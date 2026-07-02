@@ -1,0 +1,229 @@
+.register-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 36rpx 24rpx 48rpx;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40rpx;
+  padding-top: 24rpx;
+}
+
+.title {
+  display: block;
+  font-size: 46rpx;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 12rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 卡片容器：让表单更“块状”、留白更舒服 */
+.form-card {
+  border-radius: 18rpx;
+  overflow: hidden;
+  box-shadow: 0 10rpx 28rpx rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+/* Vant 的 cell-group 背景交给 form-card 控制 */
+.form-card .van-cell-group {
+  background: transparent;
+}
+
+/* 统一表单左右列：左侧标签固定宽度，右侧内容区均分，留出与标签的间距 */
+.form-card .van-cell__title {
+  flex: 0 0 240rpx !important;
+  min-width: 240rpx;
+  max-width: 240rpx;
+  word-break: keep-all;
+  padding-right: 24rpx;
+  box-sizing: border-box;
+}
+.form-card .van-cell__value {
+  flex: 1 !important;
+  min-width: 0;
+}
+.form-card .van-field__body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 输入框/占位符过长时省略显示 */
+.form-card .van-field__control {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* 单行输入框省略；textarea 不强制单行 */
+.form-card .van-cell:not(.field-textarea) .van-field__control {
+  white-space: nowrap;
+}
+
+/* 上传字段：三行等高、加号与「上传」完整显示并居中 */
+.field-with-uploader.van-cell {
+  align-items: center;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  min-height: 120rpx;
+  box-sizing: border-box;
+}
+.field-with-uploader .van-cell__value {
+  flex: 1 !important;
+  min-width: 0;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-field__body,
+.field-with-uploader .van-field__control {
+  min-width: 0;
+  flex: 1;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-uploader {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-uploader__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  width: 100%;
+  min-width: 0;
+}
+/* 三个上传块统一宽高，加号与文字完整显示、不裁切、水平垂直居中 */
+.field-with-uploader .van-uploader__upload {
+  flex: 0 0 200rpx !important;
+  width: 200rpx !important;
+  max-width: 200rpx !important;
+  min-width: 200rpx !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10rpx;
+  min-height: 96rpx !important;
+  height: 96rpx !important;
+  padding: 16rpx !important;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  border: 1rpx solid #ebedf0;
+  background-color: #f7f8fa;
+  overflow: visible !important;
+}
+.field-with-uploader .van-uploader__upload-icon {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 36rpx;
+  line-height: 1;
+  color: #969799;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-uploader__upload-text {
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  font-size: 28rpx;
+  line-height: 1;
+  color: #969799;
+  display: flex;
+  align-items: center;
+}
+/* 已上传预览与上传块同高，保持整行高度一致 */
+.field-with-uploader .van-uploader__preview {
+  flex-shrink: 0;
+  width: 200rpx;
+  height: 96rpx;
+}
+.field-with-uploader .van-uploader__preview-image {
+  width: 200rpx !important;
+  height: 96rpx !important;
+  border-radius: 12rpx;
+}
+
+/* 调整“用户身份 / 性别”这两行：横排、更紧凑、不裁剪 */
+.field-with-radios {
+  padding-top: 12rpx !important;
+  padding-bottom: 12rpx !important;
+}
+
+/* 取消右侧内容区的 overflow:hidden，避免文字被裁掉 */
+.field-with-radios .van-cell__value {
+  overflow: visible !important;
+}
+
+.field-with-radios .van-field__body,
+.field-with-radios .van-field__control {
+  overflow: visible !important;
+}
+
+/* 单选项（用户身份、性别）与整体表单标签宽度一致 */
+.field-with-radios .van-cell__title {
+  flex: 0 0 240rpx !important;
+  min-width: 240rpx;
+  padding-right: 24rpx;
+}
+
+.field-radio-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.field-radio-group .van-radio {
+  margin-right: 28rpx;
+  flex-shrink: 0;
+}
+
+.error-tip {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  margin-top: 20rpx;
+  background: rgba(238, 10, 36, 0.1);
+  border-radius: 8rpx;
+}
+
+.error-tip text {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  color: #ee0a24;
+}
+
+.button-group {
+  margin-top: 36rpx;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footer .link {
+  color: #ffffff;
+  font-weight: bold;
+  margin-left: 10rpx;
+  text-decoration: underline;
+}

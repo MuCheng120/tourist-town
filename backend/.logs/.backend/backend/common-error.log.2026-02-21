@@ -1,0 +1,524 @@
+2026-02-21 00:13:05,176 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 00:13:05,177 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 01:14:06,212 ERROR 52768 [Job#177160764621013453523545050001] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js execute failed, used 1ms. TypeError: Cannot read properties of undefined (reading 'info')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js:15:12)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 01:14:06,214 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 01:14:06,214 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 01:14:06,214 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3661058ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 02:41:26,954 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js&cron=0%200%202%20*%20*%20*&type=all] 批量更新商户信用等级失败: TypeError: Cannot read properties of undefined (reading 'User')
+    at MerchantCreditService.updateAllMerchantsCreditLevel (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:190:37)
+    at UpdateMerchantLevel.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 02:41:26,955 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js&cron=0%200%202%20*%20*%20*&type=all] [定时任务] 更新商户信用等级失败: TypeError: Cannot read properties of undefined (reading 'User')
+    at MerchantCreditService.updateAllMerchantsCreditLevel (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:190:37)
+    at UpdateMerchantLevel.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 02:41:26,955 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 02:41:26,955 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 04:09:10,711 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 04:09:10,711 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 04:09:10,707 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 5263745ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 06:30:18,877 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 06:30:18,877 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 06:30:18,875 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 5056633ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 07:07:01,838 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 2202956ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 07:54:51,773 ERROR 52768 [-/127.0.0.1/-/7ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 07:54:51,774 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 07:54:51,762 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 2869917ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 08:08:02,223 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js&cron=0%200%208%20*%20*%20*&type=all] 检查商户资质到期失败: TypeError: Cannot read properties of undefined (reading 'MerchantExt')
+    at MerchantCreditService.checkLicenseExpiry (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:331:40)
+    at CheckLicenseExpiry.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 08:08:02,224 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js&cron=0%200%208%20*%20*%20*&type=all] [定时任务] 检查商户资质到期失败: TypeError: Cannot read properties of undefined (reading 'MerchantExt')
+    at MerchantCreditService.checkLicenseExpiry (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:331:40)
+    at CheckLicenseExpiry.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 08:08:02,223 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 790451ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 08:26:05,826 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1083597ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 08:43:21,294 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1035462ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 09:09:02,071 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1540769ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 09:09:02,073 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 09:09:02,073 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 10:10:02,417 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3660332ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 10:10:02,431 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 10:10:02,433 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 11:11:02,208 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 11:11:02,208 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 11:11:02,205 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659763ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 12:12:02,098 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 12:12:02,098 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 12:12:02,096 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659885ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 13:07:13,937 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3311825ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 13:13:01,713 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 347769ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 13:13:01,721 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 13:13:01,721 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 14:14:01,667 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 14:14:01,668 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 14:14:01,646 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659913ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 15:15:02,453 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3660783ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 15:15:02,455 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 15:15:02,455 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 16:16:01,792 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659334ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 16:16:01,796 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 16:16:01,796 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 16:39:05,645 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1383841ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 17:17:01,564 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 17:17:01,565 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 17:17:01,561 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 2275893ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 18:08:09,546 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3067967ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 18:18:01,538 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 591964ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 18:18:01,544 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 18:18:01,545 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 19:19:01,530 ERROR 52768 [-/127.0.0.1/-/3ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 19:19:01,535 ERROR 52768 [-/127.0.0.1/-/5ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 19:19:01,522 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659971ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 20:20:01,498 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 20:20:01,499 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 21:21:01,498 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 21:21:01,506 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 22:22:01,458 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 22:22:01,458 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 22:54:56,521 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1975066ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 23:23:02,250 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1685719ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-21 23:23:02,252 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 23:23:02,253 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-22 00:24:02,157 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-22 00:24:02,157 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-22 00:24:02,149 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659886ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+

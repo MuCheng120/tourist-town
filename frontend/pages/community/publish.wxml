@@ -1,0 +1,75 @@
+<!--pages/community/publish.wxml-->
+<view class="container">
+  <view class="form">
+    <van-field 
+      value="{{title}}" 
+      label="标题" 
+      placeholder="请输入攻略标题" 
+      bind:change="onTitleInput"
+      required
+    />
+    
+    <van-field 
+      value="{{content}}" 
+      label="内容" 
+      type="textarea" 
+      placeholder="分享你的旅游心得..." 
+      bind:change="onContentInput"
+      autosize
+      required
+    />
+
+    <van-field
+      value="{{categoryLabel}}"
+      label="分类"
+      placeholder="请选择分类"
+      readonly
+      is-link
+      bindtap="showCategoryPicker"
+    />
+
+    <view class="upload-section">
+      <view class="section-title">添加图片</view>
+      <view class="image-list">
+        <view class="image-item" wx:for="{{images}}" wx:key="*this">
+          <image class="preview-image" src="{{item}}" mode="aspectFill" />
+          <view class="delete-btn" bindtap="deleteImage" data-index="{{index}}">
+            <van-icon name="cross" size="12" color="#fff" />
+          </view>
+        </view>
+        <view class="upload-btn" wx:if="{{images.length < 9}}" bindtap="chooseImage">
+          <van-icon name="plus" size="32" color="#999" />
+          <text class="upload-text">添加图片</text>
+        </view>
+      </view>
+      <view class="upload-tip">最多上传9张图片</view>
+    </view>
+
+    <van-cell-group title="发布设置">
+      <van-field 
+        value="{{location}}" 
+        label="位置" 
+        placeholder="添加位置信息" 
+        bind:change="onLocationInput"
+      />
+    </van-cell-group>
+  </view>
+
+  <view class="submit-btn">
+    <van-button type="default" block bindtap="saveDraftThenBack" plain>保存到草稿箱</van-button>
+    <van-button type="primary" block bindtap="submit">发布攻略</van-button>
+  </view>
+
+  <!-- 分类选择器 -->
+  <van-popup show="{{ showCategoryPicker }}" position="bottom" bind:close="onCloseCategoryPicker">
+    <van-picker
+      show-toolbar
+      title="选择分类"
+      columns="{{ categories }}"
+      bind:confirm="onCategoryConfirm"
+      bind:cancel="onCloseCategoryPicker"
+      value-key="label"
+      data-key="value"
+    />
+  </van-popup>
+</view>

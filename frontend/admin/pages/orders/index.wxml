@@ -1,0 +1,134 @@
+<view class="orders-admin-page">
+  <view class="filter-bar">
+    <view class="search-row">
+      <van-search
+        value="{{orderNo}}"
+        placeholder="订单号搜索"
+        use-action-slot
+        bind:change="onSearchInput"
+      >
+        <view slot="action" bindtap="onSearch">搜索</view>
+      </van-search>
+    </view>
+    <view class="filter-label">按状态筛选</view>
+    <picker mode="selector" range="{{statusOptions}}" range-key="label" value="{{statusIndex}}" bindchange="onStatusPickerChange">
+      <view class="filter-item">{{statusOptions[statusIndex].label}}</view>
+    </picker>
+    <view class="filter-label filter-label-sp">按订单类型筛选</view>
+    <picker mode="selector" range="{{typeOptions}}" range-key="label" value="{{typeIndex}}" bindchange="onTypePickerChange">
+      <view class="filter-item">{{typeOptions[typeIndex].label}}</view>
+    </picker>
+    <view class="deleted-switch-row">
+      <text class="deleted-switch-label">显示已删除订单</text>
+      <switch checked="{{includeDeleted}}" bindchange="onIncludeDeletedChange" color="#1989fa" />
+    </view>
+  </view>
+
+  <view class="stat-row">
+    <text class="stat-text">共 {{total}} 单</text>
+    <text
+      wx:if="{{lastActionError}}"
+      class="risk-log-link"
+      bindtap="showLastActionError"
+    >
+      查看最近失败记录
+    </text>
+  </view>
+
+  <view class="order-list">
+    <view
+      class="order-card {{item.statusClass}}"
+      wx:for="{{list}}"
+      wx:key="id"
+      bindtap="goDetail"
+      data-id="{{item.id}}"
+    >
+      <view class="order-header">
+        <text class="order-no">{{item.order_no}}</text>
+        <van-tag type="{{item.statusTagType}}">{{item.statusText}}</van-tag>
+      </view>
+      <view class="order-row">
+        <text class="label">用户</text>
+        <text class="value">{{item.userNickname}}</text>
+      </view>
+      <view class="order-row">
+        <text class="label">类型</text>
+        <text class="value">{{item.typeText}}</text>
+      </view>
+      <view class="order-row">
+        <text class="label">金额</text>
+        <text class="value amount">¥{{item.total_amount}}</text>
+      </view>
+      <view class="order-row">
+        <text class="label">时间</text>
+        <text class="value">{{item.created_at}}</text>
+      </view>
+      <view class="order-row">
+        <text class="label">时间线</text>
+        <text class="value">{{item.timelineText}}</text>
+      </view>
+      <view class="order-row" wx:if="{{item.status === 'refunding'}}">
+        <text class="label">退款证据</text>
+        <text class="value">{{item.refundEvidenceCount}} 张</text>
+      </view>
+      <view class="order-row" wx:if="{{item.status === 'refunding' && item.refund_apply_reason}}">
+        <text class="label">退款理由</text>
+        <text class="value">{{item.refund_apply_reason}}</text>
+      </view>
+      <view class="order-footer">
+        <text class="tap-hint">点击查看详情</text>
+        <view class="actions" catchtap="noop">
+          <button
+            wx:if="{{item.status === 'refunding'}}"
+            class="action-btn approve-btn"
+            size="mini"
+            data-id="{{item.id}}"
+            bindtap="approveRefund"
+          >
+            同意退款
+          </button>
+          <button
+            wx:if="{{item.status === 'refunding'}}"
+            class="action-btn reject-btn"
+            size="mini"
+            data-id="{{item.id}}"
+            bindtap="rejectRefund"
+          >
+            拒绝退款
+          </button>
+          <button
+            wx:if="{{item.order_type === 'hotel' && item.status === 'paid'}}"
+            class="action-btn complete-hotel-btn"
+            size="mini"
+            data-id="{{item.id}}"
+            bindtap="completeHotelStay"
+          >
+            确认入住完成
+          </button>
+          <button
+            wx:if="{{item.logistics && item.logistics.id && item.status === 'shipped'}}"
+            class="action-btn tracking-btn"
+            size="mini"
+            data-id="{{item.id}}"
+            bindtap="updateTrackingNo"
+          >
+            改运单号
+          </button>
+          <button
+            wx:if="{{item.status === 'refunding'}}"
+            class="action-btn force-btn"
+            size="mini"
+            data-id="{{item.id}}"
+            bindtap="forceComplete"
+          >
+            强制完成
+          </button>
+        </view>
+      </view>
+    </view>
+
+    <van-loading wx:if="{{loading}}" class="loading" />
+    <van-empty wx:if="{{!loading && list.length === 0}}" description="暂无订单" />
+    <view wx:if="{{!hasMore && list.length > 0}}" class="no-more">没有更多了</view>
+  </view>
+</view>

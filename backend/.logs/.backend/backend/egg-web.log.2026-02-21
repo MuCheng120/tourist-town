@@ -1,0 +1,47 @@
+2026-02-21 00:13:05,173 INFO 52768 [egg-logrotator] app logger reload: got log-reload message
+2026-02-21 01:14:06,210 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 01:14:06,210 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 04:09:10,707 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 04:09:10,708 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 05:06:02,248 INFO 52768 [-/127.0.0.1/-/3ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] start clean tmpdir: "/var/folders/f4/09m3b9696g72l6wm9jwz_fn40000gn/T/egg-multipart-tmp/backend"
+2026-02-21 05:06:02,267 INFO 52768 [-/127.0.0.1/-/23ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js&type=worker&cron=0%2030%204%20*%20*%20*&disable=false&immediate=false] [egg-multipart:CleanTmpdir] end
+2026-02-21 06:30:18,875 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 06:30:18,875 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 07:07:01,839 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 07:07:01,839 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 07:54:51,761 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 07:54:51,761 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 08:08:02,220 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 08:08:02,221 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 08:26:05,826 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 08:26:05,827 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 08:43:21,294 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 08:43:21,295 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 09:09:02,071 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 10:10:02,417 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 11:11:02,205 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 12:12:02,096 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 12:12:02,096 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 13:07:13,929 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 13:07:13,929 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 13:13:01,712 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 13:13:01,713 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 14:14:01,646 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 14:14:01,646 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 15:15:02,453 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 16:16:01,792 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 16:16:01,792 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 16:39:05,650 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 17:17:01,560 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 18:08:09,547 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 18:18:01,538 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 18:18:01,538 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 19:19:01,522 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-21 19:19:01,522 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 22:54:56,520 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-21 23:23:02,250 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-22 00:24:02,147 WARN 52768 [TCPBase] socket is closed by other side while there were still unhandled data in the socket buffer
+2026-02-22 00:24:02,148 WARN 52768 [ClusterClient:Watcher] follower closed, and try to init it again
+2026-02-22 00:24:02,165 INFO 52768 [-/127.0.0.1/-/11ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js&type=worker&cron=0%200%20*%20*%20*] [egg-logrotator] clean all log before 31 days
+2026-02-22 00:24:02,166 INFO 52768 [-/127.0.0.1/-/12ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-logrotator] broadcast log-reload
+2026-02-22 00:24:02,166 INFO 52768 [-/127.0.0.1/-/12ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js&type=worker&cron=1%200%200%20*%20*%20*] [egg-logrotator] rotate files success by DayRotator, files ["/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/common-error.log -> /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/common-error.log.2026-02-21","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/backend-web.log -> /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/backend-web.log.2026-02-21","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/egg-web.log -> /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/egg-web.log.2026-02-21","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/egg-schedule.log -> /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/egg-schedule.log.2026-02-21","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/egg-agent.log -> /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend/egg-agent.log.2026-02-21"]

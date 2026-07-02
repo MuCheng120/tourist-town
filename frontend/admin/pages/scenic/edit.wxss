@@ -1,0 +1,387 @@
+/* 管理端景点编辑页面样式 */
+.edit-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 120rpx;
+}
+
+.form-section {
+  background: #fff;
+  margin: 20rpx;
+  border-radius: 16rpx;
+  padding: 30rpx;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+  gap: 16rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.id-badge {
+  font-size: 22rpx;
+  color: #666;
+  background: #f2f3f5;
+  padding: 6rpx 14rpx;
+  border-radius: 999rpx;
+  flex-shrink: 0;
+}
+
+.form-item {
+  margin-bottom: 40rpx;
+}
+
+.form-item:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.label.required::before {
+  content: '*';
+  color: #ff4d4f;
+  margin-right: 8rpx;
+}
+
+.input {
+  width: 100%;
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 200rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.count {
+  text-align: right;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 8rpx;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-bottom: 16rpx;
+}
+
+.selected-tag {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  background: #eef3ff;
+  color: #3f6ad8;
+  border-radius: 999rpx;
+  padding: 8rpx 16rpx;
+  font-size: 24rpx;
+}
+
+.selected-tag-remove {
+  font-size: 28rpx;
+  line-height: 1;
+}
+
+.tag-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.tag-option {
+  border: 2rpx solid #e5e6eb;
+  color: #666;
+  border-radius: 999rpx;
+  padding: 8rpx 18rpx;
+  font-size: 24rpx;
+}
+
+.tag-option.active {
+  border-color: #5b86ff;
+  color: #5b86ff;
+  background: #f0f5ff;
+}
+
+.expand-tags-wrap {
+  margin-top: 12rpx;
+}
+
+.expand-tags-btn {
+  color: #5b86ff;
+  border-color: #c7d8ff;
+  background: #f7faff;
+}
+
+.collapse-tags-btn {
+  margin-left: 12rpx;
+  color: #666;
+  border-color: #e5e6eb;
+  background: #fff;
+}
+
+.new-tag-row {
+  display: flex;
+  gap: 12rpx;
+  margin-top: 16rpx;
+  align-items: center;
+}
+
+.new-tag-input {
+  flex: 1;
+}
+
+.new-tag-btn {
+  flex-shrink: 0;
+}
+
+/* 封面图上传 */
+.cover-upload {
+  position: relative;
+}
+
+.cover-image {
+  width: 100%;
+  height: 400rpx;
+  border-radius: 8rpx;
+}
+
+.cover-placeholder {
+  width: 100%;
+  height: 400rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx dashed #d9d9d9;
+}
+
+.cover-placeholder .icon {
+  font-size: 80rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+
+.cover-placeholder .text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.change-btn {
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+}
+
+/* 详情图网格 */
+.images-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.image-item {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+
+.delete-btn {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  line-height: 1;
+}
+
+.add-image {
+  width: 200rpx;
+  height: 200rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx dashed #d9d9d9;
+}
+
+.add-image .icon {
+  font-size: 60rpx;
+  color: #999;
+}
+
+/* 位置选择 */
+.location-box {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.location-box .input {
+  flex: 1;
+}
+
+.location-btn {
+  flex-shrink: 0;
+}
+
+.picker-value {
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 状态切换 */
+.form-item switch {
+  vertical-align: middle;
+}
+
+.status-text {
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 16rpx;
+  vertical-align: middle;
+}
+
+/* 操作按钮 */
+.actions {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 20rpx;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+  display: flex;
+  gap: 20rpx;
+  z-index: 999;
+}
+
+.btn {
+  flex: 1;
+  height: 88rpx;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.btn::after {
+  border: none;
+}
+
+.cancel-btn {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+}
+
+.save-btn[disabled] {
+  opacity: 0.6;
+}
+
+.location-coords {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+  font-size: 24rpx;
+  color: #888;
+}
+
+.ticket-type-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+}
+
+.ticket-type-card {
+  background: #f7f8fa;
+  border-radius: 10rpx;
+  padding: 14rpx;
+}
+
+.ticket-type-row {
+  display: flex;
+  gap: 12rpx;
+  margin-bottom: 10rpx;
+}
+
+.ticket-type-row:last-child {
+  margin-bottom: 0;
+}
+
+.ticket-input {
+  flex: 1;
+}
+
+.ticket-price-input {
+  width: 180rpx;
+}
+
+.ticket-remove-btn {
+  flex-shrink: 0;
+}
+
+.ticket-add-btn {
+  margin-top: 14rpx;
+}

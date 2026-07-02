@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "pay-password-popup": "../../components/pay-password-popup/pay-password-popup"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "用户评价",
+  "usingComponents": {
+    "van-field": "@vant/weapp/field/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-empty": "@vant/weapp/empty/index"
+  }
+}
+

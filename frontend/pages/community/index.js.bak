@@ -1,0 +1,181 @@
+// pages/community/index.js
+const app = getApp();
+
+Page({
+  data: {
+    posts: [],
+    activeTab: 'all',
+    searchKeyword: '',
+    loading: false,
+    page: 1,
+    hasMore: true,
+  },
+
+  onLoad() {
+    this.loadPosts();
+  },
+
+  onShow() {
+    // 设置当前 tabBar 选中状态
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 3
+      });
+    }
+  },
+
+  onPullDownRefresh() {
+    this.setData({ page: 1, hasMore: true });
+    this.loadPosts().then(() => {
+      wx.stopPullDownRefresh();
+    });
+  },
+
+  onReachBottom() {
+    if (this.data.hasMore && !this.data.loading) {
+      this.loadMorePosts();
+    }
+  },
+
+  /**
+   * 加载攻略列表
+   */
+  async loadPosts() {
+    this.setData({ loading: true });
+
+    try {
+      const posts = await app.request({
+        url: '/api/posts',
+        method: 'GET',
+        data: {
+          page: 1,
+          limit: 10,
+          category: this.data.activeTab !== 'all' ? this.data.activeTab : '',
+          keyword: this.data.searchKeyword,
+        },
+      });
+
+      // 处理攻略数据，添加安全的字段
+      const processedPosts = (posts || []).map(post => {
+        const user = post.user || {};
+        return {
+          ...post,
+          userAvatar: user.avatar || '/images/default-avatar.png',
+          userName: user.nickname || '匿名用户'
+        };
+      });
+
+      this.setData({
+        posts: processedPosts,
+        page: 1,
+        hasMore: posts.length >= 10,
+      });
+    } catch (error) {
+      console.error('加载攻略失败:', error);
+      wx.showToast({
+        title: '加载失败',
+        icon: 'none',
+      });
+    } finally {
+      this.setData({ loading: false });
+    }
+  },
+
+  /**
+   * 加载更多攻略
+   */
+  async loadMorePosts() {
+    this.setData({ loading: true });
+
+    try {
+      const nextPage = this.data.page + 1;
+      const newPosts = await app.request({
+        url: '/api/posts',
+        method: 'GET',
+        data: {
+          page: nextPage,
+          limit: 10,
+          category: this.data.activeTab !== 'all' ? this.data.activeTab : '',
+          keyword: this.data.searchKeyword,
+        },
+      });
+
+      this.setData({
+        posts: [...this.data.posts, ...newPosts],
+        page: nextPage,
+        hasMore: newPosts.length >= 10,
+      });
+    } catch (error) {
+      console.error('加载更多失败:', error);
+    } finally {
+      this.setData({ loading: false });
+    }
+  },
+
+  /**
+   * 切换分类标签
+   */
+  switchTab(e) {
+    const { tab } = e.currentTarget.dataset;
+    
+    if (tab === this.data.activeTab) return;
+
+    this.setData({
+      activeTab: tab,
+      page: 1,
+      hasMore: true,
+    });
+
+    this.loadPosts();
+  },
+
+  /**
+   * 搜索输入变化
+   */
+  onSearchChange(e) {
+    this.setData({ searchKeyword: e.detail });
+  },
+
+  /**
+   * 搜索
+   */
+  onSearch() {
+    this.setData({
+      page: 1,
+      hasMore: true,
+    });
+    this.loadPosts();
+  },
+
+  /**
+   * 导航到攻略详情
+   */
+  navigateToDetail(e) {
+    const { id } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/pages/community/detail?id=${id}`,
+    });
+  },
+
+  /**
+   * 发布攻略
+   */
+  publishPost() {
+    if (!app.globalData.token) {
+      wx.showToast({
+        title: '请先登录',
+        icon: 'none',
+      });
+      setTimeout(() => {
+        wx.switchTab({
+          url: '/pages/user/index',
+        });
+      }, 1500);
+      return;
+    }
+
+    wx.navigateTo({
+      url: '/pages/community/publish',
+    });
+  },
+});

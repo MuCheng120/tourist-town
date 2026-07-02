@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="action-bar">
+    <view class="btn-publish" bindtap="goPublish">
+      <van-icon name="add-o" size="22px" color="#fff" />
+      <text>发布商品</text>
+    </view>
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="card-main">
+        <view class="card-edit-btn" catchtap="goEdit" data-id="{{item.id}}" aria-label="编辑商品">
+          <van-icon name="edit" size="20px" color="#1989fa" />
+        </view>
+        <image class="cover" src="{{item.coverUrl}}" mode="aspectFill" />
+        <view class="info">
+          <view class="name">{{item.name}}</view>
+          <van-tag type="{{item.product_type === 'food' ? 'primary' : 'warning'}}">{{item.typeText}}</van-tag>
+          <view class="row">
+            <text class="price">¥{{item.price}}</text>
+            <text class="stock" wx:if="{{item.product_type === 'souvenir'}}">库存 {{item.stock}}</text>
+          </view>
+          <view class="row">
+            <van-tag plain type="{{item.status === 1 ? 'success' : 'default'}}">{{item.statusText}}</van-tag>
+          </view>
+        </view>
+      </view>
+      <view class="card-actions">
+        <view class="btn-action btn-off" bindtap="toggleStatus" data-id="{{item.id}}" data-status="{{item.status}}">
+          <van-icon name="{{item.status === 1 ? 'arrow-down' : 'arrow-up'}}" size="14px" />
+          <text>{{item.status === 1 ? '下架' : '上架'}}</text>
+        </view>
+        <view class="btn-action btn-del" bindtap="deleteProduct" data-id="{{item.id}}">
+          <van-icon name="delete-o" size="14px" />
+          <text>删除</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-empty wx:if="{{!loading && list.length === 0}}" description="暂无商品，点击上方发布商品" />
+  <van-loading wx:if="{{loading}}" class="loading" />
+</view>

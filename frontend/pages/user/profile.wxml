@@ -1,0 +1,116 @@
+<!--pages/user/profile.wxml 个人资料：展示与编辑 -->
+<view class="container" wx:if="{{userInfo}}">
+  <!-- 背景图（可点击更换） -->
+  <view class="profile-header" bindtap="chooseBackground">
+    <image
+      class="profile-bg"
+      src="{{backgroundUrl}}"
+      mode="aspectFill"
+      wx:if="{{backgroundUrl}}"
+    />
+    <view class="profile-bg-placeholder" wx:if="{{!backgroundUrl}}">
+      <van-icon name="photograph" size="48" color="rgba(255,255,255,0.8)" />
+      <text class="placeholder-text">点击设置背景</text>
+    </view>
+    <!-- 有背景图时也显示“更换背景”提示，避免误以为不能编辑 -->
+    <view class="profile-bg-mask" wx:if="{{backgroundUrl}}">
+      <van-icon name="photograph" size="36" color="#fff" />
+      <text class="profile-bg-mask-text">更换背景</text>
+    </view>
+  </view>
+
+  <!-- 头像（可点击更换） -->
+  <view class="avatar-wrap">
+    <view class="avatar-box" bindtap="chooseAvatar">
+      <image class="avatar-img" src="{{avatarUrl}}" mode="aspectFill" wx:if="{{avatarUrl}}" />
+      <view class="avatar-placeholder" wx:else><van-icon name="user-o" size="64" color="#ccc" /></view>
+      <view class="avatar-mask">
+        <van-icon name="photograph" size="32" color="#fff" />
+        <text>更换头像</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 表单 -->
+  <view class="form-section">
+    <van-cell-group>
+      <van-field
+        value="{{ userInfo.nickname !== undefined && userInfo.nickname !== null ? userInfo.nickname : '' }}"
+        label="昵称"
+        placeholder="请输入昵称"
+        border="{{ true }}"
+        bind:change="onNicknameChange"
+      />
+      <van-field
+        value="{{ userInfo.real_name !== undefined && userInfo.real_name !== null ? userInfo.real_name : '' }}"
+        label="真实姓名"
+        placeholder="预订酒店时作为入住人（选填）"
+        border="{{ true }}"
+        bind:change="onRealNameChange"
+      />
+      <van-cell title="手机号" value="{{ userInfo.phone }}" />
+      <van-cell
+        title="性别"
+        value="{{ genderText }}"
+        is-link
+        bind:tap="showGenderPicker"
+      />
+      <van-field
+        value="{{ userInfo.age }}"
+        type="number"
+        label="年龄"
+        placeholder="选填"
+        border="{{ true }}"
+        bind:input="onAgeChange"
+        bind:change="onAgeChange"
+      />
+    </van-cell-group>
+  </view>
+
+  <view class="btn-wrap">
+    <van-button type="primary" block round bind:click="submit" loading="{{ saving }}">
+      保存修改
+    </van-button>
+    <view class="pwd-btn-wrap">
+      <van-button type="default" block round bind:click="openChangePassword">
+        修改密码
+      </van-button>
+    </view>
+  </view>
+
+  <van-popup show="{{showPwdPopup}}" position="bottom" round bind:close="closeChangePassword">
+    <view class="pwd-popup">
+      <view class="pwd-title">修改密码</view>
+      <van-field
+        password
+        label="原密码"
+        placeholder="请输入原密码"
+        value="{{oldPassword}}"
+        bind:input="onOldPasswordInput"
+      />
+      <van-field
+        password
+        label="新密码"
+        placeholder="8-20位，含字母/数字/符号"
+        value="{{newPassword}}"
+        bind:input="onNewPasswordInput"
+      />
+      <van-field
+        password
+        label="确认新密码"
+        placeholder="请再次输入新密码"
+        value="{{confirmPassword}}"
+        bind:input="onConfirmPasswordInput"
+      />
+      <view class="pwd-tip">密码须为8-20位，且包含字母、数字和特殊符号</view>
+      <view class="pwd-actions">
+        <van-button type="default" size="small" bind:click="closeChangePassword" disabled="{{changingPassword}}">取消</van-button>
+        <van-button type="primary" size="small" bind:click="submitPasswordChange" loading="{{changingPassword}}">确认修改</van-button>
+      </view>
+    </view>
+  </van-popup>
+</view>
+
+<view class="empty" wx:else>
+  <text>请先登录</text>
+</view>

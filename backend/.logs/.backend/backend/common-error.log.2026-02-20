@@ -1,0 +1,314 @@
+2026-02-20 15:39:53,979 ERROR 90971 nodejs.EggScheduleError: schedule type [undefined] is not defined
+    at Schedule.registerSchedule (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/schedule.js:44:19)
+    at Schedule.init (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/schedule.js:32:12)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/agent.js:13:20
+    at Object.callFn (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-core/lib/utils/index.js:44:42)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-core/lib/lifecycle.js:265:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+name: "EggScheduleError"
+pid: 90971
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 15:40:04,111 ERROR 91204 nodejs.EggScheduleError: schedule type [undefined] is not defined
+    at Schedule.registerSchedule (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/schedule.js:44:19)
+    at Schedule.init (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/schedule.js:32:12)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/agent.js:13:20
+    at Object.callFn (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-core/lib/utils/index.js:44:42)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-core/lib/lifecycle.js:265:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+name: "EggScheduleError"
+pid: 91204
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 15:47:01,907 ERROR 95971 [-/127.0.0.1/-/140ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] 关闭超时订单任务失败: Error
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async order.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async CloseTimeoutOrders.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js:25:29)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:16
+    at async Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:7) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Table 'tourist_town.orders' doesn't exist
+      at Packet.asError (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packets/packet.js:739:17)
+      at Query.execute (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:508:34)
+      at PacketParser.onPacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'tourist_town.orders' doesn't exist",
+    sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:32:01';",
+    parameters: undefined
+  },
+  original: Error: Table 'tourist_town.orders' doesn't exist
+      at Packet.asError (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packets/packet.js:739:17)
+      at Query.execute (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:508:34)
+      at PacketParser.onPacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'tourist_town.orders' doesn't exist",
+    sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:32:01';",
+    parameters: undefined
+  },
+  sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:32:01';",
+  parameters: {}
+}
+2026-02-20 15:49:04,059 ERROR 97043 [-/127.0.0.1/-/25ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] 关闭超时订单任务失败: Error
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async order.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async CloseTimeoutOrders.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js:25:29)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:16
+    at async Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:7) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Table 'tourist_town.orders' doesn't exist
+      at Packet.asError (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packets/packet.js:739:17)
+      at Query.execute (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:508:34)
+      at PacketParser.onPacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'tourist_town.orders' doesn't exist",
+    sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:34:04';",
+    parameters: undefined
+  },
+  original: Error: Table 'tourist_town.orders' doesn't exist
+      at Packet.asError (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packets/packet.js:739:17)
+      at Query.execute (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:508:34)
+      at PacketParser.onPacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'tourist_town.orders' doesn't exist",
+    sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:34:04';",
+    parameters: undefined
+  },
+  sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:34:04';",
+  parameters: {}
+}
+2026-02-20 15:50:04,046 ERROR 97043 [-/127.0.0.1/-/16ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] 关闭超时订单任务失败: Error
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async order.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async CloseTimeoutOrders.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js:25:29)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:16
+    at async Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:7) {
+  name: 'SequelizeDatabaseError',
+  parent: Error: Table 'tourist_town.orders' doesn't exist
+      at Packet.asError (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packets/packet.js:739:17)
+      at Query.execute (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:508:34)
+      at PacketParser.onPacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'tourist_town.orders' doesn't exist",
+    sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:35:04';",
+    parameters: undefined
+  },
+  original: Error: Table 'tourist_town.orders' doesn't exist
+      at Packet.asError (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packets/packet.js:739:17)
+      at Query.execute (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/commands/command.js:29:26)
+      at Connection.handlePacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:508:34)
+      at PacketParser.onPacket (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:93:12)
+      at PacketParser.executeStart (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/packet_parser.js:75:16)
+      at Socket.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/mysql2/lib/base/connection.js:100:25)
+      at Socket.emit (node:events:508:28)
+      at addChunk (node:internal/streams/readable:559:12)
+      at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+      at Readable.push (node:internal/streams/readable:390:5) {
+    code: 'ER_NO_SUCH_TABLE',
+    errno: 1146,
+    sqlState: '42S02',
+    sqlMessage: "Table 'tourist_town.orders' doesn't exist",
+    sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:35:04';",
+    parameters: undefined
+  },
+  sql: "SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `type`, `total_amount`, `status`, `quantity`, `receiver_name`, `receiver_phone`, `receiver_address`, `check_in_date`, `check_out_date`, `remark`, `pay_time`, `ship_time`, `complete_time`, `verify_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `orders` AS `order` WHERE `order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 15:35:04';",
+  parameters: {}
+}
+2026-02-20 18:44:04,717 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1067632ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 19:01:27,742 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1022989ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 19:01:27,756 ERROR 52768 [-/127.0.0.1/-/6ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 19:01:27,759 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 19:16:59,385 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 931620ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 19:35:08,083 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 927206ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 19:36:12,318 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 64220ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 19:38:11,130 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 66087ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 20:09:01,284 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1741025ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 20:09:01,289 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 20:09:01,290 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 21:10:02,023 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3660727ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 21:10:02,029 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 21:10:02,031 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 22:11:03,741 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3661687ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-20 22:11:03,744 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 22:11:03,744 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 23:12:04,594 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 23:12:04,595 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-20 23:12:04,591 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3660837ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+

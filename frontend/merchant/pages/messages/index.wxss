@@ -1,0 +1,128 @@
+.messages-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 20rpx 20rpx 40rpx;
+}
+
+.session-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.session-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.product-thumb {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 8rpx;
+  margin-right: 16rpx;
+  background: #f2f2f2;
+}
+
+.session-header-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 4rpx;
+}
+
+.session-time {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.chat-body {
+  padding: 10rpx 0 0;
+}
+
+.msg-item {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.msg-left .avatar {
+  order: 0;
+}
+
+.msg-left .msg-content {
+  margin-left: 12rpx;
+  align-items: flex-start;
+}
+
+.msg-right {
+  flex-direction: row-reverse;
+}
+
+.msg-right .msg-content {
+  margin-right: 12rpx;
+  align-items: flex-end;
+}
+
+.avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background: #f2f2f2;
+}
+
+.msg-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 520rpx;
+}
+
+.msg-name {
+  font-size: 22rpx;
+  color: #999;
+  margin-bottom: 4rpx;
+}
+
+.msg-bubble {
+  padding: 12rpx 16rpx;
+  border-radius: 16rpx;
+  background: #f2f2f2;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.msg-right .msg-bubble {
+  background: #07c160;
+  color: #fff;
+}
+
+.msg-time {
+  font-size: 20rpx;
+  color: #c0c4cc;
+  margin-top: 2rpx;
+}
+
+.reply-area {
+  margin-top: 12rpx;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.send-btn {
+  flex-shrink: 0;
+  padding: 0 20rpx;
+  font-size: 24rpx;
+}
+
+.loading,
+.no-more {
+  text-align: center;
+  padding: 20rpx 0;
+  color: #999;
+  font-size: 24rpx;
+}
+

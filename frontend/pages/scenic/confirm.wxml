@@ -1,0 +1,74 @@
+<view class="confirm-container" wx:if="{{spotName}}">
+  <view class="section">
+    <view class="section-title">预订信息</view>
+    <view class="info-row">
+      <text class="label">景点</text>
+      <text class="value">{{spotName}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">游玩日期</text>
+      <text class="value">{{playDate}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">票种</text>
+      <text class="value">{{ticketName}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">数量</text>
+      <text class="value">{{quantity}}张</text>
+    </view>
+    <view class="info-row total-row">
+      <text class="label">门票小计</text>
+      <text class="total-value">¥{{total}}</text>
+    </view>
+  </view>
+
+  <view class="section" wx:if="{{spotName}}">
+    <view class="section-title">优惠券</view>
+    <view class="coupon-hint">每单限用 1 张；门票订单仅支持<text class="emph">平台券</text>，不可叠加。</view>
+    <view class="coupon-row" bindtap="onRemoveCoupon" wx:if="{{selectedCouponId}}">
+      <text class="coupon-text">已选优惠券，点击取消</text>
+      <van-icon name="arrow" />
+    </view>
+    <view class="coupon-list" wx:else>
+      <view
+        class="coupon-item"
+        wx:for="{{availableCoupons}}"
+        wx:key="id"
+        bindtap="onSelectCoupon"
+        data-id="{{item.id}}"
+      >
+        <view class="coupon-value">¥{{item.value}}</view>
+        <view class="coupon-tag">平台券</view>
+        <view class="coupon-desc">满{{item.min_spend}}可用</view>
+        <view class="coupon-title">{{item.title}}</view>
+      </view>
+      <view class="coupon-empty" wx:if="{{availableCoupons.length === 0}}">暂无可用优惠券</view>
+    </view>
+  </view>
+
+  <view class="section pay-summary" wx:if="{{spotName}}">
+    <view class="info-row" wx:if="{{discountAmount > 0}}">
+      <text class="label">优惠</text>
+      <text class="value discount">-¥{{discountAmount}}</text>
+    </view>
+    <view class="info-row total-row">
+      <text class="label">实付</text>
+      <text class="total-value">¥{{payTotal}}</text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view class="final-summary">实付 ¥{{payTotal}}</view>
+    <button class="submit-btn" bindtap="submitOrder" disabled="{{submitting}}">{{submitting ? '支付中...' : '立即支付'}}</button>
+  </view>
+
+  <pay-password-popup 
+    show="{{ showPayPopup }}" 
+    amount="{{ payTotal }}" 
+    bind:success="onPaySuccess" 
+    bind:close="onPayClose" 
+  />
+</view>
+
+<van-empty wx:else description="参数错误" />

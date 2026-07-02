@@ -1,0 +1,51 @@
+<view class="container">
+  <view class="toolbar">
+    <button class="add-btn" type="primary" size="mini" bindtap="goAdd">新增轮播</button>
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="card-main">
+        <image class="cover" src="{{item.imageDisplay}}" mode="aspectFill" />
+        <view class="info">
+          <view class="row title-row">
+            <text class="name">{{item.title || '（无标题）'}}</text>
+            <van-tag type="{{item.status === 1 ? 'success' : 'default'}}" size="small">
+              {{item.status === 1 ? '展示中' : '已隐藏'}}
+            </van-tag>
+          </view>
+          <view class="row meta">
+            <text class="meta-text">跳转：{{item.linkTypeLabel}}</text>
+          </view>
+          <view class="row meta" wx:if="{{item.linkValue}}">
+            <text class="meta-text ellipsis">{{item.linkValue}}</text>
+          </view>
+          <view class="row meta sort-row">
+            <text class="meta-text">排序：<text class="sort-num">{{item.sortOrder}}</text></text>
+          </view>
+        </view>
+      </view>
+      <view class="card-actions">
+        <view class="recommend-row">
+          <text class="recommend-label">首页展示</text>
+          <van-switch
+            checked="{{item.status === 1}}"
+            size="22px"
+            active-color="#07c160"
+            inactive-color="#dcdee0"
+            bind:change="onStatusChange"
+            data-id="{{item.id}}"
+            data-status="{{item.status}}"
+          />
+        </view>
+        <view class="btn-row">
+          <button class="btn ghost" size="mini" bindtap="goEdit" data-id="{{item.id}}">编辑</button>
+          <button class="btn danger" size="mini" bindtap="onDelete" data-id="{{item.id}}">删除</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-empty wx:if="{{!loading && list.length === 0}}" description="暂无轮播，点击「新增轮播」添加" />
+  <van-loading wx:if="{{loading}}" class="loading" />
+</view>

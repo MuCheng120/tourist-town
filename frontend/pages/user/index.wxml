@@ -1,0 +1,93 @@
+<!--pages/user/index.wxml-->
+<view class="container">
+  <!-- 用户信息卡片：有背景图时显示用户设置的背景，否则为绿色渐变 -->
+  <view class="user-card user-card--has-bg" wx:if="{{userInfo}}">
+    <image class="user-card-bg" src="{{cardBackgroundUrl}}" mode="aspectFill" wx:if="{{cardBackgroundUrl}}" />
+    <view class="user-info">
+      <view class="user-avatar">
+        <image src="{{userInfo.avatar}}" mode="aspectFill" wx:if="{{userInfo.avatar}}" />
+        <van-icon name="user-o" size="64" color="#ccc" wx:else />
+      </view>
+      <view class="user-details">
+        <text class="user-nickname">{{userInfo.nickname}}</text>
+        <view class="user-role">
+          <van-tag type="primary" wx:if="{{userInfo.role === 'admin'}}">管理员</van-tag>
+          <van-tag type="success" wx:elif="{{userInfo.role === 'merchant'}}">商家</van-tag>
+          <van-tag type="default" wx:else>游客</van-tag>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 未登录状态：灰色未登录图标，点击头像或按钮均可跳转登录 -->
+  <view class="login-card" wx:else>
+    <view class="default-avatar-wrap" bindtap="handleLogin">
+      <van-icon name="contact" size="60" color="#b0b0b0" class="default-avatar-icon" />
+    </view>
+    <button class="login-btn" bindtap="handleLogin">点击登录</button>
+  </view>
+
+  <!-- 订单管理（未登录时也显示，点击再提示登录） -->
+  <view class="order-section">
+    <view class="section-header">
+      <text class="section-title">我的订单</text>
+      <text class="section-more" bindtap="navigateToOrders">全部订单 ›</text>
+    </view>
+    <view class="order-stats">
+      <view class="stat-item" bindtap="navigateToOrders" data-status="pending">
+        <van-icon name="pending-payment" size="24" color="#ff976a" />
+        <text class="stat-text">待付款</text>
+      </view>
+      <view class="stat-item" bindtap="navigateToOrders" data-status="paid">
+        <van-icon name="tosend" size="24" color="#1989fa" />
+        <text class="stat-text">待发货</text>
+      </view>
+      <view class="stat-item" bindtap="navigateToOrders" data-status="shipped">
+        <van-icon name="logistics" size="24" color="#07c160" />
+        <text class="stat-text">待收货</text>
+      </view>
+      <view class="stat-item" bindtap="navigateToOrders" data-status="to_review">
+        <van-icon name="comment-o" size="24" color="#ff976a" />
+        <text class="stat-text">待评价</text>
+      </view>
+      <view class="stat-item" bindtap="navigateToOrders" data-status="completed">
+        <van-icon name="completed" size="24" color="#07c160" />
+        <text class="stat-text">已完成</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 优惠券 -->
+  <view class="menu-section">
+    <van-cell-group>
+      <van-cell title="领券中心" is-link bind:click="navigateToCouponCenter" icon="coupon-o" />
+      <van-cell title="我的优惠券" is-link bind:click="navigateToMyCoupons" icon="balance-list-o" />
+    </van-cell-group>
+  </view>
+
+  <!-- 功能菜单（未登录时也显示，点击再提示登录） -->
+  <view class="menu-section">
+    <van-cell-group>
+      <van-cell title="我的资料" is-link bind:click="navigateToProfile" icon="user-o" />
+      <van-cell title="我的收藏" is-link bind:click="navigateToFavorites" icon="star-o" />
+      <van-cell title="收货地址" is-link bind:click="navigateToAddress" icon="location-o" />
+      <van-cell title="我的攻略" is-link bind:click="navigateToMyPosts" icon="notes-o" />
+      <van-cell title="商家入驻 / 审核进度" is-link bind:click="navigateToMerchantApply" icon="shop-o" />
+      <van-cell title="商家工作台" is-link wx:if="{{userInfo && (userInfo.role === 'merchant' || userInfo.role === 'admin')}}" bind:click="navigateToMerchant" icon="shop-o" />
+      <van-cell title="管理后台" is-link wx:if="{{userInfo && userInfo.role === 'admin'}}" bind:click="navigateToAdmin" icon="manager-o" />
+    </van-cell-group>
+  </view>
+
+  <!-- 设置菜单 -->
+  <view class="menu-section">
+    <van-cell-group>
+      <van-cell title="联系客服" is-link bind:click="showContactService" icon="service-o" />
+      <van-cell title="注销账号" is-link bind:click="navigateToCancelAccount" custom-class="cancel-account-cell" icon="warning-o" wx:if="{{userInfo}}" />
+    </van-cell-group>
+  </view>
+
+  <!-- 退出登录（仅登录后显示） -->
+  <view class="logout-section" wx:if="{{userInfo}}">
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+  </view>
+</view>

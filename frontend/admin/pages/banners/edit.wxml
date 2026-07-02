@@ -1,0 +1,80 @@
+<view class="edit-page">
+  <view class="form-section">
+    <view class="section-title">轮播内容</view>
+
+    <view class="form-item">
+      <view class="label">标题</view>
+      <textarea
+        class="textarea-input"
+        placeholder="选填，便于后台识别"
+        value="{{form.title}}"
+        data-field="title"
+        maxlength="100"
+        auto-height
+        show-confirm-bar="{{false}}"
+        bindinput="onInput"
+      />
+      <text class="hint">最多 100 字，可换行</text>
+    </view>
+
+    <view class="form-item">
+      <view class="label required">轮播图</view>
+      <view class="cover-upload">
+        <image wx:if="{{displayImage}}" class="cover-image" src="{{displayImage}}" mode="aspectFill" />
+        <view wx:else class="cover-placeholder" bindtap="chooseImage">
+          <text class="icon">+</text>
+          <text class="text">上传图片</text>
+        </view>
+        <button wx:if="{{form.image}}" class="change-btn" size="mini" bindtap="chooseImage">更换</button>
+      </view>
+      <text class="hint">将展示在首页轮播；建议横图、清晰无遮挡</text>
+    </view>
+
+    <view class="form-item">
+      <view class="label">跳转类型</view>
+      <picker mode="selector" range="{{linkTypeLabels}}" value="{{linkTypeIndex}}" bindchange="onLinkTypeChange">
+        <view class="picker-row">
+          <text class="picker-value">{{linkTypeLabels[linkTypeIndex]}}</text>
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+      <text class="hint" wx:if="{{form.linkType === 'none'}}">选「无跳转」时轮播仅展示，点击无反应。</text>
+    </view>
+
+    <view class="form-item" wx:if="{{form.linkType !== 'none'}}">
+      <view class="label required">跳转目标</view>
+      <text class="field-desc">{{linkValueDesc}}</text>
+      <input
+        class="input"
+        placeholder="{{linkValuePlaceholder}}"
+        value="{{form.linkValue}}"
+        data-field="linkValue"
+        bindinput="onInput"
+      />
+    </view>
+
+    <view class="form-item">
+      <view class="label">排序</view>
+      <input
+        class="input input-sort"
+        type="digit"
+        placeholder="默认 0"
+        value="{{form.sortOrder}}"
+        data-field="sortOrder"
+        bindinput="onInput"
+      />
+      <text class="hint">数字越小越靠前，一般从 0 递增</text>
+    </view>
+
+    <view class="form-item switch-row">
+      <view class="label">首页展示</view>
+      <switch checked="{{form.status === 1}}" bindchange="onStatusSwitch" color="#07c160" />
+    </view>
+  </view>
+
+  <view class="footer">
+    <button class="submit-btn" type="primary" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">
+      {{isEdit ? '保存' : '创建'}}
+    </button>
+  </view>
+</view>

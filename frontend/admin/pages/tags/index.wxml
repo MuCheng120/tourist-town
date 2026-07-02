@@ -1,0 +1,75 @@
+<view class="page">
+  <view class="toolbar">
+    <text class="tip">用于酒店、景点列表与详情展示</text>
+    <button class="create-btn" size="mini" bindtap="openCreate">新建标签</button>
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="title-row">
+        <text class="title">{{item.name}}</text>
+        <text class="sort-pill">排序 {{item.sort_order != null ? item.sort_order : (item.sortOrder != null ? item.sortOrder : 0)}}</text>
+      </view>
+      <view class="desc" wx:if="{{item.description}}">{{item.description}}</view>
+      <view class="desc muted" wx:else>暂无描述</view>
+      <view class="actions">
+        <button class="action-btn action-primary" size="mini" bindtap="openEdit" data-id="{{item.id}}">编辑</button>
+        <button class="action-btn action-danger" size="mini" bindtap="remove" data-id="{{item.id}}" data-name="{{item.name}}">删除</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{!loading && list.length === 0}}">
+    <van-empty description="暂无标签，可点击新建" />
+  </view>
+
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <view class="mask" wx:if="{{showForm}}" bindtap="closeForm">
+    <view class="modal" catchtap="noop">
+      <view class="modal-title">{{isEdit ? '编辑标签' : '新建标签'}}</view>
+      <view class="field">
+        <text class="label">名称</text>
+        <input
+          class="input"
+          value="{{form.name}}"
+          data-field="name"
+          bindinput="onInput"
+          maxlength="32"
+          placeholder="如：免费停车、亲子友好"
+          placeholder-class="input-placeholder"
+        />
+      </view>
+      <view class="field">
+        <text class="label">描述（可选，最多120字）</text>
+        <input
+          class="input"
+          value="{{form.description}}"
+          data-field="description"
+          bindinput="onInput"
+          maxlength="120"
+          placeholder="设施政策等处可展示的简短说明"
+          placeholder-class="input-placeholder"
+        />
+      </view>
+      <view class="field">
+        <text class="label">排序</text>
+        <input
+          class="input"
+          type="number"
+          value="{{form.sort_order}}"
+          data-field="sort_order"
+          bindinput="onInput"
+          placeholder="数字越小越靠前，默认 0"
+          placeholder-class="input-placeholder"
+        />
+      </view>
+      <view class="modal-actions">
+        <button class="form-btn" size="mini" bindtap="closeForm">取消</button>
+        <button class="form-btn form-btn-primary" size="mini" bindtap="submitForm">保存</button>
+      </view>
+    </view>
+  </view>
+</view>

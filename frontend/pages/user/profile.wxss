@@ -1,0 +1,148 @@
+/* pages/user/profile.wxss */
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 120rpx;
+}
+
+.profile-header {
+  position: relative;
+  height: 320rpx;
+  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+}
+
+.profile-bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* 有背景图时显示的“更换背景”遮罩，与头像区域一致 */
+.profile-bg-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.profile-bg-mask-text {
+  font-size: 24rpx;
+  margin-top: 8rpx;
+}
+
+.profile-bg-placeholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.placeholder-text {
+  font-size: 28rpx;
+  margin-top: 16rpx;
+}
+
+.avatar-wrap {
+  margin-top: -80rpx;
+  padding: 0 40rpx 32rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-box {
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6rpx solid #fff;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  background: #e8e8e8;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22rpx;
+}
+
+.form-section {
+  margin: 0 24rpx 24rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.btn-wrap {
+  padding: 24rpx 32rpx;
+}
+
+.pwd-btn-wrap {
+  margin-top: 44rpx;
+}
+
+.pwd-popup {
+  padding: 24rpx 24rpx 36rpx;
+}
+
+.pwd-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 16rpx;
+}
+
+.pwd-tip {
+  font-size: 22rpx;
+  color: #999;
+  padding: 16rpx 4rpx 0;
+}
+
+.pwd-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16rpx;
+  margin-top: 24rpx;
+}
+
+.empty {
+  padding: 120rpx;
+  text-align: center;
+  color: #999;
+}

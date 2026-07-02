@@ -1,0 +1,127 @@
+.page {
+  padding: 20rpx;
+  background: #f7f8fa;
+  min-height: 100vh;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20rpx;
+}
+
+.create-btn {
+  margin: 0;
+  background: #1677ff;
+  color: #fff;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  line-height: 1.8;
+  padding: 0 18rpx;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14rpx;
+  padding: 22rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.04);
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+}
+
+.line:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  color: #666;
+  min-width: 90rpx;
+}
+
+.value {
+  color: #333;
+  max-width: 460rpx;
+  word-break: break-all;
+  text-align: right;
+}
+
+.mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.modal {
+  width: 660rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.field {
+  margin-bottom: 16rpx;
+}
+
+.field-label {
+  display: block;
+  font-size: 26rpx;
+  margin-bottom: 8rpx;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #f8f8f8;
+  border-radius: 10rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 16rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.input-placeholder {
+  color: #bfbfbf;
+}
+
+.modal-actions {
+  margin-top: 16rpx;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12rpx;
+}
+
+.form-btn {
+  margin: 0;
+  border-radius: 10rpx;
+}
+
+.form-btn-primary {
+  background: #1677ff;
+  color: #fff;
+}
+
+.empty,
+.loading {
+  margin-top: 80rpx;
+}
+/* admin/pages/admin-users/index.wxss */

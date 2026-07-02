@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "数据分析",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "ec-canvas": "/components/ec-canvas/index"
+  }
+}

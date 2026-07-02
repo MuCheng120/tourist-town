@@ -1,0 +1,102 @@
+<!--pages/order/list.wxml-->
+<view class="container">
+  <!-- 订单类型筛选 -->
+  <scroll-view scroll-x class="type-filter-scroll" enhanced show-scrollbar="{{false}}">
+    <view class="type-filter-inner">
+      <view
+        class="type-chip {{activeType === item.value ? 'active' : ''}}"
+        wx:for="{{typeOptions}}"
+        wx:key="value"
+        data-type="{{item.value}}"
+        bindtap="onTypeChange"
+      >
+        {{item.label}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 订单状态Tab -->
+  <van-tabs active="{{ activeTab }}" bind:change="onTabChange">
+    <van-tab title="全部" name="" />
+    <van-tab title="待付款" name="unpaid" />
+    <van-tab title="待发货" name="paid" />
+    <van-tab title="待收货" name="shipped" />
+    <van-tab title="待核验" name="verify_pending" />
+    <van-tab title="已核验" name="verified" />
+    <van-tab title="待评价" name="to_review" />
+    <van-tab title="已退款" name="refunded" />
+    <van-tab title="已关闭" name="cancelled" />
+  </van-tabs>
+
+  <!-- 订单列表 -->
+  <view class="order-list">
+    <view class="order-item" wx:for="{{orders}}" wx:key="id" catchtap="stopPropagation" data-id="{{item.id}}">
+      <!-- 订单头部 -->
+      <view class="order-header">
+        <view class="order-head-left">
+          <text class="order-no">订单号：{{item.order_no}}</text>
+          <text class="order-type-badge {{item.orderTypeClass}}">{{item.orderTypeText}}</text>
+        </view>
+        <text class="order-status">{{item.statusText}}</text>
+      </view>
+
+      <!-- 订单商品 -->
+      <view class="order-products">
+        <view class="product-item" wx:for="{{item.products}}" wx:for-index="pi" wx:key="pi" wx:for-item="product">
+          <image class="product-image" src="{{product.product && product.product.cover_image ? product.product.cover_image : ''}}" mode="aspectFill" />
+          <view class="product-info">
+            <text class="product-name">{{product.product.name || '商品'}}</text>
+            <view class="product-spec">
+              <text wx:if="{{product.play_date}}">游玩：{{product.play_date}}</text>
+              <text wx:if="{{product.room_type}}">{{product.room_type.name}}</text>
+              <text wx:if="{{product.check_in_date}}">入住：{{product.check_in_date}}</text>
+              <text wx:if="{{product.check_out_date}}">退房：{{product.check_out_date}}</text>
+            </view>
+            <view class="product-footer">
+              <text class="product-price">¥{{product.price}}</text>
+              <text class="product-quantity">x{{product.quantity}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 订单底部：操作按钮 -->
+      <view class="order-footer" catchtap="stopPropagation">
+        <view class="order-footer-left" wx:if="{{item.status !== 'shipped' && item.status !== 'unpaid' && activeTab !== 'to_review'}}">
+          <view
+            class="order-detail-link"
+            catchtap="goOrderDetail"
+            data-id="{{item.id}}"
+          >查看详情</view>
+        </view>
+        <view class="order-actions">
+          <van-button wx:if="{{item.status === 'unpaid'}}" size="mini" type="danger" bindtap="cancelOrder" data-id="{{item.id}}">取消</van-button>
+          <van-button wx:if="{{item.status === 'unpaid'}}" size="mini" type="primary" bindtap="payOrder" data-id="{{item.id}}" disabled="{{payingOrderId !== ''}}" loading="{{payingOrderId == item.id}}">去支付</van-button>
+          <van-button wx:if="{{item.status === 'shipped'}}" size="mini" bindtap="viewLogistics" data-id="{{item.id}}">查看物流</van-button>
+          <van-button wx:if="{{item.status === 'shipped'}}" size="mini" type="primary" bindtap="confirmReceipt" data-id="{{item.id}}">确认收货</van-button>
+          <van-button wx:if="{{activeTab === 'to_review'}}" size="mini" type="primary" bindtap="goReview" data-id="{{item.id}}">评价</van-button>
+          <van-button wx:if="{{item.status === 'cancelled' || item.status === 'completed' || item.status === 'verified' || item.status === 'refunded'}}" size="mini" type="default" bindtap="deleteOrder" data-id="{{item.id}}">删除</van-button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <van-empty wx:if="{{!loading && orders.length === 0}}" description="暂无订单" />
+
+    <!-- 加载完成 -->
+    <view class="no-more" wx:if="{{orders.length > 0 && !loading}}">
+      <text>没有更多了</text>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <van-loading wx:if="{{loading}}" type="spinner" color="#1989fa" />
+
+  <!-- 支付密码弹窗 -->
+  <pay-password-popup 
+    show="{{ showPayPopup }}" 
+    amount="{{ payAmount }}" 
+    bind:success="onPaySuccess" 
+    bind:close="onPayClose" 
+  />
+</view>

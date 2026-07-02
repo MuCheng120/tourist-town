@@ -1,0 +1,86 @@
+<view class="container" wx:if="{{orderInfo}}">
+  <view class="section">
+    <view class="section-title">预订信息</view>
+    <view class="row"><text class="label">房型</text><text class="value">{{orderInfo.room_name}}</text></view>
+    <view class="row"><text class="label">入住</text><text class="value">{{orderInfo.check_in}}</text></view>
+    <view class="row"><text class="label">退房</text><text class="value">{{orderInfo.check_out}}</text></view>
+    <view class="row"><text class="label">共</text><text class="value">{{orderInfo.night_count}}晚</text></view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">入住人信息</view>
+    <view class="guest-tip">房费为房型价×入住晚数。儿童人数、年龄用于入住登记；若平台配置了儿童每晚加价，将按儿童人数与晚数计入订单。未满18周岁需监护人陪同办理入住。</view>
+    <van-cell-group>
+      <van-field
+        value="{{contactName}}"
+        label="入住人姓名"
+        placeholder="请填写真实姓名"
+        border="{{ true }}"
+        required
+        bind:change="onContactNameChange"
+      />
+      <van-field
+        value="{{contactPhone}}"
+        type="number"
+        label="联系电话"
+        placeholder="请填写手机号"
+        border="{{ true }}"
+        required
+        maxlength="11"
+        bind:change="onContactPhoneChange"
+      />
+      <view class="guest-row">
+        <text class="guest-label">成人数</text>
+        <van-stepper value="{{adultCount}}" min="1" max="9" bind:change="onAdultCountChange" />
+      </view>
+      <view class="guest-row">
+        <text class="guest-label">儿童数</text>
+        <van-stepper value="{{childCount}}" min="0" max="9" bind:change="onChildCountChange" />
+      </view>
+    </van-cell-group>
+  </view>
+
+  <view class="section">
+    <view class="section-title">优惠券</view>
+    <view class="coupon-hint">每单限用 1 张；平台券与本店券二选一，不可叠加。</view>
+    <view class="coupon-row" bindtap="onRemoveCoupon" wx:if="{{selectedCouponId}}">
+      <text class="coupon-text">已选优惠券，点击取消</text>
+      <van-icon name="arrow" />
+    </view>
+    <view class="coupon-list" wx:else>
+      <view
+        class="coupon-item"
+        wx:for="{{availableCoupons}}"
+        wx:key="id"
+        bindtap="onSelectCoupon"
+        data-id="{{item.id}}"
+      >
+        <view class="coupon-value">¥{{item.value}}</view>
+        <view class="coupon-tag">{{item.type === 'platform' ? '平台券' : '店铺券'}}</view>
+        <view class="coupon-desc">满{{item.min_spend}}可用</view>
+        <view class="coupon-title">{{item.title}}</view>
+      </view>
+      <view class="coupon-empty" wx:if="{{availableCoupons.length === 0}}">暂无可用优惠券</view>
+    </view>
+  </view>
+
+  <view class="section total">
+    <view class="row" wx:if="{{childSurcharge > 0}}"><text class="label">房费（房型×晚）</text><text class="value">¥{{baseRoomAmount}}</text></view>
+    <view class="row" wx:if="{{childSurcharge > 0}}"><text class="label">儿童加价</text><text class="value">¥{{childSurcharge}}</text></view>
+    <view class="row"><text class="label">订单金额</text><text class="value">¥{{orderInfo.total_price}}</text></view>
+    <view class="row" wx:if="{{discountAmount > 0}}"><text class="label">优惠券</text><text class="value discount">-¥{{discountAmount}}</text></view>
+    <view class="row final"><text class="label">实付</text><text class="value final-amount">¥{{finalAmount}}</text></view>
+  </view>
+
+  <view class="footer">
+    <view class="final-summary">实付 ¥{{finalAmount}}</view>
+    <button class="submit-btn" bindtap="submitOrder" disabled="{{submitting}}">{{submitting ? '支付中...' : '立即支付'}}</button>
+  </view>
+
+  <pay-password-popup 
+    show="{{ showPayPopup }}" 
+    amount="{{ finalAmount }}" 
+    bind:success="onPaySuccess" 
+    bind:close="onPayClose" 
+  />
+</view>

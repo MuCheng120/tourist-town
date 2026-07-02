@@ -1,0 +1,185 @@
+<view class="container">
+  <view class="page-header">
+    <text class="page-title">{{hotelName}} - 房型</text>
+    <button class="btn-primary" bindtap="showAddDialog">添加房型</button>
+  </view>
+  <view class="risk-log-bar" wx:if="{{lastActionError}}">
+    <text class="risk-log-text" bindtap="showLastActionError">查看最近失败记录</text>
+  </view>
+
+  <view class="room-list">
+    <view class="room-item" wx:for="{{roomTypes}}" wx:key="id">
+      <view class="room-header">
+        <text class="room-name">{{item.name}}</text>
+        <text class="status-tag {{item.status === 1 ? 'active' : 'inactive'}}">{{item.status === 1 ? '上架中' : '已下架'}}</text>
+      </view>
+      <view class="room-info room-info-row">
+        <text class="room-price">¥{{item.price}}/晚</text>
+        <text class="room-stock-today">今日库存 {{item.todayStockDisplay}}</text>
+      </view>
+      <view class="room-images" wx:if="{{item.images && item.images.length > 0}}">
+        <image class="room-image" src="{{img}}" wx:for="{{item.images}}" wx:for-item="img" wx:key="*this" mode="aspectFill" />
+      </view>
+      <view class="room-actions">
+        <button class="btn-small btn-info" bindtap="showEditDialog" data-item="{{item}}">编辑</button>
+        <button class="btn-small btn-warning" bindtap="toggleStatus" data-item="{{item}}">{{item.status === 1 ? '下架' : '上架'}}</button>
+        <button class="btn-small btn-success" bindtap="showStockDialog" data-item="{{item}}">库存</button>
+        <button class="btn-small btn-danger" bindtap="deleteRoom" data-item="{{item}}">删除</button>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{roomTypes.length === 0 && !loading}}">暂无房型，点击上方「添加房型」</view>
+  </view>
+  <view class="loading" wx:if="{{loading}}">加载中...</view>
+</view>
+
+<!-- 添加房型弹窗 -->
+<view class="modal" wx:if="{{showAddModal}}">
+  <view class="modal-mask" bindtap="closeAddDialog"></view>
+  <view class="modal-content">
+    <view class="modal-header">
+      <text class="modal-title">添加房型</text>
+      <text class="modal-close" bindtap="closeAddDialog">×</text>
+    </view>
+    <view class="modal-body">
+      <view class="form-item">
+        <text class="form-label">房型名称 *</text>
+        <input class="form-input" value="{{formData.name}}" bindinput="onInputChange" data-field="name" placeholder="请输入房型名称" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">价格/晚 *</text>
+        <input class="form-input" type="digit" value="{{formData.price}}" bindinput="onInputChange" data-field="price" placeholder="请输入价格" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">默认可售间数/日</text>
+        <input class="form-input" type="number" value="{{formData.initial_daily_stock}}" bindinput="onInputChange" data-field="initial_daily_stock" placeholder="默认10，填0需稍后点「库存」" />
+        <text class="form-hint">保存时写入未来366天每日库存；0 表示暂不写入（用户端会显示满房）</text>
+      </view>
+      <view class="form-item">
+        <text class="form-label">房型描述</text>
+        <textarea class="form-textarea" value="{{formData.description}}" bindinput="onInputChange" data-field="description" placeholder="请输入房型描述" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">房型图片</text>
+        <view class="image-list">
+          <view class="image-item" wx:for="{{formData.images}}" wx:key="*this">
+            <image class="image-preview" src="{{item}}" mode="aspectFill" />
+            <text class="image-delete" bindtap="deleteImage" data-index="{{index}}">×</text>
+          </view>
+          <view class="image-add" bindtap="chooseImage" wx:if="{{formData.images.length < 3}}">
+            <text class="add-icon">+</text>
+            <text class="add-text">添加图片</text>
+          </view>
+        </view>
+      </view>
+      <view class="form-item">
+        <text class="form-label">面积</text>
+        <input class="form-input" value="{{formData.area}}" bindinput="onInputChange" data-field="area" placeholder="如：30㎡" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">床型</text>
+        <input class="form-input" value="{{formData.bed_type}}" bindinput="onInputChange" data-field="bed_type" placeholder="如：大床1.8米" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">最多入住人数</text>
+        <input class="form-input" type="number" value="{{formData.max_occupancy}}" bindinput="onInputChange" data-field="max_occupancy" placeholder="默认2人" />
+      </view>
+    </view>
+    <view class="modal-footer">
+      <button class="btn-cancel" bindtap="closeAddDialog">取消</button>
+      <button class="btn-confirm" bindtap="submitAdd">确定</button>
+    </view>
+  </view>
+</view>
+
+<!-- 编辑房型弹窗 -->
+<view class="modal" wx:if="{{showEditModal}}">
+  <view class="modal-mask" bindtap="closeEditDialog"></view>
+  <view class="modal-content">
+    <view class="modal-header">
+      <text class="modal-title">编辑房型</text>
+      <text class="modal-close" bindtap="closeEditDialog">×</text>
+    </view>
+    <view class="modal-body">
+      <view class="form-item">
+        <text class="form-label">房型名称 *</text>
+        <input class="form-input" value="{{formData.name}}" bindinput="onInputChange" data-field="name" placeholder="请输入房型名称" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">价格/晚 *</text>
+        <input class="form-input" type="digit" value="{{formData.price}}" bindinput="onInputChange" data-field="price" placeholder="请输入价格" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">房型描述</text>
+        <textarea class="form-textarea" value="{{formData.description}}" bindinput="onInputChange" data-field="description" placeholder="请输入房型描述" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">房型图片</text>
+        <view class="image-list">
+          <view class="image-item" wx:for="{{formData.images}}" wx:key="*this">
+            <image class="image-preview" src="{{item}}" mode="aspectFill" />
+            <text class="image-delete" bindtap="deleteImage" data-index="{{index}}">×</text>
+          </view>
+          <view class="image-add" bindtap="chooseImage" wx:if="{{formData.images.length < 3}}">
+            <text class="add-icon">+</text>
+            <text class="add-text">添加图片</text>
+          </view>
+        </view>
+      </view>
+      <view class="form-item">
+        <text class="form-label">面积</text>
+        <input class="form-input" value="{{formData.area}}" bindinput="onInputChange" data-field="area" placeholder="如：30㎡" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">床型</text>
+        <input class="form-input" value="{{formData.bed_type}}" bindinput="onInputChange" data-field="bed_type" placeholder="如：大床1.8米" />
+      </view>
+      <view class="form-item">
+        <text class="form-label">最多入住人数</text>
+        <input class="form-input" type="number" value="{{formData.max_occupancy}}" bindinput="onInputChange" data-field="max_occupancy" placeholder="默认2人" />
+      </view>
+    </view>
+    <view class="modal-footer">
+      <button class="btn-cancel" bindtap="closeEditDialog">取消</button>
+      <button class="btn-confirm" bindtap="submitEdit">确定</button>
+    </view>
+  </view>
+</view>
+
+<!-- 库存弹窗 -->
+<view class="modal" wx:if="{{showStockModal}}">
+  <view class="modal-mask" bindtap="closeStockDialog"></view>
+  <view class="modal-content">
+    <view class="modal-header">
+      <text class="modal-title">库存管理</text>
+      <text class="modal-close" bindtap="closeStockDialog">×</text>
+    </view>
+    <view class="modal-body">
+      <view class="form-item">
+        <text class="form-label">开始日期</text>
+        <picker mode="date" value="{{dateRange.start}}" bindchange="onStartDateChange">
+          <view class="picker-view">{{dateRange.start}}</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="form-label">结束日期</text>
+        <picker mode="date" value="{{dateRange.end}}" bindchange="onEndDateChange">
+          <view class="picker-view">{{dateRange.end}}</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text class="form-hint">设置范围内每天库存（将覆盖原值）</text>
+        <input
+          class="form-input"
+          type="number"
+          value="{{stockCount}}"
+          bindinput="onStockCountChange"
+          placeholder="请输入每日库存"
+        />
+      </view>
+    </view>
+    <view class="modal-footer">
+      <button class="btn-cancel" bindtap="closeStockDialog">取消</button>
+      <button class="btn-confirm" bindtap="setStock">确定</button>
+    </view>
+  </view>
+</view>

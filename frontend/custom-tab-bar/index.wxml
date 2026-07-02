@@ -1,0 +1,21 @@
+<!--custom-tab-bar/index.wxml-->
+<!-- 只有游客端显示TabBar -->
+<view class="tab-bar" wx:if="{{showTabBar}}">
+  <view 
+    wx:for="{{list}}" 
+    wx:key="index" 
+    class="tab-bar-item" 
+    data-path="{{item.pagePath}}" 
+    data-index="{{index}}" 
+    bindtap="switchTab"
+  >
+    <view class="tab-icon">
+      <van-icon 
+        name="{{selected === index ? item.selectedIcon : item.icon}}" 
+        color="{{selected === index ? selectedColor : color}}" 
+        size="24"
+      />
+    </view>
+    <view class="tab-text" style="color: {{selected === index ? selectedColor : color}}">{{item.text}}</view>
+  </view>
+</view>

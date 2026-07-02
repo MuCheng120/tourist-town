@@ -1,0 +1,62 @@
+<!-- pages/hotel/facility-policy.wxml - 政策设施独立页（3个Tab + 锚点滚动） -->
+<view class="page">
+  <view class="tabs">
+    <view class="tab {{activeTab==='highlights'?'active':''}}" bindtap="onTabTap" data-tab="highlights">亮点描述</view>
+    <view class="tab {{activeTab==='facilities'?'active':''}}" bindtap="onTabTap" data-tab="facilities">设施服务</view>
+    <view class="tab {{activeTab==='policies'?'active':''}}" bindtap="onTabTap" data-tab="policies">酒店政策</view>
+  </view>
+
+  <scroll-view
+    class="content"
+    scroll-y
+    scroll-with-animation
+    scroll-into-view="{{scrollIntoView}}"
+    bindscroll="onScroll"
+  >
+    <view class="section" id="highlights">
+      <view class="section-title">亮点描述</view>
+      <view class="card">
+        <text class="desc" wx:if="{{hotel && hotel.introduction}}">{{hotel.introduction}}</text>
+        <text class="desc muted" wx:else>暂无亮点描述</text>
+      </view>
+    </view>
+
+    <view class="section" id="facilities">
+      <view class="section-title">设施服务</view>
+      <view class="card">
+        <view class="tag-grid" wx:if="{{hotel && hotel.tags && hotel.tags.length}}">
+          <view class="tag-item" wx:for="{{hotel.tags}}" wx:key="id">
+            <view class="tag-item-row">
+              <view class="tag-icon">
+                <van-icon name="{{item.icon_name || 'passed'}}" size="20" color="#1989fa" />
+              </view>
+              <view class="tag-text-col">
+                <text class="tag-text">{{item.name}}</text>
+                <text class="tag-desc" wx:if="{{item.description}}">{{item.description}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <text class="desc muted" wx:else>暂无设施服务信息</text>
+      </view>
+    </view>
+
+    <view class="section" id="policies">
+      <view class="section-title">酒店政策</view>
+      <view class="card">
+        <view wx:if="{{policySections && policySections.length}}">
+          <view class="policy-section" wx:for="{{policySections}}" wx:key="title">
+            <text class="policy-title">{{item.title}}</text>
+            <text class="policy-item" wx:for="{{item.items}}" wx:key="index">- {{item}}</text>
+          </view>
+        </view>
+        <rich-text wx:if="{{policyRichTextNodes}}" class="policy-rich" nodes="{{policyRichTextNodes}}"></rich-text>
+        <rich-text wx:elif="{{policyRichTextHtml}}" class="policy-rich" nodes="{{policyRichTextHtml}}"></rich-text>
+        <text class="desc muted" wx:if="{{(!policySections || !policySections.length) && !policyRichTextHtml && !policyRichTextNodes}}">暂无酒店政策信息</text>
+      </view>
+    </view>
+
+    <view style="height: 60rpx;"></view>
+  </scroll-view>
+</view>
+

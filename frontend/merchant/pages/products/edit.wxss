@@ -1,0 +1,115 @@
+.edit-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 120rpx;
+}
+.form-section {
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 24rpx 30rpx;
+}
+.section-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+.form-item {
+  margin-bottom: 24rpx;
+}
+.form-item .label {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+  display: block;
+}
+.form-item .label.required::before {
+  content: '* ';
+  color: #ee0a24;
+}
+.input, .textarea {
+  width: 100%;
+  padding: 20rpx;
+  font-size: 28rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  box-sizing: border-box;
+}
+/* 单行输入框：固定高度+行高，避免 placeholder 被上下裁切 */
+.input {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+}
+.textarea {
+  min-height: 160rpx;
+}
+.picker-row {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+}
+.picker-row .label {
+  margin-bottom: 0;
+  margin-right: 16rpx;
+  color: #666;
+}
+.picker-row .value {
+  flex: 1;
+  color: #333;
+}
+.picker-row .arrow {
+  color: #999;
+}
+.cover-wrap {
+  position: relative;
+}
+.cover-img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 12rpx;
+  background: #eee;
+}
+.cover-placeholder {
+  width: 200rpx;
+  height: 200rpx;
+  border: 2rpx dashed #ddd;
+  border-radius: 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 24rpx;
+}
+.cover-placeholder .icon {
+  font-size: 48rpx;
+  margin-bottom: 8rpx;
+}
+.change-btn {
+  margin-top: 12rpx;
+}
+.delivery-row {
+  display: flex;
+  align-items: center;
+  gap: 40rpx;
+}
+.delivery-radio {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #323233;
+}
+.delivery-radio radio {
+  margin-right: 8rpx;
+}
+.submit-wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24rpx 30rpx;
+  background: #fff;
+  box-shadow: 0 -2rpx 10rpx rgba(0,0,0,0.05);
+}

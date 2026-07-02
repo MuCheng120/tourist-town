@@ -1,0 +1,70 @@
+<view class="container">
+  <van-tabs active="{{activeTab}}" bind:change="onTabChange" color="#1989fa">
+    <van-tab title="已通过" name="approved"></van-tab>
+    <van-tab title="已拒绝" name="rejected"></van-tab>
+  </van-tabs>
+
+  <view class="toolbar">
+    <van-search
+      value="{{keyword}}"
+      placeholder="搜索商品名称"
+      bind:change="onKeywordChange"
+      bind:search="onSearch"
+      shape="round"
+    />
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="card-main">
+        <image class="cover" src="{{item.coverUrl}}" mode="aspectFill" />
+        <view class="info">
+          <view class="row title-row">
+            <text class="name">{{item.name}}</text>
+            <view class="title-right">
+              <text class="id-badge">ID: {{item.id}}</text>
+              <van-tag type="{{item.product_type === 'food' ? 'primary' : 'warning'}}" size="small">
+                {{item.product_type === 'food' ? '美食' : '特产'}}
+              </van-tag>
+            </view>
+          </view>
+          <view class="row">
+            <text class="merchant">商家：{{item.merchantNickname || '—'}}</text>
+          </view>
+          <view class="row">
+            <text class="price">¥{{item.price}}</text>
+            <text class="stock">库存 {{item.stock}}</text>
+          </view>
+          <view class="row">
+            <van-tag plain type="{{item.status === 1 ? 'success' : 'default'}}" size="small">
+              {{item.status === 1 ? '上架' : '下架'}}
+            </van-tag>
+            <van-tag plain type="{{item.audit_status === 1 ? 'success' : (item.audit_status === 2 ? 'danger' : 'warning')}}" size="small">
+              {{item.audit_status === 1 ? '已通过' : (item.audit_status === 2 ? '已拒绝' : '待审核')}}
+            </van-tag>
+            <van-tag wx:if="{{item.is_recommend === 1}}" type="success" size="small">首页推荐</van-tag>
+          </view>
+        </view>
+      </view>
+
+      <view class="card-actions">
+        <view class="recommend-row">
+          <text class="recommend-label">推荐</text>
+          <van-switch
+            checked="{{item.is_recommend === 1}}"
+            size="22px"
+            active-color="#07c160"
+            inactive-color="#dcdee0"
+            disabled="{{activeTab !== 'approved' || !(item.audit_status === 1 && item.status === 1)}}"
+            bind:change="onRecommendChange"
+            data-id="{{item.id}}"
+          />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-empty wx:if="{{!loading && list.length === 0}}" description="暂无数据" />
+  <van-loading wx:if="{{loading}}" class="loading" />
+</view>
+

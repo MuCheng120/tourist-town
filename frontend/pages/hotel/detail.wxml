@@ -1,0 +1,232 @@
+<!--pages/hotel/detail.wxml - 酒店详情（参考图：图集/Tab/设施/评分地址/优惠/日期人数/房型） -->
+<van-nav-bar
+  fixed
+  placeholder
+  z-index="{{200}}"
+  left-arrow="{{true}}"
+  border="{{true}}"
+  safe-area-inset-top="{{true}}"
+  custom-class="hotel-detail-navbar"
+  bind:click-left="onNavBack"
+>
+  <view slot="title" class="hotel-nav-title-slot">
+    <text class="hotel-nav-title-text">{{ hotel ? hotel.name : '酒店详情' }}</text>
+    <view class="hotel-nav-fav {{ isFavorited ? 'hotel-nav-fav--on' : '' }}" catchtap="toggleFavorite">
+      <view class="hotel-nav-fav-inner">
+        <van-icon name="{{ isFavorited ? 'star' : 'star-o' }}" size="17px" color="{{ isFavorited ? '#ff976a' : '#323233' }}" />
+      </view>
+      <text class="hotel-nav-fav-label">{{ isFavorited ? '已收藏' : '收藏' }}</text>
+    </view>
+  </view>
+</van-nav-bar>
+<view class="container">
+  <block wx:if="{{hotel}}">
+    <!-- 顶部主封面 -->
+    <view class="detail-gallery">
+      <image class="gallery-cover" wx:if="{{headerCover}}" src="{{headerCover}}" mode="aspectFill" bindload="onHeaderImageLoad" binderror="onHeaderImageError" />
+      <view class="gallery-cover gallery-cover-placeholder" wx:else>
+        <van-icon name="hotel-o" size="64" color="#c8c9cc" />
+      </view>
+    </view>
+
+    <!-- 酒店名称 + 类型 -->
+    <view class="detail-name-bar">
+      <view class="detail-name-row">
+        <text class="detail-name">{{hotel.name}}</text>
+        <view class="detail-type-wrap">
+          <text class="detail-type">酒店</text>
+          <view class="detail-dots"><text class="dot"></text><text class="dot"></text><text class="dot"></text></view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 设施/标签 横向滚动 -->
+    <view class="facility-row">
+      <scroll-view
+        class="facility-scroll"
+        scroll-x="true"
+        enable-flex="true"
+        enhanced="true"
+        show-scrollbar="{{false}}"
+      >
+        <view class="facility-list">
+          <view class="facility-item" wx:for="{{hotel.tags}}" wx:key="id">
+            <view class="facility-icon"><van-icon name="{{item.icon_name || 'passed'}}" class="facility-icon-mark" size="20" color="#1989fa" /></view>
+            <view class="facility-text-col">
+              <text class="facility-text facility-name">{{item.name}}</text>
+              <text class="facility-desc" wx:if="{{item.description}}">{{item.description}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="facility-link-side" bindtap="goFacilityPolicy">
+        <text class="facility-text facility-text-break">政策
+设施</text>
+        <van-icon name="arrow" size="14" color="#969799" />
+      </view>
+    </view>
+
+    <!-- 评分 + 地址 两列 -->
+    <view class="detail-rating-address">
+      <view class="rating-col info-card">
+        <view class="rating-main-row">
+          <view class="rating-box" wx:if="{{hotel.rating_has_value}}">
+            <text class="rating-num">{{hotel.rating || '0'}}</text>
+          </view>
+          <text class="rating-label">{{hotel.rating_label}}</text>
+          <text class="review-count">{{hotel.rating_count || 0}}条</text>
+        </view>
+        <text class="review-quote">{{reviewQuote || '暂无点评'}}</text>
+      </view>
+      <view class="address-col info-card">
+        <view class="address-row">
+          <text class="address-detail" wx:if="{{hotel.address}}">{{hotel.address}}</text>
+          <view class="map-btn" bindtap="openMap">
+            <van-icon name="location-o" size="16" color="#1989fa" />
+            <text>地图</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 左侧整块为入住/离店日期（与列表页同款区间日历，底部弹层）；右侧为间数人数 -->
+    <view class="detail-date-guest">
+      <view class="date-guest-card dg-card-flex">
+        <view class="dg-left-date" bindtap="openRangeCalendarPopup">
+          <view class="dg-row-top">
+            <view class="dg-grid-labels">
+              <text class="date-label-above">{{checkInShortLabel}}</text>
+              <view class="dg-grid-gap"></view>
+              <text class="date-label-above dg-label-checkout">{{checkOutShortLabel}}</text>
+            </view>
+          </view>
+          <view class="dg-row-bottom-date">
+            <view class="dg-grid-values">
+              <view class="dg-date-tap">
+                <text class="date-line-main">{{checkInDisplay}}</text>
+              </view>
+              <text class="date-col-sep dg-sep">-</text>
+              <view class="dg-date-tap">
+                <text class="date-line-main">{{checkOutDisplay}}</text>
+              </view>
+            </view>
+            <view class="dg-nights-wrap">
+              <text class="date-nights-between">共{{nightCount}}晚</text>
+              <view class="dg-vdivider"></view>
+            </view>
+          </view>
+        </view>
+        <view class="dg-right-guest">
+          <view class="dg-row-top dg-row-top--guest">
+            <text class="date-label-above dg-guest-title">间数人数</text>
+          </view>
+          <view class="dg-row-bottom dg-row-bottom--guest">
+            <view class="dg-guest-values" catchtap="openRoomGuestPicker">
+              <view class="guest-metric">
+                <text class="guest-metric-num">{{roomCount}}</text>
+                <van-icon name="hotel-o" size="18" color="#333" class="guest-metric-icon" />
+              </view>
+              <view class="guest-metric">
+                <text class="guest-metric-num">{{adultCount}}</text>
+                <van-icon name="user-o" size="18" color="#333" class="guest-metric-icon" />
+              </view>
+              <view class="guest-metric">
+                <text class="guest-metric-num">{{childCount}}</text>
+                <van-icon name="smile" size="18" color="#333" class="guest-metric-icon" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 房型列表 -->
+  <view class="room-list">
+    <view class="room-card" wx:for="{{roomTypes}}" wx:key="id" bindtap="goRoomDetail" data-id="{{item.id}}" data-room="{{item}}">
+      <image class="room-image" src="{{item.images[0]}}" mode="aspectFill" wx:if="{{item.images && item.images[0]}}" />
+      <view class="room-image room-image-placeholder" wx:else><van-icon name="photo-o" size="48" color="#c8c9cc" /></view>
+      <view class="room-info">
+        <text class="room-name">{{item.name}}</text>
+        <view class="room-desc">{{item.description}}</view>
+        <view class="room-tags" wx:if="{{item.features && item.features.length}}">
+          <van-tag plain type="primary" size="small" wx:for="{{item.features}}" wx:key="index" wx:for-item="feature">{{feature}}</van-tag>
+        </view>
+        <view class="room-footer">
+          <view class="price-section">
+            <text class="room-price">¥{{item.price}}</text>
+            <text class="price-unit">/晚</text>
+          </view>
+          <button class="book-btn" catchtap="handleBook" data-id="{{item.id}}" data-room="{{item}}" disabled="{{!item.available}}">
+            {{item.available ? '预订' : '满房'}}
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-empty wx:if="{{hotel && roomTypes.length === 0 && !loading}}" description="暂无房型" />
+  <view class="loading" wx:if="{{loading}}"><van-loading size="24px">加载中...</van-loading></view>
+
+  <!-- 住客点评：放在房型列表与「暂无房型」空状态之后 -->
+  <view wx:if="{{hotel}}" id="guest-review-panel" class="guest-review-panel">
+    <view class="guest-review-title">住客点评</view>
+    <view class="guest-review-body">
+      <view class="guest-review-left">
+        <text class="guest-review-score-main" wx:if="{{hotel.rating_has_value}}">{{reviewOverallText}}</text>
+        <text class="guest-review-score-main guest-review-score-main--muted" wx:else>—</text>
+        <view class="guest-review-left-meta">
+          <text class="guest-review-rating-tag" wx:if="{{hotel.rating_has_value}}">{{hotel.rating_label}}</text>
+          <text class="guest-review-rating-tag guest-review-rating-tag--muted" wx:else>暂无评分</text>
+          <text class="guest-review-count">{{hotel.rating_count || 0}}条</text>
+        </view>
+      </view>
+      <view class="guest-review-vline"></view>
+      <view class="guest-review-dims">
+        <view class="guest-review-dim" wx:for="{{reviewDimItems}}" wx:key="key">
+          <text class="guest-review-dim-score">{{item.value}}</text>
+          <text class="guest-review-dim-label">{{item.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="guest-review-list" wx:if="{{guestReviewList.length > 0}}">
+      <view class="guest-review-item" wx:for="{{guestReviewList}}" wx:key="id">
+        <view class="guest-review-item-head">
+          <image wx:if="{{item.avatarUrl}}" class="guest-review-avatar" src="{{item.avatarUrl}}" mode="aspectFill" />
+          <view wx:else class="guest-review-avatar guest-review-avatar--placeholder" />
+          <view class="guest-review-item-meta">
+            <text class="guest-review-nickname">{{item.nickname}}</text>
+            <text wx:if="{{item.scoreText}}" class="guest-review-item-score">{{item.scoreText}}分</text>
+          </view>
+          <text wx:if="{{item.timeText}}" class="guest-review-time">{{item.timeText}}</text>
+        </view>
+        <text class="guest-review-item-content">{{item.content}}</text>
+      </view>
+    </view>
+    <view wx:elif="{{hotel.rating_count > 0}}" class="guest-review-no-text">暂无文字评价</view>
+  </view>
+
+  <!-- 入住/离店：与列表页相同的区间日历（组件内嵌底部弹层） -->
+  <!-- 勿在内部用 wx:if 绑 show：关闭时会立刻销毁日历，van-calendar 内 setTimeout 仍回调导致 __subPageFrameEndTime__ 报错 -->
+  <van-popup show="{{showRangeCalendarPopup}}" position="bottom" round bind:close="onCloseRangeCalendarPopup">
+    <view class="detail-calendar-popup">
+      <hotel-range-calendar
+        check-in-date="{{checkInDate}}"
+        check-out-date="{{checkOutDate}}"
+        embedded="{{true}}"
+        bind:cancel="onCloseRangeCalendarPopup"
+        bind:confirm="onRangeCalendarConfirm"
+      />
+    </view>
+  </van-popup>
+
+  <hotel-room-guest-popup
+    show="{{ showRoomGuestPopup }}"
+    room-count="{{ roomCount }}"
+    adult-count="{{ adultCount }}"
+    child-count="{{ childCount }}"
+    child-ages="{{ childAges }}"
+    bind:close="closeRoomGuestPopup"
+    bind:confirm="onRoomGuestPopupConfirm"
+  />
+</view>

@@ -1,0 +1,19 @@
+<view class="hotel-range-calendar {{ embedded ? 'hotel-range-calendar--embedded' : '' }}">
+  <view class="hotel-range-calendar__body">
+    <van-calendar
+      poppable="{{ false }}"
+      type="range"
+      title="选择入住与退房日期"
+      min-date="{{ minDate }}"
+      max-date="{{ maxDate }}"
+      default-date="{{ defaultDate }}"
+      min-range="{{ 1 }}"
+      show-confirm="{{ false }}"
+      bind:select="onSelect"
+    />
+  </view>
+  <view class="hotel-range-calendar__footer">
+    <button class="hotel-range-calendar__btn hotel-range-calendar__btn--back" bindtap="onBack">返回</button>
+    <button class="hotel-range-calendar__btn hotel-range-calendar__btn--confirm" bindtap="onConfirmTap">确定</button>
+  </view>
+</view>

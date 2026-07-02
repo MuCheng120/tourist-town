@@ -1,0 +1,148 @@
+<!--merchant/pages/orders/index.wxml-->
+<view class="container">
+  <!-- 状态筛选 -->
+  <view class="tabs">
+    <view 
+      class="tab-item {{activeTab === '' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab=""
+    >
+      全部
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'unpaid' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="unpaid"
+    >
+      待付款
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'shipping_pending' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="shipping_pending"
+    >
+      待发货
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'verify_pending' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="verify_pending"
+    >
+      待核销
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'shipped' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="shipped"
+    >
+      已发货
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'verified' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="verified"
+    >
+      已核销
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'completed' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="completed"
+    >
+      已完成
+    </view>
+    <view 
+      class="tab-item {{activeTab === 'refunding' ? 'active' : ''}}" 
+      bindtap="switchTab" 
+      data-tab="refunding"
+    >
+      退款中
+    </view>
+  </view>
+
+  <!-- 订单列表 -->
+  <view class="order-list">
+    <view 
+      class="order-card" 
+      wx:for="{{orders}}" 
+      wx:key="id"
+      bindtap="navigateToDetail"
+      data-id="{{item.id}}"
+    >
+      <view class="order-header">
+        <text class="order-no">订单号：{{item.order_no}}</text>
+        <view class="order-status status-{{item.status}}">
+          <text>{{item.statusText}}</text>
+        </view>
+      </view>
+
+      <view class="product-info">
+        <image class="product-image" src="{{item.productImage}}" mode="aspectFill" />
+        <view class="product-details">
+          <text class="product-name">{{item.productName}}</text>
+          <text class="product-spec">数量：{{item.quantity}}</text>
+          <text class="product-price">¥{{item.productPrice}}</text>
+        </view>
+      </view>
+
+      <view class="user-info">
+        <van-icon name="user-o" size="14" />
+        <text class="user-name">{{item.userName}}</text>
+        <text class="order-time">{{item.created_at}}</text>
+      </view>
+
+      <view class="order-footer">
+        <text class="order-amount">¥{{item.total_amount}}</text>
+        
+        <!-- 待发货订单显示发货按钮 -->
+        <button 
+          class="action-btn ship-btn" 
+          wx:if="{{item.canShip}}"
+          catchtap="shipOrder"
+          data-id="{{item.id}}"
+        >
+          去发货
+        </button>
+        <!-- 退款中订单：商户处理退款 -->
+        <button 
+          class="action-btn danger-btn" 
+          wx:if="{{item.status === 'refunding' && !item.merchantRefundDecided}}"
+          catchtap="approveRefund"
+          data-id="{{item.id}}"
+        >
+          同意退款
+        </button>
+        <button 
+          class="action-btn" 
+          wx:if="{{item.status === 'refunding' && !item.merchantRefundDecided}}"
+          catchtap="rejectRefund"
+          data-id="{{item.id}}"
+        >
+          拒绝退款
+        </button>
+        <text wx:if="{{item.status === 'refunding' && item.merchantRefundDecided}}" class="refund-pending-text">已提交平台裁决</text>
+        
+        <!-- 已核销/已完成订单 -->
+        <button 
+          class="action-btn" 
+          wx:if="{{item.status === 'verified' || item.status === 'completed'}}"
+        >
+          查看详情
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <van-loading size="24px">加载中...</van-loading>
+  </view>
+
+  <!-- 没有更多数据 -->
+  <view class="no-more" wx:if="{{!hasMore && orders.length > 0}}">
+    <text>没有更多了</text>
+  </view>
+
+  <!-- 空状态 -->
+  <van-empty wx:if="{{orders.length === 0 && !loading}}" description="暂无订单" />
+</view>

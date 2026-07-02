@@ -1,0 +1,243 @@
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 45838248ms at 2026-02-21 04:30:00.001
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 29638247ms at 2026-02-21 00:00:00.000
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 29639247ms at 2026-02-21 00:00:01.000
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 16:46:01.753
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js next time will execute after 58438247ms at 2026-02-21 08:00:00.000
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 16:46:01.753
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js next time will execute after 86400000ms at 2026-02-21 15:46:01.753
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 15:47:01.753
+2026-02-20 15:46:01,753 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js next time will execute after 36838247ms at 2026-02-21 02:00:00.000
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js
+2026-02-20 15:46:01,608 INFO 95971 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js
+2026-02-20 15:47:01,758 INFO 95968 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 15:48:01.758
+2026-02-20 15:47:01,764 INFO 95971 [Job#177157362175613113277208985001] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 15:47:01,908 INFO 95971 [Job#177157362175613113277208985001] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 141ms. 
+2026-02-20 15:48:04,023 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 45715977ms at 2026-02-21 04:30:00.000
+2026-02-20 15:48:04,023 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 29515977ms at 2026-02-21 00:00:00.000
+2026-02-20 15:48:04,024 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 29516977ms at 2026-02-21 00:00:01.001
+2026-02-20 15:48:04,024 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 16:48:04.024
+2026-02-20 15:48:04,024 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js next time will execute after 58315976ms at 2026-02-21 08:00:00.000
+2026-02-20 15:48:04,024 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 16:48:04.024
+2026-02-20 15:48:04,024 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js next time will execute after 86400000ms at 2026-02-21 15:48:04.024
+2026-02-20 15:48:04,024 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 15:49:04.024
+2026-02-20 15:48:04,024 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js next time will execute after 36715976ms at 2026-02-21 02:00:00.000
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js
+2026-02-20 15:48:03,899 INFO 97043 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js
+2026-02-20 15:49:04,028 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 15:50:04.027
+2026-02-20 15:49:04,033 INFO 97043 [Job#177157374402513114499906630001] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 15:49:04,060 INFO 97043 [Job#177157374402513114499906630001] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 26ms. 
+2026-02-20 15:50:04,028 INFO 97032 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 15:51:04.028
+2026-02-20 15:50:04,029 INFO 97043 [Job#177157380402813115099932351252] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 15:50:04,048 INFO 97043 [Job#177157380402813115099932351252] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 18ms. 
+2026-02-20 17:47:35,124 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 38544878ms at 2026-02-21 04:30:00.002
+2026-02-20 17:47:35,124 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 22344876ms at 2026-02-21 00:00:00.000
+2026-02-20 17:47:35,124 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 22345876ms at 2026-02-21 00:00:01.000
+2026-02-20 17:47:35,124 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 18:47:35.124
+2026-02-20 17:47:35,125 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js reach endDate, will stop
+2026-02-20 17:47:35,125 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js next time will execute after 51144875ms at 2026-02-21 08:00:00.000
+2026-02-20 17:47:35,125 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 18:47:35.125
+2026-02-20 17:47:35,125 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js next time will execute after 86400000ms at 2026-02-21 17:47:35.125
+2026-02-20 17:47:35,125 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:48:35.125
+2026-02-20 17:47:35,125 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js next time will execute after 29544875ms at 2026-02-21 02:00:00.000
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js
+2026-02-20 17:47:34,891 INFO 46952 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js
+2026-02-20 17:48:35,131 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:49:35.131
+2026-02-20 17:48:35,136 INFO 46952 [Job#177158091512913186211088482081] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:48:35,165 INFO 46952 [Job#177158091512913186211088482081] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 27ms. 
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js
+2026-02-20 17:48:39,120 INFO 47510 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js
+2026-02-20 17:49:35,134 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:50:35.134
+2026-02-20 17:49:35,137 INFO 47510 [Job#177158097513313186811130187502] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:49:35,165 INFO 47510 [Job#177158097513313186811130187502] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 21ms. 
+2026-02-20 17:50:35,138 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:51:35.137
+2026-02-20 17:50:35,141 INFO 47510 [Job#177158103513613187411159648753] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:50:35,153 INFO 47510 [Job#177158103513613187411159648753] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 10ms. 
+2026-02-20 17:51:35,145 INFO 47510 [Job#177158109513913188011194292914] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:51:35,166 INFO 47510 [Job#177158109513913188011194292914] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 21ms. 
+2026-02-20 17:51:35,141 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:52:35.141
+2026-02-20 17:52:35,150 INFO 47510 [Job#177158115514213188611224685835] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:52:35,173 INFO 47510 [Job#177158115514213188611224685835] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 22ms. 
+2026-02-20 17:52:35,144 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:53:35.143
+2026-02-20 17:53:35,157 INFO 47510 [Job#177158121514413189211246713336] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:53:35,174 INFO 47510 [Job#177158121514413189211246713336] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 16ms. 
+2026-02-20 17:53:35,146 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:54:35.146
+2026-02-20 17:54:35,150 INFO 47510 [Job#177158127514713189811275747917] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:54:35,159 INFO 47510 [Job#177158127514713189811275747917] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 9ms. 
+2026-02-20 17:54:35,148 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:55:35.148
+2026-02-20 17:55:35,153 INFO 47510 [Job#177158133515013190411299740418] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:55:35,180 INFO 47510 [Job#177158133515013190411299740418] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 26ms. 
+2026-02-20 17:55:35,150 INFO 46949 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:56:35.150
+2026-02-20 17:56:35,556 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js next time will execute after 38004445ms at 2026-02-21 04:30:00.001
+2026-02-20 17:56:35,556 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 21804444ms at 2026-02-21 00:00:00.000
+2026-02-20 17:56:35,556 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 21805444ms at 2026-02-21 00:00:01.000
+2026-02-20 17:56:35,556 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 18:56:35.556
+2026-02-20 17:56:35,557 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js next time will execute after 25404444ms at 2026-02-21 01:00:00.001
+2026-02-20 17:56:35,557 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js next time will execute after 50604443ms at 2026-02-21 08:00:00.000
+2026-02-20 17:56:35,557 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 18:56:35.557
+2026-02-20 17:56:35,557 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js next time will execute after 86400000ms at 2026-02-21 17:56:35.557
+2026-02-20 17:56:35,557 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:57:35.557
+2026-02-20 17:56:35,557 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js next time will execute after 29004443ms at 2026-02-21 02:00:00.000
+2026-02-20 17:56:35,313 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-multipart/app/schedule/clean_tmpdir.js
+2026-02-20 17:56:35,313 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js
+2026-02-20 17:56:35,313 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js
+2026-02-20 17:56:35,313 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js
+2026-02-20 17:56:35,313 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js
+2026-02-20 17:56:35,313 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js
+2026-02-20 17:56:35,314 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js
+2026-02-20 17:56:35,314 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js
+2026-02-20 17:56:35,314 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js
+2026-02-20 17:56:35,314 INFO 52768 [egg-schedule]: register schedule /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js
+2026-02-20 17:57:35,560 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:58:35.560
+2026-02-20 17:57:35,569 INFO 52768 [Job#177158145555813191615392002911] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:57:35,597 INFO 52768 [Job#177158145555813191615392002911] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 25ms. 
+2026-02-20 17:58:35,561 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 17:59:35.561
+2026-02-20 17:58:35,563 INFO 52768 [Job#177158151556113192215414909582] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:58:35,579 INFO 52768 [Job#177158151556113192215414909582] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 15ms. 
+2026-02-20 17:59:35,562 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:00:35.562
+2026-02-20 17:59:35,563 INFO 52768 [Job#177158157556113192815424116253] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 17:59:35,581 INFO 52768 [Job#177158157556113192815424116253] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 17ms. 
+2026-02-20 18:00:35,565 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:01:35.565
+2026-02-20 18:00:35,569 INFO 52768 [Job#177158163556313193415440170004] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:00:35,586 INFO 52768 [Job#177158163556313193415440170004] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 16ms. 
+2026-02-20 18:01:35,568 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:02:35.567
+2026-02-20 18:01:35,571 INFO 52768 [Job#177158169556713194015478285415] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:01:35,598 INFO 52768 [Job#177158169556713194015478285415] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 26ms. 
+2026-02-20 18:02:35,572 INFO 52768 [Job#177158175556813194615498300006] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:02:35,586 INFO 52768 [Job#177158175556813194615498300006] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 14ms. 
+2026-02-20 18:02:35,569 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:03:35.569
+2026-02-20 18:03:35,574 INFO 52768 [Job#177158181557013195215516370417] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:03:35,592 INFO 52768 [Job#177158181557013195215516370417] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 17ms. 
+2026-02-20 18:03:35,571 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:04:35.571
+2026-02-20 18:04:35,582 INFO 52768 [Job#177158187557213195815539962918] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:04:35,592 INFO 52768 [Job#177158187557213195815539962918] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 10ms. 
+2026-02-20 18:04:35,573 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:05:35.573
+2026-02-20 18:05:35,578 INFO 52768 [Job#177158193557413196415558927919] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:05:35,589 INFO 52768 [Job#177158193557413196415558927919] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 10ms. 
+2026-02-20 18:05:35,575 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:06:35.575
+2026-02-20 18:06:35,584 INFO 52768 [Job#1771581995577131970155936545810] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:06:35,603 INFO 52768 [Job#1771581995577131970155936545810] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 18ms. 
+2026-02-20 18:06:35,580 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:07:35.580
+2026-02-20 18:07:35,585 INFO 52768 [Job#1771582055581131976156294579111] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:07:35,601 INFO 52768 [Job#1771582055581131976156294579111] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 16ms. 
+2026-02-20 18:07:35,582 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:08:35.582
+2026-02-20 18:23:33,655 INFO 52768 [Job#1771583013649132071963276033312] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:23:33,669 INFO 52768 [Job#1771583013649132071963276033312] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 13ms. 
+2026-02-20 18:23:33,649 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:24:33.649
+2026-02-20 18:24:40,325 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:25:40.324
+2026-02-20 18:24:40,330 INFO 52768 [Job#1771583080323132078630708829113] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:24:40,343 INFO 52768 [Job#1771583080323132078630708829113] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 13ms. 
+2026-02-20 18:25:45,101 INFO 52768 [Job#177158314510013208518461870814] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:25:45,111 INFO 52768 [Job#177158314510013208518461870814] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 10ms. 
+2026-02-20 18:25:45,101 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:26:45.101
+2026-02-20 18:44:04,714 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 18:45:04.713
+2026-02-20 18:44:04,732 INFO 52768 [Job#1771584244713132195069960725015] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 18:44:04,770 INFO 52768 [Job#1771584244713132195069960725015] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 38ms. 
+2026-02-20 19:01:27,739 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:02:27.739
+2026-02-20 19:01:27,741 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 20:01:27.741
+2026-02-20 19:01:27,741 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 20:01:27.741
+2026-02-20 19:01:27,748 INFO 52768 [Job#1771585287738132299372887820816] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:01:27,750 INFO 52768 [Job#177158528774013229937310664161] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js executing by app
+2026-02-20 19:01:27,758 INFO 52768 [Job#177158528774113229937315657501] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js executing by app
+2026-02-20 19:01:27,759 INFO 52768 [Job#177158528774013229937310664161] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js execute succeed, used 9ms. 
+2026-02-20 19:01:27,761 INFO 52768 [Job#177158528774113229937315657501] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js execute succeed, used 3ms. 
+2026-02-20 19:01:27,817 INFO 52768 [Job#1771585287738132299372887820816] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 69ms. 
+2026-02-20 19:16:59,384 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:17:59.384
+2026-02-20 19:16:59,386 INFO 52768 [Job#1771586219384132392537699058317] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:16:59,392 INFO 52768 [Job#1771586219384132392537699058317] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 6ms. 
+2026-02-20 19:18:04,199 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:19:04.199
+2026-02-20 19:18:04,201 INFO 52768 [Job#1771586284199132399020227287518] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:18:04,214 INFO 52768 [Job#1771586284199132399020227287518] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 13ms. 
+2026-02-20 19:19:08,959 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:20:08.959
+2026-02-20 19:19:08,960 INFO 52768 [Job#1771586348959132405497196716619] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:19:08,977 INFO 52768 [Job#1771586348959132405497196716619] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 17ms. 
+2026-02-20 19:35:08,073 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:36:08.072
+2026-02-20 19:35:08,084 INFO 52768 [Job#177158730807013250149182745820] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:35:08,104 INFO 52768 [Job#177158730807013250149182745820] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 20ms. 
+2026-02-20 19:36:12,317 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:37:12.317
+2026-02-20 19:36:12,319 INFO 52768 [Job#1771587372317132507834080266621] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:36:12,327 INFO 52768 [Job#1771587372317132507834080266621] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 8ms. 
+2026-02-20 19:37:12,320 INFO 52768 [Job#1771587432318132513834288795822] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:37:12,325 INFO 52768 [Job#1771587432318132513834288795822] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 5ms. 
+2026-02-20 19:37:12,319 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:38:12.319
+2026-02-20 19:38:12,319 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:39:12.319
+2026-02-20 19:38:12,319 INFO 52768 [Job#1771587492319132519834346920823] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:38:12,323 INFO 52768 [Job#1771587492319132519834346920823] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 4ms. 
+2026-02-20 19:40:00,254 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 19:41:00.254
+2026-02-20 19:40:00,255 INFO 52768 [Job#1771587600254132530627970179124] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 19:40:00,273 INFO 52768 [Job#1771587600254132530627970179124] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 18ms. 
+2026-02-20 20:09:01,283 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 20:10:01.283
+2026-02-20 20:09:01,284 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 21:09:01.284
+2026-02-20 20:09:01,284 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 21:09:01.284
+2026-02-20 20:09:01,287 INFO 52768 [Job#1771589341283132704731865370825] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 20:09:01,288 INFO 52768 [Job#177158934128313270473194426252] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js executing by app
+2026-02-20 20:09:01,289 INFO 52768 [Job#177158934128413270473197173332] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js executing by app
+2026-02-20 20:09:01,291 INFO 52768 [Job#177158934128313270473194426252] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js execute succeed, used 3ms. 
+2026-02-20 20:09:01,292 INFO 52768 [Job#177158934128413270473197173332] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js execute succeed, used 3ms. 
+2026-02-20 20:09:01,306 INFO 52768 [Job#1771589341283132704731865370825] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 19ms. 
+2026-02-20 21:10:02,023 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 21:11:02.023
+2026-02-20 21:10:02,023 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 22:10:02.023
+2026-02-20 21:10:02,023 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 22:10:02.023
+2026-02-20 21:10:02,028 INFO 52768 [Job#177159300202313307088052920826] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 21:10:02,028 INFO 52768 [Job#17715930020231330708807232913] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js executing by app
+2026-02-20 21:10:02,031 INFO 52768 [Job#17715930020231330708808062913] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js executing by app
+2026-02-20 21:10:02,033 INFO 52768 [Job#17715930020231330708807232913] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js execute succeed, used 5ms. 
+2026-02-20 21:10:02,041 INFO 52768 [Job#17715930020231330708808062913] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js execute succeed, used 10ms. 
+2026-02-20 21:10:02,103 INFO 52768 [Job#177159300202313307088052920826] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 75ms. 
+2026-02-20 22:11:03,741 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 22:12:03.741
+2026-02-20 22:11:03,741 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-20 23:11:03.741
+2026-02-20 22:11:03,741 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-20 23:11:03.741
+2026-02-20 22:11:03,743 INFO 52768 [Job#1771596663741133436982012887527] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 22:11:03,743 INFO 52768 [Job#177159666374113343698203896664] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js executing by app
+2026-02-20 22:11:03,744 INFO 52768 [Job#177159666374113343698205131664] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js executing by app
+2026-02-20 22:11:03,744 INFO 52768 [Job#177159666374113343698203896664] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js execute succeed, used 1ms. 
+2026-02-20 22:11:03,745 INFO 52768 [Job#177159666374113343698205131664] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js execute succeed, used 1ms. 
+2026-02-20 22:11:03,750 INFO 52768 [Job#1771596663741133436982012887527] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 7ms. 
+2026-02-20 23:12:04,593 INFO 52768 [Job#1771600324587133803068834154128] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-20 23:12:04,594 INFO 52768 [Job#177160032458813380306886622505] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js executing by app
+2026-02-20 23:12:04,594 INFO 52768 [Job#177160032459013380306914126665] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js executing by app
+2026-02-20 23:12:04,595 INFO 52768 [Job#177160032458813380306886622505] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js execute succeed, used 1ms. 
+2026-02-20 23:12:04,596 INFO 52768 [Job#177160032459013380306914126665] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js execute succeed, used 2ms. 
+2026-02-20 23:12:04,602 INFO 52768 [Job#1771600324587133803068834154128] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js execute succeed, used 9ms. 
+2026-02-20 23:12:04,588 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-20 23:13:04.588
+2026-02-20 23:12:04,589 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-21 00:12:04.589
+2026-02-20 23:12:04,591 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-21 00:12:04.591
+2026-02-21 00:13:05,153 INFO 52768 [Job#1771603985152134169127480145829] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js executing by app
+2026-02-21 00:13:05,161 INFO 52768 [Job#177160398515213416912750745001] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js executing by app
+2026-02-21 00:13:05,166 INFO 52768 [Job#177160398516213416912841785831] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js executing by app
+2026-02-21 00:13:05,169 INFO 52768 [Job#177160398515213416912750745001] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js execute succeed, used 8ms. 
+2026-02-21 00:13:05,172 INFO 52768 [Job#177160398516213416912841785831] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js execute succeed, used 6ms. 
+2026-02-21 00:13:05,152 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js next time will execute after 60000ms at 2026-02-21 00:14:05.152
+2026-02-21 00:13:05,161 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/clean_log.js next time will execute after 85614847ms at 2026-02-22 00:00:00.006
+2026-02-21 00:13:05,175 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-logrotator/app/schedule/rotate_by_file.js next time will execute after 85615838ms at 2026-02-22 00:00:01.013
+2026-02-21 00:13:05,175 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js next time will execute after 3600000ms at 2026-02-21 01:13:05.175
+2026-02-21 00:13:05,176 INFO 52767 [Timer] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js next time will execute after 3600000ms at 2026-02-21 01:13:05.176

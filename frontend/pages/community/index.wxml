@@ -1,0 +1,111 @@
+<!--pages/community/index.wxml-->
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <van-search
+      value="{{searchKeyword}}"
+      bind:change="onSearchChange"
+      bind:search="onSearch"
+      placeholder="搜索攻略"
+    />
+  </view>
+
+  <!-- 分类标签 -->
+  <view class="category-tabs">
+    <scroll-view scroll-x class="tabs-scroll">
+      <view class="tab-item {{activeTab === 'all' ? 'active' : ''}}" bindtap="switchTab" data-tab="all">
+        <text>全部</text>
+      </view>
+      <view class="tab-item {{activeTab === 'scenery' ? 'active' : ''}}" bindtap="switchTab" data-tab="scenery">
+        <text>景点</text>
+      </view>
+      <view class="tab-item {{activeTab === 'food' ? 'active' : ''}}" bindtap="switchTab" data-tab="food">
+        <text>美食</text>
+      </view>
+      <view class="tab-item {{activeTab === 'accommodation' ? 'active' : ''}}" bindtap="switchTab" data-tab="accommodation">
+        <text>住宿</text>
+      </view>
+      <view class="tab-item {{activeTab === 'guide' ? 'active' : ''}}" bindtap="switchTab" data-tab="guide">
+        <text>综合</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 攻略列表 -->
+  <view class="post-list">
+    <view class="post-card" wx:for="{{posts}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+      <view class="post-header">
+        <view class="author-info">
+          <image class="author-avatar" wx:if="{{item.userAvatar}}" src="{{item.userAvatar}}" />
+          <view class="author-avatar author-avatar-placeholder" wx:else><van-icon name="user-circle-o" size="40" color="#c8c9cc" /></view>
+          <view class="author-details">
+            <text class="author-name">{{item.userName}}</text>
+            <text class="post-time">{{item.created_at}}</text>
+          </view>
+        </view>
+        <van-tag wx:if="{{item.categoryLabel}}" type="primary" size="small">{{item.categoryLabel}}</van-tag>
+      </view>
+
+      <text class="post-title">{{item.title}}</text>
+
+      <!-- 图片预览 -->
+      <view class="post-images" wx:if="{{item.images && item.images.length > 0}}">
+        <image 
+          class="post-image" 
+          src="{{item.images[0]}}" 
+          mode="aspectFill"
+          wx:if="{{item.images.length === 1}}"
+        />
+        <view class="image-grid" wx:elif="{{item.images.length > 1}}">
+          <image 
+            class="grid-image" 
+            src="{{img}}" 
+            mode="aspectFill"
+            wx:for="{{item.images}}" 
+            wx:key="index"
+            wx:for-item="img"
+            wx:if="{{index < 3}}"
+          />
+          <view class="image-mask" wx:if="{{item.images.length > 3}}">
+            <text>+{{item.images.length - 3}}</text>
+          </view>
+        </view>
+      </view>
+
+      <text class="post-content">{{item.content}}</text>
+
+      <!-- 互动数据 -->
+      <view class="post-stats">
+        <view class="stat-item">
+          <van-icon name="like-o" size="16" />
+          <text>{{item.likes_count || 0}}</text>
+        </view>
+        <view class="stat-item">
+          <van-icon name="comment-o" size="16" />
+          <text>{{item.comments_count || 0}}</text>
+        </view>
+        <view class="stat-item">
+          <van-icon name="star-o" size="16" />
+          <text>{{item.favorite_count || 0}}</text>
+        </view>
+        <view class="stat-item">
+          <van-icon name="eye-o" size="16" />
+          <text>{{item.views_count || 0}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <van-empty wx:if="{{posts.length === 0 && !loading}}" description="暂无攻略" />
+
+  <!-- 加载中 -->
+  <view class="loading" wx:if="{{loading}}">
+    <van-loading size="24px">加载中...</van-loading>
+  </view>
+
+  <!-- 发布按钮 -->
+  <view class="publish-btn" bindtap="publishPost">
+    <van-icon name="plus" size="20" color="#fff" />
+  </view>
+</view>

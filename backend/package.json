@@ -1,0 +1,42 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "clean": "egg-bin clean",
+    "start": "egg-scripts start --daemon",
+    "stop": "egg-scripts stop",
+    "seed:admins": "node database/seeds/admins.seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.13.5",
+    "bcryptjs": "^3.0.3",
+    "egg": "^3.34.0",
+    "egg-cors": "^3.0.1",
+    "egg-jwt": "^3.1.7",
+    "egg-redis": "^2.6.1",
+    "egg-scripts": "^3.1.0",
+    "egg-sequelize": "^6.0.0",
+    "egg-session": "^3.3.0",
+    "mysql2": "^3.17.2",
+    "sequelize": "^6.37.7"
+  },
+  "devDependencies": {
+    "egg-bin": "^6.13.0",
+    "egg-mock": "^5.15.2",
+    "sequelize-cli": "^6.6.5"
+  }
+}

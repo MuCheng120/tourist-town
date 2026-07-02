@@ -1,0 +1,235 @@
+<!--管理端景点编辑/发布页面：与数据表及用户端详情页字段一致-->
+<view class="edit-page">
+  <view class="form-section">
+    <view class="section-title-row">
+      <text class="section-title">基本信息</text>
+      <text class="id-badge" wx:if="{{isEdit && id}}">ID: {{id}}</text>
+    </view>
+
+    <view class="form-item">
+      <view class="label required">景点名称</view>
+      <input
+        class="input"
+        placeholder="请输入景点名称"
+        value="{{form.name}}"
+        data-field="name"
+        bindinput="onInputChange"
+      />
+    </view>
+
+    <view class="form-item">
+      <view class="label required">封面图</view>
+      <view class="cover-upload">
+        <image wx:if="{{displayCover}}" class="cover-image" src="{{displayCover}}" mode="aspectFill" />
+        <view wx:else class="cover-placeholder" bindtap="chooseCoverImage">
+          <text class="icon">+</text>
+          <text class="text">上传封面</text>
+        </view>
+        <button wx:if="{{form.cover_image}}" class="change-btn" size="mini" bindtap="chooseCoverImage">更换</button>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">详情图（最多9张）</view>
+      <view class="images-grid">
+        <view wx:for="{{displayImages}}" wx:key="index" class="image-item">
+          <image class="image" src="{{item}}" mode="aspectFill" />
+          <view class="delete-btn" data-index="{{index}}" bindtap="deleteImage">×</view>
+        </view>
+        <view wx:if="{{displayImages.length < 9}}" class="add-image" bindtap="chooseImages">
+          <text class="icon">+</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label required">位置/地址</view>
+      <view class="location-box">
+        <input
+          class="input"
+          placeholder="可手动输入详细地址，或点击右侧按钮从地图选点（带出经纬度）"
+          value="{{form.address}}"
+          data-field="address"
+          bindinput="onInputChange"
+        />
+        <button class="location-btn" size="mini" bindtap="chooseLocation">选择位置</button>
+      </view>
+      <view class="location-coords">
+        <text>纬度：{{form.latitude || '未选择'}}</text>
+        <text>经度：{{form.longitude || '未选择'}}</text>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">开放时间</view>
+      <input
+        class="input"
+        placeholder="例如：09:00-17:00"
+        value="{{form.open_time}}"
+        data-field="open_time"
+        bindinput="onInputChange"
+      />
+    </view>
+
+    <view class="form-item">
+      <view class="label">开放状态</view>
+      <picker mode="selector" range="{{openStatusOptions}}" range-key="label" value="{{openStatusIndex}}" bindchange="onOpenStatusChange">
+        <view class="picker-value">
+          {{form.open_status === 'open' ? '开放中' : (form.open_status === 'closed' ? '暂停开放' : '限流中')}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <view class="label">停止售票时间</view>
+      <input
+        class="input"
+        placeholder="例如：21:00（HH:mm）"
+        value="{{form.stop_sale_time}}"
+        data-field="stop_sale_time"
+        bindinput="onInputChange"
+      />
+    </view>
+
+    <view class="form-item">
+      <view class="label">停止入园时间</view>
+      <input
+        class="input"
+        placeholder="例如：21:00（HH:mm）"
+        value="{{form.stop_entry_time}}"
+        data-field="stop_entry_time"
+        bindinput="onInputChange"
+      />
+    </view>
+
+    <view class="form-item">
+      <view class="label">门票价格（元）</view>
+      <input
+        class="input"
+        type="digit"
+        placeholder="请输入门票价格，0表示免费"
+        value="{{form.price}}"
+        data-field="price"
+        bindinput="onInputChange"
+      />
+    </view>
+
+    <view class="form-item">
+      <view class="label">票种明细（可选，覆盖默认票种）</view>
+      <view class="ticket-type-list">
+        <view class="ticket-type-card" wx:for="{{form.ticket_types}}" wx:key="type">
+          <view class="ticket-type-row">
+            <input
+              class="input ticket-input"
+              placeholder="票种名称（如成人票）"
+              value="{{item.name}}"
+              data-index="{{index}}"
+              data-field="name"
+              bindinput="onTicketTypeFieldChange"
+            />
+            <input
+              class="input ticket-price-input"
+              type="digit"
+              placeholder="价格"
+              value="{{item.price}}"
+              data-index="{{index}}"
+              data-field="price"
+              bindinput="onTicketTypeFieldChange"
+            />
+          </view>
+          <view class="ticket-type-row">
+            <input
+              class="input"
+              placeholder="备注（如需携带身份证）"
+              value="{{item.remark}}"
+              data-index="{{index}}"
+              data-field="remark"
+              bindinput="onTicketTypeFieldChange"
+            />
+            <button class="ticket-remove-btn" size="mini" data-index="{{index}}" bindtap="removeTicketType">删除</button>
+          </view>
+        </view>
+      </view>
+      <button class="ticket-add-btn" size="mini" bindtap="addTicketType">+ 添加票种</button>
+    </view>
+
+    <view class="form-item">
+      <view class="label">每日最大接待量</view>
+      <input
+        class="input"
+        type="number"
+        placeholder="默认100"
+        value="{{form.daily_capacity}}"
+        data-field="daily_capacity"
+        bindinput="onInputChange"
+      />
+    </view>
+
+    <view class="form-item">
+      <view class="label required">景点描述</view>
+      <textarea
+        class="textarea"
+        placeholder="请输入景点描述"
+        value="{{form.description}}"
+        data-field="description"
+        bindinput="onInputChange"
+        maxlength="2000"
+        show-confirm-bar="{{false}}"
+      />
+      <view class="count">{{form.description.length}}/2000</view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">景点标签（全部标签，多选）</view>
+      <view class="selected-tags" wx:if="{{form.tags.length}}">
+        <view class="selected-tag" wx:for="{{form.tags}}" wx:key="*this">
+          <text class="selected-tag-text">{{item}}</text>
+          <text class="selected-tag-remove" data-name="{{item}}" bindtap="removeSelectedTag">×</text>
+        </view>
+      </view>
+      <view class="tag-options">
+        <view
+          wx:for="{{displayedTags}}"
+          wx:key="*this"
+          class="tag-option {{form.tags.indexOf(item) >= 0 ? 'active' : ''}}"
+          data-name="{{item}}"
+          bindtap="toggleTagOption"
+        >
+          {{item}}
+        </view>
+      </view>
+      <view class="expand-tags-wrap" wx:if="{{(availableTags && availableTags.length) && (hasMoreTags || visibleTagCount > baseVisibleTagCount)}}">
+        <button class="expand-tags-btn" size="mini" wx:if="{{hasMoreTags}}" bindtap="expandMoreTags">展开更多（+10）</button>
+        <button class="collapse-tags-btn" size="mini" wx:if="{{visibleTagCount > baseVisibleTagCount}}" bindtap="collapseTags">收起</button>
+      </view>
+      <view class="new-tag-row">
+        <input
+          class="input new-tag-input"
+          placeholder="没有合适标签？输入名称后新增"
+          value="{{newTagName}}"
+          bindinput="onNewTagInput"
+        />
+        <button class="new-tag-btn" size="mini" bindtap="createTag">新增标签</button>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">上架状态</view>
+      <switch checked="{{form.status === 1}}" bindchange="onStatusChange" />
+      <text class="status-text">{{form.status === 1 ? '上架' : '下架'}}</text>
+    </view>
+
+    <view class="form-item">
+      <view class="label">是否推荐</view>
+      <switch checked="{{form.is_recommend === 1}}" bindchange="onRecommendChange" />
+      <text class="status-text">{{form.is_recommend === 1 ? '推荐' : '不推荐'}}</text>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button class="btn cancel-btn" bindtap="cancel">取消</button>
+    <button class="btn save-btn" bindtap="save" loading="{{loading}}" disabled="{{loading}}">
+      {{isEdit ? '保存' : '发布'}}
+    </button>
+  </view>
+</view>

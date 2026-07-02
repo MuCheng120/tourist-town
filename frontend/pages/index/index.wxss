@@ -1,0 +1,372 @@
+/* pages/index/index.wxss */
+.index-page {
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  /* TabBar 约 100rpx + 底部手势条；略加大避免「热门攻略」最后一行被挡 */
+  padding-bottom: 200rpx;
+  padding-bottom: calc(200rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(200rpx + env(safe-area-inset-bottom));
+  position: relative;
+  z-index: 1;
+}
+
+/* 轮播图 */
+.banner-section {
+  margin-top: 20rpx;
+}
+
+.banner {
+  height: 360rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 系统公告 */
+.notice-section {
+  margin: 20rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.notice-row {
+  display: flex;
+  align-items: stretch;
+  background-color: #fffbe8;
+}
+
+.notice-bar-wrap {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.notice-bar-inner {
+  width: 100%;
+}
+
+.notice-all {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx 0 8rpx;
+  font-size: 24rpx;
+  color: #ed6a0c;
+  gap: 4rpx;
+}
+
+.notice-all--hover {
+  opacity: 0.75;
+}
+
+/* 快捷入口 */
+.quick-entry {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  padding: 40rpx 0;
+  margin: 20rpx;
+  border-radius: 16rpx;
+}
+
+.entry-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entry-icon {
+  width: 88rpx;
+  height: 88rpx;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12rpx;
+}
+
+.entry-text {
+  font-size: 22rpx;
+  color: #333;
+}
+
+/* 景点滚动 */
+.spot-scroll {
+  white-space: nowrap;
+  padding: 10rpx 0;
+}
+
+.spot-item {
+  display: inline-flex;
+  flex-direction: column;
+  width: 240rpx;
+  margin-right: 20rpx;
+  background: #f9f9f9;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.spot-image {
+  width: 100%;
+  height: 180rpx;
+}
+
+.spot-info {
+  padding: 16rpx;
+}
+
+.spot-name {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spot-rating {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  margin-bottom: 8rpx;
+}
+
+.rating-text {
+  font-size: 22rpx;
+  color: #ff9800;
+}
+
+.spot-price {
+  font-size: 28rpx;
+  color: #ee0a24;
+  font-weight: bold;
+}
+
+/* 路线列表 */
+.route-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.route-item {
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.route-item:last-child {
+  border-bottom: none;
+}
+
+.route-cover {
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.route-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.route-title {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.route-meta {
+  display: flex;
+  gap: 20rpx;
+}
+
+.meta-text {
+  font-size: 22rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 4rpx;
+}
+
+/* 模块 */
+.section {
+  background: #fff;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 16rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-more {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 推荐特产美食：横向滚动 */
+.product-scroll {
+  white-space: nowrap;
+  padding: 10rpx 0;
+}
+
+.product-item {
+  display: inline-flex;
+  flex-direction: column;
+  width: 230rpx;
+  margin-right: 20rpx;
+  background: #f9f9f9;
+  border-radius: 12rpx;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.product-image {
+  width: 100%;
+  height: 200rpx;
+  background: #eee;
+}
+
+.product-info {
+  padding: 16rpx;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 120rpx;
+  box-sizing: border-box;
+}
+
+.product-name {
+  font-size: 26rpx;
+  color: #333;
+  line-height: 1.45;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12rpx;
+  gap: 8rpx;
+  flex-wrap: wrap;
+}
+
+.product-price {
+  font-size: 28rpx;
+  color: #ee0a24;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.product-sales {
+  font-size: 22rpx;
+  color: #999;
+  flex-shrink: 0;
+}
+
+/* 攻略列表 */
+.post-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-item {
+  display: flex;
+  padding: 20rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-image {
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+  flex-shrink: 0;
+}
+
+.post-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-title {
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  margin-right: 8rpx;
+}
+
+.author-name {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.post-stats {
+  display: flex;
+  align-items: center;
+}
+
+.stat-text {
+  font-size: 22rpx;
+  color: #999;
+  margin-left: 4rpx;
+}

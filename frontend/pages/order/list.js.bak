@@ -1,0 +1,233 @@
+// pages/order/list.js
+const app = getApp();
+
+Page({
+  data: {
+    activeTab: '',
+    orders: [],
+    loading: false,
+  },
+
+  onLoad(options) {
+    // 如果从其他页面跳转过来，可能带有status参数
+    if (options.status) {
+      this.setData({ activeTab: options.status });
+    }
+    this.loadOrders();
+  },
+
+  onShow() {
+    // 页面显示时刷新订单列表
+    this.loadOrders();
+  },
+
+  onPullDownRefresh() {
+    this.loadOrders().finally(() => {
+      wx.stopPullDownRefresh();
+    });
+  },
+
+  /**
+   * 切换Tab
+   */
+  onTabChange(e) {
+    const { name } = e.detail;
+    this.setData({ activeTab: name });
+    this.loadOrders();
+  },
+
+  /**
+   * 加载订单列表
+   */
+  async loadOrders() {
+    this.setData({ loading: true });
+
+    try {
+      const res = await app.request({
+        url: '/api/orders',
+        data: {
+          status: this.data.activeTab || undefined,
+        },
+        needAuth: true,  // 需要认证
+      });
+
+      if (res.code === 200) {
+        // 处理订单数据，添加状态文本
+        const orders = res.data.list.map(order => ({
+          ...order,
+          statusText: this.getStatusText(order.status),
+          total_quantity: order.products.reduce((sum, p) => sum + p.quantity, 0),
+        }));
+        this.setData({ orders });
+      }
+    } catch (error) {
+      console.error('加载订单失败:', error);
+      wx.showToast({
+        title: '加载失败',
+        icon: 'none',
+      });
+    } finally {
+      this.setData({ loading: false });
+    }
+  },
+
+  /**
+   * 获取状态文本
+   */
+  getStatusText(status) {
+    const statusMap = {
+      pending: '待付款',
+      paid: '待发货',
+      shipped: '待收货',
+      completed: '已完成',
+      cancelled: '已取消',
+      refunding: '退款中',
+      refunded: '已退款',
+    };
+    return statusMap[status] || '未知';
+  },
+
+  /**
+   * 跳转到订单详情
+   */
+  navigateToDetail(e) {
+    // 阻止冒泡，避免与按钮点击冲突
+    if (e.target.dataset.action) return;
+    
+    const { id } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/pages/order/detail?id=${id}`,
+    });
+  },
+
+  /**
+   * 取消订单
+   */
+  async cancelOrder(e) {
+    const { id } = e.currentTarget.dataset;
+
+    try {
+      const res = await wx.showModal({
+        title: '提示',
+        content: '确定要取消这个订单吗？',
+      });
+
+      if (res.confirm) {
+        const result = await app.request({
+          url: `/api/orders/${id}/cancel`,
+          method: 'POST',
+          needAuth: true,  // 需要认证
+        });
+
+        if (result.code === 200) {
+          wx.showToast({
+            title: '订单已取消',
+            icon: 'success',
+          });
+          this.loadOrders();
+        }
+      }
+    } catch (error) {
+      console.error('取消订单失败:', error);
+    }
+  },
+
+  /**
+   * 支付订单
+   */
+  async payOrder(e) {
+    const { id } = e.currentTarget.dataset;
+
+    try {
+      const res = await app.request({
+        url: `/api/orders/${id}/pay`,
+        method: 'POST',
+        needAuth: true,  // 需要认证
+      });
+
+      if (res.code === 200) {
+        wx.showToast({
+          title: '支付成功',
+          icon: 'success',
+        });
+        this.loadOrders();
+      }
+    } catch (error) {
+      console.error('支付失败:', error);
+    }
+  },
+
+  /**
+   * 确认收货
+   */
+  async confirmReceipt(e) {
+    const { id } = e.currentTarget.dataset;
+
+    try {
+      const res = await wx.showModal({
+        title: '提示',
+        content: '确定已收到商品吗？',
+      });
+
+      if (res.confirm) {
+        const result = await app.request({
+          url: `/api/orders/${id}/complete`,
+          method: 'POST',
+          needAuth: true,  // 需要认证
+        });
+
+        if (result.code === 200) {
+          wx.showToast({
+            title: '确认成功',
+            icon: 'success',
+          });
+          this.loadOrders();
+        }
+      }
+    } catch (error) {
+      console.error('确认收货失败:', error);
+    }
+  },
+
+  /**
+   * 查看物流
+   */
+  viewLogistics(e) {
+    const { id } = e.currentTarget.dataset;
+    wx.navigateTo({
+      url: `/pages/order/detail?id=${id}&tab=logistics`,
+    });
+  },
+
+  /**
+   * 申请退款
+   */
+  async refundOrder(e) {
+    const { id } = e.currentTarget.dataset;
+
+    try {
+      const res = await wx.showModal({
+        title: '申请退款',
+        content: '确定要申请退款吗？',
+      });
+
+      if (res.confirm) {
+        const result = await app.request({
+          url: `/api/orders/${id}/refund`,
+          method: 'POST',
+          needAuth: true,  // 需要认证
+        });
+
+        if (result.code === 200) {
+          wx.showToast({
+            title: '退款申请已提交',
+            icon: 'success',
+          });
+          this.loadOrders();
+        }
+      }
+    } catch (error) {
+      console.error('申请退款失败:', error);
+    }
+  },
+});

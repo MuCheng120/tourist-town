@@ -1,0 +1,341 @@
+/**
+ * 全局样式
+ */
+
+/* 全局变量 */
+page {
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 通用样式 */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mt-10 {
+  margin-top: 10rpx;
+}
+
+.mt-20 {
+  margin-top: 20rpx;
+}
+
+.mb-10 {
+  margin-bottom: 10rpx;
+}
+
+.mb-20 {
+  margin-bottom: 20rpx;
+}
+
+.ml-10 {
+  margin-left: 10rpx;
+}
+
+.ml-20 {
+  margin-left: 20rpx;
+}
+
+.mr-10 {
+  margin-right: 10rpx;
+}
+
+.mr-20 {
+  margin-right: 20rpx;
+}
+
+.p-10 {
+  padding: 10rpx;
+}
+
+.p-20 {
+  padding: 20rpx;
+}
+
+.pt-10 {
+  padding-top: 10rpx;
+}
+
+.pt-20 {
+  padding-top: 20rpx;
+}
+
+.pb-10 {
+  padding-bottom: 10rpx;
+}
+
+.pb-20 {
+  padding-bottom: 20rpx;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: #1989fa;
+}
+
+.text-success {
+  color: #07c160;
+}
+
+.text-warning {
+  color: #ff976a;
+}
+
+.text-danger {
+  color: #ee0a24;
+}
+
+.text-info {
+  color: #909399;
+}
+
+.text-muted {
+  color: #969799;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-gray {
+  background-color: #f5f5f5;
+}
+
+.border-radius {
+  border-radius: 8rpx;
+}
+
+.box-shadow {
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 自定义按钮样式 */
+.btn-primary {
+  background-color: #1989fa;
+  color: #ffffff;
+}
+
+.btn-success {
+  background-color: #07c160;
+  color: #ffffff;
+}
+
+.btn-warning {
+  background-color: #ff976a;
+  color: #ffffff;
+}
+
+.btn-danger {
+  background-color: #ee0a24;
+  color: #ffffff;
+}
+
+/* 价格样式 */
+.price {
+  color: #ee0a24;
+  font-weight: bold;
+}
+
+.price::before {
+  content: '¥';
+  font-size: 0.8em;
+  margin-right: 2rpx;
+}
+
+.price-large {
+  font-size: 36rpx;
+}
+
+.price-medium {
+  font-size: 28rpx;
+}
+
+.price-small {
+  font-size: 24rpx;
+}
+
+/* 标签样式 */
+.tag {
+  display: inline-block;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+
+.tag-primary {
+  background-color: #1989fa;
+  color: #ffffff;
+}
+
+.tag-success {
+  background-color: #07c160;
+  color: #ffffff;
+}
+
+.tag-warning {
+  background-color: #ff976a;
+  color: #ffffff;
+}
+
+.tag-danger {
+  background-color: #ee0a24;
+  color: #ffffff;
+}
+
+.tag-info {
+  background-color: #909399;
+  color: #ffffff;
+}
+
+.tag-gray {
+  background-color: #f5f5f5;
+  color: #969799;
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100rpx 0;
+}
+
+.empty-icon {
+  font-size: 100rpx;
+  color: #c8c9cc;
+  margin-bottom: 20rpx;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #969799;
+}
+
+/* 加载状态 */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 0;
+  font-size: 28rpx;
+  color: #969799;
+}
+
+/* 分隔线 */
+.divider {
+  height: 1rpx;
+  background-color: #ebedf0;
+  margin: 20rpx 0;
+}
+
+/* 卡片样式 */
+.card {
+  background-color: #ffffff;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #323233;
+}
+
+.card-body {
+  font-size: 28rpx;
+  color: #646566;
+  line-height: 1.6;
+}
+
+/* 列表样式 */
+.list-item {
+  background-color: #ffffff;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.list-item-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #323233;
+  margin-bottom: 12rpx;
+}
+
+.list-item-desc {
+  font-size: 26rpx;
+  color: #969799;
+  line-height: 1.5;
+}
+
+/* 图片样式 */
+.image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-contain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 徽标样式 */
+.badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 32rpx;
+  height: 32rpx;
+  padding: 0 8rpx;
+  background-color: #ee0a24;
+  color: #ffffff;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  text-align: center;
+  border-radius: 16rpx;
+}

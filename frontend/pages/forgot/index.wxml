@@ -1,0 +1,43 @@
+<view class="forgot-container">
+  <view class="header">
+    <text class="title">找回密码</text>
+    <text class="subtitle">使用注册手机号重置密码</text>
+  </view>
+
+  <van-cell-group>
+    <van-field
+      value="{{ phone }}"
+      label="手机号"
+      placeholder="请输入注册手机号"
+      type="number"
+      maxlength="11"
+      bind:change="onPhoneInput"
+      required
+      clearable
+    />
+    <van-field
+      value="{{ code }}"
+      label="验证码"
+      placeholder="无需发送，默认为 {{ devCode }}"
+      type="number"
+      maxlength="6"
+      bind:change="onCodeInput"
+      required
+      clearable
+    />
+    <van-field
+      value="{{ newPassword }}"
+      label="新密码"
+      placeholder="8-20位，须含字母、数字和特殊符号"
+      type="password"
+      bind:change="onPasswordInput"
+      required
+      clearable
+    />
+  </van-cell-group>
+
+  <view class="button-group">
+    <van-button type="primary" block bind:click="resetPassword" loading="{{ loading }}">确认重置</van-button>
+    <van-button block bind:click="backToLogin" class="back-btn">返回登录</van-button>
+  </view>
+</view>

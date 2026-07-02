@@ -1,0 +1,111 @@
+.container {
+  min-height: 100vh;
+  background: #f7f8fa;
+}
+
+.toolbar {
+  padding: 12px 12px 6px;
+}
+
+.list {
+  padding: 8px 12px 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.card-main {
+  display: flex;
+}
+
+.cover {
+  width: 92px;
+  height: 92px;
+  border-radius: 10px;
+  background: #f2f3f5;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.title-row {
+  margin-top: 0;
+  justify-content: space-between;
+}
+
+.title-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.id-badge {
+  font-size: 11px;
+  color: #646566;
+  background: #f2f3f5;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #323233;
+  max-width: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.merchant {
+  color: #646566;
+  font-size: 12px;
+}
+
+.price {
+  color: #ee0a24;
+  font-weight: 600;
+}
+
+.stock {
+  color: #646566;
+  font-size: 12px;
+}
+
+.card-actions {
+  margin-top: 10px;
+  border-top: 1px solid #f2f3f5;
+  padding-top: 10px;
+}
+
+.recommend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recommend-label {
+  color: #323233;
+  font-size: 13px;
+}
+
+.loading {
+  margin: 16px auto;
+}

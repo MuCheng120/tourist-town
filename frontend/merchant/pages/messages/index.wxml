@@ -1,0 +1,54 @@
+<view class="messages-page">
+  <view class="session-list">
+    <view
+      class="session-card"
+      wx:for="{{threads}}"
+      wx:key="id"
+    >
+      <view class="session-header">
+        <image class="product-thumb" src="{{item.cover}}" mode="aspectFill" />
+        <view class="session-header-info">
+          <text class="product-name">{{item.productName}}</text>
+          <text class="session-time">{{item.created_at}}</text>
+        </view>
+      </view>
+
+      <view class="chat-body">
+        <view
+          class="msg-item {{msg.fromMerchant ? 'msg-right' : 'msg-left'}}"
+          wx:for="{{item.messages}}"
+          wx:for-item="msg"
+          wx:key="id"
+        >
+          <image class="avatar" src="{{msg.avatar}}" mode="aspectFill" wx:if="{{msg.avatar}}" />
+          <view class="msg-content">
+            <text class="msg-name">{{msg.fromMerchant ? '商家' : msg.userName}}</text>
+            <view class="msg-bubble">
+              <text>{{msg.content}}</text>
+            </view>
+            <text class="msg-time">{{msg.created_at}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class="reply-area">
+        <van-field
+          value="{{replyContentMap[item.id]}}"
+          placeholder="回复游客..."
+          data-id="{{item.id}}"
+          bind:change="onReplyChange"
+        />
+        <button class="send-btn" size="mini" bindtap="sendReply" data-id="{{item.id}}">发送</button>
+      </view>
+    </view>
+
+    <view class="loading" wx:if="{{loading}}">
+      <van-loading size="24px">加载中...</van-loading>
+    </view>
+    <view class="no-more" wx:if="{{!loading && !hasMore && threads.length > 0}}">
+      <text>没有更多了</text>
+    </view>
+    <van-empty wx:if="{{!loading && threads.length === 0}}" description="暂无用户评价" />
+  </view>
+</view>
+

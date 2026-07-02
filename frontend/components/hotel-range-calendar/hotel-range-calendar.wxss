@@ -1,0 +1,66 @@
+/* 全屏页：固定视口高度，避免 flex 子项被日历内容撑高把底部按钮顶出屏幕 */
+.hotel-range-calendar {
+  height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hotel-range-calendar--embedded {
+  height: 65vh;
+  max-height: 75vh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.hotel-range-calendar__body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.hotel-range-calendar__body .van-calendar {
+  height: 100% !important;
+}
+
+.hotel-range-calendar__footer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  padding: 24rpx 24rpx calc(24rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.hotel-range-calendar__btn {
+  flex: 1;
+  height: 88rpx;
+  padding: 0;
+  margin: 0;
+  font-size: 30rpx;
+  border-radius: 44rpx;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+}
+
+.hotel-range-calendar__btn::after {
+  border: none;
+}
+
+.hotel-range-calendar__btn--back {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.hotel-range-calendar__btn--confirm {
+  background: #07c160;
+  color: #fff;
+}

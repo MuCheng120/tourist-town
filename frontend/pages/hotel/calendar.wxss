@@ -1,0 +1,6 @@
+/* 与 hotel-range-calendar 全屏 100vh 对齐，避免整页再滚一层把底部按钮挡住 */
+page {
+  height: 100vh;
+  overflow: hidden;
+  background: #fff;
+}

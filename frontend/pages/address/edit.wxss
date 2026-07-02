@@ -1,0 +1,32 @@
+.edit-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding-bottom: 120rpx;
+}
+.region-picker-row {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  background: #fff;
+  font-size: 28rpx;
+  border-top: 1rpx solid #ebedf0;
+}
+.region-label {
+  flex-shrink: 0;
+  width: 160rpx;
+  color: #323233;
+}
+.region-text {
+  flex: 1;
+  color: #323233;
+}
+.region-text.placeholder {
+  color: #c8c9cc;
+}
+.region-arrow {
+  margin-left: 16rpx;
+  color: #969799;
+}
+.submit-wrap {
+  margin: 40rpx 30rpx 0;
+}

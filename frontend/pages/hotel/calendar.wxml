@@ -1,0 +1,8 @@
+<!-- 酒店入住日期：完整日历页，复用组件 -->
+<hotel-range-calendar
+  check-in-date="{{ initialCheckIn }}"
+  check-out-date="{{ initialCheckOut }}"
+  embedded="{{ false }}"
+  bind:cancel="onBack"
+  bind:confirm="onConfirmFromComponent"
+/>

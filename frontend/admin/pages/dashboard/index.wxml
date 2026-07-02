@@ -1,0 +1,225 @@
+<!--admin/pages/dashboard/index.wxml-->
+<view class="container">
+  <!-- 数据统计 -->
+  <view class="stats-section">
+    <view class="stat-card">
+      <view class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+        <van-icon name="gold-coin-o" size="32" color="#fff" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">¥{{stats.totalGMV || 0}}</text>
+        <text class="stat-label">总成交额（GMV）</text>
+      </view>
+    </view>
+
+    <view class="stat-card">
+      <view class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+        <van-icon name="bar-chart-o" size="32" color="#fff" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">{{stats.totalOrders || 0}}</text>
+        <text class="stat-label">总订单数</text>
+      </view>
+    </view>
+
+    <view class="stat-card">
+      <view class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+        <van-icon name="user-o" size="32" color="#fff" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">{{stats.totalUsers || 0}}</text>
+        <text class="stat-label">总用户数</text>
+      </view>
+    </view>
+
+    <view class="stat-card">
+      <view class="stat-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+        <van-icon name="shop-o" size="32" color="#fff" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">{{stats.totalMerchants || 0}}</text>
+        <text class="stat-label">总商家数</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 今日数据 -->
+  <view class="today-section" wx:if="{{false}}">
+    <text class="section-title">今日数据</text>
+    <view class="today-grid">
+      <view class="today-item">
+        <text class="today-label">今日成交额</text>
+        <text class="today-value amount">¥{{stats.todayAmount || 0}}</text>
+      </view>
+      <view class="today-item">
+        <text class="today-label">今日订单</text>
+        <text class="today-value">{{stats.todayOrders || 0}}</text>
+      </view>
+      <view class="today-item">
+        <text class="today-label">今日新增用户</text>
+        <text class="today-value">{{stats.todayNewUsers || 0}}</text>
+      </view>
+      <view class="today-item">
+        <text class="today-label">今日转化率</text>
+        <text class="today-value">{{stats.todayConversion || 0}}%</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 审核中心 -->
+  <view class="audit-section">
+    <view class="section-header">
+      <text class="section-title">审核中心</text>
+      <text class="view-all" bindtap="navigateToAudit">查看全部</text>
+    </view>
+
+    <view class="audit-grid">
+      <view class="audit-item" bindtap="navigateToMerchantAudit">
+        <van-icon name="shop-o" size="32" color="#1989fa" />
+        <text class="audit-label">商户入驻</text>
+        <van-tag type="danger" size="small">{{stats.pendingMerchants || 0}}</van-tag>
+      </view>
+
+      <view class="audit-item" bindtap="navigateToPostAudit">
+        <van-icon name="description" size="32" color="#07c160" />
+        <text class="audit-label">攻略审核</text>
+        <van-tag type="danger" size="small">{{stats.pendingPosts || 0}}</van-tag>
+      </view>
+
+      <view class="audit-item" bindtap="navigateToCommentAudit">
+        <van-icon name="comment-o" size="32" color="#ff976a" />
+        <text class="audit-label">评论审核</text>
+        <van-tag type="danger" size="small">{{stats.pendingComments || 0}}</van-tag>
+      </view>
+    </view>
+  </view>
+
+  <!-- 咨询电话设置 -->
+  <view class="settings-section">
+    <text class="section-title">咨询电话</text>
+    <view class="contact-phone-row">
+      <input
+        class="contact-phone-input"
+        placeholder="景点/住宿有疑问可致电此号码"
+        value="{{contactPhone}}"
+        bindinput="onContactPhoneInput"
+      />
+      <button class="contact-phone-save" type="primary" size="mini" bindtap="saveContactPhone">保存</button>
+    </view>
+    <text class="settings-tip">用户在景点、酒店详情页可拨打此电话咨询</text>
+  </view>
+
+  <!-- 快捷操作 -->
+  <view class="actions-section">
+    <text class="section-title">快捷操作</text>
+    <view class="action-group">
+      <text class="action-group-title">用户与审核</text>
+      <view class="action-grid">
+        <view class="action-item" bindtap="navigateToUsers">
+          <van-icon name="user-o" size="22" color="#1989fa" />
+          <text>用户管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToMerchants">
+          <van-icon name="shop-o" size="22" color="#07c160" />
+          <text>商户管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToAudit">
+          <van-icon name="shield-o" size="22" color="#ff976a" />
+          <text>审核中心</text>
+        </view>
+        <view class="action-item" bindtap="navigateToVerify">
+          <van-icon name="scan" size="22" color="#07c160" />
+          <text>门票核销</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="action-group">
+      <text class="action-group-title">内容与商品</text>
+      <view class="action-grid">
+        <view class="action-item" bindtap="navigateToScenic">
+          <van-icon name="photo-o" size="22" color="#07c160" />
+          <text>景点管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToHotel">
+          <van-icon name="hotel-o" size="22" color="#1989fa" />
+          <text>酒店管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToProducts">
+          <van-icon name="goods-collect-o" size="22" color="#07c160" />
+          <text>商品管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToPostManage">
+          <van-icon name="description" size="22" color="#07c160" />
+          <text>攻略管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToTags">
+          <van-icon name="cluster-o" size="22" color="#1989fa" />
+          <text>标签管理</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="action-group">
+      <text class="action-group-title">交易与运营</text>
+      <view class="action-grid">
+        <view class="action-item" bindtap="navigateToOrders">
+          <van-icon name="orders-o" size="22" color="#ff976a" />
+          <text>订单管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToCoupon">
+          <van-icon name="coupon-o" size="22" color="#ff976a" />
+          <text>优惠券管理</text>
+        </view>
+        <view class="action-item" bindtap="navigateToBanners">
+          <van-icon name="tv-o" size="22" color="#1989fa" />
+          <text>首页轮播</text>
+        </view>
+        <view class="action-item" bindtap="navigateToAnnouncements">
+          <van-icon name="volume-o" size="22" color="#ff976a" />
+          <text>公告管理</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="action-group">
+      <text class="action-group-title">系统管理</text>
+      <view class="action-grid">
+        <view class="action-item" bindtap="navigateToCredit">
+          <van-icon name="medal-o" size="22" color="#1989fa" />
+          <text>商家信誉</text>
+        </view>
+        <view class="action-item" bindtap="navigateToDataAnalysis">
+          <van-icon name="bar-chart-o" size="22" color="#ee0a24" />
+          <text>数据分析</text>
+        </view>
+        <view class="action-item" bindtap="navigateToAdminUsers">
+          <van-icon name="manager-o" size="22" color="#1989fa" />
+          <text>管理员管理</text>
+        </view>
+        <view class="action-item action-item--empty"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 系统通知 -->
+  <view class="notice-section" wx:if="{{notices.length > 0}}">
+    <text class="section-title">系统通知</text>
+    <view class="notice-list">
+      <view class="notice-item" wx:for="{{notices}}" wx:key="id">
+        <view class="notice-icon">
+          <van-icon name="bell" size="20" color="#ff976a" />
+        </view>
+        <view class="notice-content">
+          <text class="notice-title">{{item.title}}</text>
+          <text class="notice-time">{{item.created_at}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-section">
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+  </view>
+</view>

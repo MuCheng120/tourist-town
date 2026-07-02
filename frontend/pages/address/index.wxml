@@ -1,0 +1,78 @@
+<!--pages/address/index.wxml-->
+<view class="address-page">
+  <!-- 头部：标题 + 管理/完成 -->
+  <view class="header">
+    <view class="title">{{manageMode ? '管理地址' : (fromOrder ? '选择地址' : '收货地址')}}</view>
+    <view class="header-right" bindtap="toggleManageMode">
+      <text class="header-btn">{{manageMode ? '完成' : '管理'}}</text>
+    </view>
+  </view>
+
+  <!-- 地址列表 -->
+  <view class="address-list">
+    <view
+      class="address-item {{manageMode && item.selected ? 'address-item--selected' : ''}}"
+      wx:for="{{addressList}}"
+      wx:key="id"
+      bindtap="{{manageMode ? 'toggleSelect' : 'selectAddress'}}"
+      data-address="{{item}}"
+      data-id="{{item.id}}"
+    >
+      <!-- 管理模式：左侧复选框 -->
+      <view class="address-check" wx:if="{{manageMode}}">
+        <van-icon name="{{item.selected ? 'success' : 'circle'}}" size="22" color="{{item.selected ? '#1989fa' : '#c8c9cc'}}" />
+      </view>
+      <view class="address-content">
+        <view class="address-header">
+          <text class="name">{{item.userName}}</text>
+          <text class="phone">{{item.telNumber}}</text>
+          <view class="default-tag" wx:if="{{item.default}}">默认</view>
+        </view>
+        <view class="address-detail">
+          <view class="address-detail-icon">
+            <van-icon name="location-o" size="14" color="#07c160" />
+          </view>
+          <text class="detail-text">{{item.provinceName}}{{item.cityName}}{{item.countyName}} {{item.detailInfo}}</text>
+        </view>
+        <!-- 非管理模式：编辑/设为默认/删除 -->
+        <view class="address-actions" wx:if="{{!manageMode}}">
+          <view class="action-btn" catchtap="goEdit" data-id="{{item.id}}">
+            <van-icon name="edit" size="14" color="#1989fa" />
+            <text>编辑</text>
+          </view>
+          <view class="action-btn" catchtap="setDefault" data-id="{{item.id}}" wx:if="{{!item.default}}">
+            <text>设为默认</text>
+          </view>
+          <view class="action-btn action-btn--danger" catchtap="deleteAddress" data-id="{{item.id}}">
+            <van-icon name="delete-o" size="14" color="#969799" />
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-state" wx:if="{{addressList.length === 0}}">
+      <view class="empty-icon">
+        <van-icon name="location-o" size="64" color="#c8c9cc" />
+      </view>
+      <view class="empty-text">暂无收货地址</view>
+    </view>
+  </view>
+
+  <!-- 底部：管理模式显示「删除选中」；否则显示添加地址 -->
+  <view class="footer" wx:if="{{manageMode}}">
+    <button class="manage-btn manage-btn--delete" bindtap="deleteSelected">
+      删除选中 ({{selectedIds.length}})
+    </button>
+  </view>
+  <view class="footer" wx:else>
+    <button class="add-address-btn add-address-btn--wechat" bindtap="chooseAddress">
+      <van-icon name="location-o" size="16" color="#fff" />
+      <text>微信选择地址</text>
+    </button>
+    <button class="add-address-btn add-address-btn--manual" bindtap="goEdit">
+      <van-icon name="plus" size="16" color="#fff" />
+      <text>手动填写地址</text>
+    </button>
+  </view>
+</view>

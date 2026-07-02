@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="toolbar">
+    <button class="create-btn" size="mini" bindtap="openCreate">新增管理员</button>
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="line">
+        <text class="label">账号</text>
+        <text class="value">{{item.username}}</text>
+      </view>
+      <view class="line">
+        <text class="label">昵称</text>
+        <text class="value">{{item.nickname || '-'}}</text>
+      </view>
+      <view class="line">
+        <text class="label">状态</text>
+        <text class="value">{{item.status || '-'}}</text>
+      </view>
+      <view class="line">
+        <text class="label">创建时间</text>
+        <text class="value">{{item.created_at || item.createdAt || '-'}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{!loading && list.length === 0}}">
+    <van-empty description="暂无管理员" />
+  </view>
+
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <view class="mask" wx:if="{{showCreate}}" bindtap="closeCreate">
+    <view class="modal" catchtap="noop">
+      <view class="modal-title">新增管理员</view>
+      <view class="field">
+        <text class="field-label">用户名</text>
+        <input class="input" value="{{form.username}}" data-field="username" bindinput="onInput" placeholder="请输入用户名" placeholder-class="input-placeholder" />
+      </view>
+      <view class="field">
+        <text class="field-label">密码</text>
+        <input class="input" password value="{{form.password}}" data-field="password" bindinput="onInput" placeholder="请输入密码" placeholder-class="input-placeholder" />
+      </view>
+      <view class="field">
+        <text class="field-label">昵称</text>
+        <input class="input" value="{{form.nickname}}" data-field="nickname" bindinput="onInput" placeholder="请输入昵称（可选）" placeholder-class="input-placeholder" />
+      </view>
+      <view class="modal-actions">
+        <button class="form-btn" size="mini" bindtap="closeCreate">取消</button>
+        <button class="form-btn form-btn-primary" size="mini" bindtap="createAdmin">创建</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,190 @@
+<view class="analysis-page">
+  <view class="section">
+    <view class="section-title">核心质量指标</view>
+    <view class="overview-cards">
+      <view class="card">
+        <view class="card-label">退款率</view>
+        <view class="card-value">{{qualityMetrics.refundRate}}%</view>
+      </view>
+      <view class="card">
+        <view class="card-label">核销率</view>
+        <view class="card-value">{{qualityMetrics.verifyRate}}%</view>
+      </view>
+      <view class="card">
+        <view class="card-label">复购率</view>
+        <view class="card-value">{{qualityMetrics.repurchaseRate}}%</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 日报 / 周报 / 月报 / 年报 -->
+  <view class="section">
+    <view class="section-title">报表</view>
+    <van-tabs active="{{ reportType }}" bind:change="onReportTabChange">
+      <van-tab title="日报" name="daily" />
+      <van-tab title="周报" name="weekly" />
+      <van-tab title="月报" name="monthly" />
+      <van-tab title="年报" name="yearly" />
+    </van-tabs>
+    <view class="report-range" wx:if="{{report && report.dateRange}}">
+      <text>{{report.dateRange.start}} 至 {{report.dateRange.end}}</text>
+    </view>
+  </view>
+
+  <van-loading wx:if="{{loading}}" class="page-loading" type="spinner" />
+
+  <block wx:elif="{{report}}">
+    <!-- 游客流量：访问人数、浏览页数、停留时间 -->
+    <view class="section chart-section">
+      <view class="chart-wrap" wx:if="{{chartAvailable && echarts}}">
+        <ec-canvas id="traffic-chart" canvas-id="traffic" echarts="{{ echarts }}" ec="{{ ecTraffic }}"></ec-canvas>
+      </view>
+      <view class="chart-fallback" wx:else>
+        <text>访问量(PV)：{{(report.traffic && report.traffic.page_views && report.traffic.page_views.length) ? report.traffic.page_views[report.traffic.page_views.length - 1] : 0}}</text>
+        <text>访客数(UV)：{{(report.traffic && report.traffic.unique_visitors && report.traffic.unique_visitors.length) ? report.traffic.unique_visitors[report.traffic.unique_visitors.length - 1] : 0}}</text>
+      </view>
+    </view>
+
+    <!-- 用户行为统计：行为类型 + 页面路径与停留（user_behavior_logs） -->
+    <view class="section">
+      <view class="section-title">用户行为统计（游客端）</view>
+      <van-loading wx:if="{{behaviorLoading}}" class="page-loading" type="spinner" />
+      <block wx:elif="{{!behaviorEmpty}}">
+        <view class="behavior-hint">仅统计路径为的游客端埋点（不含管理端、商家端）。趋势为按日、按行为类型次数；下表为各页访问与停留。平均停留仅统计离开页时上报且停留大于 1 秒的样本。</view>
+        <view class="chart-section" wx:if="{{behaviorStats.dates && behaviorStats.dates.length}}">
+          <view class="chart-wrap" wx:if="{{chartAvailable && echarts}}">
+            <ec-canvas id="behavior-trend-chart" canvas-id="behaviorTrend" echarts="{{ echarts }}" ec="{{ ecBehaviorTrend }}"></ec-canvas>
+          </view>
+          <view class="chart-fallback" wx:else>
+            <text>行为趋势图暂不可用（echarts 未加载）</text>
+          </view>
+        </view>
+        <view class="subsection-title" wx:if="{{behaviorPageList.length}}">页面访问与停留</view>
+        <view class="chart-section" wx:if="{{behaviorPageList.length && chartAvailable && echarts}}">
+          <view class="chart-wrap chart-wrap-bar-side">
+            <ec-canvas id="behavior-page-stay-chart" canvas-id="behaviorPageStay" echarts="{{ echarts }}" ec="{{ ecBehaviorPageStay }}"></ec-canvas>
+          </view>
+        </view>
+        <view class="behavior-page-table" wx:if="{{behaviorPageList.length}}">
+          <view class="behavior-table-head">
+            <text class="col-page-title">页面</text>
+            <text class="col-page-num">进入</text>
+            <text class="col-page-num">停留样本</text>
+            <text class="col-page-stay">均停留</text>
+            <text class="col-page-stay">总停留</text>
+          </view>
+          <view class="behavior-table-row" wx:for="{{behaviorPageList}}" wx:key="page_path">
+            <text class="col-page-title">{{item.pageTitle}}</text>
+            <text class="col-page-num">{{item.enter_count}}</text>
+            <text class="col-page-num">{{item.stay_samples}}</text>
+            <text class="col-page-stay">{{item.avgStayText}}</text>
+            <text class="col-page-stay">{{item.totalStayText}}</text>
+          </view>
+        </view>
+      </block>
+      <van-empty wx:if="{{!behaviorLoading && behaviorEmpty}}" description="暂无用户行为统计" />
+    </view>
+
+
+
+    <!-- 热门消费品类 -->
+    <view class="section chart-section">
+      <view class="chart-wrap chart-wrap-pie" wx:if="{{chartAvailable && echarts}}">
+        <ec-canvas id="category-chart" canvas-id="category" echarts="{{ echarts }}" ec="{{ ecCategory }}"></ec-canvas>
+      </view>
+      <view class="chart-fallback" wx:else>
+        <text>消费品类（按成交额）</text>
+        <text wx:for="{{report.category || []}}" wx:key="name">{{item.name}}：¥{{item.value}}</text>
+      </view>
+    </view>
+
+
+
+    <!-- 经营明细切换 -->
+    <view class="section">
+      <view class="section-title">经营明细</view>
+      <van-tabs active="{{ detailType }}" bind:change="onDetailTabChange">
+        <van-tab title="商户" name="merchant" />
+        <van-tab title="景点" name="scenic" />
+        <van-tab title="酒店" name="hotel" />
+      </van-tabs>
+      
+      <!-- 商户明细 -->
+      <view wx:if="{{detailType === 'merchant' && report && report.merchants && report.merchants.length > 0}}">
+        <view class="chart-section" wx:if="{{chartAvailable && echarts}}">
+          <view class="chart-wrap">
+            <ec-canvas id="merchant-chart" canvas-id="merchant" echarts="{{ echarts }}" ec="{{ ecMerchant }}"></ec-canvas>
+          </view>
+        </view>
+        <view class="chart-fallback" wx:else>
+          <text>商户经营图暂不可用（echarts 未加载）</text>
+        </view>
+        <view class="table-head">
+          <text class="col-name">商户</text>
+          <text class="col-num">订单量</text>
+          <text class="col-amount">成交额</text>
+          <text class="col-rate">好评率</text>
+        </view>
+        <view class="table-row" wx:for="{{report.merchants}}" wx:key="id">
+          <text class="col-name">{{item.nickname || '商户'}}</text>
+          <text class="col-num">{{item.order_count}}</text>
+          <text class="col-amount">¥{{item.total_amount}}</text>
+          <text class="col-rate">{{item.good_review_rate != null ? item.good_review_rate + '%' : '-'}}</text>
+        </view>
+      </view>
+      <van-empty wx:if="{{detailType === 'merchant' && (!report || !report.merchants || report.merchants.length === 0)}}" description="暂无商户明细" />
+      
+      <!-- 景点明细 -->
+      <view wx:if="{{detailType === 'scenic' && report && report.scenic && report.scenic.length > 0}}">
+        <view class="chart-section" wx:if="{{chartAvailable && echarts}}">
+          <view class="chart-wrap">
+            <ec-canvas id="scenic-chart" canvas-id="scenic" echarts="{{ echarts }}" ec="{{ ecScenic }}"></ec-canvas>
+          </view>
+        </view>
+        <view class="chart-fallback" wx:else>
+          <text>门票经营图暂不可用（echarts 未加载）</text>
+        </view>
+        <view class="table-head">
+          <text class="col-name">景点</text>
+          <text class="col-date">日期</text>
+          <text class="col-num">订单量</text>
+          <text class="col-amount">成交额</text>
+        </view>
+        <view class="table-row" wx:for="{{report.scenic}}" wx:key="{{item.scenic_id}}-{{item.date}}">
+          <text class="col-name">{{item.scenic_name}}</text>
+          <text class="col-date">{{item.date}}</text>
+          <text class="col-num">{{item.order_count}}</text>
+          <text class="col-amount">¥{{item.total_amount}}</text>
+        </view>
+      </view>
+      <van-empty wx:if="{{detailType === 'scenic' && (!report || !report.scenic || report.scenic.length === 0)}}" description="暂无景点明细" />
+      
+      <!-- 酒店明细 -->
+      <view wx:if="{{detailType === 'hotel' && report && report.hotel && report.hotel.length > 0}}">
+        <view class="chart-section" wx:if="{{chartAvailable && echarts}}">
+          <view class="chart-wrap">
+            <ec-canvas id="hotel-chart" canvas-id="hotel" echarts="{{ echarts }}" ec="{{ ecHotel }}"></ec-canvas>
+          </view>
+        </view>
+        <view class="chart-fallback" wx:else>
+          <text>酒店经营图暂不可用（echarts 未加载）</text>
+        </view>
+        <view class="table-head">
+          <text class="col-name">酒店</text>
+          <text class="col-date">日期</text>
+          <text class="col-num">订单量</text>
+          <text class="col-amount">成交额</text>
+        </view>
+        <view class="table-row" wx:for="{{report.hotel}}" wx:key="{{item.hotel_id}}-{{item.date}}">
+          <text class="col-name">{{item.hotel_name}}</text>
+          <text class="col-date">{{item.date}}</text>
+          <text class="col-num">{{item.order_count}}</text>
+          <text class="col-amount">¥{{item.total_amount}}</text>
+        </view>
+      </view>
+      <van-empty wx:if="{{detailType === 'hotel' && (!report || !report.hotel || report.hotel.length === 0)}}" description="暂无酒店明细" />
+    </view>
+  </block>
+
+  <van-empty wx:if="{{!loading && !report}}" description="暂无报表数据" />
+</view>

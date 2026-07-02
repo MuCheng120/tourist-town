@@ -1,0 +1,497 @@
+.order-detail-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 40rpx;
+}
+
+.order-detail-container.with-bottom-bar {
+  padding-bottom: calc(140rpx + env(safe-area-inset-bottom));
+}
+
+.detail-bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20rpx;
+  padding: 20rpx 32rpx;
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+  background: #fff;
+  box-shadow: 0 -4rpx 24rpx rgba(0, 0, 0, 0.06);
+}
+
+/* 管理端只读：无底部操作条，减少留白 */
+.order-detail-container--admin {
+  padding-bottom: 40rpx;
+}
+
+/* 状态卡片 */
+.status-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60rpx 40rpx;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.status-icon {
+  margin-right: 30rpx;
+}
+
+.status-text {
+  flex: 1;
+}
+
+.status-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.status-desc {
+  display: block;
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+/* 卡片样式 */
+.card {
+  background: #fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.card-title text {
+  margin-left: 10rpx;
+}
+
+/* 景点卡片 */
+.spot-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.spot-header {
+  display: flex;
+  padding: 30rpx;
+}
+
+.spot-cover {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 12rpx;
+  margin-right: 20rpx;
+}
+
+.spot-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.spot-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.spot-meta {
+  font-size: 26rpx;
+  color: #999;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+/* 订单信息 */
+.order-info-card .info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.order-info-card .info-row:last-child {
+  border-bottom: none;
+}
+
+.info-row .label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.info-row .value {
+  font-size: 28rpx;
+  color: #333;
+  text-align: right;
+}
+
+.info-row .value.order-no {
+  font-family: monospace;
+  color: #666;
+}
+
+.info-row .value.price {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ee0a24;
+}
+
+/* 收货信息 */
+.address-card .address-content .value {
+  text-align: left;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+/* 核销码卡片 */
+.verify-card {
+  text-align: center;
+}
+
+.verify-code-box {
+  margin: 30rpx 0;
+}
+
+.verify-code {
+  display: block;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #07c160;
+  font-family: monospace;
+  letter-spacing: 4rpx;
+  margin-bottom: 10rpx;
+}
+
+.verify-code-actions {
+  margin-bottom: 12rpx;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 12rpx 24rpx;
+  background: #07c160;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 32rpx;
+}
+
+.verify-tip {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.qr-code {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.qrcode-canvas {
+  width: 400rpx;
+  height: 400rpx;
+  background: #fff;
+  border-radius: 12rpx;
+}
+
+.admin-refund-card .admin-tip {
+  font-size: 24rpx;
+  color: #ff976a;
+  margin-bottom: 16rpx;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.admin-btn {
+  flex: 1;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  color: #fff;
+}
+
+.admin-approve {
+  background: #07c160;
+}
+
+.admin-reject {
+  background: #ee0a24;
+}
+
+.admin-hotel-complete-card .admin-hotel-complete-tip {
+  font-size: 26rpx;
+  color: #646566;
+  line-height: 1.5;
+  margin-bottom: 20rpx;
+}
+
+.admin-complete-hotel {
+  width: 100%;
+  background: #07c160;
+}
+
+.aftersale-card .aftersale-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16rpx;
+}
+
+.aftersale-tip {
+  flex: 1;
+  font-size: 26rpx;
+  color: #646566;
+  line-height: 1.4;
+}
+
+.refund-evidence-card .evidence-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.evidence-image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+
+.refund-popup-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24rpx;
+}
+
+.refund-popup {
+  width: 100%;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+}
+
+.refund-popup-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16rpx;
+}
+
+.refund-reason-input {
+  width: 100%;
+  min-height: 160rpx;
+  border: 1rpx solid #eee;
+  border-radius: 10rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.refund-evidence-title {
+  margin-top: 16rpx;
+  margin-bottom: 12rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.upload-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.upload-add,
+.upload-item {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+
+.upload-add {
+  border: 1rpx dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.upload-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.upload-remove {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: #ee0a24;
+  color: #fff;
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refund-popup-actions {
+  margin-top: 24rpx;
+  display: flex;
+  gap: 16rpx;
+}
+
+.refund-btn {
+  flex: 1;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+}
+
+.refund-btn.cancel {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.refund-btn.submit {
+  background: #ee0a24;
+  color: #fff;
+}
+
+/* 物流 */
+.logistics-card .logistics-loading {
+  font-size: 28rpx;
+  color: #969799;
+  padding: 24rpx 0;
+}
+
+.logistics-summary .logistics-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.logistics-summary .logistics-row:last-child {
+  border-bottom: none;
+}
+
+.tracking-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  text-align: right;
+  flex: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.tracking-no {
+  font-family: monospace;
+  font-size: 26rpx;
+  color: #333;
+  word-break: break-all;
+}
+
+.copy-link {
+  flex-shrink: 0;
+  font-size: 26rpx;
+  color: #1989fa;
+}
+
+.logistics-empty-hint {
+  font-size: 26rpx;
+  color: #969799;
+  padding: 20rpx 0 8rpx;
+  line-height: 1.5;
+}
+
+.logistics-timeline {
+  margin-top: 24rpx;
+  padding-left: 8rpx;
+}
+
+.logistics-timeline .trace-item {
+  position: relative;
+  padding-left: 36rpx;
+  padding-bottom: 32rpx;
+}
+
+.logistics-timeline .trace-item:last-child {
+  padding-bottom: 0;
+}
+
+.logistics-timeline .trace-dot {
+  position: absolute;
+  left: 0;
+  top: 10rpx;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background: #1989fa;
+  border: 4rpx solid #e8f3ff;
+}
+
+.logistics-timeline .trace-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 7rpx;
+  top: 28rpx;
+  bottom: -8rpx;
+  width: 2rpx;
+  background: #ebedf0;
+}
+
+.trace-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6rpx;
+}
+
+.trace-time {
+  font-size: 24rpx;
+  color: #969799;
+}
+
+.trace-location {
+  font-size: 26rpx;
+  color: #646566;
+}
+
+.trace-context {
+  font-size: 28rpx;
+  color: #323233;
+  line-height: 1.45;
+}

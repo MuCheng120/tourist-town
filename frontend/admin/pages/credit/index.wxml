@@ -1,0 +1,181 @@
+<!--管理端信用管理页面-->
+<view class="credit-page">
+  <!-- 标签切换 -->
+  <view class="tabs">
+    <view 
+      class="tab {{activeTab === 'list' ? 'active' : ''}}" 
+      data-tab="list"
+      bindtap="switchTab"
+    >
+      商户列表
+    </view>
+    <view 
+      class="tab {{activeTab === 'statistics' ? 'active' : ''}}" 
+      data-tab="statistics"
+      bindtap="switchTab"
+    >
+      统计报表
+    </view>
+  </view>
+
+  <!-- 商户列表 -->
+  <view wx:if="{{activeTab === 'list'}}" class="list-content">
+    <!-- 筛选栏 -->
+    <view class="filter-bar">
+      <picker 
+        mode="selector" 
+        range="{{levelOptions}}" 
+        value="{{filterIndex.level}}"
+        data-field="level"
+        bindchange="onFilterChange"
+      >
+        <view class="filter-item">
+          <text class="filter-label">信用等级</text>
+          <text class="filter-value">{{filters.level || '全部'}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+
+      <picker 
+        mode="selector" 
+        range="{{statusOptionLabels}}" 
+        value="{{filterIndex.status}}"
+        data-field="status"
+        bindchange="onFilterChange"
+      >
+        <view class="filter-item">
+          <text class="filter-label">状态</text>
+          <text class="filter-value">{{filters.status ? statusTextMap[filters.status] : '全部'}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+
+      <picker
+        mode="selector"
+        range="{{violationStatusOptionLabels}}"
+        value="{{filterIndex.violationStatus}}"
+        data-field="violationStatus"
+        bindchange="onFilterChange"
+      >
+        <view class="filter-item">
+          <text class="filter-label">违规状态</text>
+          <text class="filter-value">{{violationStatusOptionLabels[filterIndex.violationStatus]}}</text>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+
+      <view class="batch-update-badge" bindtap="batchUpdate">
+        <text class="batch-update-dot"></text>
+        <text class="batch-update-text">批量更新</text>
+      </view>
+    </view>
+
+    <!-- 商户列表 -->
+    <view class="merchant-list">
+      <view 
+        wx:for="{{merchants}}" 
+        wx:key="merchant_id" 
+        class="merchant-item"
+      >
+        <view class="merchant-header" bindtap="goToDetail" data-id="{{item.merchant_id}}">
+          <image class="avatar" wx:if="{{item.merchant.avatar}}" src="{{item.merchant.avatar}}"></image>
+          <view class="avatar avatar-placeholder" wx:else><van-icon name="user-circle-o" size="24" color="#c8c9cc" /></view>
+          <view class="merchant-info">
+            <view class="merchant-name">{{item.merchant.nickname}}</view>
+            <view class="merchant-phone">{{item.merchant.phone}}</view>
+          </view>
+          <view class="level-badge" style="background: {{item.levelColor}}">
+            {{item.credit_level}}级
+          </view>
+        </view>
+
+        <view class="merchant-stats">
+          <view class="stat-item">
+            <text class="label">信用分</text>
+            <text class="value">{{item.credit_score}}</text>
+          </view>
+          <view class="stat-item">
+            <text class="label">订单完成率</text>
+            <text class="value">{{item.order_completion_rate}}%</text>
+          </view>
+          <view class="stat-item">
+            <text class="label">状态</text>
+            <text class="value status-{{item.status}}">{{item.statusText}}</text>
+          </view>
+          <view class="stat-item">
+            <text class="label">违规次数</text>
+            <text class="value">{{item.violation_count || 0}}</text>
+          </view>
+          <view class="stat-item" wx:if="{{item.riskTag}}">
+            <text class="label">风险标记</text>
+            <text class="value">{{item.riskTag}}</text>
+          </view>
+        </view>
+
+        <view class="merchant-actions">
+          <button 
+            class="action-btn update-btn" 
+            size="mini"
+            data-id="{{item.merchant_id}}"
+            data-name="{{item.merchant.nickname}}"
+            bindtap="updateCreditLevel"
+          >
+            更新等级
+          </button>
+          <button 
+            class="action-btn violate-btn" 
+            size="mini"
+            data-id="{{item.merchant_id}}"
+            data-name="{{item.merchant.nickname}}"
+            bindtap="recordViolation"
+          >
+            记录违规
+          </button>
+        </view>
+      </view>
+
+      <view wx:if="{{merchants.length === 0 && !loading}}" class="empty">
+        <van-empty description="暂无商户数据" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计报表 -->
+  <view wx:if="{{activeTab === 'statistics'}}" class="statistics-content">
+    <!-- 平均信用分 -->
+    <view class="stat-card">
+      <view class="card-title">平均信用分</view>
+      <view class="score-display">{{statistics.avgScore}}</view>
+    </view>
+
+    <!-- 等级分布 -->
+    <view class="stat-card">
+      <view class="card-title">等级分布</view>
+      <view class="level-distribution">
+        <view wx:for="{{statistics.levelStats}}" wx:key="level" class="level-item">
+          <view class="level-badge" style="background: {{item.levelColor}}">
+            {{item.level}}级
+          </view>
+          <view class="level-count">{{item.count}}户</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 状态分布 -->
+    <view class="stat-card">
+      <view class="card-title">状态分布</view>
+      <view class="status-distribution">
+        <view wx:for="{{statistics.statusStats}}" wx:key="status" class="status-row">
+          <text class="status-label">{{item.statusText}}</text>
+          <view class="progress-bar">
+            <view 
+              class="progress-fill" 
+              style="width: {{item.percent}}%"
+            ></view>
+          </view>
+          <text class="status-count">{{item.count}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

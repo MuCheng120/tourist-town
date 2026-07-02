@@ -1,0 +1,69 @@
+<view class="login-container">
+  <view class="header">
+    <text class="title">{{ isAdminLogin ? '管理员登录' : '欢迎登录' }}</text>
+    <text class="subtitle">旅游小镇小程序</text>
+  </view>
+
+  <van-cell-group>
+    <van-field
+      value="{{ account }}"
+      label="账号"
+      placeholder="请输入用户名或手机号"
+      bind:change="onAccountChange"
+      required
+      clearable
+    />
+
+    <van-field
+      value="{{ password }}"
+      label="密码"
+      placeholder="请输入密码"
+      bind:change="onPasswordChange"
+      required
+      password="{{ !showPassword }}"
+      clearable
+      use-icon-slot
+    >
+      <van-icon slot="icon" name="{{ showPassword ? 'eye-o' : 'closed-eye' }}" bind:click="togglePassword" />
+    </van-field>
+  </van-cell-group>
+
+  <view class="actions">
+    <text class="actions-link" bindtap="toggleAdminLogin">{{ isAdminLogin ? '返回用户登录' : '管理员登录' }}</text>
+    <text class="actions-link" bindtap="goToForgot">忘记密码？</text>
+  </view>
+
+  <view class="button-group">
+    <van-button 
+      type="primary" 
+      block 
+      bind:click="handleLogin"
+      disabled="{{ !canSubmit }}"
+      loading="{{ loading }}"
+    >
+      登录
+    </van-button>
+  </view>
+
+  <view class="footer">
+    <text>还没有账号？</text>
+    <text class="link" bind:tap="goToRegister">立即注册</text>
+  </view>
+
+  <!-- 分割线 -->
+  <view class="divider">
+    <view class="divider-line"></view>
+    <text class="divider-text">其他登录方式</text>
+    <view class="divider-line"></view>
+  </view>
+
+  <!-- 微信登录：微信绿圆底 + 白色图标，更贴近品牌感 -->
+  <view class="wechat-login">
+    <view class="wechat-btn" bind:tap="handleWechatLogin">
+      <view class="wechat-icon-wrap">
+        <van-icon name="chat-o" size="44" color="#fff" class="wechat-icon" />
+      </view>
+      <text>微信登录</text>
+    </view>
+  </view>
+</view>

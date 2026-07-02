@@ -1,0 +1,81 @@
+<!--管理端记录商户违规页面-->
+<view class="violate-page">
+  <view class="merchant-info">
+    <view class="info-label">商户名称</view>
+    <view class="info-value">{{merchantName}}</view>
+  </view>
+
+  <view class="form-section">
+    <view class="form-title">违规信息</view>
+
+    <!-- 违规类型 -->
+    <view class="form-item">
+      <view class="label required">违规类型</view>
+      <picker 
+        mode="selector" 
+        range="{{violationTypes}}" 
+        range-key="label"
+        value="{{typeIndex}}"
+        bindchange="onTypeChange"
+      >
+        <view class="picker-value">
+          <view wx:if="{{typeIndex >= 0}}" class="picker-text">
+            {{violationTypes[typeIndex].label}}
+          </view>
+          <view wx:else class="picker-text placeholder">请选择违规类型</view>
+          <text class="arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <!-- 违规类型说明 -->
+    <view class="type-tips" wx:if="{{typeIndex >= 0}}">
+      <view class="tip-item" wx:if="{{form.violation_type === 'warning'}}">
+        ⚠️ 警告：对商户进行警告提醒，不影响正常经营
+      </view>
+      <view class="tip-item" wx:if="{{form.violation_type === 'limit'}}">
+        📉 限流：降低商户在平台上的曝光度和推荐优先级
+      </view>
+      <view class="tip-item" wx:if="{{form.violation_type === 'suspend'}}">
+        ⏸️ 暂停营业：暂停商户的营业状态，无法接收新订单
+      </view>
+      <view class="tip-item" wx:if="{{form.violation_type === 'revoke'}}">
+        ❌ 注销：永久注销商户资格，无法恢复
+      </view>
+    </view>
+
+    <!-- 违规原因 -->
+    <view class="form-item">
+      <view class="label required">违规原因</view>
+      <textarea 
+        class="textarea" 
+        placeholder="请详细描述违规原因（至少10个字符）" 
+        value="{{form.reason}}"
+        bindinput="onReasonInput"
+        maxlength="500"
+        show-confirm-bar="{{false}}"
+        auto-height
+      ></textarea>
+      <view class="count">{{form.reason.length}}/500</view>
+    </view>
+
+    <!-- 注意事项 -->
+    <view class="notice">
+      <view class="notice-title">⚠️ 注意事项</view>
+      <view class="notice-list">
+        <view class="notice-item">• 违规记录将影响商户的信用等级</view>
+        <view class="notice-item">• 违规原因将展示给商户和管理员</view>
+        <view class="notice-item">• 请确保违规记录真实准确</view>
+        <view class="notice-item">• 违规记录提交后无法删除</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="actions">
+    <button class="btn cancel-btn" bindtap="cancel">取消</button>
+    <button class="btn submit-btn" bindtap="submit" loading="{{loading}}" disabled="{{loading}}">
+      确认记录
+    </button>
+  </view>
+</view>

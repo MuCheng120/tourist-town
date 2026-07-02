@@ -1,0 +1,374 @@
+2026-02-21 00:13:05,176 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 00:13:05,176 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 00:13:05,177 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 00:13:05,190 INFO 52768 [-/127.0.0.1/-/37ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](10ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-20 23:58:05'));
+2026-02-21 01:14:06,214 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 01:14:06,214 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 01:14:06,214 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 01:14:06,226 INFO 52768 [-/127.0.0.1/-/15ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 00:59:06'));
+2026-02-21 02:41:26,954 INFO 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js&cron=0%200%202%20*%20*%20*&type=all] [定时任务] 开始更新所有商户信用等级...
+2026-02-21 02:41:26,954 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js&cron=0%200%202%20*%20*%20*&type=all] 批量更新商户信用等级失败: TypeError: Cannot read properties of undefined (reading 'User')
+    at MerchantCreditService.updateAllMerchantsCreditLevel (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:190:37)
+    at UpdateMerchantLevel.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 02:41:26,955 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js&cron=0%200%202%20*%20*%20*&type=all] [定时任务] 更新商户信用等级失败: TypeError: Cannot read properties of undefined (reading 'User')
+    at MerchantCreditService.updateAllMerchantsCreditLevel (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:190:37)
+    at UpdateMerchantLevel.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 02:41:26,955 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 02:41:26,955 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 02:41:26,955 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 02:41:26,960 INFO 52768 [-/127.0.0.1/-/8ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 02:26:26'));
+2026-02-21 04:09:10,710 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 04:09:10,711 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 04:09:10,711 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 04:09:10,721 INFO 52768 [-/127.0.0.1/-/12ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 03:54:10'));
+2026-02-21 05:06:02,268 INFO 52768 [-/127.0.0.1/-/26ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 04:51:02'));
+2026-02-21 06:30:18,876 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 06:30:18,877 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 06:30:18,877 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 06:30:18,883 INFO 52768 [-/127.0.0.1/-/7ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](2ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 06:15:18'));
+2026-02-21 07:07:01,855 INFO 52768 [-/127.0.0.1/-/15ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 06:52:01'));
+2026-02-21 07:54:51,766 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 07:54:51,773 ERROR 52768 [-/127.0.0.1/-/7ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 07:54:51,774 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 07:54:51,832 INFO 52768 [-/127.0.0.1/-/67ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](6ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 07:39:51'));
+2026-02-21 08:08:02,223 INFO 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js&cron=0%200%208%20*%20*%20*&type=all] [定时任务] 开始检查商户资质到期情况...
+2026-02-21 08:08:02,224 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js&cron=0%200%208%20*%20*%20*&type=all] 检查商户资质到期失败: TypeError: Cannot read properties of undefined (reading 'MerchantExt')
+    at MerchantCreditService.checkLicenseExpiry (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:331:40)
+    at CheckLicenseExpiry.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 08:08:02,224 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js&cron=0%200%208%20*%20*%20*&type=all] [定时任务] 检查商户资质到期失败: TypeError: Cannot read properties of undefined (reading 'MerchantExt')
+    at MerchantCreditService.checkLicenseExpiry (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:331:40)
+    at CheckLicenseExpiry.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 08:08:02,231 INFO 52768 [-/127.0.0.1/-/9ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 07:53:02'));
+2026-02-21 08:26:05,831 INFO 52768 [-/127.0.0.1/-/4ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 08:11:05'));
+2026-02-21 08:43:21,304 INFO 52768 [-/127.0.0.1/-/8ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 08:28:21'));
+2026-02-21 09:09:02,072 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 09:09:02,073 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 09:09:02,073 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 09:09:02,083 INFO 52768 [-/127.0.0.1/-/11ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 08:54:02'));
+2026-02-21 10:10:02,429 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 10:10:02,431 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 10:10:02,433 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 10:10:02,447 INFO 52768 [-/127.0.0.1/-/21ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 09:55:02'));
+2026-02-21 11:11:02,207 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 11:11:02,208 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 11:11:02,208 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 11:11:02,214 INFO 52768 [-/127.0.0.1/-/7ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 10:56:02'));
+2026-02-21 12:12:02,097 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 12:12:02,098 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 12:12:02,098 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 12:12:02,107 INFO 52768 [-/127.0.0.1/-/10ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](2ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 11:57:02'));
+2026-02-21 13:07:13,955 INFO 52768 [-/127.0.0.1/-/17ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](5ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 12:52:13'));
+2026-02-21 13:13:01,720 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 13:13:01,721 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 13:13:01,722 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 13:13:01,735 INFO 52768 [-/127.0.0.1/-/17ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](5ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 12:58:01'));
+2026-02-21 14:14:01,667 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 14:14:01,667 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 14:14:01,668 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 14:14:01,678 INFO 52768 [-/127.0.0.1/-/32ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](6ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 13:59:01'));
+2026-02-21 15:15:02,454 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 15:15:02,455 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 15:15:02,455 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 15:15:02,460 INFO 52768 [-/127.0.0.1/-/6ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 15:00:02'));
+2026-02-21 16:16:01,795 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 16:16:01,796 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 16:16:01,796 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 16:16:01,809 INFO 52768 [-/127.0.0.1/-/15ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](7ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 16:01:01'));
+2026-02-21 16:39:05,697 INFO 52768 [-/127.0.0.1/-/40ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](24ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 16:24:05'));
+2026-02-21 17:17:01,563 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 17:17:01,564 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 17:17:01,565 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 17:17:01,596 INFO 52768 [-/127.0.0.1/-/34ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 17:02:01'));
+2026-02-21 18:08:09,604 INFO 52768 [-/127.0.0.1/-/57ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](19ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 17:53:09'));
+2026-02-21 18:08:09,605 INFO 52768 [-/127.0.0.1/-/57ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js&interval=1d&type=all&immediate=false] [egg-sequelize](20ms) Executed (default): DELETE FROM `user_behavior_logs` WHERE `created_at` < '2025-11-23 18:08:09'
+2026-02-21 18:08:09,605 INFO 52768 [-/127.0.0.1/-/57ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_old_logs.js&interval=1d&type=all&immediate=false] [schedule.cleanOldLogs] 清理旧日志定时任务执行完成，删除了 0 条90天前的行为日志
+2026-02-21 18:18:01,543 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 18:18:01,544 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 18:18:01,546 ERROR 52768 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 18:18:01,576 INFO 52768 [-/127.0.0.1/-/34ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 18:03:01'));
+2026-02-21 19:19:01,528 INFO 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 19:19:01,530 ERROR 52768 [-/127.0.0.1/-/3ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 19:19:01,535 ERROR 52768 [-/127.0.0.1/-/5ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 19:19:01,595 INFO 52768 [-/127.0.0.1/-/70ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 19:04:01'));
+2026-02-21 20:20:01,498 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 20:20:01,499 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 20:20:01,499 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 20:20:01,591 INFO 52768 [-/127.0.0.1/-/94ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](3ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 20:05:01'));
+2026-02-21 21:21:01,497 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 21:21:01,506 ERROR 52768 [-/127.0.0.1/-/9ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 21:21:01,507 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 21:21:01,547 INFO 52768 [-/127.0.0.1/-/52ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](19ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 21:06:01'));
+2026-02-21 22:22:01,457 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 22:22:01,458 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 22:22:01,458 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 22:22:01,485 INFO 52768 [-/127.0.0.1/-/28ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 22:07:01'));
+2026-02-21 22:54:56,534 INFO 52768 [-/127.0.0.1/-/13ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](1ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 22:39:56'));
+2026-02-21 23:23:02,252 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-21 23:23:02,252 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 23:23:02,253 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-21 23:23:02,275 INFO 52768 [-/127.0.0.1/-/24ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/close_timeout_orders.js&interval=1m&type=worker] [egg-sequelize](16ms) Executed (default): SELECT `id`, `order_no`, `user_id`, `merchant_id`, `product_id`, `order_type`, `total_amount`, `discount_amount`, `final_amount`, `status`, `quantity`, `check_in_date`, `check_out_date`, `address_info`, `remark`, `coupon_id`, `paid_at`, `shipped_at`, `completed_at`, `verification_code`, `verified_at`, `refund_reason`, `refund_time`, `refund_reject_reason`, `force_complete_reason`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt`, `deleted_at` FROM `orders` AS `order` WHERE (`order`.`deleted_at` IS NULL AND (`order`.`status` = 'unpaid' AND `order`.`created_at` < '2026-02-21 23:08:02'));
+2026-02-22 00:24:02,156 INFO 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 开始执行订单自动完成定时任务
+2026-02-22 00:24:02,157 ERROR 52768 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-22 00:24:02,157 ERROR 52768 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

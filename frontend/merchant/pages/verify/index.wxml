@@ -1,0 +1,70 @@
+<!-- merchant/pages/verify/index.wxml -->
+<view class="verify-container">
+  <view class="header">
+    <text class="title">扫码核销</text>
+    <text class="subtitle">扫描用户订单核销码</text>
+  </view>
+
+  <view class="scan-area">
+    <view class="scan-icon">
+      <van-icon name="scan" size="80rpx" color="#1989fa" />
+    </view>
+    <text class="scan-tip">点击下方按钮扫描核销码</text>
+  </view>
+
+  <view class="actions">
+    <view class="button-center">
+      <van-button
+        type="primary"
+        size="large"
+        icon="scan"
+        bindtap="scanCode"
+        loading="{{loading}}"
+      >
+        扫描核销码
+      </van-button>
+    </view>
+  </view>
+
+  <!-- 核销结果显示 -->
+  <view wx:if="{{verified}}" class="result-card success">
+    <van-icon name="passed" size="60rpx" color="#07c160" />
+    <text class="result-title">核销成功</text>
+    <view class="result-info">
+      <text class="info-label">商品名称：</text>
+      <text class="info-value">{{verified.productName}}</text>
+    </view>
+    <view class="result-info">
+      <text class="info-label">核销时间：</text>
+      <text class="info-value">{{verified.verifiedAt}}</text>
+    </view>
+    <van-button type="default" size="small" bindtap="reset">继续核销</van-button>
+  </view>
+
+  <!-- 错误提示 -->
+  <view wx:if="{{error}}" class="result-card error">
+    <van-icon name="close" size="60rpx" color="#ee0a24" />
+    <text class="result-title">{{error}}</text>
+    <van-button type="default" size="small" bindtap="reset">重试</van-button>
+  </view>
+
+  <!-- 手动输入 -->
+  <view class="manual-input">
+    <van-divider>或手动输入核销码</van-divider>
+    <van-field
+      value="{{code}}"
+      placeholder="请输入核销码"
+      bind:change="onCodeChange"
+    />
+    <view class="button-center manual-button-wrap">
+      <van-button
+        type="info"
+        size="small"
+        bindtap="manualVerify"
+        disabled="{{!code}}"
+      >
+        确认核销
+      </van-button>
+    </view>
+  </view>
+</view>

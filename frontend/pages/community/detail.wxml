@@ -1,0 +1,226 @@
+<!--pages/community/detail.wxml-->
+<view class="container">
+  <view wx:if="{{post}}">
+    <!-- 攻略头部 -->
+    <view class="post-header">
+      <view class="post-title">{{post.title}}</view>
+      <view class="post-meta">
+        <view class="author-info">
+          <image class="author-avatar" src="{{post.user.avatar}}" mode="aspectFill" />
+          <text class="author-name">{{post.user.nickname}}</text>
+        </view>
+        <text class="post-time">{{post.createdAt}}</text>
+      </view>
+    </view>
+
+    <!-- 攻略内容 -->
+    <view class="post-content">
+      <rich-text nodes="{{post.content}}"></rich-text>
+    </view>
+
+    <!-- 攻略图片 -->
+    <view class="post-images" wx:if="{{post.images && post.images.length > 0}}">
+      <image 
+        class="post-image" 
+        wx:for="{{post.images}}" 
+        wx:key="*this" 
+        src="{{item}}" 
+        mode="widthFix"
+        bindtap="previewImage"
+        data-url="{{item}}"
+      />
+    </view>
+
+    <!-- 点赞、收藏和统计 -->
+    <view class="post-stats">
+      <view class="stat-item" bindtap="toggleLike">
+        <van-icon name="{{post.isLiked ? 'good-job' : 'good-job-o'}}" color="{{post.isLiked ? '#ee0a24' : '#999'}}" />
+        <text class="stat-text">{{post.likes_count || 0}}</text>
+      </view>
+      <view class="stat-item" wx:if="{{!isOwnPost}}" bindtap="toggleFavorite">
+        <van-icon name="{{isFavorited ? 'star' : 'star-o'}}" color="{{isFavorited ? '#ff976a' : '#999'}}" />
+        <text class="stat-text">{{isFavorited ? '已收藏' : '收藏'}}</text>
+      </view>
+      <view class="stat-item">
+        <van-icon name="comment-o" />
+        <text class="stat-text">{{post.comments_count || 0}}</text>
+      </view>
+    </view>
+
+    <!-- 评论区（管理端只读查看时隐藏） -->
+    <view class="comments-section" wx:if="{{!readonly}}">
+      <view class="section-title">评论 ({{post.comments_count || 0}})</view>
+
+      <!-- 评论列表（二级标题显示） -->
+      <view class="comments-list">
+        <!-- 一级评论 -->
+        <view class="comment-item" wx:for="{{comments}}" wx:key="id" wx:if="{{item.depth === 0}}">
+          <image class="comment-avatar" src="{{item.user.avatar}}" mode="aspectFill" />
+          <view class="comment-content">
+            <view class="comment-header">
+              <text class="comment-author">{{item.user.nickname}}</text>
+              <view class="comment-like" bindtap="likeComment" data-id="{{item.id}}">
+                <van-icon name="{{item.isLiked ? 'good-job' : 'good-job-o'}}" size="14" />
+                <text class="like-count">{{item.likes_count || 0}}</text>
+              </view>
+            </view>
+            <view class="comment-text-wrap" wx:if="{{item.isOwn}}" bindtap="toggleCommentMenu" data-id="{{item.id}}">
+              <text class="comment-text">{{item.content}}</text>
+            </view>
+            <view class="comment-text-wrap" wx:else bindtap="replyComment" data-id="{{item.id}}">
+              <text class="comment-text">{{item.content}}</text>
+            </view>
+            <view class="comment-footer">
+              <text class="comment-time">{{item.createdAt}}</text>
+            </view>
+            
+            <!-- 二级评论（默认收起） -->
+            <view class="sub-comments" wx:if="{{item.replies && item.replies.length > 0}}">
+              <!-- 二级评论展开/折叠按钮 -->
+              <view class="comment-expand-btn" bindtap="toggleCommentExpand" data-id="{{item.id}}">
+                <text>{{expandedComments[item.id] ? '收起回复' : '展开回复'}}</text>
+              </view>
+              
+              <!-- 显示所有二级评论（仅当展开时） -->
+              <view wx:if="{{expandedComments[item.id]}}">
+                <view class="sub-comment-item" wx:for="{{item.replies}}" wx:key="id" wx:for-item="subItem">
+                  <image class="sub-comment-avatar" src="{{subItem.user.avatar}}" mode="aspectFill" />
+                  <view class="sub-comment-content">
+                    <view class="sub-comment-header">
+                      <text class="sub-comment-author">{{subItem.user.nickname}}</text>
+                      <view class="sub-comment-actions">
+                        <view class="comment-like" bindtap="likeComment" data-id="{{subItem.id}}">
+                          <van-icon name="{{subItem.isLiked ? 'good-job' : 'good-job-o'}}" size="12" />
+                          <text class="like-count">{{subItem.likes_count || 0}}</text>
+                        </view>
+                      </view>
+                    </view>
+                    <view wx:if="{{subItem.isOwn}}" bindtap="toggleCommentMenu" data-id="{{subItem.id}}">
+                      <text class="sub-comment-text">{{subItem.content}}</text>
+                    </view>
+                    <view wx:else bindtap="replyComment" data-id="{{subItem.id}}">
+                      <text class="sub-comment-text">{{subItem.content}}</text>
+                    </view>
+                    <view class="sub-comment-footer">
+                      <text class="comment-time">{{subItem.createdAt}}</text>
+                    </view>
+                    
+                    <!-- 三级及以上评论（作为二级评论的回复显示，无缩进） -->
+                    <view wx:if="{{subItem.replies && subItem.replies.length > 0}}">
+                      <view class="sub-comment-item" wx:for="{{subItem.replies}}" wx:key="id" wx:for-item="subSubItem">
+                        <image class="sub-comment-avatar" src="{{subSubItem.user.avatar}}" mode="aspectFill" />
+                        <view class="sub-comment-content">
+                          <view class="sub-comment-header">
+                            <text class="sub-comment-author">{{subSubItem.user.nickname}}</text>
+                            <view class="sub-comment-actions">
+                              <view class="comment-like" bindtap="likeComment" data-id="{{subSubItem.id}}">
+                                <van-icon name="{{subSubItem.isLiked ? 'good-job' : 'good-job-o'}}" size="12" />
+                                <text class="like-count">{{subSubItem.likes_count || 0}}</text>
+                              </view>
+                            </view>
+                          </view>
+                          <view wx:if="{{subSubItem.isOwn}}" bindtap="toggleCommentMenu" data-id="{{subSubItem.id}}">
+                            <text class="sub-comment-text">{{subSubItem.content}}</text>
+                          </view>
+                          <view wx:else bindtap="replyComment" data-id="{{subSubItem.id}}">
+                            <text class="sub-comment-text">{{subSubItem.content}}</text>
+                          </view>
+                          <view class="sub-comment-footer">
+                            <text class="comment-time">{{subSubItem.createdAt}}</text>
+                          </view>
+                          
+                          <!-- 递归显示四级及以上评论 -->
+                          <view wx:if="{{subSubItem.replies && subSubItem.replies.length > 0}}">
+                            <view class="sub-comment-item" wx:for="{{subSubItem.replies}}" wx:key="id" wx:for-item="subSubSubItem">
+                              <image class="sub-comment-avatar" src="{{subSubSubItem.user.avatar}}" mode="aspectFill" />
+                              <view class="sub-comment-content">
+                                <view class="sub-comment-header">
+                                  <text class="sub-comment-author">{{subSubSubItem.user.nickname}}</text>
+                                  <view class="sub-comment-actions">
+                                    <view class="comment-like" bindtap="likeComment" data-id="{{subSubSubItem.id}}">
+                                      <van-icon name="{{subSubSubItem.isLiked ? 'good-job' : 'good-job-o'}}" size="12" />
+                                      <text class="like-count">{{subSubSubItem.likes_count || 0}}</text>
+                                    </view>
+                                  </view>
+                                </view>
+                                <view wx:if="{{subSubSubItem.isOwn}}" bindtap="toggleCommentMenu" data-id="{{subSubSubItem.id}}">
+                                  <text class="sub-comment-text">{{subSubSubItem.content}}</text>
+                                </view>
+                                <view wx:else bindtap="replyComment" data-id="{{subSubSubItem.id}}">
+                                  <text class="sub-comment-text">{{subSubSubItem.content}}</text>
+                                </view>
+                                <view class="sub-comment-footer">
+                                  <text class="comment-time">{{subSubSubItem.createdAt}}</text>
+                                </view>
+                                
+                                <!-- 继续递归显示更多级别的评论 -->
+                                <view wx:if="{{subSubSubItem.replies && subSubSubItem.replies.length > 0}}">
+                                  <view class="sub-comment-item" wx:for="{{subSubSubItem.replies}}" wx:key="id" wx:for-item="deepComment">
+                                    <image class="sub-comment-avatar" src="{{deepComment.user.avatar}}" mode="aspectFill" />
+                                    <view class="sub-comment-content">
+                                      <view class="sub-comment-header">
+                                        <text class="sub-comment-author">{{deepComment.user.nickname}}</text>
+                                        <view class="sub-comment-actions">
+                                          <view class="comment-like" bindtap="likeComment" data-id="{{deepComment.id}}">
+                                            <van-icon name="{{deepComment.isLiked ? 'good-job' : 'good-job-o'}}" size="12" />
+                                            <text class="like-count">{{deepComment.likes_count || 0}}</text>
+                                          </view>
+                                        </view>
+                                      </view>
+                                      <view wx:if="{{deepComment.isOwn}}" bindtap="toggleCommentMenu" data-id="{{deepComment.id}}">
+                                        <text class="sub-comment-text">{{deepComment.content}}</text>
+                                      </view>
+                                      <view wx:else bindtap="replyComment" data-id="{{deepComment.id}}">
+                                        <text class="sub-comment-text">{{deepComment.content}}</text>
+                                      </view>
+                                      <view class="sub-comment-footer">
+                                        <text class="comment-time">{{deepComment.createdAt}}</text>
+                                      </view>
+                                    </view>
+                                  </view>
+                                </view>
+                              </view>
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 空状态 -->
+      <van-empty wx:if="{{!loading && comments.length === 0}}" description="暂无评论" image="comment" />
+      
+      <!-- 加载更多 -->
+      <view class="loading-more" wx:if="{{loadingComments}}">
+        <van-loading size="20px">加载更多评论...</van-loading>
+      </view>
+      
+      <!-- 没有更多 -->
+      <view class="no-more" wx:if="{{!loadingComments && !hasMoreComments && comments.length > 0}}">
+        <text>没有更多评论了</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部评论栏 -->
+  <view class="comment-bar" wx:if="{{!readonly}}">
+    <van-field 
+      value="{{commentText}}" 
+      placeholder="说点什么..." 
+      bind:change="onCommentInput"
+    />
+    <van-button 
+      class="comment-submit-btn"
+      size="small" 
+      type="primary"
+      disabled="{{!commentCanSubmit}}"
+      bindtap="submitComment"
+    >发送评论</van-button>
+  </view>
+</view>

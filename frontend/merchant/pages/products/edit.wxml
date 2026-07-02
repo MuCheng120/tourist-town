@@ -1,0 +1,113 @@
+<view class="edit-page">
+  <view class="form-section">
+    <view class="section-title">商品类型</view>
+    <picker mode="selector" range="{{typeOptions}}" range-key="label" value="{{typeIndex}}" bindchange="onTypeChange">
+      <view class="picker-row">
+        <text class="label">类型</text>
+        <text class="value">{{typeOptions[typeIndex].label}}</text>
+        <text class="arrow">></text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">基本信息</view>
+    <view class="form-item">
+      <view class="label required">商品名称</view>
+      <input class="input" placeholder="请输入商品名称" value="{{form.name}}" data-field="name" bindinput="onInput" />
+    </view>
+    <view class="form-item">
+      <view class="label required">封面图</view>
+      <view class="cover-wrap">
+        <image wx:if="{{displayCover}}" class="cover-img" src="{{displayCover}}" mode="aspectFill" />
+        <view wx:else class="cover-placeholder" bindtap="chooseCover">
+          <text class="icon">+</text>
+          <text class="text">上传封面</text>
+        </view>
+        <button wx:if="{{form.cover_image}}" class="change-btn" size="mini" bindtap="chooseCover">更换</button>
+      </view>
+    </view>
+    <view class="form-item">
+      <view class="label">规格</view>
+      <input class="input" placeholder="如：500g/盒、2人套餐" value="{{form.spec}}" data-field="spec" bindinput="onInput" />
+    </view>
+    <view class="form-item">
+      <view class="label">价格（元）</view>
+      <input class="input" type="digit" placeholder="请输入价格" value="{{form.price}}" data-field="price" bindinput="onInput" />
+    </view>
+    <view class="form-item">
+      <view class="label">原价（元，选填）</view>
+      <input class="input" type="digit" placeholder="选填" value="{{form.original_price}}" data-field="original_price" bindinput="onInput" />
+    </view>
+    <view class="form-item" wx:if="{{form.product_type === 'souvenir'}}">
+      <view class="label">库存</view>
+      <input class="input" type="number" placeholder="0" value="{{form.stock}}" data-field="stock" bindinput="onInput" />
+    </view>
+    <view class="form-item">
+      <view class="label">商品描述</view>
+      <textarea class="textarea" placeholder="请输入商品描述" value="{{form.description}}" data-field="description" bindinput="onInput" />
+    </view>
+    <view class="form-item">
+      <view class="label">上架状态</view>
+      <picker mode="selector" range="{{['上架','下架']}}" value="{{form.status === 1 ? 0 : 1}}" bindchange="onStatusChange">
+        <view class="picker-row">
+          <text class="value">{{form.status === 1 ? '上架' : '下架'}}</text>
+          <text class="arrow">></text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 特产：发货设置（美食到店直接付款，无发货、无核销） -->
+  <view class="form-section" wx:if="{{form.product_type === 'souvenir'}}">
+    <view class="section-title">发货设置</view>
+    <view class="form-item">
+      <view class="label">发货方式（可多选，游客下单时可任选其一）</view>
+      <checkbox-group class="delivery-row" bindchange="onDeliveryChange">
+        <label class="delivery-radio">
+          <checkbox value="express" checked="{{deliveryExpress}}" /> 快递发货
+        </label>
+        <label class="delivery-radio">
+          <checkbox value="self_pickup" checked="{{deliverySelfPickup}}" /> 到店自提
+        </label>
+      </checkbox-group>
+    </view>
+    <view class="form-item">
+      <view class="label">发货时间</view>
+      <input
+        class="input"
+        placeholder="如：付款后 48 小时内发货"
+        value="{{form.ship_time_desc}}"
+        data-field="ship_time_desc"
+        bindinput="onInput"
+      />
+    </view>
+  </view>
+
+  <!-- 美食：使用条件 -->
+  <view class="form-section" wx:if="{{form.product_type === 'food'}}">
+    <view class="section-title">使用条件（美食）</view>
+    <view class="form-item">
+      <view class="label">使用说明</view>
+      <textarea class="textarea" placeholder="如：仅堂食、可打包、节假日通用等" value="{{form.usage_conditions}}" data-field="usage_conditions" bindinput="onInput" />
+    </view>
+  </view>
+
+  <!-- 特产：分类 -->
+  <view class="form-section" wx:if="{{form.product_type === 'souvenir'}}">
+    <view class="section-title">特产分类</view>
+    <picker mode="selector" range="{{categoryOptions}}" range-key="label" value="{{categoryIndex}}" bindchange="onCategoryChange">
+      <view class="picker-row">
+        <text class="label">分类</text>
+        <text class="value">{{form.category || '请选择'}}</text>
+        <text class="arrow">></text>
+      </view>
+    </picker>
+  </view>
+
+  <view class="submit-wrap">
+    <van-button type="primary" block loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">
+      {{isEdit ? '保存' : '发布'}}
+    </van-button>
+  </view>
+</view>

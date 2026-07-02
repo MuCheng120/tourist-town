@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择入住日期",
+  "usingComponents": {
+    "hotel-range-calendar": "/components/hotel-range-calendar/hotel-range-calendar"
+  }
+}

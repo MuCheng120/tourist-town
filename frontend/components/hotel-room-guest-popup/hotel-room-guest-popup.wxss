@@ -1,0 +1,63 @@
+.room-guest-popup {
+  padding: 32rpx 24rpx calc(32rpx + env(safe-area-inset-bottom));
+}
+
+.room-guest-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 16rpx;
+}
+
+.room-guest-tip {
+  font-size: 24rpx;
+  color: #969799;
+  margin-bottom: 32rpx;
+  padding: 0 8rpx;
+}
+
+.room-guest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.room-guest-row text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.room-guest-hint {
+  font-size: 22rpx;
+  color: #969799;
+  margin-left: 12rpx;
+}
+
+.room-guest-child-tip {
+  font-size: 24rpx;
+  color: #07c160;
+  margin-top: 12rpx;
+  padding: 0 0 16rpx;
+}
+
+.room-guest-child-ages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  padding: 12rpx 0 0;
+}
+
+.child-age-tag {
+  font-size: 24rpx;
+  color: #666;
+  background: #f5f5f5;
+  padding: 8rpx 16rpx;
+  border-radius: 8rpx;
+}
+
+.room-guest-footer {
+  margin-top: 32rpx;
+}

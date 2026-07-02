@@ -1,0 +1,80 @@
+<view class="container">
+  <view class="filter-bar">
+    <picker mode="selector" range="{{statusOptions}}" range-key="label" value="{{statusIndex}}" bindchange="onStatusPickerChange">
+      <view class="filter-item">账号状态：{{statusOptions[statusIndex].label}}</view>
+    </picker>
+  </view>
+
+  <view class="merchant-list">
+    <view class="merchant-card" wx:for="{{list}}" wx:key="id">
+      <view class="card-header">
+        <image class="avatar" wx:if="{{item.avatar}}" src="{{item.avatar}}" mode="aspectFill" />
+        <view class="avatar placeholder" wx:else><van-icon name="shop-o" size="28" color="#c8c9cc" /></view>
+        <view class="head-info">
+          <text class="name">{{item.business_name || item.nickname || item.username || '未设置'}}</text>
+          <text class="contact" wx:if="{{item.displayContact}}">{{item.displayContact}}</text>
+        </view>
+        <view class="tags">
+          <van-tag type="{{item.status === 'active' ? 'success' : (item.status === 'banned' ? 'danger' : 'default')}}">账号：{{item.accountStatusText}}</van-tag>
+          <van-tag plain type="primary">店铺：{{item.shopStatusText}}</van-tag>
+        </view>
+      </view>
+      <view class="card-body">
+        <view class="row">
+          <text class="label">信用等级</text>
+          <text class="value">{{item.credit_level || '-'}}</text>
+        </view>
+        <view class="row">
+          <text class="label">信用分</text>
+          <text class="value">{{item.credit_score != null ? item.credit_score : '-'}}</text>
+        </view>
+        <view class="row">
+          <text class="label">订单完成率</text>
+          <text class="value">{{item.orderCompletionRate}}{{item.orderCompletionRate === '-' ? '' : '%'}}</text>
+        </view>
+        <view class="row">
+          <text class="label">违规次数</text>
+          <text class="value">{{item.violation_count || 0}}</text>
+        </view>
+        <view class="row">
+          <text class="label">入驻时间</text>
+          <text class="value">{{item.created_at}}</text>
+        </view>
+      </view>
+      <view class="card-actions">
+        <van-button size="small" type="primary" plain bindtap="goDetail" data-id="{{item.id}}">查看完整信息</van-button>
+      </view>
+      <view class="card-actions" wx:if="{{item.status !== 'cancelled'}}">
+        <van-button size="small" plain type="warning" bindtap="showWarn" data-id="{{item.id}}" data-name="{{item.business_name || item.nickname}}">警告</van-button>
+        <van-button size="small" plain type="warning" bindtap="showSuspend" data-id="{{item.id}}" data-name="{{item.business_name || item.nickname}}">暂停营业</van-button>
+        <van-button size="small" plain type="danger" bindtap="showRevoke" data-id="{{item.id}}" data-name="{{item.business_name || item.nickname}}">注销账号</van-button>
+      </view>
+    </view>
+
+    <van-empty wx:if="{{list.length === 0 && !loading}}" description="暂无商户" />
+    <view class="loading-wrap" wx:if="{{loading}}">
+      <van-loading size="24px">加载中...</van-loading>
+    </view>
+    <view class="no-more" wx:if="{{!hasMore && list.length > 0}}">没有更多了</view>
+  </view>
+
+  <!-- 警告/暂停营业 原因弹窗：点击遮罩空白处关闭，弹窗内容不拦截输入 -->
+  <view class="modal-mask" wx:if="{{actionModal.show}}" catchtouchmove="preventMove" bindtap="onActionMaskTap">
+    <view class="modal-box">
+      <view class="modal-title">{{actionModal.action === 'warning' ? '记录警告' : '暂停营业'}}</view>
+      <view class="modal-desc">商户：{{actionModal.merchantName}}</view>
+      <van-field
+        value="{{ violationReason }}"
+        placeholder="请填写原因（必填）"
+        type="textarea"
+        autosize
+        border
+        bind:change="onReasonInput"
+      />
+      <view class="modal-btns">
+        <van-button size="small" bindtap="closeActionModal">取消</van-button>
+        <van-button size="small" type="primary" bindtap="confirmAction">确认</van-button>
+      </view>
+    </view>
+  </view>
+</view>

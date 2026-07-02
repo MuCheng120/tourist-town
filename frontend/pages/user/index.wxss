@@ -1,0 +1,196 @@
+/* pages/user/index.wxss */
+/* 底部留白 ≥ 自定义 tabBar 高度，避免内容被遮挡、滚动到底时“卡住” */
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding-bottom: 180rpx;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  overflow-x: hidden;
+}
+
+/* 用户信息卡片：固定最小高度，避免有背景图时高度塌陷 */
+.user-card {
+  position: relative;
+  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+  padding: 60rpx 40rpx 40rpx;
+  margin-bottom: 12rpx;
+  overflow: hidden;
+  min-height: 260rpx;
+  box-sizing: border-box;
+}
+
+/* 用户设置的背景图（个人资料里修改后会同步显示在此） */
+.user-card-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  display: block;
+}
+
+.user-card--has-bg .user-info {
+  position: relative;
+  z-index: 1;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  margin-right: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+.user-avatar image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-nickname {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #fff;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.user-role {
+  display: inline-block;
+}
+
+/* 登录卡片 */
+.login-card {
+  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+  padding: 80rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+/* 未登录：灰色头像图标，白底圆框，可点击跳转登录 */
+.default-avatar-wrap {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 4rpx solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 24rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.default-avatar-icon {
+  color: #999 !important;
+}
+
+.login-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 40rpx;
+  padding: 16rpx 60rpx;
+  font-size: 28rpx;
+}
+
+.login-btn::after {
+  border: none;
+}
+
+/* 订单区域 */
+.order-section {
+  background: #fff;
+  margin: 12rpx 20rpx;
+  padding: 30rpx 20rpx;
+  border-radius: 16rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-more {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.order-stats {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12rpx;
+}
+
+.stat-text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 菜单区域：不设 overflow:hidden，避免裁切列表项导致“显示不全” */
+.menu-section {
+  margin: 12rpx 20rpx;
+  border-radius: 16rpx;
+}
+
+/* 退出登录 */
+.logout-section {
+  margin: 40rpx 20rpx;
+}
+
+.logout-btn {
+  background: #fff;
+  color: #ee0a24;
+  border: none;
+  border-radius: 16rpx;
+  padding: 28rpx;
+  font-size: 30rpx;
+}
+
+.logout-btn::after {
+  border: none;
+}
+
+.cancel-account-cell .van-cell__title {
+  color: #ee0a24;
+}
+
+/* 避免 van-cell 右侧箭头被裁切，给列表留出安全距离 */
+.menu-section .van-cell-group,
+.menu-section .van-cell {
+  box-sizing: border-box;
+}

@@ -1,0 +1,10 @@
+<!--components/offline-bar/offline-bar.wxml-->
+<view class="offline-bar" wx:if="{{visible}}">
+  <view class="offline-icon">
+    <text class="iconfont">⚠️</text>
+  </view>
+  <view class="offline-text">{{text}}</view>
+  <view class="offline-close" bindtap="hide">
+    <text>✕</text>
+  </view>
+</view>

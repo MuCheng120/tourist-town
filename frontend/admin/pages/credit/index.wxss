@@ -1,0 +1,347 @@
+/* 管理端信用管理页面样式 */
+.credit-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* 标签切换 */
+.tabs {
+  display: flex;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 30rpx 0;
+  font-size: 28rpx;
+  color: #666;
+  position: relative;
+}
+
+.tab.active {
+  color: #667eea;
+  font-weight: bold;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60rpx;
+  height: 4rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2rpx;
+}
+
+/* 列表内容 */
+.list-content {
+  padding: 20rpx;
+}
+
+/* 筛选栏 */
+.filter-bar {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+  align-items: center;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  padding: 12rpx 18rpx;
+  background: #f7f8fc;
+  border: 1rpx solid #e8ebf5;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.filter-label {
+  color: #8a8f9c;
+  margin-right: 10rpx;
+}
+
+.filter-value {
+  color: #2f3440;
+  font-weight: 600;
+}
+
+.filter-item .arrow {
+  margin-left: 8rpx;
+  font-size: 18rpx;
+  color: #a0a6b4;
+}
+
+.batch-update-badge {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+  padding: 12rpx 20rpx;
+  border-radius: 999rpx;
+  border: 1rpx solid #667eea;
+  background: #f3f5ff;
+}
+
+.batch-update-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #667eea;
+}
+
+.batch-update-text {
+  font-size: 24rpx;
+  color: #5b6dde;
+  font-weight: 600;
+}
+
+/* 商户列表 */
+.merchant-list {
+  padding-bottom: 20rpx;
+}
+
+.merchant-item {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.merchant-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.avatar-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+}
+
+.merchant-info {
+  flex: 1;
+}
+
+.merchant-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.merchant-phone {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.level-badge {
+  padding: 8rpx 20rpx;
+  border-radius: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+/* 商户统计 */
+.merchant-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 0;
+  border-top: 1rpx solid #f0f0f0;
+  border-bottom: 1rpx solid #f0f0f0;
+  margin-bottom: 20rpx;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item .label {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 8rpx;
+}
+
+.stat-item .value {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-item .value.status-normal {
+  color: #52c41a;
+}
+
+.stat-item .value.status-warning {
+  color: #faad14;
+}
+
+.stat-item .value.status-limited {
+  color: #ff4d4f;
+}
+
+.stat-item .value.status-suspended {
+  color: #d9d9d9;
+}
+
+/* 商户操作 */
+.merchant-actions {
+  display: flex;
+  gap: 16rpx;
+}
+
+.action-btn {
+  flex: 1;
+  border: none;
+  font-size: 26rpx;
+}
+
+.update-btn {
+  background: #1890ff;
+  color: #fff;
+}
+
+.violate-btn {
+  background: #ff4d4f;
+  color: #fff;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx 0;
+}
+
+.empty-icon {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+  opacity: 0.3;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 统计报表 */
+.statistics-content {
+  padding: 20rpx;
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24rpx;
+}
+
+.score-display {
+  text-align: center;
+  font-size: 80rpx;
+  font-weight: bold;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 等级分布 */
+.level-distribution {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20rpx;
+}
+
+.level-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.level-item .level-badge {
+  margin-bottom: 12rpx;
+}
+
+.level-count {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 状态分布 */
+.status-distribution {
+  padding: 20rpx 0;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.status-row:last-child {
+  margin-bottom: 0;
+}
+
+.status-label {
+  width: 150rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 20rpx;
+  background: #f0f0f0;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin: 0 20rpx;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10rpx;
+  transition: width 0.3s;
+}
+
+.status-count {
+  width: 80rpx;
+  text-align: right;
+  font-size: 26rpx;
+  color: #333;
+  font-weight: bold;
+}

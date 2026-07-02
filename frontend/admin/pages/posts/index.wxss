@@ -1,0 +1,90 @@
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.top {
+  background: #fff;
+}
+
+.list {
+  padding: 20rpx;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16rpx;
+  align-items: flex-start;
+}
+
+.title {
+  flex: 1;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.meta {
+  margin-top: 12rpx;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.meta-text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.content {
+  margin-top: 12rpx;
+}
+
+.desc {
+  font-size: 26rpx;
+  color: #555;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.reason {
+  margin-top: 12rpx;
+  padding: 16rpx;
+  background: #fff7f7;
+  border-radius: 12rpx;
+}
+
+.reason-text {
+  font-size: 26rpx;
+  color: #ee0a24;
+}
+
+.actions {
+  margin-top: 18rpx;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16rpx;
+}
+
+.loading {
+  padding: 30rpx 0;
+  display: flex;
+  justify-content: center;
+}
+

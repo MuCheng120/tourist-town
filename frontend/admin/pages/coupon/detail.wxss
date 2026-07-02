@@ -1,0 +1,40 @@
+.page {
+  padding: 20rpx;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14rpx;
+  font-size: 26rpx;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.label {
+  color: #666;
+}
+
+.value {
+  color: #333;
+  text-align: right;
+  max-width: 460rpx;
+  word-break: break-all;
+}
+
+.loading,
+.empty {
+  margin-top: 120rpx;
+  text-align: center;
+  color: #999;
+}
+/* admin/pages/coupon/detail.wxss */

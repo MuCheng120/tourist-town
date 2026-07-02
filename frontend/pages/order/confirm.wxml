@@ -1,0 +1,102 @@
+<view class="container" wx:if="{{items.length > 0}}">
+  <!-- 商品清单 -->
+  <view class="section">
+    <view class="section-title">商品清单</view>
+    <view class="order-item" wx:for="{{items}}" wx:key="id">
+      <image class="item-cover" src="{{item.product.cover_image || (item.product.images && item.product.images[0])}}" mode="aspectFill" />
+      <view class="item-info">
+        <text class="item-name">{{item.product.name}}</text>
+        <view class="item-row">
+          <text class="item-price">¥{{item.product.price}}</text>
+          <text class="item-qty">x{{item.quantity}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 收货方式（特产订单必显，可选快递/自提） -->
+  <view class="section" wx:if="{{showDeliverySection}}">
+    <view class="section-title">收货方式</view>
+    <radio-group bindchange="onDeliveryChange">
+      <label class="delivery-option" wx:if="{{supportsExpress}}">
+        <radio value="express" checked="{{selectedDelivery === 'express'}}" /> 快递发货
+      </label>
+      <label class="delivery-option" wx:if="{{supportsSelfPickup}}">
+        <radio value="self_pickup" checked="{{selectedDelivery === 'self_pickup'}}" /> 到店自提
+      </label>
+    </radio-group>
+  </view>
+
+  <!-- 多件合并：无法用券 -->
+  <view class="section" wx:if="{{items.length > 1}}">
+    <view class="section-title">优惠券</view>
+    <view class="coupon-hint muted">多件商品合并结算时暂不可使用优惠券，请分单结算以使用优惠券。</view>
+  </view>
+
+  <!-- 单件店铺商品：可用券 -->
+  <view class="section" wx:if="{{showCouponBlock}}">
+    <view class="section-title">优惠券</view>
+    <view class="coupon-hint">每单限用 1 张；<text class="emph">平台券与店铺券二选一</text>，不可叠加。</view>
+    <view class="coupon-row" bindtap="onRemoveCoupon" wx:if="{{selectedCouponId}}">
+      <text class="coupon-text">已选优惠券，点击取消</text>
+      <van-icon name="arrow" />
+    </view>
+    <view class="coupon-list" wx:else>
+      <view
+        class="coupon-item"
+        wx:for="{{availableCoupons}}"
+        wx:key="id"
+        bindtap="onSelectCoupon"
+        data-id="{{item.id}}"
+      >
+        <view class="coupon-value">¥{{item.value}}</view>
+        <view class="coupon-tag">{{item.type === 'platform' ? '平台券' : '店铺券'}}</view>
+        <view class="coupon-desc">满{{item.min_spend}}可用</view>
+        <view class="coupon-title">{{item.title}}</view>
+      </view>
+      <view class="coupon-empty" wx:if="{{availableCoupons.length === 0}}">暂无可用优惠券</view>
+    </view>
+  </view>
+
+  <!-- 收货地址（特产且选快递时需要） -->
+  <view class="section" wx:if="{{needAddress}}" bindtap="toAddressList">
+    <view class="section-title">收货地址</view>
+    <view class="address-block" wx:if="{{selectedAddress}}">
+      <view class="address-name">{{selectedAddress.user_name || selectedAddress.userName}}</view>
+      <view class="address-phone">{{selectedAddress.tel_number || selectedAddress.telNumber}}</view>
+      <view class="address-detail">{{selectedAddress.province_name || selectedAddress.provinceName}}{{selectedAddress.city_name || selectedAddress.cityName}}{{selectedAddress.county_name || selectedAddress.countyName}}{{selectedAddress.detail_info || selectedAddress.detailInfo}}</view>
+    </view>
+    <view class="address-placeholder" wx:else>
+      <text>请选择收货地址</text>
+      <van-icon name="arrow" />
+    </view>
+  </view>
+
+  <!-- 合计 -->
+  <view class="section total">
+    <view class="row">
+      <text class="label">商品总额</text>
+      <text class="value">¥{{totalAmount}}</text>
+    </view>
+    <view class="row" wx:if="{{discountAmount > 0}}">
+      <text class="label">优惠券</text>
+      <text class="value discount">-¥{{discountAmount}}</text>
+    </view>
+    <view class="row final">
+      <text class="label">实付</text>
+      <text class="value final-amount">¥{{payTotal}}</text>
+    </view>
+  </view>
+
+  <view class="footer">
+    <view class="final-summary">实付 ¥{{payTotal}}</view>
+    <button class="submit-btn" bindtap="submitOrder" disabled="{{submitting}}">{{submitting ? '支付中...' : '立即支付'}}</button>
+  </view>
+
+  <pay-password-popup 
+    show="{{ showPayPopup }}" 
+    amount="{{ payTotal }}" 
+    bind:success="onPaySuccess" 
+    bind:close="onPayClose" 
+  />
+</view>

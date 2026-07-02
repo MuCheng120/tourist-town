@@ -1,0 +1,360 @@
+<!--admin/pages/audit/index.wxml-->
+<view class="container">
+  <!-- 标签切换 -->
+  <van-tabs active="{{activeTab}}" bind:change="switchTab" color="#1989fa">
+    <van-tab title="商户申请" name="merchant"></van-tab>
+    <van-tab title="攻略审核" name="post"></van-tab>
+    <van-tab title="评论审核" name="comment"></van-tab>
+    <van-tab title="商品审核" name="product"></van-tab>
+  </van-tabs>
+  <view class="risk-log-bar" wx:if="{{lastActionError}}">
+    <text class="risk-log-text" bindtap="showLastActionError">查看最近失败记录</text>
+  </view>
+
+  <!-- 商户申请列表 -->
+  <view class="audit-list" wx:if="{{activeTab === 'merchant'}}">
+    <view 
+      class="audit-card" 
+      wx:for="{{merchantList}}" 
+      wx:for-item="m"
+      wx:key="id"
+    >
+      <view class="card-header">
+        <view class="merchant-info">
+          <image class="avatar" src="{{m.avatar}}" mode="aspectFill" />
+          <view class="info">
+            <text class="name">{{m.nickname}}</text>
+            <text class="time">{{m.created_at}}</text>
+          </view>
+        </view>
+        <van-tag type="warning">待审核</van-tag>
+      </view>
+
+      <view class="card-body">
+        <view class="info-row">
+          <text class="label">申请时间：</text>
+          <text class="value">{{m.created_at}}</text>
+        </view>
+        <view class="info-row" wx:if="{{m.business_name}}">
+          <text class="label">商户名称：</text>
+          <text class="value">{{m.business_name}}</text>
+        </view>
+        <view class="info-row" wx:if="{{m.contact}}">
+          <text class="label">联系方式：</text>
+          <text class="value">{{m.contact}}</text>
+        </view>
+        <view class="info-row" wx:if="{{m.license_no}}">
+          <text class="label">营业执照号：</text>
+          <text class="value">{{m.license_no}}</text>
+        </view>
+        <view class="info-row" wx:if="{{m.license_expiry}}">
+          <text class="label">执照有效期：</text>
+          <text class="value">{{m.license_expiry}}</text>
+        </view>
+        <view class="info-row" wx:if="{{m.address}}">
+          <text class="label">经营地址：</text>
+          <text class="value">{{m.address}}</text>
+        </view>
+        <view class="info-row" wx:if="{{m.description}}">
+          <text class="label">店铺简介：</text>
+          <text class="value">{{m.description}}</text>
+        </view>
+        <view class="detail-section" wx:if="{{m.license_images && m.license_images.length > 0}}">
+          <text class="label">营业执照照片（点击预览）：</text>
+          <view class="image-list">
+            <image wx:for="{{m.license_images}}" wx:for-item="img" wx:key="*this" class="thumb" src="{{img}}" mode="aspectFill" bindtap="previewImage" data-urls="{{m.license_images}}" data-current="{{img}}" />
+          </view>
+        </view>
+        <view class="detail-section" wx:if="{{m.idcard_front || m.idcard_back}}">
+          <text class="label">身份证正反面（点击预览）：</text>
+          <view class="idcard-row">
+            <view class="idcard-item" wx:if="{{m.idcard_front}}">
+              <text class="idcard-label">正面</text>
+              <image class="idcard-thumb" src="{{m.idcard_front}}" mode="widthFix" bindtap="previewImage" data-urls="{{[m.idcard_front, m.idcard_back].filter(Boolean)}}" data-current="{{m.idcard_front}}" />
+            </view>
+            <view class="idcard-item" wx:if="{{m.idcard_back}}">
+              <text class="idcard-label">反面</text>
+              <image class="idcard-thumb" src="{{m.idcard_back}}" mode="widthFix" bindtap="previewImage" data-urls="{{[m.idcard_front, m.idcard_back].filter(Boolean)}}" data-current="{{m.idcard_back}}" />
+            </view>
+          </view>
+        </view>
+        <view class="detail-section" wx:if="{{m.qualification_file_list && m.qualification_file_list.length > 0}}">
+          <text class="label">资质文件（点击预览或下载）：</text>
+          <view class="qualification-list">
+            <block wx:for="{{m.qualification_file_list}}" wx:key="url">
+              <image wx:if="{{item.isImage}}" class="thumb" src="{{item.url}}" mode="aspectFill" bindtap="previewQualificationImage" data-urls="{{m.qualification_file_list}}" data-current="{{item.url}}" />
+              <view wx:else class="file-row" bindtap="previewOrDownloadFile" data-url="{{item.url}}">
+                <van-icon name="description" size="18" color="#1989fa" />
+                <text class="file-text">PDF/文件 · 点击预览</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+
+      <view class="card-footer">
+        <button 
+          class="action-btn reject-btn" 
+          size="small" 
+          bindtap="auditMerchant" 
+          data-id="{{m.id}}" 
+          data-pass="false"
+        >
+          拒绝
+        </button>
+        <button 
+          class="action-btn approve-btn" 
+          size="small" 
+          type="primary"
+          bindtap="auditMerchant" 
+          data-id="{{m.id}}" 
+          data-pass="true"
+        >
+          通过
+        </button>
+      </view>
+    </view>
+
+    <van-empty wx:if="{{merchantList.length === 0}}" description="暂无待审核商户" />
+  </view>
+
+  <!-- 拒绝审核意见弹层：仅点击遮罩空白处关闭，输入区域用 van-field 文本域，避免原生 textarea 在弹层里的输入问题 -->
+  <view class="reject-popup-mask" wx:if="{{showRejectPopup}}" catchtouchmove="preventMove" bindtap="onRejectMaskTap">
+    <view class="reject-popup">
+      <view class="reject-popup-title">填写审核意见</view>
+      <van-field
+        class="reject-opinion-input"
+        type="textarea"
+        autosize
+        border="{{false}}"
+        value="{{rejectOpinion}}"
+        placeholder="请填写不通过原因，将展示给申请人"
+        maxlength="500"
+        bind:change="onRejectOpinionChange"
+      />
+      <view class="template-list">
+        <text
+          wx:for="{{rejectTemplates}}"
+          wx:key="*this"
+          class="template-item"
+          data-target="merchant"
+          data-value="{{item}}"
+          bindtap="quickFillRejectTemplate"
+        >{{item}}</text>
+      </view>
+      <view class="reject-popup-actions">
+        <button class="reject-popup-btn cancel" bindtap="closeRejectPopup">取消</button>
+        <button class="reject-popup-btn confirm" bindtap="confirmReject">提交</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 攻略拒绝原因弹层 -->
+  <view class="reject-popup-mask" wx:if="{{showPostRejectPopup}}" catchtouchmove="preventMove" bindtap="closePostRejectPopup">
+    <view class="reject-popup" catchtap="preventMove">
+      <view class="reject-popup-title">填写拒绝原因</view>
+      <van-field
+        class="reject-opinion-input"
+        type="textarea"
+        autosize
+        border="{{false}}"
+        value="{{rejectPostReason}}"
+        placeholder="请填写不通过原因，将展示给发布者"
+        maxlength="500"
+        bind:change="onPostRejectReasonChange"
+      />
+      <view class="template-list">
+        <text
+          wx:for="{{rejectTemplates}}"
+          wx:key="*this"
+          class="template-item"
+          data-target="post"
+          data-value="{{item}}"
+          bindtap="quickFillRejectTemplate"
+        >{{item}}</text>
+      </view>
+      <view class="reject-popup-actions">
+        <button class="reject-popup-btn cancel" bindtap="closePostRejectPopup">取消</button>
+        <button class="reject-popup-btn confirm" bindtap="confirmPostReject">提交</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 攻略审核列表 -->
+  <view class="audit-list" wx:if="{{activeTab === 'post'}}">
+    <view 
+      class="audit-card" 
+      wx:for="{{postList}}" 
+      wx:key="id"
+    >
+      <view class="card-header">
+        <view class="post-info">
+          <text class="title">{{item.title}}</text>
+        </view>
+        <van-tag type="warning">待审核</van-tag>
+      </view>
+
+      <view class="card-body">
+        <view class="info-row">
+          <text class="label">发布者：</text>
+          <text class="value">{{item.user.nickname}}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">发布时间：</text>
+          <text class="value">{{item.created_at}}</text>
+        </view>
+        <view class="content-preview">
+          <text class="label">内容摘要：</text>
+          <text class="value">{{item.content}}</text>
+        </view>
+      </view>
+
+      <view class="card-footer">
+        <button 
+          class="action-btn detail-btn" 
+          size="small" 
+          bindtap="viewPostDetail" 
+          data-id="{{item.id}}"
+        >
+          查看详情
+        </button>
+        <button 
+          class="action-btn reject-btn" 
+          size="small" 
+          bindtap="auditPost" 
+          data-id="{{item.id}}" 
+          data-pass="false"
+        >
+          拒绝
+        </button>
+        <button 
+          class="action-btn approve-btn" 
+          size="small" 
+          type="primary"
+          bindtap="auditPost" 
+          data-id="{{item.id}}" 
+          data-pass="true"
+        >
+          通过
+        </button>
+      </view>
+    </view>
+
+    <van-empty wx:if="{{postList.length === 0}}" description="暂无待审核攻略" />
+  </view>
+
+  <!-- 评论审核列表 -->
+  <view class="audit-list" wx:if="{{activeTab === 'comment'}}">
+    <view 
+      class="audit-card" 
+      wx:for="{{commentList}}" 
+      wx:key="id"
+    >
+      <view class="card-header">
+        <view class="comment-info">
+          <image class="avatar" src="{{item.user.avatar}}" mode="aspectFill" />
+          <view class="info">
+            <text class="name">{{item.user.nickname}}</text>
+            <text class="time">{{item.created_at}}</text>
+          </view>
+        </view>
+        <van-tag type="warning">待审核</van-tag>
+      </view>
+
+      <view class="card-body">
+        <view class="content-preview">
+          <text class="label">评论内容：</text>
+          <text class="value">{{item.content}}</text>
+        </view>
+        <view class="info-row" wx:if="{{item.parent}}">
+          <text class="label">回复对象：</text>
+          <text class="value">{{item.parent.user.nickname}}</text>
+        </view>
+      </view>
+
+      <view class="card-footer">
+        <button 
+          class="action-btn reject-btn" 
+          size="small" 
+          bindtap="auditComment" 
+          data-id="{{item.id}}" 
+          data-pass="false"
+        >
+          拒绝
+        </button>
+        <button 
+          class="action-btn approve-btn" 
+          size="small" 
+          type="primary"
+          bindtap="auditComment" 
+          data-id="{{item.id}}" 
+          data-pass="true"
+        >
+          通过
+        </button>
+      </view>
+    </view>
+
+    <van-empty wx:if="{{commentList.length === 0}}" description="暂无待审核评论" />
+  </view>
+
+  <view class="audit-list" wx:if="{{activeTab === 'product'}}">
+    <view class="audit-card" wx:for="{{productList}}" wx:key="id">
+      <view class="card-header">
+        <view class="post-info">
+          <text class="title">{{item.name}}</text>
+        </view>
+        <van-tag type="warning">待审核</van-tag>
+      </view>
+      <view class="card-body">
+        <view class="info-row">
+          <text class="label">商户：</text>
+          <text class="value">{{(item.merchant && item.merchant.nickname) || '-'}}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">价格：</text>
+          <text class="value">¥{{item.price}}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">创建时间：</text>
+          <text class="value">{{item.created_at}}</text>
+        </view>
+      </view>
+      <view class="card-footer">
+        <button class="action-btn reject-btn" size="small" bindtap="auditProduct" data-id="{{item.id}}" data-pass="false">拒绝</button>
+        <button class="action-btn approve-btn" size="small" type="primary" bindtap="auditProduct" data-id="{{item.id}}" data-pass="true">通过</button>
+      </view>
+    </view>
+    <van-empty wx:if="{{productList.length === 0}}" description="暂无待审核商品" />
+  </view>
+
+  <view class="reject-popup-mask" wx:if="{{showProductRejectPopup}}" catchtouchmove="preventMove" bindtap="closeProductRejectPopup">
+    <view class="reject-popup" catchtap="preventMove">
+      <view class="reject-popup-title">填写商品拒绝原因</view>
+      <van-field
+        class="reject-opinion-input"
+        type="textarea"
+        autosize
+        border="{{false}}"
+        value="{{rejectProductReason}}"
+        placeholder="请填写不通过原因，将展示给商户"
+        maxlength="500"
+        bind:change="onProductRejectReasonChange"
+      />
+      <view class="template-list">
+        <text
+          wx:for="{{rejectTemplates}}"
+          wx:key="*this"
+          class="template-item"
+          data-target="product"
+          data-value="{{item}}"
+          bindtap="quickFillRejectTemplate"
+        >{{item}}</text>
+      </view>
+      <view class="reject-popup-actions">
+        <button class="reject-popup-btn cancel" bindtap="closeProductRejectPopup">取消</button>
+        <button class="reject-popup-btn confirm" bindtap="confirmProductReject">提交</button>
+      </view>
+    </view>
+  </view>
+</view>

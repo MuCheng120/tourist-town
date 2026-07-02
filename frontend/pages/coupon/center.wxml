@@ -1,0 +1,52 @@
+<!--领券中心：平台券与店铺券，可在此领取-->
+<view class="center-container">
+  <view class="header-tip">
+    <text>登录后领取的优惠券可在「我的优惠券」及下单时使用</text>
+    <button class="link-btn" bindtap="goMyCoupons">我的优惠券</button>
+  </view>
+
+  <view class="center-tabs">
+    <view class="tab-item {{activeTab === 'platform' ? 'active' : ''}}" data-tab="platform" bindtap="onTabChange">平台券</view>
+    <view class="tab-item {{activeTab === 'shop' ? 'active' : ''}}" data-tab="shop" bindtap="onTabChange">店铺券</view>
+  </view>
+
+  <view class="coupon-list" wx:if="{{list.length > 0}}">
+    <view class="coupon-item" wx:for="{{list}}" wx:key="id">
+      <view class="coupon-main">
+        <view class="coupon-left">
+          <view class="amount">
+            <text class="currency">¥</text>
+            <text class="value">{{item.value}}</text>
+          </view>
+          <view class="condition" wx:if="{{item.min_spend > 0}}">满{{item.min_spend}}可用</view>
+          <view class="condition" wx:else>无门槛</view>
+        </view>
+        <view class="coupon-right">
+          <view class="title">{{item.title}}</view>
+          <view class="meta shop-name" wx:if="{{item.merchant_name}}">{{item.merchant_name}}</view>
+          <view class="meta">有效期至 {{item.expiry_date_display || item.expiry_date}}</view>
+          <view class="meta">已领 {{item.received_count}}/{{item.total_count}}</view>
+        </view>
+      </view>
+      <view class="coupon-footer">
+        <button
+          class="receive-btn {{item.received ? 'received' : ''}}"
+          disabled="{{item.received}}"
+          loading="{{receivingId === item.id}}"
+          bindtap="onReceive"
+          data-id="{{item.id}}"
+        >
+          {{item.received ? '已领取' : '立即领取'}}
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty-state" wx:if="{{list.length === 0 && !loading}}">
+    <van-empty description="暂无可领取的优惠券" />
+  </view>
+
+  <view class="loading-state" wx:if="{{loading}}">
+    <van-loading type="spinner" />
+  </view>
+</view>

@@ -1,0 +1,88 @@
+<!--用户端 - 我的优惠券-->
+<view class="coupon-container">
+  <!-- 标签栏 -->
+  <view class="tabs">
+    <view 
+      class="tab-item {{activeTab === index ? 'active' : ''}}" 
+      wx:for="{{tabs}}" 
+      wx:key="index"
+      bindtap="onTabChange"
+      data-index="{{index}}"
+    >
+      {{item}}
+    </view>
+  </view>
+
+  <!-- 优惠券列表 -->
+  <view class="coupon-list">
+    <view class="coupon-item" wx:for="{{couponList}}" wx:key="id">
+      <!-- 优惠券主体（列表项变量为 item，券信息在 item.coupon） -->
+      <view class="coupon-main">
+        <!-- 左侧金额 -->
+        <view class="coupon-left">
+          <view class="amount">
+            <text class="currency">¥</text>
+            <text class="value">{{item.coupon.value != null ? item.coupon.value : '0'}}</text>
+          </view>
+          <view class="condition" wx:if="{{item.coupon.min_spend > 0}}">
+            满{{item.coupon.min_spend}}可用
+          </view>
+          <view class="condition" wx:else>
+            无门槛
+          </view>
+        </view>
+
+        <!-- 右侧信息 -->
+        <view class="coupon-right">
+          <view class="title">{{item.coupon.title || '优惠券'}}</view>
+          <view class="type-tag">
+            {{item.coupon.type === 'platform' ? '平台券' : '店铺券'}}
+          </view>
+          <view class="expire-date">
+            有效期至 {{item.coupon.expiry_date_display || item.coupon.expiry_date || '—'}}
+          </view>
+        </view>
+      </view>
+
+      <!-- 使用状态 -->
+      <view class="coupon-footer">
+        <block wx:if="{{activeTab === 0}}">
+          <!-- 可使用状态 -->
+          <button 
+            class="use-btn" 
+            bindtap="goUse"
+            data-coupon="{{item}}"
+          >
+            立即使用
+          </button>
+          <text class="detail-link" bindtap="viewDetail" data-coupon="{{item}}">详情</text>
+        </block>
+
+        <block wx:if="{{activeTab === 1}}">
+          <!-- 已使用状态 -->
+          <view class="used-tag">已使用</view>
+          <text class="detail-link" bindtap="viewDetail" data-coupon="{{item}}">详情</text>
+        </block>
+
+        <block wx:if="{{activeTab === 2}}">
+          <!-- 已过期状态 -->
+          <view class="expired-tag">已过期</view>
+          <text class="detail-link" bindtap="viewDetail" data-coupon="{{item}}">详情</text>
+        </block>
+      </view>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{couponList.length === 0 && !loading}}">
+      <van-empty description="暂无{{tabs[activeTab]}}优惠券" />
+      <button class="go-mall-btn" wx:if="{{activeTab === 0}}" bindtap="goMall">
+        去逛逛
+      </button>
+    </view>
+
+    <!-- 加载中 -->
+    <view class="loading-state" wx:if="{{loading}}">
+      <text>加载中...</text>
+    </view>
+  </view>
+</view>

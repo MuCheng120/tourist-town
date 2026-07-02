@@ -1,0 +1,68 @@
+<view class="cart-container">
+  <!-- 顶部导航栏 -->
+  <view class="cart-header">
+    <view class="header-title">购物车</view>
+    <view class="edit-btn" bindtap="toggleEditMode">{{ isEditMode ? '完成' : '管理' }}</view>
+  </view>
+
+  <!-- 购物车列表 -->
+  <view class="cart-list" wx:if="{{ cartList.length > 0 }}">
+    <view class="cart-item" wx:for="{{ cartList }}" wx:key="id">
+      <!-- 选择框 -->
+      <view class="checkbox-container">
+        <van-checkbox value="{{ item.selected }}" bind:change="onSelectItem" data-id="{{ item.id }}" />
+      </view>
+
+      <!-- 商品信息 -->
+      <view class="product-info" bindtap="goToProduct" data-id="{{ item.product.id }}">
+        <image class="product-image" src="{{ item.product.firstImage }}" mode="aspectFill" />
+        
+        <view class="product-detail">
+          <view class="product-name">{{ item.product.name }}</view>
+          <view class="product-merchant">{{ item.product.merchant.nickname }}</view>
+          <view class="product-price-box">
+            <text class="price-symbol">¥</text>
+            <text class="price-value">{{ item.product.price }}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 数量控制 -->
+      <view class="quantity-control">
+        <van-stepper value="{{ item.quantity }}" min="1" max="{{ item.product.product_type === 'food' ? 999 : item.product.stock }}" bind:change="onQuantityChange" data-id="{{ item.id }}" integer disabled="{{ isEditMode }}" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty-cart" wx:else>
+    <van-empty description="购物车空空如也" />
+    <van-button type="danger" size="small" bindtap="goToMall">去逛逛</van-button>
+  </view>
+
+  <!-- 底部结算栏 -->
+  <view class="bottom-bar" wx:if="{{ cartList.length > 0 }}">
+    <view class="select-all">
+      <van-checkbox value="{{ isAllSelected }}" bind:change="onSelectAll">全选</van-checkbox>
+    </view>
+
+    <!-- 编辑模式 -->
+    <view class="edit-actions" wx:if="{{ isEditMode }}">
+      <view class="total-delete-btn" bindtap="batchDelete">
+        <text>删除</text>
+      </view>
+    </view>
+
+    <!-- 普通模式 -->
+    <view class="checkout-actions" wx:else>
+      <view class="total-price-wrap">
+        <text class="total-label">合计</text>
+        <text class="total-amount">¥{{ totalPrice }}</text>
+      </view>
+      <view class="checkout-btn {{ selectedCount === 0 ? 'disabled' : '' }}" bindtap="{{ selectedCount > 0 ? 'checkout' : '' }}">
+        <text>结算</text>
+        <text class="checkout-count" wx:if="{{ selectedCount > 0 }}">({{ selectedCount }})</text>
+      </view>
+    </view>
+  </view>
+</view>

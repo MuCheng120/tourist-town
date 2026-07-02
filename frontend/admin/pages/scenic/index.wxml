@@ -1,0 +1,93 @@
+<view class="scenic-admin-page">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input 
+      class="search-input" 
+      placeholder="搜索景点名称" 
+      value="{{keyword}}"
+      bindinput="onSearch"
+    />
+  </view>
+
+  <!-- 统计信息 -->
+  <view class="stats-bar">
+    <text class="stat-text">共 {{total}} 个景点</text>
+    <button class="btn-add" size="mini" bindtap="goToAdd">+ 新增景点</button>
+  </view>
+
+  <!-- 景点列表 -->
+  <view class="scenic-list">
+    <view class="scenic-item" wx:for="{{scenicSpots}}" wx:key="id">
+      <view class="scenic-cover">
+        <image src="{{item.cover_image}}" mode="aspectFill"></image>
+        <view class="scenic-status {{item.status === 1 ? 'active' : 'inactive'}}">
+          <text>{{item.status === 1 ? '启用' : '禁用'}}</text>
+        </view>
+      </view>
+
+      <view class="scenic-info">
+        <view class="scenic-name-row">
+          <text class="scenic-name">{{item.name}}</text>
+        </view>
+        
+        <view class="scenic-details">
+          <view class="detail-item">
+            <text class="detail-label">票价：</text>
+            <text class="detail-value">¥{{item.price != null ? item.price : (item.ticket_price != null ? item.ticket_price : '0')}}</text>
+          </view>
+          <view class="detail-item">
+            <text class="detail-label">评分：</text>
+            <text class="detail-value">{{item.rating != null ? item.rating : '-'}}</text>
+            <text class="rating-count">({{item.rating_count || 0}}人)</text>
+          </view>
+          <view class="detail-item">
+            <text class="detail-label">开放时间：</text>
+            <text class="detail-value">{{item.open_time || item.opening_hours || '暂无'}}</text>
+          </view>
+        </view>
+
+        <view class="scenic-tags" wx:if="{{item.tags && item.tags.length > 0}}">
+          <text class="tag" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="*this">{{tag}}</text>
+        </view>
+
+        <view class="scenic-meta">
+          <text class="meta-text">创建于 {{item.created_at_text}}</text>
+        </view>
+      </view>
+
+      <view class="scenic-actions">
+        <text class="id-badge action-id-badge">ID: {{item.id}}</text>
+        <button 
+          class="btn-edit" 
+          size="mini" 
+          data-id="{{item.id}}" 
+          bindtap="goToEdit"
+        >编辑</button>
+        <button 
+          class="btn-delete" 
+          size="mini" 
+          data-id="{{item.id}}" 
+          data-name="{{item.name}}"
+          bindtap="deleteSpot"
+        >删除</button>
+      </view>
+    </view>
+
+    <!-- 加载状态 -->
+    <view class="loading-more" wx:if="{{loading}}">
+      <text>加载中...</text>
+    </view>
+
+    <!-- 没有更多数据 -->
+    <view class="no-more" wx:if="{{!hasMore && scenicSpots.length > 0}}">
+      <text>没有更多数据了</text>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{scenicSpots.length === 0 && !loading}}">
+      <van-empty description="暂无景点" />
+      <text>暂无景点数据</text>
+      <button class="btn-create" bindtap="goToAdd">创建第一个景点</button>
+    </view>
+  </view>
+</view>

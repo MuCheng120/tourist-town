@@ -1,0 +1,66 @@
+<!--pages/order/review.wxml 订单评价（按 post_type 区分：餐饮三维、酒店四维、景点/特产单一） -->
+<view class="container" wx:if="{{order && targetType}}">
+  <view class="target-name">评价：{{targetName}}</view>
+  <view class="form-card">
+    <!-- 餐饮商品：味道/环境/服务三维评分 -->
+    <block wx:if="{{isFoodProduct}}">
+      <view class="form-item">
+        <text class="label">味道</text>
+        <van-rate value="{{ tasteScore }}" bind:change="onTasteScoreChange" />
+      </view>
+      <view class="form-item">
+        <text class="label">环境</text>
+        <van-rate value="{{ environmentScore }}" bind:change="onEnvironmentScoreChange" />
+      </view>
+      <view class="form-item">
+        <text class="label">服务</text>
+        <van-rate value="{{ serviceScore }}" bind:change="onServiceScoreChange" />
+      </view>
+    </block>
+    <!-- 酒店：卫生/环境/服务/设施四维评分 -->
+    <block wx:elif="{{targetType === 'hotel'}}">
+      <view class="form-item">
+        <text class="label">卫生</text>
+        <van-rate value="{{ hygieneScore }}" bind:change="onHygieneScoreChange" />
+      </view>
+      <view class="form-item">
+        <text class="label">环境</text>
+        <van-rate value="{{ environmentScore }}" bind:change="onEnvironmentScoreChange" />
+      </view>
+      <view class="form-item">
+        <text class="label">服务</text>
+        <van-rate value="{{ serviceScore }}" bind:change="onServiceScoreChange" />
+      </view>
+      <view class="form-item">
+        <text class="label">设施</text>
+        <van-rate value="{{ facilityScore }}" bind:change="onFacilityScoreChange" />
+      </view>
+    </block>
+    <!-- 景点/特产：单一评分 -->
+    <view class="form-item" wx:else>
+      <text class="label">评分</text>
+      <van-rate value="{{ score }}" bind:change="onScoreChange" />
+    </view>
+    <view class="form-item">
+      <text class="label">评价内容</text>
+      <textarea class="textarea" placeholder="选填，说说您的体验" value="{{ content }}" bindinput="onContentInput" maxlength="500" />
+    </view>
+    <view class="form-item">
+      <text class="label">添加图片（选填，最多9张）</text>
+      <view class="upload-section">
+        <view class="upload-list">
+          <view class="upload-item" wx:for="{{images}}" wx:key="*this">
+            <image class="preview-img" src="{{item}}" mode="aspectFill" />
+            <view class="upload-delete" bindtap="onDeleteImage" data-index="{{index}}">×</view>
+          </view>
+          <view class="upload-add" wx:if="{{images.length < 9}}" bindtap="onChooseImage">
+            <text class="upload-add-text">+</text>
+            <text class="upload-add-hint">添加</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <van-button type="primary" block bind:click="submitReview" loading="{{ submitting }}">提交评价</van-button>
+</view>
+<van-empty wx:elif="{{order && !targetType}}" description="该订单暂不支持评价" />

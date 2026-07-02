@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "hotel-range-calendar": "/components/hotel-range-calendar/hotel-range-calendar",
+    "hotel-room-guest-popup": "/components/hotel-room-guest-popup/hotel-room-guest-popup"
+  }
+}

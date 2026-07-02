@@ -1,0 +1,34 @@
+<!-- 管理员 - 酒店管理：参考前端酒店列表/详情与数据表字段 -->
+<view class="container">
+  <view class="filter-bar">
+    <picker mode="selector" range="{{statusOptions}}" range-key="label" value="{{statusIndex}}" bindchange="onStatusPickerChange">
+      <view class="filter-item">状态：{{statusOptions[statusIndex].label}}</view>
+    </picker>
+  </view>
+
+  <view class="page-header">
+    <text class="page-title">酒店管理</text>
+    <button class="btn-primary" bindtap="goToAddHotel">发布酒店</button>
+  </view>
+
+  <view class="hotel-list">
+    <view class="hotel-card" wx:for="{{hotels}}" wx:key="id">
+      <view class="hotel-left">
+        <view class="hotel-cover-wrap">
+          <image class="hotel-cover" wx:if="{{item.cover_image}}" src="{{item.cover_image}}" mode="aspectFill" />
+          <view class="hotel-cover hotel-cover-placeholder" wx:else><van-icon name="hotel-o" size="40" color="#c8c9cc" /></view>
+          <view class="hotel-status-tag {{item.status === 1 ? 'on' : 'off'}}">{{item.statusText}}</view>
+        </view>
+        <text class="hotel-name-below">{{item.name}}</text>
+      </view>
+      <view class="hotel-actions">
+        <van-button size="small" plain bindtap="goToEditHotel" data-id="{{item.id}}">编辑</van-button>
+        <van-button size="small" type="primary" plain bindtap="goRoomTypes" data-id="{{item.id}}" data-name="{{item.name}}">房型</van-button>
+        <van-button size="small" plain type="danger" bindtap="deleteHotel" data-id="{{item.id}}">删除</van-button>
+      </view>
+    </view>
+
+    <van-empty wx:if="{{hotels.length === 0 && !loading}}" description="暂无酒店，请先发布酒店" />
+  </view>
+  <view class="loading-wrap" wx:if="{{loading}}"><van-loading size="24px">加载中...</van-loading></view>
+</view>

@@ -1,0 +1,103 @@
+<view class="shop-edit-page">
+  <view class="form-section">
+    <view class="section-title">基本信息</view>
+    <van-cell-group>
+      <van-field
+        value="{{form.business_name}}"
+        label="店铺名称"
+        placeholder="请输入店铺名称"
+        data-field="business_name"
+        bind:change="onInput"
+      />
+      <van-field
+        value="{{form.contact}}"
+        label="联系方式"
+        placeholder="电话/微信等，便于游客联系"
+        data-field="contact"
+        bind:change="onInput"
+      />
+      <van-field
+        value="{{form.address}}"
+        label="经营地址"
+        placeholder="选填，便于游客到店；可手动填写或点击下方定位"
+        data-field="address"
+        bind:change="onInput"
+      />
+      <view class="address-actions">
+        <van-button type="default" size="small" icon="location-o" bindtap="chooseLocation">选择位置</van-button>
+        <van-button type="default" size="small" icon="aim" bindtap="getLocationAddress">当前定位</van-button>
+      </view>
+      <van-field
+        value="{{form.business_hours}}"
+        label="营业时间"
+        placeholder="如：周一至周日 09:00-21:00"
+        data-field="business_hours"
+        bind:change="onInput"
+      />
+    </van-cell-group>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">店铺简介</view>
+    <van-field
+      value="{{form.description}}"
+      type="textarea"
+      rows="4"
+      placeholder="介绍店铺环境、特色等，便于游客了解"
+      data-field="description"
+      bind:change="onInput"
+    />
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">店铺图片</view>
+    <view class="images-tip">展示店铺环境、特色等，最多 9 张</view>
+    <view class="images-row">
+      <view wx:for="{{displayImages}}" wx:key="index" class="img-wrap">
+        <image class="thumb" src="{{item}}" mode="aspectFill" />
+        <view class="img-del" catchtap="removeShopImage" data-index="{{index}}">×</view>
+      </view>
+      <view wx:if="{{shopImagesLen < 9}}" class="img-add" bindtap="chooseShopImages">
+        <text class="icon">+</text>
+        <text class="text">上传</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-section">
+    <view class="section-title">营业执照（可修改，到期请及时更新）</view>
+    <van-cell-group>
+      <van-field
+        value="{{form.license_no}}"
+        label="营业执照号"
+        placeholder="选填，统一社会信用代码"
+        data-field="license_no"
+        bind:change="onInput"
+      />
+      <van-field
+        value="{{form.license_expiry}}"
+        label="营业执照到期日"
+        placeholder="选填，如：2025-12-31"
+        data-field="license_expiry"
+        bind:change="onInput"
+      />
+    </van-cell-group>
+    <view class="images-tip">营业执照图片可更新</view>
+    <view class="images-row">
+      <view wx:for="{{displayLicenseImages}}" wx:key="index" class="img-wrap" bindtap="previewLicenseImage" data-index="{{index}}">
+        <image class="thumb" src="{{item}}" mode="aspectFill" />
+        <view class="img-del" catchtap="removeLicenseImage" data-index="{{index}}">×</view>
+      </view>
+      <view wx:if="{{licenseImagesLen < 9}}" class="img-add" bindtap="chooseLicenseImages">
+        <text class="icon">+</text>
+        <text class="text">上传</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="submit-wrap">
+    <van-button type="primary" block loading="{{submitting}}" disabled="{{submitting}}" bindtap="submit">
+      保存
+    </van-button>
+  </view>
+</view>

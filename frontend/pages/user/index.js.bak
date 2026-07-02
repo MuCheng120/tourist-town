@@ -1,0 +1,297 @@
+// pages/user/index.js
+const app = getApp();
+
+Page({
+  data: {
+    userInfo: null,
+  },
+
+  onLoad() {
+    this.loadUserInfo();
+  },
+
+  onShow() {
+    // 设置当前 tabBar 选中状态
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 4
+      });
+    }
+
+    // 页面显示时刷新用户信息
+    this.loadUserInfo();
+  },
+
+  /**
+   * 加载用户信息
+   */
+  async loadUserInfo() {
+    try {
+      const userInfo = await app.request({
+        url: '/api/user/info',
+        method: 'GET',
+        needAuth: true,  // 需要带上 token
+      });
+      this.setData({ userInfo });
+      // 更新全局用户信息
+      app.globalData.userInfo = userInfo;
+      // 同时缓存到本地存储
+      wx.setStorageSync('userInfo', userInfo);
+    } catch (error) {
+      console.error('加载用户信息失败:', error);
+      this.setData({ userInfo: null });
+    }
+  },
+
+  /**
+   * 微信登录
+   */
+  handleLogin() {
+    wx.showLoading({ title: '登录中...' });
+    
+    wx.login({
+      success: async (res) => {
+        if (res.code) {
+          try {
+            // 调用后端登录接口
+            const result = await app.request({
+              url: '/api/user/login',
+              method: 'POST',
+              data: { code: res.code },
+            });
+
+            // 保存 token
+            wx.setStorageSync('token', result.token);
+            app.globalData.token = result.token;
+
+            // 加载用户信息
+            await this.loadUserInfo();
+
+            wx.hideLoading();
+            wx.showToast({
+              title: '登录成功',
+              icon: 'success',
+            });
+          } catch (error) {
+            wx.hideLoading();
+            wx.showToast({
+              title: '登录失败',
+              icon: 'none',
+            });
+            console.error('登录失败:', error);
+          }
+        }
+      },
+      fail: () => {
+        wx.hideLoading();
+        wx.showToast({
+          title: '登录失败',
+          icon: 'none',
+        });
+      },
+    });
+  },
+
+  /**
+   * 测试登录
+   */
+  handleTestLogin(e) {
+    const { openid, role } = e.currentTarget.dataset;
+    
+    wx.showModal({
+      title: '测试登录',
+      content: `确定要以${role === 'consumer' ? '游客' : role === 'merchant' ? '商户' : '管理员'}身份登录吗？`,
+      success: async (res) => {
+        if (res.confirm) {
+          wx.showLoading({ title: '登录中...' });
+
+          try {
+            // 调用测试登录接口
+            const result = await app.request({
+              url: '/api/user/test-login',
+              method: 'POST',
+              data: { openid },
+            });
+
+            // 保存 token
+            wx.setStorageSync('token', result.token);
+            app.globalData.token = result.token;
+
+            // 加载用户信息
+            await this.loadUserInfo();
+
+            wx.hideLoading();
+            wx.showToast({
+              title: '登录成功',
+              icon: 'success',
+            });
+          } catch (error) {
+            wx.hideLoading();
+            wx.showToast({
+              title: error.message || '登录失败',
+              icon: 'none',
+            });
+            console.error('测试登录失败:', error);
+          }
+        }
+      },
+    });
+  },
+
+  /**
+   * 管理员登录
+   */
+  handleAdminLogin() {
+    // 使用输入框让管理员输入用户名和密码
+    wx.showModal({
+      title: '管理员登录',
+      editable: true,
+      placeholderText: '请输入管理员用户名',
+      success: (res) => {
+        if (res.confirm) {
+          const username = res.content;
+          if (!username) {
+            wx.showToast({
+              title: '请输入用户名',
+              icon: 'none',
+            });
+            return;
+          }
+
+          // 第二次输入密码
+          wx.showModal({
+            title: '管理员登录',
+            editable: true,
+            placeholderText: '请输入管理员密码',
+            confirmText: '登录',
+            success: async (passRes) => {
+              if (passRes.confirm) {
+                const password = passRes.content;
+                if (!password) {
+                  wx.showToast({
+                    title: '请输入密码',
+                    icon: 'none',
+                  });
+                  return;
+                }
+
+                wx.showLoading({ title: '登录中...' });
+
+                try {
+                  // 调用管理员登录接口
+                  const result = await app.request({
+                    url: '/api/user/admin-login',
+                    method: 'POST',
+                    data: { username, password },
+                  });
+
+                  // 保存 token
+                  wx.setStorageSync('token', result.token);
+                  app.globalData.token = result.token;
+
+                  // 加载用户信息
+                  await this.loadUserInfo();
+
+                  wx.hideLoading();
+                  wx.showToast({
+                    title: '管理员登录成功',
+                    icon: 'success',
+                  });
+                } catch (error) {
+                  wx.hideLoading();
+                  wx.showToast({
+                    title: error.message || '登录失败',
+                    icon: 'none',
+                  });
+                  console.error('管理员登录失败:', error);
+                }
+              }
+            },
+          });
+        }
+      },
+    });
+  },
+
+  /**
+   * 退出登录
+   */
+  handleLogout() {
+    wx.showModal({
+      title: '提示',
+      content: '确定要退出登录吗？',
+      success: (res) => {
+        if (res.confirm) {
+          // 清除本地存储
+          wx.removeStorageSync('token');
+          app.globalData.token = null;
+          app.globalData.userInfo = null;
+
+          this.setData({ userInfo: null });
+
+          wx.showToast({
+            title: '已退出登录',
+            icon: 'success',
+          });
+        }
+      },
+    });
+  },
+
+  /**
+   * 导航到订单列表
+   */
+  navigateToOrders(e) {
+    const { status } = e.currentTarget.dataset;
+    let url = '/pages/order/list';
+    if (status) {
+      url += `?status=${status}`;
+    }
+    wx.navigateTo({ url });
+  },
+
+  /**
+   * 导航到收货地址
+   */
+  navigateToAddress() {
+    wx.navigateTo({
+      url: '/pages/address/list',
+    });
+  },
+
+  /**
+   * 导航到我的攻略
+   */
+  navigateToMyPosts() {
+    wx.navigateTo({
+      url: '/pages/community/my',
+    });
+  },
+
+  /**
+   * 申请成为商家
+   */
+  applyMerchant() {
+    wx.navigateTo({
+      url: '/pages/merchant-apply/index',
+    });
+  },
+
+  /**
+   * 导航到商家工作台
+   */
+  navigateToMerchant() {
+    wx.navigateTo({
+      url: '/pages/merchant/dashboard/index',
+    });
+  },
+
+  /**
+   * 导航到管理后台
+   */
+  navigateToAdmin() {
+    wx.navigateTo({
+      url: '/pages/admin/dashboard/index',
+    });
+  },
+});

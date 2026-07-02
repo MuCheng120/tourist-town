@@ -1,0 +1,137 @@
+.container {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding-bottom: 24px;
+}
+
+.toolbar {
+  padding: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-btn {
+  border-radius: 8px !important;
+}
+
+.list {
+  padding: 0 12px 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.card-main {
+  display: flex;
+}
+
+.cover {
+  width: 96px;
+  height: 54px;
+  border-radius: 8px;
+  background: #f2f3f5;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+  margin-left: 12px;
+  min-width: 0;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.title-row {
+  margin-top: 0;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #323233;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.45;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.meta {
+  margin-top: 4px;
+}
+
+.meta-text {
+  color: #646566;
+  font-size: 12px;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.sort-row .sort-num {
+  font-weight: 600;
+  color: #323233;
+}
+
+.meta-text.ellipsis {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+.card-actions {
+  margin-top: 10px;
+  border-top: 1px solid #f2f3f5;
+  padding-top: 10px;
+}
+
+.recommend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.recommend-label {
+  font-size: 13px;
+  color: #323233;
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn.ghost {
+  background: #fff;
+  color: #1989fa;
+  border: 1px solid #1989fa;
+}
+
+.btn.danger {
+  background: #fff;
+  color: #ee0a24;
+  border: 1px solid #ee0a24;
+}
+
+.loading {
+  display: block;
+  text-align: center;
+  padding: 24px;
+}

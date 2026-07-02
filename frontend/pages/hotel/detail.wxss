@@ -1,0 +1,835 @@
+/* pages/hotel/detail.wxss - 酒店详情（参考图布局） */
+.container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+.hotel-detail-navbar {
+  --nav-bar-background-color: #fff;
+}
+
+.hotel-nav-title-slot {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  gap: 10px;
+  vertical-align: middle;
+}
+
+.hotel-nav-title-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #323233;
+}
+
+.hotel-nav-fav {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2px;
+  min-width: 38px;
+}
+
+.hotel-nav-fav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 19px;
+}
+
+.hotel-nav-fav-label {
+  font-size: 9px;
+  color: #323233;
+  line-height: 1.2;
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+.hotel-nav-fav--on .hotel-nav-fav-label {
+  color: #ff976a;
+}
+
+/* 顶部图集 */
+.detail-gallery {
+  position: relative;
+  width: 100%;
+  height: 420rpx;
+  min-height: 420rpx;
+  background: #e8e8e8;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.gallery-cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  opacity: 1;
+}
+
+.gallery-cover-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e8e8e8;
+  z-index: 1;
+}
+
+/* 酒店名称 + 类型 */
+.detail-name-bar {
+  background: #fff;
+  padding: 28rpx 24rpx 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.detail-name-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.detail-name {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #333;
+  display: inline-block;
+  line-height: 1.35;
+}
+
+.detail-type-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  padding: 6rpx 14rpx;
+  border-radius: 999rpx;
+  background: #f5f5f5;
+}
+
+.detail-type {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.detail-dots {
+  display: flex;
+  gap: 6rpx;
+}
+
+.detail-dots .dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #ff976a;
+  display: inline-block;
+}
+
+/* 设施横向滚动 */
+.facility-row {
+  background: #fff;
+  display: flex;
+  align-items: stretch;
+}
+
+.facility-scroll {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  white-space: nowrap;
+  padding: 20rpx 0 24rpx;
+}
+
+.facility-list {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding: 0 24rpx;
+  gap: 24rpx;
+}
+
+.facility-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rpx;
+  flex: 0 0 auto;
+  max-width: 200rpx;
+}
+
+.facility-icon {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 50%;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facility-icon-mark {
+  line-height: 1;
+}
+
+.facility-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rpx;
+  width: 100%;
+  min-width: 0;
+}
+
+.facility-text {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.facility-name {
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-all;
+}
+
+.facility-desc {
+  font-size: 20rpx;
+  color: #969799;
+  text-align: center;
+  line-height: 1.35;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.facility-link {
+  flex-direction: row;
+  margin-left: 8rpx;
+}
+
+.facility-link-side {
+  flex-shrink: 0;
+  width: 120rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rpx;
+  background: #fff;
+}
+
+.facility-link-side::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18rpx;
+  bottom: 18rpx;
+  width: 2rpx;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.12) 20%,
+    rgba(0, 0, 0, 0.12) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.facility-text-break {
+  font-size: 24rpx;
+  color: #969799;
+  white-space: pre-line;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* 评分 + 地址 两列 */
+.detail-rating-address {
+  background: #fff;
+  display: flex;
+  padding: 24rpx;
+  gap: 16rpx;
+  margin-top: 2rpx;
+}
+
+.info-card {
+  background: #f5f9ff;
+  border: 1rpx solid #dbeafe;
+  border-radius: 12rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+}
+
+.rating-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.rating-box {
+  display: inline-flex;
+  align-items: baseline;
+  background: #1989fa;
+  color: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 8rpx;
+  align-self: flex-start;
+}
+
+.rating-main-row {
+  display: flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.rating-num {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.rating-label {
+  font-size: 24rpx;
+  color: #1989fa;
+}
+
+.review-count {
+  font-size: 26rpx;
+  color: #333;
+  margin-left: 10rpx;
+}
+
+.review-quote {
+  font-size: 24rpx;
+  font-weight: 600;
+  color: #646566;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+
+.address-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.address-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12rpx;
+}
+
+.address-area,
+.address-detail {
+  flex: 1;
+  min-width: 0;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.4;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8rpx;
+  font-size: 26rpx;
+  color: #1989fa;
+  flex-shrink: 0;
+}
+
+.detail-date-guest {
+  background: #fff;
+  margin-top: 16rpx;
+  padding: 24rpx;
+}
+
+.date-guest-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.dg-card-flex {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 20rpx;
+}
+
+.dg-left-date {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.dg-right-guest {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10rpx;
+}
+
+.dg-row-top--guest {
+  justify-content: flex-end;
+  min-height: 44rpx;
+}
+
+.dg-row-bottom-date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.dg-row-bottom--guest {
+  justify-content: flex-end;
+}
+
+.detail-calendar-popup {
+  overflow: hidden;
+}
+
+.dg-row-top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.dg-grid-labels {
+  display: inline-grid;
+  grid-template-columns: auto 28rpx auto;
+  align-items: end;
+  column-gap: 38rpx;
+  max-width: 100%;
+}
+
+.dg-grid-gap {
+  width: 28rpx;
+}
+
+.dg-label-checkout {
+  text-align: right;
+}
+
+.dg-guest-title {
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.dg-row-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.dg-grid-values {
+  display: inline-grid;
+  grid-template-columns: auto 28rpx auto;
+  align-items: center;
+  column-gap: 8rpx;
+  max-width: 100%;
+}
+
+.dg-date-tap {
+  min-width: 0;
+}
+
+.dg-date-tap:first-child .date-line-main {
+  text-align: left;
+}
+
+.dg-date-tap:last-of-type .date-line-main {
+  text-align: right;
+}
+
+.dg-sep {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.date-label-above {
+  font-size: 22rpx;
+  color: #969799;
+  line-height: 1.2;
+}
+
+.date-line-main {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+}
+
+.date-col-sep {
+  font-size: 26rpx;
+  color: #c8c9cc;
+  line-height: 1.2;
+}
+
+.dg-nights-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.date-nights-between {
+  font-size: 24rpx;
+  color: #333;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.dg-vdivider {
+  width: 2rpx;
+  height: 50rpx;
+  background: #ebedf0;
+  flex-shrink: 0;
+  margin-left: 20rpx;
+}
+
+.dg-guest-values {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20rpx;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.guest-metric {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6rpx;
+}
+
+.guest-metric-num {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  line-height: 1;
+}
+
+/* 房型列表 */
+.room-list {
+  padding: 24rpx;
+  margin-top: 16rpx;
+}
+
+.room-card {
+  background: #fff;
+  border-radius: 16rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: 320rpx;
+  background: #f0f0f0;
+  display: block;
+}
+
+.room-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-info {
+  padding: 24rpx;
+}
+
+.room-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 12rpx;
+}
+
+.room-desc {
+  font-size: 26rpx;
+  color: #999;
+  line-height: 1.5;
+  margin-bottom: 16rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+.room-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rpx;
+  margin-bottom: 20rpx;
+}
+
+.room-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.price-section {
+  display: flex;
+  align-items: baseline;
+}
+
+.room-price {
+  font-size: 40rpx;
+  color: #ee0a24;
+  font-weight: bold;
+}
+
+.price-unit {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 4rpx;
+}
+
+.book-btn {
+  background: linear-gradient(135deg, #07c160 0%, #06ad56 100%);
+  color: #fff;
+  border: none;
+  border-radius: 40rpx;
+  padding: 16rpx 48rpx;
+  font-size: 28rpx;
+}
+
+.book-btn::after {
+  border: none;
+}
+
+.book-btn[disabled] {
+  background: #ccc;
+}
+
+/* 住客点评（房型下） */
+.guest-review-panel {
+  margin: 0 24rpx 24rpx;
+  padding: 24rpx;
+  background: #fff;
+  border-radius: 16rpx;
+  box-sizing: border-box;
+}
+
+.guest-review-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24rpx;
+}
+
+.guest-review-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20rpx;
+}
+
+.guest-review-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 12rpx;
+}
+
+.guest-review-score-main {
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #1989fa;
+  line-height: 1;
+}
+
+.guest-review-score-main--muted {
+  color: #c8c9cc;
+  font-size: 48rpx;
+}
+
+.guest-review-left-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.guest-review-rating-tag {
+  font-size: 24rpx;
+  color: #1989fa;
+  line-height: 1.2;
+}
+
+.guest-review-rating-tag--muted {
+  color: #969799;
+}
+
+.guest-review-count {
+  font-size: 22rpx;
+  color: #646566;
+  line-height: 1.2;
+}
+
+.guest-review-vline {
+  width: 2rpx;
+  align-self: stretch;
+  min-height: 88rpx;
+  background: #ebedf0;
+  flex-shrink: 0;
+}
+
+.guest-review-dims {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8rpx;
+}
+
+.guest-review-dim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.guest-review-dim-score {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #323233;
+  line-height: 1.3;
+}
+
+.guest-review-dim-label {
+  font-size: 20rpx;
+  color: #969799;
+  margin-top: 8rpx;
+  line-height: 1.2;
+}
+
+.guest-review-list {
+  margin-top: 24rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid #ebedf0;
+}
+
+.guest-review-item {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #f2f3f5;
+}
+
+.guest-review-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.guest-review-item-head {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 12rpx;
+}
+
+.guest-review-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #f2f3f5;
+}
+
+.guest-review-avatar--placeholder {
+  background: linear-gradient(135deg, #e8ecf0, #d0d4dc);
+}
+
+.guest-review-item-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rpx;
+}
+
+.guest-review-nickname {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #323233;
+}
+
+.guest-review-item-score {
+  font-size: 22rpx;
+  color: #ff976a;
+}
+
+.guest-review-time {
+  font-size: 22rpx;
+  color: #969799;
+  flex-shrink: 0;
+}
+
+.guest-review-item-content {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #646566;
+  line-height: 1.55;
+  display: block;
+}
+
+.guest-review-no-text {
+  margin-top: 24rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid #ebedf0;
+  font-size: 26rpx;
+  color: #969799;
+  text-align: center;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  padding: 60rpx 0;
+}

@@ -1,0 +1,231 @@
+<!--pages/product/detail.wxml-->
+<view class="page-wrap" wx:if="{{product}}">
+  <scroll-view class="container" scroll-y enhanced show-scrollbar="{{false}}">
+  <!-- 商品图片轮播（无图时用 cover 兜底，避免空白） -->
+  <view class="images-section">
+    <swiper class="images-swiper" indicator-dots="{{(product.images && product.images.length) > 1}}" circular>
+      <swiper-item wx:for="{{product.images}}" wx:key="index">
+        <image class="product-image" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-url="{{item}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 商品信息 -->
+  <view class="product-info">
+    <view class="product-header">
+      <view class="product-title-row">
+        <text class="product-name">{{product.name}}</text>
+        <view class="favorite-inline" bindtap="toggleFavorite">
+          <van-icon name="{{isFavorited ? 'star' : 'star-o'}}" size="18" color="{{isFavorited ? '#ff976a' : '#666'}}" />
+          <text class="favorite-inline-text">{{isFavorited ? '已收藏' : '收藏'}}</text>
+        </view>
+      </view>
+      <view class="product-tags">
+        <van-tag plain type="danger" size="small">包邮</van-tag>
+        <van-tag plain type="primary" size="small" wx:if="{{product.category}}">{{product.category}}</van-tag>
+      </view>
+    </view>
+
+    <view class="product-price-row">
+      <text class="product-price">¥{{product.price}}</text>
+    </view>
+
+    <view class="product-spec-row" wx:if="{{product.spec}}">
+      <text class="spec-label">规格</text>
+      <text class="spec-value">{{product.spec}}</text>
+    </view>
+
+    <view class="product-meta">
+      <view class="meta-item">
+        <text class="meta-label">销量</text>
+        <text class="meta-value">{{product.sales_count || 0}}</text>
+      </view>
+      <view class="meta-item" wx:if="{{product.product_type !== 'food'}}">
+        <text class="meta-label">库存</text>
+        <text class="meta-value">{{product.stock}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 配送与使用信息 -->
+  <view class="product-delivery" wx:if="{{product.delivery_method || product.ship_time_desc}}">
+    <view class="section-title">{{product.product_type === 'food' ? '使用信息' : '配送与使用'}}</view>
+    <view class="delivery-row" wx:if="{{product.delivery_method && product.product_type !== 'food'}}">
+      <text class="delivery-label">发货方式</text>
+      <text class="delivery-value">{{product.deliveryMethodText}}</text>
+    </view>
+    <view class="delivery-row" wx:if="{{product.product_type === 'food'}}">
+      <text class="delivery-label">使用方式</text>
+      <text class="delivery-value">{{product.deliveryMethodText}}</text>
+    </view>
+    <view class="delivery-row" wx:if="{{product.ship_time_desc}}">
+      <text class="delivery-label">发货时间</text>
+      <text class="delivery-value">{{product.ship_time_desc}}</text>
+    </view>
+  </view>
+
+  <!-- 游客评价（店铺信息上方，餐饮与特产统一） -->
+  <view class="tourist-comment-section">
+    <view class="section-title">游客评价</view>
+    <view class="rating-summary" wx:if="{{product.product_type === 'food' || product.product_type === 'souvenir'}}">
+      <text class="rating-summary-score">{{product.overall_rating || '暂无评分'}}</text>
+      <text class="rating-summary-text">综合评分</text>
+      <text class="rating-summary-count">共 {{product.rating_count || 0}} 条评价</text>
+    </view>
+    <view class="comment-list" wx:if="{{comments.length > 0}}">
+      <view class="comment-item" wx:for="{{comments}}" wx:key="id">
+        <view class="comment-header">
+          <image class="comment-avatar" src="{{item.user && item.user.avatar ? item.user.avatar : ''}}" mode="aspectFill" wx:if="{{item.user && item.user.avatar}}" />
+          <view class="comment-avatar placeholder" wx:else>{{item.user && item.user.nickname ? item.user.nickname[0] : '?'}}</view>
+          <view class="comment-user">{{item.user && item.user.nickname ? item.user.nickname : '用户'}}</view>
+          <view class="comment-time">{{item.created_at}}</view>
+        </view>
+        <view class="comment-dimensions" wx:if="{{item.taste_score != null || item.environment_score != null || item.service_score != null}}">
+          <text wx:if="{{item.taste_score != null}}">味道 {{item.taste_score}}星</text>
+          <text wx:if="{{item.environment_score != null}}">环境 {{item.environment_score}}星</text>
+          <text wx:if="{{item.service_score != null}}">服务 {{item.service_score}}星</text>
+        </view>
+        <view class="comment-score-single" wx:elif="{{item.score != null && item.score > 0}}">
+          <van-rate value="{{item.score}}" readonly size="14" />
+        </view>
+        <view class="comment-content" wx:if="{{item.content}}">{{item.content}}</view>
+        <view class="merchant-reply-section" wx:if="{{item.replies && item.replies.length > 0}}">
+          <view class="merchant-reply-list">
+            <view class="merchant-reply-item" wx:for="{{item.replies}}" wx:for-item="r" wx:key="r.id">
+              <text class="merchant-reply-prefix">商家回复：</text>
+              <text class="merchant-reply-content">{{r.content || ''}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="comment-images" wx:if="{{item.images && item.images.length > 0}}">
+          <image
+            wx:for="{{item.images}}"
+            wx:for-item="img"
+            wx:key="*this"
+            class="comment-image"
+            src="{{img}}"
+            mode="aspectFill"
+            bindtap="previewCommentImage"
+            data-current="{{img}}"
+            data-urls="{{item.images}}"
+          />
+        </view>
+      </view>
+    </view>
+    <view class="comment-empty" wx:else>没有评价，暂时无人购买</view>
+  </view>
+
+  <!-- 店铺信息（评价下方） -->
+  <view class="shop-section" wx:if="{{product.merchantName || product.merchantShopImages.length || product.businessHours}}">
+    <view class="section-title">店铺信息</view>
+    <view class="shop-basic">
+      <text class="shop-name">{{product.merchantName}}</text>
+      <text class="shop-desc" wx:if="{{product.merchantDesc}}">{{product.merchantDesc}}</text>
+      <text class="shop-line" wx:if="{{product.businessHours}}">营业时间：{{product.businessHours}}</text>
+      <view class="shop-line shop-line-phone" bindtap="contactService">
+        <van-icon name="phone-o" size="18" />
+        <text>联系店铺</text>
+      </view>
+      <view class="shop-line shop-line-address" wx:if="{{product.merchantAddress}}" bindtap="openAddressNavigation">
+        <van-icon name="location-o" size="18" />
+        <text class="address-text">{{product.merchantAddress}}</text>
+      </view>
+    </view>
+    <scroll-view wx:if="{{product.merchantShopImages.length}}" scroll-x="true" class="shop-images">
+      <image
+        wx:for="{{product.merchantShopImages}}"
+        wx:key="index"
+        class="shop-image"
+        src="{{item}}"
+        mode="aspectFill"
+      />
+    </scroll-view>
+  </view>
+
+  <!-- 商品详情（放在最后） -->
+  <view class="product-detail">
+    <view class="section-title">商品详情</view>
+    <view class="detail-content">
+      <text class="detail-text" wx:if="{{product.description}}">{{product.description}}</text>
+      <text class="detail-empty" wx:else>暂无详细描述</text>
+    </view>
+  </view>
+
+  </scroll-view>
+
+  <!-- 底部操作栏（固定在屏底）：店铺、加入购物车；联系店铺在店铺信息中电话图标 -->
+  <view class="bottom-bar">
+    <view class="action-buttons">
+      <view class="icon-btn" bindtap="navigateToStore">
+        <van-icon name="shop-o" size="20" />
+        <text>店铺</text>
+      </view>
+      <view class="icon-btn" bindtap="addToCart">
+        <van-icon name="cart-circle-o" size="20" />
+        <text>加入购物车</text>
+      </view>
+    </view>
+    <view class="buy-buttons">
+      <button class="add-cart-btn" bindtap="handleBuy" disabled="{{product.product_type !== 'food' && product.stock <= 0}}">
+        {{product.product_type === 'food' ? '立即购买' : (product.stock > 0 ? '立即购买' : '已售罄')}}
+      </button>
+    </view>
+  </view>
+
+  <!-- 数量选择弹窗 -->
+  <van-popup show="{{showQuantityPopup}}" position="bottom" bind:close="onCloseQuantityPopup">
+    <view class="quantity-popup">
+      <view class="popup-header">
+        <text>选择数量</text>
+        <van-icon name="cross" bindtap="onCloseQuantityPopup" />
+      </view>
+      <view class="product-summary">
+        <image class="summary-image" src="{{(product.images && product.images[0]) || product.cover_image}}" />
+        <view class="summary-info">
+          <text class="summary-price">¥{{product.price}}</text>
+          <text class="summary-stock" wx:if="{{product.product_type !== 'food'}}">库存 {{product.stock}}</text>
+        </view>
+      </view>
+      <view class="quantity-selector">
+        <text class="quantity-label">数量</text>
+        <van-stepper value="{{quantity}}" min="1" max="{{product.product_type === 'food' ? 999 : product.stock}}" bind:change="onQuantityChange" />
+      </view>
+      <view class="food-coupon-block" wx:if="{{product.product_type === 'food'}}">
+        <view class="food-coupon-hint">每单限用 1 张；<text class="emph">平台券与店铺券二选一</text>，不可叠加。</view>
+        <view class="food-coupon-row" wx:if="{{selectedFoodCouponId}}" bindtap="onRemoveFoodCoupon">
+          <text>已选优惠券，点击取消</text>
+          <van-icon name="cross" size="16" />
+        </view>
+        <scroll-view wx:else scroll-x class="food-coupon-scroll" enhanced show-scrollbar="{{false}}">
+          <view class="food-coupon-scroll-inner">
+            <view
+              class="food-coupon-chip"
+              wx:for="{{foodAvailableCoupons}}"
+              wx:key="id"
+              bindtap="onSelectFoodCoupon"
+              data-id="{{item.id}}"
+            >
+              <text class="chip-val">¥{{item.value}}</text>
+              <text class="chip-type">{{item.type === 'platform' ? '平台' : '店铺'}}</text>
+            </view>
+          </view>
+        </scroll-view>
+        <view class="food-coupon-empty" wx:if="{{product.product_type === 'food' && !selectedFoodCouponId && foodAvailableCoupons.length === 0}}">暂无可用券</view>
+        <view class="food-pay-row" wx:if="{{foodDiscountAmount > 0}}">
+          <text>优惠 -¥{{foodDiscountAmount}}</text>
+        </view>
+        <view class="food-pay-row strong">
+          <text>实付 ¥{{foodPayTotal}}</text>
+        </view>
+      </view>
+      <button class="confirm-btn" bindtap="confirmBuy">确定</button>
+    </view>
+  </van-popup>
+
+  <pay-password-popup 
+    show="{{ showPayPopup }}" 
+    amount="{{ foodPayTotal || '0.00' }}" 
+    bind:success="onPaySuccess" 
+    bind:close="onPayClose" 
+  />
+</view>

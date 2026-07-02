@@ -1,0 +1,93 @@
+<view class="scenic-container">
+  <!-- 搜索框 -->
+  <view class="search-wrap">
+    <van-search
+      value="{{keyword}}"
+      placeholder="输入景点名称关键词"
+      shape="round"
+      background="#f5f5f5"
+      bind:change="onSearchChange"
+      bind:search="onSearch"
+    />
+  </view>
+
+  <!-- 排序栏：横向标签，与酒店页一致 -->
+  <view class="filter-bar">
+    <view
+      class="filter-item {{(sortBy === item.key || sortBy === item.key + '_asc' || sortBy === item.key + '_desc') ? 'active' : ''}}"
+      wx:for="{{sortOptions}}"
+      wx:key="key"
+      data-key="{{item.key}}"
+      bindtap="onSortChange"
+    >
+      <block wx:if="{{item.key === 'sales'}}">
+        <text>销量</text>
+        <text class="filter-arrow">{{sortBy === 'sales' ? '↓' : (sortBy === 'sales_asc' ? '↑' : '')}}</text>
+      </block>
+      <block wx:elif="{{item.key === 'distance'}}">
+        <text>距离</text>
+        <text class="filter-arrow">{{sortBy === 'distance' ? '↑' : (sortBy === 'distance_desc' ? '↓' : '')}}</text>
+      </block>
+      <block wx:else>
+        <text>{{item.label}}</text>
+        <text class="filter-arrow">{{sortBy === item.key ? '↓' : (sortBy === item.key + '_asc' ? '↑' : '')}}</text>
+      </block>
+    </view>
+  </view>
+
+  <view class="spot-list">
+    <view
+      class="spot-card"
+      wx:for="{{spotList}}"
+      wx:key="id"
+      bindtap="goToDetail"
+      data-id="{{item.id}}"
+    >
+        <view class="spot-cover-wrap">
+        <image class="spot-cover" src="{{item.cover_image}}" mode="aspectFill" />
+        <view class="spot-distance" wx:if="{{(sortBy && sortBy.indexOf('distance') === 0) && item.distance}}">约 {{item.distance}}km</view>
+      </view>
+      <view class="spot-body">
+        <view class="spot-name-row">
+          <text class="spot-name">{{item.name}}</text>
+        </view>
+        <view class="spot-rating-row">
+          <text class="spot-rating-num" wx:if="{{item.rating != null && item.rating > 0}}">{{item.rating}}</text>
+          <text class="spot-rating-max" wx:if="{{item.rating != null && item.rating > 0}}">/5</text>
+          <text class="spot-review-count" wx:if="{{item.rating_count != null}}">{{item.rating_count}}条点评</text>
+        </view>
+        <view class="spot-location-row" wx:if="{{item.location_text || ((sortBy && sortBy.indexOf('distance') === 0) && item.distance)}}">
+          <text wx:if="{{(sortBy && sortBy.indexOf('distance') === 0) && item.distance}}">距{{item.distance}}km</text>
+          <text wx:if="{{item.location_text && (sortBy && sortBy.indexOf('distance') === 0) && item.distance}}">・</text>
+          <text wx:if="{{item.location_text}}">{{item.location_text}}</text>
+        </view>
+        <view class="spot-tags-price-row">
+          <view class="spot-tags">
+            <text
+              class="spot-tag"
+              wx:for="{{item.tag_list}}"
+              wx:key="id"
+              wx:for-item="tag"
+            >{{tag.name}}</text>
+          </view>
+          <view class="spot-price-wrap">
+            <text class="spot-price-label">门票</text>
+            <text class="spot-price">¥{{item.ticket_price != null ? item.ticket_price : (item.price != null ? item.price : 0)}}起</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="loading-more" wx:if="{{loading}}">
+    <van-loading size="16">加载中...</van-loading>
+  </view>
+  
+  <view class="no-more" wx:if="{{!hasMore && spotList.length > 0}}">
+    <text>没有更多了</text>
+  </view>
+  
+  <view class="empty" wx:if="{{spotList.length === 0 && !loading}}">
+    <van-empty description="暂无景点数据" />
+  </view>
+</view>

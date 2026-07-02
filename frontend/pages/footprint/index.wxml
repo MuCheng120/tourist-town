@@ -1,0 +1,48 @@
+<view class="footprint-page">
+  <!-- 标签页 -->
+  <van-tabs active="{{ activeTab }}" bind:change="onTabChange" sticky>
+    <van-tab wx:for="{{tabs}}" wx:key="index" title="{{item}}">
+      <!-- 足迹列表 -->
+      <view class="footprint-list">
+        <view 
+          class="footprint-item" 
+          wx:for="{{footprintList}}" 
+          wx:key="id" 
+          wx:for-item="footprint"
+          bindtap="goToDetail"
+          data-type="{{footprint.target_type}}"
+          data-id="{{footprint.target_id}}"
+        >
+          <image class="item-image" wx:if="{{footprint.cover_image}}" src="{{footprint.cover_image}}" mode="aspectFill"></image>
+          <view class="item-image item-image-placeholder" wx:else><van-icon name="photo-o" size="32" color="#c8c9cc" /></view>
+          
+          <view class="item-info">
+            <view class="item-title">{{footprint.title}}</view>
+            <view class="item-meta">
+              <text class="item-type">{{footprint.type_name}}</text>
+              <text class="item-time">{{footprint.visited_time}}</text>
+            </view>
+          </view>
+          
+          <van-icon name="arrow" class="arrow-icon" />
+        </view>
+
+        <!-- 空状态 -->
+        <view class="empty-state" wx:if="{{!loading && footprintList.length === 0}}">
+          <van-empty description="暂无足迹记录" />
+          <text class="empty-hint">快去探索景点和路线吧</text>
+        </view>
+
+        <!-- 加载更多 -->
+        <view class="loading-more" wx:if="{{loading}}">
+          <van-loading type="spinner" size="20px">加载中...</van-loading>
+        </view>
+
+        <!-- 没有更多 -->
+        <view class="no-more" wx:if="{{!hasMore && footprintList.length > 0}}">
+          没有更多了
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "pay-password-popup": "../../components/pay-password-popup/pay-password-popup"
+  }
+}

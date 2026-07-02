@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="tabs">
+    <view
+      class="tab {{activeTab === item.key ? 'active' : ''}}"
+      wx:for="{{tabs}}"
+      wx:key="key"
+      data-key="{{item.key}}"
+      bindtap="onTabChange"
+    >{{item.label}}</view>
+  </view>
+  <!-- 酒店列表 -->
+  <view class="list" wx:if="{{activeTab === 'hotel'}}" wx:for="{{list}}" wx:key="id">
+    <view class="card" bindtap="goToDetail" data-id="{{item.id}}" data-type="hotel">
+      <image class="cover" src="{{item.cover_image}}" mode="aspectFill" wx:if="{{item.cover_image}}" />
+      <view class="cover placeholder" wx:else><van-icon name="hotel-o" size="40" color="#c8c9cc" /></view>
+      <view class="body">
+        <text class="name">{{item.name}}</text>
+        <text class="intro">{{item.introduction || '暂无介绍'}}</text>
+      </view>
+      <van-icon name="arrow" class="arrow" />
+    </view>
+  </view>
+  <!-- 景点列表 -->
+  <view class="list" wx:if="{{activeTab === 'scenic'}}" wx:for="{{list}}" wx:key="id">
+    <view class="card" bindtap="goToDetail" data-id="{{item.id}}" data-type="scenic">
+      <image class="cover" src="{{item.cover_image}}" mode="aspectFill" wx:if="{{item.cover_image}}" />
+      <image class="cover" src="{{item.images && item.images[0]}}" mode="aspectFill" wx:elif="{{item.images && item.images[0]}}" />
+      <view class="cover placeholder" wx:else><van-icon name="location-o" size="40" color="#c8c9cc" /></view>
+      <view class="body">
+        <text class="name">{{item.name}}</text>
+        <text class="intro">¥{{item.price || item.ticket_price}} · {{item.opening_hours || item.open_time || '景点'}}</text>
+      </view>
+      <van-icon name="arrow" class="arrow" />
+    </view>
+  </view>
+  <!-- 攻略列表 -->
+  <view class="list" wx:if="{{activeTab === 'post'}}" wx:for="{{list}}" wx:key="id">
+    <view class="card post-card" bindtap="goToDetail" data-id="{{item.id}}" data-type="post">
+      <image class="cover" src="{{item.images && item.images[0]}}" mode="aspectFill" wx:if="{{item.images && item.images[0]}}" />
+      <view class="cover placeholder" wx:else><van-icon name="description" size="40" color="#c8c9cc" /></view>
+      <view class="body">
+        <text class="name">{{item.title}}</text>
+        <text class="intro">{{item.location || '攻略'}}</text>
+      </view>
+      <van-icon name="arrow" class="arrow" />
+    </view>
+  </view>
+  <!-- 商品列表（特产/餐饮） -->
+  <view class="list" wx:if="{{activeTab === 'product'}}" wx:for="{{list}}" wx:key="id">
+    <view class="card" bindtap="goToDetail" data-id="{{item.id}}" data-type="product">
+      <image class="cover" src="{{item.images && item.images[0] ? item.images[0] : item.cover_image}}" mode="aspectFill" wx:if="{{item.images && item.images[0]}}" />
+      <image class="cover" src="{{item.cover_image}}" mode="aspectFill" wx:elif="{{item.cover_image}}" />
+      <view class="cover placeholder" wx:else><van-icon name="shopping-cart-o" size="40" color="#c8c9cc" /></view>
+      <view class="body">
+        <text class="name">{{item.name}}</text>
+        <text class="intro">¥{{item.price}}</text>
+      </view>
+      <van-icon name="arrow" class="arrow" />
+    </view>
+  </view>
+  <van-empty wx:if="{{!loading && list.length === 0}}" description="暂无收藏" />
+  <van-loading wx:if="{{loading}}" class="loading" type="spinner" />
+</view>

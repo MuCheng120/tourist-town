@@ -1,0 +1,68 @@
+<!-- admin/pages/posts/index.wxml -->
+<view class="container">
+  <view class="top">
+    <van-search
+      value="{{keyword}}"
+      placeholder="搜索标题/内容"
+      show-action
+      bind:change="onSearchChange"
+      bind:search="onSearch"
+      bind:clear="onClearSearch"
+    >
+      <view slot="action" bindtap="onSearch">搜索</view>
+    </van-search>
+
+    <van-tabs active="{{tab}}" bind:change="onTabChange" color="#1989fa">
+      <van-tab title="已发布" name="published" />
+      <van-tab title="待审核" name="pending" />
+      <van-tab title="未通过" name="rejected" />
+      <van-tab title="草稿" name="draft" />
+    </van-tabs>
+  </view>
+
+  <view class="list" wx:if="{{list.length > 0}}">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="header">
+        <text class="title">{{item.title || '（无标题）'}}</text>
+        <van-tag
+          size="small"
+          type="{{tab === 'published' ? 'success' : (tab === 'pending' ? 'primary' : (tab === 'rejected' ? 'danger' : 'default'))}}"
+        >
+          {{tab === 'published' ? '已发布' : (tab === 'pending' ? '待审核' : (tab === 'rejected' ? '未通过' : '草稿'))}}
+        </van-tag>
+      </view>
+
+      <view class="meta">
+        <text class="meta-text">作者：{{item.user.nickname || item.user_id}}</text>
+        <text class="meta-text">时间：{{item.created_at}}</text>
+      </view>
+
+      <view class="content">
+        <text class="desc">{{item.content}}</text>
+      </view>
+
+      <view class="reason" wx:if="{{tab === 'rejected' && item.audit_remark}}">
+        <text class="reason-text">拒绝原因：{{item.audit_remark}}</text>
+      </view>
+
+      <view class="actions">
+        <van-button size="small" type="default" bindtap="viewPostDetail" data-id="{{item.id}}">
+          查看
+        </van-button>
+        <van-button size="small" type="danger" bindtap="deletePost" data-id="{{item.id}}">
+          下架/删除
+        </van-button>
+      </view>
+    </view>
+  </view>
+
+  <van-empty
+    wx:else
+    description="暂无数据"
+  />
+
+  <view class="loading" wx:if="{{loading}}">
+    <van-loading size="24px">加载中...</van-loading>
+  </view>
+</view>
+

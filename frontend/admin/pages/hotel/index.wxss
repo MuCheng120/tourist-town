@@ -1,0 +1,654 @@
+/* admin/pages/hotel/index.wxss - 参考前端酒店列表与数据表字段 */
+.container {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding: 20rpx;
+  padding-bottom: 40rpx;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+  margin-bottom: 16rpx;
+}
+
+.filter-item {
+  font-size: 28rpx;
+  color: #333;
+  padding: 12rpx 24rpx;
+  background: #fff;
+  border-radius: 8rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.page-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #1989fa;
+  color: white;
+  border: none;
+  border-radius: 12rpx;
+  padding: 16rpx 32rpx;
+  font-size: 28rpx;
+}
+
+.hotel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+/* 卡片布局与前端酒店列表一致 */
+.hotel-card {
+  background: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: flex-start;
+  padding: 24rpx;
+  gap: 24rpx;
+}
+
+.hotel-left {
+  width: 260rpx;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14rpx;
+}
+
+.hotel-name-below {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: 1rpx;
+  text-shadow: 0 1rpx 2rpx rgba(44, 62, 80, 0.08);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-all;
+  text-align: center;
+}
+
+.hotel-cover-wrap {
+  position: relative;
+  width: 260rpx;
+  height: 190rpx;
+  flex-shrink: 0;
+  border-radius: 16rpx;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.hotel-cover {
+  width: 100%;
+  height: 100%;
+  background: #f0f0f0;
+}
+
+.hotel-cover-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  color: #999;
+  background: #f5f5f5;
+}
+
+.hotel-status-tag {
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  padding: 6rpx 14rpx;
+  border-radius: 10rpx;
+  font-size: 22rpx;
+}
+
+.hotel-status-tag.on {
+  background: #07c160;
+  color: white;
+}
+
+.hotel-status-tag.off {
+  background: #d9d9d9;
+  color: #666;
+}
+
+.hotel-body {
+  flex: 1;
+  min-width: 0;
+  padding: 0 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8rpx;
+}
+
+.hotel-address {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 6rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hotel-intro {
+  font-size: 24rpx;
+  color: #999;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-bottom: 8rpx;
+}
+
+.hotel-tags-scroll {
+  width: 100%;
+  margin-bottom: 10rpx;
+  white-space: nowrap;
+}
+
+.hotel-tags-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.hotel-tag-pill {
+  margin-right: 0 !important;
+}
+
+.hotel-tag-more {
+  opacity: 0.85;
+}
+
+.hotel-meta {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.hotel-rating {
+  font-size: 24rpx;
+  color: #ff976a;
+}
+
+.hotel-min-price {
+  font-size: 26rpx;
+  color: #ff4d4f;
+  font-weight: 600;
+}
+
+.hotel-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16rpx;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.hotel-actions .van-button {
+  min-width: 220rpx;
+}
+
+.loading-wrap {
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.room-item {
+  background-color: white;
+  border-radius: 12rpx;
+  padding: 24rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.room-name {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.room-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-tag {
+  padding: 8rpx 16rpx;
+  border-radius: 4rpx;
+  font-size: 24rpx;
+}
+
+.status-tag.active {
+  background-color: #52c41a;
+  color: white;
+}
+
+.status-tag.inactive {
+  background-color: #d9d9d9;
+  color: #666;
+}
+
+.room-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+  margin-bottom: 16rpx;
+}
+
+.room-price {
+  font-size: 36rpx;
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.room-desc {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.5;
+}
+
+.room-images {
+  display: flex;
+  gap: 16rpx;
+  margin-bottom: 16rpx;
+  overflow-x: auto;
+}
+
+.room-image {
+  width: 200rpx;
+  height: 150rpx;
+  border-radius: 8rpx;
+  flex-shrink: 0;
+}
+
+.room-actions {
+  display: flex;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.btn-small {
+  padding: 12rpx 24rpx;
+  border-radius: 6rpx;
+  font-size: 26rpx;
+  border: none;
+}
+
+.btn-info {
+  background-color: #1890ff;
+  color: white;
+}
+
+.btn-warning {
+  background-color: #faad14;
+  color: white;
+}
+
+.btn-success {
+  background-color: #52c41a;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.empty {
+  text-align: center;
+  padding: 100rpx 0;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.loading {
+  text-align: center;
+  padding: 40rpx 0;
+  color: #999;
+}
+
+/* 弹窗样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 弹窗固定宽度，避免百分比导致输入框宽度不稳定 */
+.modal-content {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 660rpx;
+  height: 84vh;
+  max-height: 84vh;
+  background-color: white;
+  border-radius: 16rpx;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.modal-close {
+  font-size: 48rpx;
+  color: #999;
+  cursor: pointer;
+}
+
+.modal-body {
+  flex: 1;
+  min-height: 0;
+  width: 660rpx;
+  box-sizing: border-box;
+}
+
+.modal-body-inner {
+  padding: 32rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.modal-footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16rpx;
+  padding: 24rpx 32rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+/* 输入框外层：固定宽度，避免小程序 input 被挤压 */
+.input-wrap {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-wrap .form-input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 自定义 placeholder：用 view 显示占位文案，不依赖原生 placeholder，避免被裁剪 */
+.input-wrap-with-ph {
+  position: relative;
+  min-height: 72rpx;
+}
+
+.custom-placeholder {
+  position: absolute;
+  left: 20rpx;
+  top: 0;
+  right: 20rpx;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  color: #999;
+  pointer-events: none;
+  line-height: 1.5;
+  overflow: visible;
+  white-space: normal;
+  word-break: break-all;
+}
+
+.btn-cancel {
+  background-color: #f5f5f5;
+  color: #666;
+  border: none;
+  border-radius: 8rpx;
+  padding: 16rpx 32rpx;
+  font-size: 28rpx;
+}
+
+.btn-confirm {
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 8rpx;
+  padding: 16rpx 32rpx;
+  font-size: 28rpx;
+}
+
+/* 表单分组（与数据表字段分组对齐） */
+.form-section {
+  margin-bottom: 32rpx;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.form-section-title {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-bottom: 12rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.form-item {
+  margin-bottom: 24rpx;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.form-label.required::after {
+  content: ' *';
+  color: #ee0a24;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  min-height: 72rpx;
+  padding: 16rpx 20rpx;
+  border: 1rpx solid #d9d9d9;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 16rpx;
+  border: 1rpx solid #d9d9d9;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  min-height: 120rpx;
+  box-sizing: border-box;
+}
+
+.form-hint {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.address-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  width: 100%;
+  min-width: 0;
+}
+
+.address-row .address-input-wrap {
+  flex: 1;
+  min-width: 0;
+  width: 0;
+}
+
+.address-row .input-wrap {
+  width: 100%;
+}
+
+.btn-choose-loc {
+  flex-shrink: 0;
+  font-size: 24rpx;
+  padding: 12rpx 24rpx;
+  line-height: 1.4;
+  min-width: 140rpx;
+}
+
+.tag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.tag-chip {
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+  color: #666;
+  border: 1rpx solid #d9d9d9;
+  border-radius: 24rpx;
+  background: #fafafa;
+}
+
+.tag-chip.active {
+  color: #1890ff;
+  border-color: #1890ff;
+  background: #e6f7ff;
+}
+
+.picker-view {
+  padding: 16rpx;
+  border: 1rpx solid #d9d9d9;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+}
+
+/* 图片列表 */
+.image-list {
+  display: flex;
+  gap: 16rpx;
+  flex-wrap: wrap;
+}
+
+.image-item {
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.image-preview {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+  object-fit: cover;
+}
+
+.image-delete {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  line-height: 1;
+}
+
+.image-add {
+  width: 160rpx;
+  height: 160rpx;
+  border: 2rpx dashed #d9d9d9;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  color: #999;
+}
+
+.add-icon {
+  font-size: 48rpx;
+  line-height: 1;
+}
+
+.add-text {
+  font-size: 24rpx;
+}

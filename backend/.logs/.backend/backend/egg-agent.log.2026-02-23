@@ -1,0 +1,600 @@
+2026-02-23 00:29:49,836 INFO 66660 [egg-logrotator] agent logger reload: got log-reload message
+2026-02-23 00:53:18,882 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1409045ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 01:30:49,722 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2250808ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 02:29:05,984 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3476207ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 05:26:10,600 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2629846ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 06:21:03,432 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3292827ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 07:07:09,814 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2766355ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 07:27:10,545 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1200722ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 07:57:26,532 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1815961ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 08:06:49,806 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 563263ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 08:28:11,291 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1281455ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 08:44:03,059 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 931747ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 09:29:11,248 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2539578ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 10:30:11,389 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2550360ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 11:31:10,723 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1274772ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 12:32:11,352 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2319191ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 13:09:25,554 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2039921ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 13:29:27,055 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 989248ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 14:33:11,013 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3631747ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 15:34:11,084 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2435875ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 16:11:38,763 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2053235ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 16:17:32,382 INFO 78034 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2026-02-23 16:17:32,097 INFO 78034 [egg:logger] init all loggers with options: {"dir":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{}}
+2026-02-23 16:17:32,324 INFO 78034 [egg:core] dump config after load, 3ms
+2026-02-23 16:17:32,352 INFO 78034 [egg-watcher] Start watching: ["/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"]
+2026-02-23 16:17:32,352 INFO 78034 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app"
+2026-02-23 16:17:32,352 INFO 78034 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config"
+2026-02-23 16:17:32,352 INFO 78034 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks"
+2026-02-23 16:17:32,353 INFO 78034 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy"
+2026-02-23 16:17:32,353 INFO 78034 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"
+2026-02-23 16:17:32,354 INFO 78034 [egg-watcher:agent] watcher start success
+2026-02-23 16:17:32,386 INFO 78034 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [233ms] - #0 Process Start
+                ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [458ms] - #1 Application Start
+                 ▇ [4ms] - #2 Load Plugin
+                 ▇ [7ms] - #3 Load Config
+                 ▇ [0ms] - #4 Require(0) config/config.default.js
+                 ▇ [0ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                 ▇ [1ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                 ▇ [0ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                 ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                 ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                 ▇ [1ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                 ▇ [0ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                 ▇ [0ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                 ▇ [0ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                 ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                 ▇ [0ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                 ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                 ▇ [0ms] - #17 Require(13) node_modules/egg-sequelize/config/config.default.js
+                 ▇ [0ms] - #18 Require(14) node_modules/egg-cors/config/config.default.js
+                 ▇ [0ms] - #19 Require(15) node_modules/egg-jwt/config/config.default.js
+                 ▇ [0ms] - #20 Require(16) node_modules/egg-redis/config/config.default.js
+                 ▇ [0ms] - #21 Require(17) node_modules/egg/config/config.default.js
+                 ▇ [0ms] - #22 Require(18) config/config.default.js
+                 ▇ [0ms] - #23 Require(19) node_modules/egg-security/config/config.local.js
+                 ▇ [0ms] - #24 Require(20) node_modules/egg-watcher/config/config.local.js
+                 ▇ [0ms] - #25 Require(21) node_modules/egg-view/config/config.local.js
+                 ▇ [0ms] - #26 Require(22) node_modules/egg/config/config.local.js
+                 ▇▇▇▇▇▇▇▇ [119ms] - #27 Load extend/agent.js
+                  ▇ [0ms] - #28 Require(23) node_modules/egg-security/app/extend/agent.js
+                  ▇▇▇▇▇▇▇▇ [115ms] - #29 Require(24) node_modules/egg-schedule/app/extend/agent.js
+                          ▇ [0ms] - #30 Require(25) node_modules/egg-logrotator/app/extend/agent.js
+                          ▇ [19ms] - #31 Load extend/context.js
+                          ▇ [7ms] - #32 Require(26) node_modules/egg-security/app/extend/context.js
+                           ▇ [1ms] - #33 Require(27) node_modules/egg-jsonp/app/extend/context.js
+                           ▇ [0ms] - #34 Require(28) node_modules/egg-i18n/app/extend/context.js
+                           ▇ [9ms] - #35 Require(29) node_modules/egg-multipart/app/extend/context.js
+                           ▇ [1ms] - #36 Require(30) node_modules/egg-view/app/extend/context.js
+                           ▇ [1ms] - #37 Require(31) node_modules/egg/app/extend/context.js
+                           ▇ [16ms] - #38 Load agent.js
+                           ▇ [1ms] - #39 Require(32) node_modules/egg-security/agent.js
+                           ▇ [0ms] - #40 Require(33) node_modules/egg-onerror/agent.js
+                           ▇ [7ms] - #41 Require(34) node_modules/egg-watcher/agent.js
+                            ▇ [1ms] - #42 Require(35) node_modules/egg-schedule/agent.js
+                            ▇ [5ms] - #43 Require(36) node_modules/egg-development/agent.js
+                            ▇ [0ms] - #44 Require(37) node_modules/egg-logrotator/agent.js
+                            ▇ [0ms] - #45 Require(38) node_modules/egg-sequelize/agent.js
+                            ▇ [1ms] - #46 Require(39) node_modules/egg-redis/agent.js
+                             ▇ [0ms] - #47 Require(40) node_modules/egg/agent.js
+                             ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [255ms] - #48 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                             ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [242ms] - #49 Before Start in node_modules/egg-schedule/agent.js:12:9
+                             ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [262ms] - #50 Before Start in node_modules/egg-development/agent.js:9:9
+                                           ▇ [24ms] - #51 Load "Symbol(model)" to Application
+                                             ▇▇▇▇ [62ms] - #52 Before Start in node_modules/egg-sequelize/lib/loader.js:39:7
+2026-02-23 16:17:32,386 INFO 78034 [egg:core] dump config after ready, 3ms
+2026-02-23 16:41:46,340 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 133583ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 16:56:46,025 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js change
+2026-02-23 16:56:45,797 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475057,"size":7145,"blocks":16,"atimeMs":1771837005770.8184,"mtimeMs":1771837005713.1453,"ctimeMs":1771837005713.1453,"birthtimeMs":1771348573355.6643},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 16:57:52,224 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js change
+2026-02-23 16:57:52,012 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475057,"size":7143,"blocks":16,"atimeMs":1771837071967.3374,"mtimeMs":1771837071936.5457,"ctimeMs":1771837071936.5457,"birthtimeMs":1771348573355.6643},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 16:58:03,132 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/controller/user.js change
+2026-02-23 16:58:02,929 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/controller/user.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475749,"size":5546,"blocks":16,"atimeMs":1771569831048.6829,"mtimeMs":1771837082916.1616,"ctimeMs":1771837082916.1616,"birthtimeMs":1771348733004.2136},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 17:01:01,435 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8476203,"size":13162,"blocks":32,"atimeMs":1771837261403.1675,"mtimeMs":1771837261372.1846,"ctimeMs":1771837261372.1846,"birthtimeMs":1771348841046.079},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 17:01:01,638 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js change
+2026-02-23 17:02:21,145 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config/config.default.js change
+2026-02-23 17:02:20,941 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config/config.default.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8471000,"size":1919,"blocks":8,"atimeMs":1771837340903.4353,"mtimeMs":1771837340878.1133,"ctimeMs":1771837340878.1133,"birthtimeMs":1771348439316.6775},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 17:25:53,772 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js change
+2026-02-23 17:25:53,568 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475057,"size":7465,"blocks":16,"atimeMs":1771838753529.2258,"mtimeMs":1771838753505.1865,"ctimeMs":1771838753505.1865,"birthtimeMs":1771348573355.6643},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 18:07:11,682 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 176639ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 19:17:28,687 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 3268836ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 19:34:07,683 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 358735ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 20:18:48,738 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 656767ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 20:46:55,720 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 633496ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 21:03:53,905 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 101887ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 21:12:09,146 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8476203,"size":13153,"blocks":32,"atimeMs":1771852329143.571,"mtimeMs":1771852329081.7922,"ctimeMs":1771852329081.7922,"birthtimeMs":1771348841046.079},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 21:12:09,357 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js change
+2026-02-23 21:12:24,079 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js change
+2026-02-23 21:12:23,876 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8476203,"size":12783,"blocks":32,"atimeMs":1771852330236.23,"mtimeMs":1771852343862.2876,"ctimeMs":1771852343862.2876,"birthtimeMs":1771348841046.079},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 21:13:09,285 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/controller/room_type.js change
+2026-02-23 21:13:09,083 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/controller/room_type.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8476022,"size":3084,"blocks":8,"atimeMs":1771852389047.7954,"mtimeMs":1771852389021.6072,"ctimeMs":1771852389021.6072,"birthtimeMs":1771348787377.8083},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 21:13:44,740 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/room_type.js change
+2026-02-23 21:13:44,521 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/room_type.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475520,"size":4454,"blocks":16,"atimeMs":1771852424467.4668,"mtimeMs":1771852424434.3096,"ctimeMs":1771852424434.3096,"birthtimeMs":1771348665520.0461},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 21:14:18,736 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/model/room_type.js change
+2026-02-23 21:14:18,534 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/model/room_type.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8474664,"size":1521,"blocks":8,"atimeMs":1771852458498.0032,"mtimeMs":1771852458471.312,"ctimeMs":1771852458471.312,"birthtimeMs":1771348497011.4285},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 21:36:06,565 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 286853ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 22:00:37,315 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/controller/user.js change
+2026-02-23 22:00:37,113 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/controller/user.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475749,"size":5971,"blocks":16,"atimeMs":1771855237061.9773,"mtimeMs":1771855237050.9336,"ctimeMs":1771855237050.9336,"birthtimeMs":1771348733004.2136},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 22:01:54,935 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js change
+2026-02-23 22:01:54,733 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/user.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475057,"size":8722,"blocks":24,"atimeMs":1771855314729.0615,"mtimeMs":1771855314667.0989,"ctimeMs":1771855314667.0989,"birthtimeMs":1771348573355.6643},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 22:03:55,893 WARN 78034 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js change
+2026-02-23 22:03:55,690 INFO 78034 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/router.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8476203,"size":12849,"blocks":32,"atimeMs":1771855435653.5715,"mtimeMs":1771855435627.7104,"ctimeMs":1771855435627.7104,"birthtimeMs":1771348841046.079},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 22:19:30,141 INFO 78522 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2026-02-23 22:19:29,873 INFO 78522 [egg:logger] init all loggers with options: {"dir":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{}}
+2026-02-23 22:19:30,087 INFO 78522 [egg:core] dump config after load, 4ms
+2026-02-23 22:19:30,114 INFO 78522 [egg-watcher] Start watching: ["/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"]
+2026-02-23 22:19:30,115 INFO 78522 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app"
+2026-02-23 22:19:30,115 INFO 78522 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config"
+2026-02-23 22:19:30,115 INFO 78522 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks"
+2026-02-23 22:19:30,115 INFO 78522 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy"
+2026-02-23 22:19:30,115 INFO 78522 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"
+2026-02-23 22:19:30,115 INFO 78522 [egg-watcher:agent] watcher start success
+2026-02-23 22:19:30,148 INFO 78522 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [216ms] - #0 Process Start
+                  ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [359ms] - #1 Application Start
+                   ▇ [5ms] - #2 Load Plugin
+                   ▇ [13ms] - #3 Load Config
+                   ▇ [0ms] - #4 Require(0) config/config.default.js
+                   ▇ [0ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                   ▇ [1ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                   ▇ [0ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                   ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                   ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                   ▇ [0ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                   ▇ [0ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                   ▇ [0ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                    ▇ [0ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                    ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                    ▇ [0ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                    ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                    ▇ [1ms] - #17 Require(13) node_modules/egg-sequelize/config/config.default.js
+                    ▇ [0ms] - #18 Require(14) node_modules/egg-cors/config/config.default.js
+                    ▇ [0ms] - #19 Require(15) node_modules/egg-jwt/config/config.default.js
+                    ▇ [2ms] - #20 Require(16) node_modules/egg-redis/config/config.default.js
+                    ▇ [0ms] - #21 Require(17) node_modules/egg/config/config.default.js
+                    ▇ [0ms] - #22 Require(18) config/config.default.js
+                    ▇ [0ms] - #23 Require(19) node_modules/egg-security/config/config.local.js
+                    ▇ [1ms] - #24 Require(20) node_modules/egg-watcher/config/config.local.js
+                    ▇ [0ms] - #25 Require(21) node_modules/egg-view/config/config.local.js
+                    ▇ [1ms] - #26 Require(22) node_modules/egg/config/config.local.js
+                    ▇▇ [32ms] - #27 Load extend/agent.js
+                    ▇ [1ms] - #28 Require(23) node_modules/egg-security/app/extend/agent.js
+                    ▇▇ [28ms] - #29 Require(24) node_modules/egg-schedule/app/extend/agent.js
+                       ▇ [0ms] - #30 Require(25) node_modules/egg-logrotator/app/extend/agent.js
+                       ▇ [17ms] - #31 Load extend/context.js
+                       ▇ [5ms] - #32 Require(26) node_modules/egg-security/app/extend/context.js
+                       ▇ [1ms] - #33 Require(27) node_modules/egg-jsonp/app/extend/context.js
+                        ▇ [1ms] - #34 Require(28) node_modules/egg-i18n/app/extend/context.js
+                        ▇ [8ms] - #35 Require(29) node_modules/egg-multipart/app/extend/context.js
+                        ▇ [1ms] - #36 Require(30) node_modules/egg-view/app/extend/context.js
+                        ▇ [1ms] - #37 Require(31) node_modules/egg/app/extend/context.js
+                        ▇ [13ms] - #38 Load agent.js
+                        ▇ [1ms] - #39 Require(32) node_modules/egg-security/agent.js
+                         ▇ [0ms] - #40 Require(33) node_modules/egg-onerror/agent.js
+                         ▇ [4ms] - #41 Require(34) node_modules/egg-watcher/agent.js
+                         ▇ [0ms] - #42 Require(35) node_modules/egg-schedule/agent.js
+                         ▇ [5ms] - #43 Require(36) node_modules/egg-development/agent.js
+                         ▇ [0ms] - #44 Require(37) node_modules/egg-logrotator/agent.js
+                         ▇ [0ms] - #45 Require(38) node_modules/egg-sequelize/agent.js
+                         ▇ [3ms] - #46 Require(39) node_modules/egg-redis/agent.js
+                          ▇ [0ms] - #47 Require(40) node_modules/egg/agent.js
+                          ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [241ms] - #48 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                          ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [229ms] - #49 Before Start in node_modules/egg-schedule/agent.js:12:9
+                          ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [270ms] - #50 Before Start in node_modules/egg-development/agent.js:9:9
+                                         ▇▇ [25ms] - #51 Load "Symbol(model)" to Application
+                                            ▇▇▇▇▇ [59ms] - #52 Before Start in node_modules/egg-sequelize/lib/loader.js:39:7
+2026-02-23 22:19:30,148 INFO 78522 [egg:core] dump config after ready, 3ms
+2026-02-23 22:36:08,275 WARN 78522 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/product.js change
+2026-02-23 22:36:08,060 INFO 78522 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/product.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475116,"size":3809,"blocks":8,"atimeMs":1771857368013.5525,"mtimeMs":1771857367986.9966,"ctimeMs":1771857367986.9966,"birthtimeMs":1771348586366.474},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 22:36:58,458 WARN 78522 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/scenic_spot.js change
+2026-02-23 22:36:58,254 INFO 78522 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/scenic_spot.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8516981,"size":5874,"blocks":16,"atimeMs":1771857418218.4072,"mtimeMs":1771857418190.55,"ctimeMs":1771857418190.55,"birthtimeMs":1771566963888.663},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 22:37:29,887 INFO 78522 [egg-watcher] Received a change event from eventSource: {"event":"change","path":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/post.js","stat":{"dev":16777233,"mode":33188,"nlink":1,"uid":501,"gid":20,"rdev":0,"blksize":4096,"ino":8475589,"size":7360,"blocks":16,"atimeMs":1771857449846.8467,"mtimeMs":1771857449823.1182,"ctimeMs":1771857449823.1182,"birthtimeMs":1771348691245.9497},"remove":false,"isDirectory":false,"isFile":true}
+2026-02-23 22:37:30,090 WARN 78522 [agent:development] reload worker because /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/post.js change
+2026-02-23 22:41:32,331 INFO 89559 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2026-02-23 22:41:32,077 INFO 89559 [egg:logger] init all loggers with options: {"dir":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{}}
+2026-02-23 22:41:32,277 INFO 89559 [egg:core] dump config after load, 3ms
+2026-02-23 22:41:32,303 INFO 89559 [egg-watcher] Start watching: ["/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"]
+2026-02-23 22:41:32,303 INFO 89559 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app"
+2026-02-23 22:41:32,303 INFO 89559 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config"
+2026-02-23 22:41:32,303 INFO 89559 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks"
+2026-02-23 22:41:32,303 INFO 89559 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy"
+2026-02-23 22:41:32,303 INFO 89559 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"
+2026-02-23 22:41:32,304 INFO 89559 [egg-watcher:agent] watcher start success
+2026-02-23 22:41:32,336 INFO 89559 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [234ms] - #0 Process Start
+                    ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [333ms] - #1 Application Start
+                    ▇ [5ms] - #2 Load Plugin
+                     ▇ [9ms] - #3 Load Config
+                     ▇ [0ms] - #4 Require(0) config/config.default.js
+                     ▇ [0ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                     ▇ [0ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                     ▇ [0ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                     ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                     ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                     ▇ [2ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                     ▇ [1ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                     ▇ [0ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                     ▇ [1ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                     ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                     ▇ [0ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                     ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                     ▇ [1ms] - #17 Require(13) node_modules/egg-sequelize/config/config.default.js
+                      ▇ [0ms] - #18 Require(14) node_modules/egg-cors/config/config.default.js
+                      ▇ [0ms] - #19 Require(15) node_modules/egg-jwt/config/config.default.js
+                      ▇ [0ms] - #20 Require(16) node_modules/egg-redis/config/config.default.js
+                      ▇ [0ms] - #21 Require(17) node_modules/egg/config/config.default.js
+                      ▇ [0ms] - #22 Require(18) config/config.default.js
+                      ▇ [0ms] - #23 Require(19) node_modules/egg-security/config/config.local.js
+                      ▇ [1ms] - #24 Require(20) node_modules/egg-watcher/config/config.local.js
+                      ▇ [0ms] - #25 Require(21) node_modules/egg-view/config/config.local.js
+                      ▇ [0ms] - #26 Require(22) node_modules/egg/config/config.local.js
+                      ▇▇ [29ms] - #27 Load extend/agent.js
+                      ▇ [1ms] - #28 Require(23) node_modules/egg-security/app/extend/agent.js
+                      ▇▇ [26ms] - #29 Require(24) node_modules/egg-schedule/app/extend/agent.js
+                        ▇ [1ms] - #30 Require(25) node_modules/egg-logrotator/app/extend/agent.js
+                        ▇ [17ms] - #31 Load extend/context.js
+                        ▇ [5ms] - #32 Require(26) node_modules/egg-security/app/extend/context.js
+                         ▇ [1ms] - #33 Require(27) node_modules/egg-jsonp/app/extend/context.js
+                         ▇ [0ms] - #34 Require(28) node_modules/egg-i18n/app/extend/context.js
+                         ▇ [7ms] - #35 Require(29) node_modules/egg-multipart/app/extend/context.js
+                          ▇ [1ms] - #36 Require(30) node_modules/egg-view/app/extend/context.js
+                          ▇ [1ms] - #37 Require(31) node_modules/egg/app/extend/context.js
+                          ▇ [11ms] - #38 Load agent.js
+                          ▇ [0ms] - #39 Require(32) node_modules/egg-security/agent.js
+                          ▇ [0ms] - #40 Require(33) node_modules/egg-onerror/agent.js
+                          ▇ [3ms] - #41 Require(34) node_modules/egg-watcher/agent.js
+                          ▇ [1ms] - #42 Require(35) node_modules/egg-schedule/agent.js
+                          ▇ [4ms] - #43 Require(36) node_modules/egg-development/agent.js
+                           ▇ [0ms] - #44 Require(37) node_modules/egg-logrotator/agent.js
+                           ▇ [0ms] - #45 Require(38) node_modules/egg-sequelize/agent.js
+                           ▇ [0ms] - #46 Require(39) node_modules/egg-redis/agent.js
+                           ▇ [1ms] - #47 Require(40) node_modules/egg/agent.js
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [225ms] - #48 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [213ms] - #49 Before Start in node_modules/egg-schedule/agent.js:12:9
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [245ms] - #50 Before Start in node_modules/egg-development/agent.js:9:9
+                                          ▇ [22ms] - #51 Load "Symbol(model)" to Application
+                                            ▇▇▇▇▇ [59ms] - #52 Before Start in node_modules/egg-sequelize/lib/loader.js:39:7
+2026-02-23 22:41:32,336 INFO 89559 [egg:core] dump config after ready, 4ms
+2026-02-23 22:43:39,033 INFO 90861 [egg-sequelize](1ms) Executed (default): SELECT 1+1 AS result
+2026-02-23 22:43:38,775 INFO 90861 [egg:logger] init all loggers with options: {"dir":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{}}
+2026-02-23 22:43:38,979 INFO 90861 [egg:core] dump config after load, 3ms
+2026-02-23 22:43:39,006 INFO 90861 [egg-watcher] Start watching: ["/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"]
+2026-02-23 22:43:39,006 INFO 90861 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app"
+2026-02-23 22:43:39,006 INFO 90861 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config"
+2026-02-23 22:43:39,006 INFO 90861 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks"
+2026-02-23 22:43:39,006 INFO 90861 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy"
+2026-02-23 22:43:39,006 INFO 90861 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"
+2026-02-23 22:43:39,006 INFO 90861 [egg-watcher:agent] watcher start success
+2026-02-23 22:43:39,036 INFO 90861 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [229ms] - #0 Process Start
+                    ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [338ms] - #1 Application Start
+                    ▇ [4ms] - #2 Load Plugin
+                     ▇ [7ms] - #3 Load Config
+                     ▇ [0ms] - #4 Require(0) config/config.default.js
+                     ▇ [0ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                     ▇ [1ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                     ▇ [0ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                     ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                     ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                     ▇ [1ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                     ▇ [0ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                     ▇ [0ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                     ▇ [0ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                     ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                     ▇ [0ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                     ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                     ▇ [0ms] - #17 Require(13) node_modules/egg-sequelize/config/config.default.js
+                     ▇ [0ms] - #18 Require(14) node_modules/egg-cors/config/config.default.js
+                     ▇ [0ms] - #19 Require(15) node_modules/egg-jwt/config/config.default.js
+                     ▇ [0ms] - #20 Require(16) node_modules/egg-redis/config/config.default.js
+                     ▇ [0ms] - #21 Require(17) node_modules/egg/config/config.default.js
+                     ▇ [0ms] - #22 Require(18) config/config.default.js
+                     ▇ [0ms] - #23 Require(19) node_modules/egg-security/config/config.local.js
+                     ▇ [0ms] - #24 Require(20) node_modules/egg-watcher/config/config.local.js
+                     ▇ [0ms] - #25 Require(21) node_modules/egg-view/config/config.local.js
+                     ▇ [0ms] - #26 Require(22) node_modules/egg/config/config.local.js
+                     ▇▇ [30ms] - #27 Load extend/agent.js
+                     ▇ [2ms] - #28 Require(23) node_modules/egg-security/app/extend/agent.js
+                     ▇▇ [27ms] - #29 Require(24) node_modules/egg-schedule/app/extend/agent.js
+                        ▇ [0ms] - #30 Require(25) node_modules/egg-logrotator/app/extend/agent.js
+                        ▇ [17ms] - #31 Load extend/context.js
+                        ▇ [6ms] - #32 Require(26) node_modules/egg-security/app/extend/context.js
+                        ▇ [1ms] - #33 Require(27) node_modules/egg-jsonp/app/extend/context.js
+                        ▇ [0ms] - #34 Require(28) node_modules/egg-i18n/app/extend/context.js
+                        ▇ [8ms] - #35 Require(29) node_modules/egg-multipart/app/extend/context.js
+                         ▇ [1ms] - #36 Require(30) node_modules/egg-view/app/extend/context.js
+                         ▇ [1ms] - #37 Require(31) node_modules/egg/app/extend/context.js
+                         ▇ [13ms] - #38 Load agent.js
+                         ▇ [1ms] - #39 Require(32) node_modules/egg-security/agent.js
+                         ▇ [0ms] - #40 Require(33) node_modules/egg-onerror/agent.js
+                         ▇ [3ms] - #41 Require(34) node_modules/egg-watcher/agent.js
+                          ▇ [1ms] - #42 Require(35) node_modules/egg-schedule/agent.js
+                          ▇ [4ms] - #43 Require(36) node_modules/egg-development/agent.js
+                          ▇ [0ms] - #44 Require(37) node_modules/egg-logrotator/agent.js
+                          ▇ [0ms] - #45 Require(38) node_modules/egg-sequelize/agent.js
+                          ▇ [0ms] - #46 Require(39) node_modules/egg-redis/agent.js
+                          ▇ [3ms] - #47 Require(40) node_modules/egg/agent.js
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [229ms] - #48 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [218ms] - #49 Before Start in node_modules/egg-schedule/agent.js:12:9
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [238ms] - #50 Before Start in node_modules/egg-development/agent.js:9:9
+                                          ▇▇ [23ms] - #51 Load "Symbol(model)" to Application
+                                            ▇▇▇▇▇ [57ms] - #52 Before Start in node_modules/egg-sequelize/lib/loader.js:39:7
+2026-02-23 22:43:39,036 INFO 90861 [egg:core] dump config after ready, 2ms
+2026-02-23 22:54:30,411 INFO 96644 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2026-02-23 22:54:30,134 INFO 96644 [egg:logger] init all loggers with options: {"dir":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{}}
+2026-02-23 22:54:30,359 INFO 96644 [egg:core] dump config after load, 4ms
+2026-02-23 22:54:30,386 INFO 96644 [egg-watcher] Start watching: ["/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"]
+2026-02-23 22:54:30,386 INFO 96644 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app"
+2026-02-23 22:54:30,387 INFO 96644 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config"
+2026-02-23 22:54:30,387 INFO 96644 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks"
+2026-02-23 22:54:30,387 INFO 96644 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy"
+2026-02-23 22:54:30,387 INFO 96644 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"
+2026-02-23 22:54:30,387 INFO 96644 [egg-watcher:agent] watcher start success
+2026-02-23 22:54:30,415 INFO 96644 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [235ms] - #0 Process Start
+                   ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [356ms] - #1 Application Start
+                    ▇ [4ms] - #2 Load Plugin
+                    ▇ [7ms] - #3 Load Config
+                    ▇ [0ms] - #4 Require(0) config/config.default.js
+                    ▇ [0ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                    ▇ [1ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                    ▇ [0ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                    ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                    ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                    ▇ [1ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                    ▇ [0ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                    ▇ [0ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                    ▇ [0ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                    ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                    ▇ [1ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                    ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                    ▇ [0ms] - #17 Require(13) node_modules/egg-sequelize/config/config.default.js
+                    ▇ [0ms] - #18 Require(14) node_modules/egg-cors/config/config.default.js
+                    ▇ [0ms] - #19 Require(15) node_modules/egg-jwt/config/config.default.js
+                    ▇ [0ms] - #20 Require(16) node_modules/egg-redis/config/config.default.js
+                    ▇ [1ms] - #21 Require(17) node_modules/egg/config/config.default.js
+                    ▇ [0ms] - #22 Require(18) config/config.default.js
+                     ▇ [0ms] - #23 Require(19) node_modules/egg-security/config/config.local.js
+                     ▇ [0ms] - #24 Require(20) node_modules/egg-watcher/config/config.local.js
+                     ▇ [0ms] - #25 Require(21) node_modules/egg-view/config/config.local.js
+                     ▇ [0ms] - #26 Require(22) node_modules/egg/config/config.local.js
+                     ▇▇ [29ms] - #27 Load extend/agent.js
+                     ▇ [1ms] - #28 Require(23) node_modules/egg-security/app/extend/agent.js
+                     ▇▇ [26ms] - #29 Require(24) node_modules/egg-schedule/app/extend/agent.js
+                       ▇ [1ms] - #30 Require(25) node_modules/egg-logrotator/app/extend/agent.js
+                       ▇ [17ms] - #31 Load extend/context.js
+                       ▇ [5ms] - #32 Require(26) node_modules/egg-security/app/extend/context.js
+                        ▇ [1ms] - #33 Require(27) node_modules/egg-jsonp/app/extend/context.js
+                        ▇ [1ms] - #34 Require(28) node_modules/egg-i18n/app/extend/context.js
+                        ▇ [7ms] - #35 Require(29) node_modules/egg-multipart/app/extend/context.js
+                        ▇ [0ms] - #36 Require(30) node_modules/egg-view/app/extend/context.js
+                        ▇ [1ms] - #37 Require(31) node_modules/egg/app/extend/context.js
+                         ▇ [13ms] - #38 Load agent.js
+                         ▇ [0ms] - #39 Require(32) node_modules/egg-security/agent.js
+                         ▇ [0ms] - #40 Require(33) node_modules/egg-onerror/agent.js
+                         ▇ [4ms] - #41 Require(34) node_modules/egg-watcher/agent.js
+                         ▇ [3ms] - #42 Require(35) node_modules/egg-schedule/agent.js
+                         ▇ [5ms] - #43 Require(36) node_modules/egg-development/agent.js
+                          ▇ [0ms] - #44 Require(37) node_modules/egg-logrotator/agent.js
+                          ▇ [0ms] - #45 Require(38) node_modules/egg-sequelize/agent.js
+                          ▇ [1ms] - #46 Require(39) node_modules/egg-redis/agent.js
+                          ▇ [0ms] - #47 Require(40) node_modules/egg/agent.js
+                          ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [251ms] - #48 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                          ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [240ms] - #49 Before Start in node_modules/egg-schedule/agent.js:12:9
+                          ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [257ms] - #50 Before Start in node_modules/egg-development/agent.js:9:9
+                                          ▇ [23ms] - #51 Load "Symbol(model)" to Application
+                                             ▇▇▇▇ [56ms] - #52 Before Start in node_modules/egg-sequelize/lib/loader.js:39:7
+2026-02-23 22:54:30,415 INFO 96644 [egg:core] dump config after ready, 3ms
+2026-02-23 23:13:21,797 ERROR 96644 nodejs.ClusterClientNoResponseError: client no response in 210661ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 96644
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-24 00:08:52,949 ERROR 96644 nodejs.ClusterClientNoResponseError: client no response in 3331054ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 96644
+hostname: Kinda-DevdeMacBook-Air.local
+

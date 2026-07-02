@@ -1,0 +1,282 @@
+2026-02-22 00:24:02,167 INFO 52767 [egg-logrotator] agent logger reload: got log-reload message
+2026-02-22 00:52:05,864 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1683700ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 02:13:06,560 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 4860687ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 04:02:45,701 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 5281025ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 07:52:35,259 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 4317813ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 08:14:14,617 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1299340ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 08:21:14,271 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 419641ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 09:05:05,737 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 2631463ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 10:08:47,092 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3821341ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 12:17:14,157 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659875ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 13:20:02,892 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 60630ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 13:22:46,798 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 60609ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 13:27:14,053 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 95800ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 13:31:29,967 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 62059ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 13:37:48,997 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 64911ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 13:54:17,992 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 988991ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 14:19:14,795 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 1496791ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 15:20:14,652 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3659835ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 16:21:14,781 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3660121ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 17:18:05,668 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 3410875ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 17:21:42,223 ERROR 52767 nodejs.ClusterClientNoResponseError: client no response in 216507ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 52767
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 17:25:19,054 INFO 66660 [egg-sequelize](0ms) Executed (default): SELECT 1+1 AS result
+2026-02-22 17:25:18,790 INFO 66660 [egg:logger] init all loggers with options: {"dir":"/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/logs/backend","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"backend-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"enablePerformanceTimer":false,"enableFastContextLogger":false,"type":"agent","localStorage":{}}
+2026-02-22 17:25:19,000 INFO 66660 [egg:core] dump config after load, 3ms
+2026-02-22 17:25:19,026 INFO 66660 [egg-watcher] Start watching: ["/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy","/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"]
+2026-02-22 17:25:19,026 INFO 66660 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app"
+2026-02-22 17:25:19,026 INFO 66660 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/config"
+2026-02-22 17:25:19,026 INFO 66660 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks"
+2026-02-22 17:25:19,026 INFO 66660 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/mocks_proxy"
+2026-02-22 17:25:19,026 INFO 66660 [egg-watcher] Start watching: "/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app.js"
+2026-02-22 17:25:19,027 INFO 66660 [egg-watcher:agent] watcher start success
+2026-02-22 17:25:19,058 INFO 66660 egg start timeline:
+▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [235ms] - #0 Process Start
+                   ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [355ms] - #1 Application Start
+                    ▇ [12ms] - #2 Load Plugin
+                     ▇ [6ms] - #3 Load Config
+                     ▇ [0ms] - #4 Require(0) config/config.default.js
+                     ▇ [0ms] - #5 Require(1) node_modules/egg-session/config/config.default.js
+                     ▇ [0ms] - #6 Require(2) node_modules/egg-security/config/config.default.js
+                     ▇ [0ms] - #7 Require(3) node_modules/egg-jsonp/config/config.default.js
+                     ▇ [0ms] - #8 Require(4) node_modules/egg-onerror/config/config.default.js
+                     ▇ [0ms] - #9 Require(5) node_modules/egg-i18n/config/config.default.js
+                     ▇ [0ms] - #10 Require(6) node_modules/egg-watcher/config/config.default.js
+                     ▇ [1ms] - #11 Require(7) node_modules/egg-schedule/config/config.default.js
+                     ▇ [0ms] - #12 Require(8) node_modules/egg-multipart/config/config.default.js
+                     ▇ [0ms] - #13 Require(9) node_modules/egg-development/config/config.default.js
+                     ▇ [0ms] - #14 Require(10) node_modules/egg-logrotator/config/config.default.js
+                     ▇ [0ms] - #15 Require(11) node_modules/egg-static/config/config.default.js
+                     ▇ [0ms] - #16 Require(12) node_modules/egg-view/config/config.default.js
+                     ▇ [0ms] - #17 Require(13) node_modules/egg-sequelize/config/config.default.js
+                     ▇ [0ms] - #18 Require(14) node_modules/egg-cors/config/config.default.js
+                     ▇ [0ms] - #19 Require(15) node_modules/egg-jwt/config/config.default.js
+                     ▇ [0ms] - #20 Require(16) node_modules/egg-redis/config/config.default.js
+                     ▇ [1ms] - #21 Require(17) node_modules/egg/config/config.default.js
+                     ▇ [0ms] - #22 Require(18) config/config.default.js
+                     ▇ [0ms] - #23 Require(19) node_modules/egg-security/config/config.local.js
+                     ▇ [0ms] - #24 Require(20) node_modules/egg-watcher/config/config.local.js
+                     ▇ [0ms] - #25 Require(21) node_modules/egg-view/config/config.local.js
+                     ▇ [0ms] - #26 Require(22) node_modules/egg/config/config.local.js
+                     ▇▇ [29ms] - #27 Load extend/agent.js
+                     ▇ [2ms] - #28 Require(23) node_modules/egg-security/app/extend/agent.js
+                      ▇▇ [25ms] - #29 Require(24) node_modules/egg-schedule/app/extend/agent.js
+                        ▇ [0ms] - #30 Require(25) node_modules/egg-logrotator/app/extend/agent.js
+                        ▇ [17ms] - #31 Load extend/context.js
+                        ▇ [5ms] - #32 Require(26) node_modules/egg-security/app/extend/context.js
+                        ▇ [1ms] - #33 Require(27) node_modules/egg-jsonp/app/extend/context.js
+                        ▇ [0ms] - #34 Require(28) node_modules/egg-i18n/app/extend/context.js
+                        ▇ [8ms] - #35 Require(29) node_modules/egg-multipart/app/extend/context.js
+                         ▇ [1ms] - #36 Require(30) node_modules/egg-view/app/extend/context.js
+                         ▇ [1ms] - #37 Require(31) node_modules/egg/app/extend/context.js
+                         ▇ [18ms] - #38 Load agent.js
+                         ▇ [1ms] - #39 Require(32) node_modules/egg-security/agent.js
+                         ▇ [0ms] - #40 Require(33) node_modules/egg-onerror/agent.js
+                         ▇ [3ms] - #41 Require(34) node_modules/egg-watcher/agent.js
+                          ▇ [2ms] - #42 Require(35) node_modules/egg-schedule/agent.js
+                          ▇ [8ms] - #43 Require(36) node_modules/egg-development/agent.js
+                          ▇ [0ms] - #44 Require(37) node_modules/egg-logrotator/agent.js
+                          ▇ [0ms] - #45 Require(38) node_modules/egg-sequelize/agent.js
+                          ▇ [1ms] - #46 Require(39) node_modules/egg-redis/agent.js
+                           ▇ [0ms] - #47 Require(40) node_modules/egg/agent.js
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [235ms] - #48 Before Start in node_modules/egg-watcher/lib/init.js:15:14
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [223ms] - #49 Before Start in node_modules/egg-schedule/agent.js:12:9
+                           ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ [241ms] - #50 Before Start in node_modules/egg-development/agent.js:9:9
+                                          ▇▇ [25ms] - #51 Load "Symbol(model)" to Application
+                                            ▇▇▇▇ [58ms] - #52 Before Start in node_modules/egg-sequelize/lib/loader.js:39:7
+2026-02-22 17:25:19,058 INFO 66660 [egg:core] dump config after ready, 2ms
+2026-02-22 18:23:48,849 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2230586ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 19:24:49,352 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3660495ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 20:54:55,520 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1746325ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 21:26:50,328 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1914801ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 22:27:50,245 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3659906ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-22 23:28:49,773 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3659500ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 00:29:49,825 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3660023ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+

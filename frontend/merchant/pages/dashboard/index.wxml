@@ -1,0 +1,133 @@
+<!--merchant/pages/dashboard/index.wxml-->
+<view class="container">
+  <!-- 店铺状态（P1） -->
+  <view class="merchant-status-bar" wx:if="{{merchantStatusText}}">
+    <text class="status-label">店铺状态</text>
+    <text class="status-value status-{{stats.merchant_status || 'pending'}}">{{merchantStatusText}}</text>
+  </view>
+
+  <!-- 时间范围切换 -->
+  <view class="time-range-selector">
+    <view class="time-option {{timeRange === 'day' ? 'active' : ''}}" bindtap="switchTimeRange" data-range="day">今日</view>
+    <view class="time-option {{timeRange === 'week' ? 'active' : ''}}" bindtap="switchTimeRange" data-range="week">本周</view>
+    <view class="time-option {{timeRange === 'year' ? 'active' : ''}}" bindtap="switchTimeRange" data-range="year">本年</view>
+  </view>
+
+  <!-- 头部统计卡片 -->
+  <view class="stats-section">
+    <view class="stat-card">
+      <view class="stat-icon">
+        <van-icon name="gold-coin-o" size="24" color="#ee0a24" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">¥{{stats.amount || 0}}</text>
+        <text class="stat-label">{{timeRange === 'day' ? '今日' : timeRange === 'week' ? '本周' : '本年'}}成交额</text>
+      </view>
+    </view>
+
+    <view class="stat-card">
+      <view class="stat-icon">
+        <van-icon name="orders-o" size="24" color="#1989fa" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">{{stats.count || 0}}</text>
+        <text class="stat-label">{{timeRange === 'day' ? '今日' : timeRange === 'week' ? '本周' : '本年'}}订单</text>
+      </view>
+    </view>
+
+    <view class="stat-card">
+      <view class="stat-icon">
+        <van-icon name="logistics" size="24" color="#07c160" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">{{stats.pendingShipment || 0}}</text>
+        <text class="stat-label">待发货</text>
+      </view>
+    </view>
+
+    <view class="stat-card">
+      <view class="stat-icon">
+        <van-icon name="pending-payment" size="24" color="#ff976a" />
+      </view>
+      <view class="stat-info">
+        <text class="stat-value">{{stats.pendingPayment || 0}}</text>
+        <text class="stat-label">待付款</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷操作 -->
+  <view class="quick-actions">
+    <text class="section-title">快捷操作</text>
+    <view class="action-grid">
+      <view class="action-item" bindtap="navigateToOrders">
+        <van-icon name="orders-o" size="32" color="#1989fa" />
+        <text>订单管理</text>
+      </view>
+      <view class="action-item" bindtap="navigateToProducts">
+        <van-icon name="shop-o" size="32" color="#07c160" />
+        <text>商品管理</text>
+      </view>
+      <view class="action-item" bindtap="navigateToScan">
+        <van-icon name="scan" size="32" color="#ff976a" />
+        <text>扫码核销</text>
+      </view>
+      <view class="action-item" bindtap="navigateToCoupon">
+        <van-icon name="coupon-o" size="32" color="#ee0a24" />
+        <text>优惠券</text>
+      </view>
+      <view class="action-item" bindtap="navigateToCredit">
+        <van-icon name="medal-o" size="32" color="#ff976a" />
+        <text>信誉中心</text>
+      </view>
+      <view class="action-item" bindtap="navigateToMessages">
+        <van-icon name="chat-o" size="32" color="#1989fa" />
+        <text>用户评价</text>
+      </view>
+      <view class="action-item" bindtap="navigateToShopEdit">
+        <van-icon name="setting-o" size="32" color="#1989fa" />
+        <text>店铺设置</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 待发货订单 -->
+  <view class="pending-section" wx:if="{{pendingOrders.length > 0}}">
+    <view class="section-header">
+      <text class="section-title">待发货订单</text>
+      <text class="more-btn" bindtap="navigateToOrders">查看全部</text>
+    </view>
+
+    <view class="order-card" wx:for="{{pendingOrders}}" wx:key="id" bindtap="navigateToOrderDetail" data-id="{{item.id}}">
+      <view class="order-header">
+        <text class="order-no">订单号：{{item.order_no}}</text>
+        <text class="order-time">{{item.created_at}}</text>
+      </view>
+      
+      <view class="product-info">
+        <image class="product-image" src="{{item.productImage}}" mode="aspectFill" />
+        <view class="product-details">
+          <text class="product-name">{{item.productName}}</text>
+          <text class="product-quantity">数量：{{item.quantity}}</text>
+        </view>
+      </view>
+
+      <view class="order-footer">
+        <text class="order-amount">¥{{item.total_amount}}</text>
+        <button class="ship-btn" catchtap="shipOrder" data-id="{{item.id}}" data-product="{{item.product}}">
+          去发货
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态（非加载中且无待发货时展示） -->
+  <view class="empty-wrap" wx:if="{{!loading && pendingOrders.length === 0}}">
+    <van-empty description="暂无待发货订单" />
+  </view>
+
+  <!-- 退出登录 -->
+  <view class="logout-section">
+    <button class="logout-btn" bindtap="handleLogout">退出登录</button>
+  </view>
+</view>

@@ -1,0 +1,275 @@
+/* pages/merchant-apply/index.wxss */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 120rpx;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60rpx 30rpx;
+  color: #fff;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 12rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 24rpx;
+  opacity: 0.9;
+}
+
+/* 状态展示：加载中 / 审核中 / 已拒绝 */
+.status-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80rpx 40rpx;
+  background-color: #fff;
+  margin: 20rpx;
+  border-radius: 12rpx;
+}
+
+.status-block .status-text {
+  font-size: 32rpx;
+  color: #333;
+  margin-top: 24rpx;
+  font-weight: 500;
+}
+
+.status-block .status-desc {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 16rpx;
+  text-align: center;
+}
+
+.rejected-block .audit-opinion {
+  width: 100%;
+  margin-top: 24rpx;
+  padding: 24rpx;
+  background-color: #fff5f5;
+  border-radius: 8rpx;
+  border-left: 4rpx solid #ee0a24;
+}
+
+.rejected-block .opinion-label {
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 8rpx;
+}
+
+.rejected-block .opinion-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.rejected-block .resubmit-btn {
+  margin-top: 40rpx;
+  min-width: 280rpx;
+}
+
+.upload-section {
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 30rpx;
+  border-radius: 12rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.upload-area {
+  display: flex;
+  justify-content: center;
+}
+
+.preview-image {
+  width: 500rpx;
+  height: 350rpx;
+  border-radius: 8rpx;
+}
+
+.upload-placeholder {
+  width: 500rpx;
+  height: 350rpx;
+  border: 2rpx dashed #ddd;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.idcard-section .upload-area--small {
+  justify-content: center;
+}
+
+.upload-placeholder--small,
+.preview-image--small {
+  width: 320rpx;
+  height: 200rpx;
+}
+
+.upload-placeholder--small {
+  border: 2rpx dashed #ddd;
+  border-radius: 8rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+.preview-image--small {
+  border-radius: 8rpx;
+}
+
+.upload-text {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 16rpx;
+}
+
+/* 资质文件：与注册页一致的 van-field + van-uploader 样式 */
+.field-with-uploader.van-cell {
+  align-items: center;
+  padding-top: 24rpx;
+  padding-bottom: 24rpx;
+  min-height: 120rpx;
+  box-sizing: border-box;
+}
+.field-with-uploader .van-cell__value {
+  flex: 1 !important;
+  min-width: 0;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-field__body,
+.field-with-uploader .van-field__control {
+  min-width: 0;
+  flex: 1;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-uploader {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-uploader__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16rpx;
+  width: 100%;
+  min-width: 0;
+}
+.field-with-uploader .van-uploader__upload {
+  flex: 0 0 200rpx !important;
+  width: 200rpx !important;
+  max-width: 200rpx !important;
+  min-width: 200rpx !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10rpx;
+  min-height: 96rpx !important;
+  height: 96rpx !important;
+  padding: 16rpx !important;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  border: 1rpx solid #ebedf0;
+  background-color: #f7f8fa;
+  overflow: visible !important;
+}
+.field-with-uploader .van-uploader__upload-icon {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 36rpx;
+  line-height: 1;
+  color: #969799;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.field-with-uploader .van-uploader__upload-text {
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap;
+  font-size: 28rpx;
+  line-height: 1;
+  color: #969799;
+  display: flex;
+  align-items: center;
+}
+.field-with-uploader .van-uploader__preview {
+  flex-shrink: 0;
+  width: 200rpx;
+  height: 96rpx;
+}
+.field-with-uploader .van-uploader__preview-image {
+  width: 200rpx !important;
+  height: 96rpx !important;
+  border-radius: 12rpx;
+}
+
+.tips-section {
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 30rpx 30rpx 140rpx 30rpx;
+  border-radius: 12rpx;
+}
+
+.tips-title {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20rpx;
+  padding-left: 12rpx;
+  border-left: 4rpx solid #667eea;
+}
+
+.tips-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tip-item {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 8rpx;
+}
+
+.submit-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+}

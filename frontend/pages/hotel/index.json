@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "hotel-room-guest-popup": "/components/hotel-room-guest-popup/hotel-room-guest-popup"
+  }
+}

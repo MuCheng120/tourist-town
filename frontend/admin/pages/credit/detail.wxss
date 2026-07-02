@@ -1,0 +1,147 @@
+.page {
+  padding: 20rpx;
+  background: #f7f8fa;
+  min-height: 100vh;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14rpx;
+  padding: 22rpx;
+  margin-bottom: 18rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.04);
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 18rpx;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14rpx;
+}
+
+.label {
+  color: #666;
+  font-size: 26rpx;
+  min-width: 120rpx;
+}
+
+.value {
+  color: #333;
+  font-size: 26rpx;
+  text-align: right;
+  max-width: 460rpx;
+  word-break: break-all;
+}
+
+.remark-input {
+  flex: 1;
+  text-align: left;
+  border: 1rpx solid #e8e8e8;
+  border-radius: 8rpx;
+  padding: 12rpx 16rpx;
+  font-size: 24rpx;
+  background: #fff;
+}
+
+.violation-item {
+  border-top: 1rpx solid #f2f2f2;
+  padding-top: 18rpx;
+  margin-top: 18rpx;
+}
+
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  margin: 8rpx 0 12rpx;
+}
+
+.timeline-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+  margin-right: 12rpx;
+  flex-shrink: 0;
+}
+
+.timeline-dot.active {
+  background: #1677ff;
+}
+
+.timeline-dot.resolved {
+  background: #52c41a;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-title {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.timeline-time {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96rpx;
+  height: 46rpx;
+  padding: 0 14rpx;
+  border-radius: 12rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.status-active {
+  color: #1677ff;
+  background: #e8f3ff;
+}
+
+.status-resolved {
+  color: #52c41a;
+  background: #edf9ed;
+}
+
+.action-btn {
+  margin: 0;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+}
+
+.action-primary {
+  background: #1677ff;
+  color: #fff;
+}
+
+.action-disabled {
+  background: #f2f3f5;
+  color: #999;
+}
+
+.loading,
+.sub-empty {
+  text-align: center;
+  color: #999;
+  padding: 28rpx 0;
+}
+/* admin/pages/credit/detail.wxss */

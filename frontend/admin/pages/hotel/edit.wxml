@@ -1,0 +1,148 @@
+<view class="edit-page">
+  <view class="form-section">
+    <view class="section-title-row">
+      <text class="section-title">酒店基本信息</text>
+      <text class="id-badge" wx:if="{{isEdit && id}}">ID: {{id}}</text>
+    </view>
+
+    <view class="form-item">
+      <view class="label required">酒店名称</view>
+      <input class="input" placeholder="请输入酒店名称" value="{{form.name}}" data-field="name" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <view class="label required">封面图</view>
+      <view class="cover-upload">
+        <image wx:if="{{displayCover}}" class="cover-image" src="{{displayCover}}" mode="aspectFill" />
+        <view wx:else class="cover-placeholder" bindtap="chooseCoverImage">
+          <text class="icon">+</text>
+          <text class="text">上传封面</text>
+        </view>
+        <button wx:if="{{form.cover_image}}" class="change-btn" size="mini" bindtap="chooseCoverImage">更换</button>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">酒店介绍</view>
+      <textarea class="textarea" placeholder="用于游客端详情页展示" value="{{form.introduction}}" data-field="introduction" bindinput="onInputChange" maxlength="5000" />
+    </view>
+
+    <view class="form-item">
+      <view class="label">地址</view>
+      <view class="location-box">
+        <input class="input" placeholder="手动输入或使用地图选点" value="{{form.address}}" data-field="address" bindinput="onInputChange" />
+        <button class="location-btn" size="mini" bindtap="chooseLocation">选择位置</button>
+      </view>
+      <view class="location-coords">
+        <text>纬度：{{form.latitude || '未设置'}}</text>
+        <text>经度：{{form.longitude || '未设置'}}</text>
+      </view>
+    </view>
+
+    <view class="form-item">
+      <view class="label">列表库存提示</view>
+      <input class="input" placeholder="如：低价房仅剩2间（可选）" value="{{form.list_stock_tip}}" data-field="list_stock_tip" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <view class="label">酒店标签（多选）</view>
+      <view class="selected-tags" wx:if="{{selectedTagList.length}}">
+        <view class="selected-tag" wx:for="{{selectedTagList}}" wx:key="id" wx:for-item="t">
+          <text class="selected-tag-text">{{t.name}}</text>
+          <text class="selected-tag-remove" data-id="{{t.id}}" bindtap="removeSelectedTag">×</text>
+        </view>
+      </view>
+      <view class="tag-options">
+        <view
+          class="tag-option {{form.tag_ids.indexOf(tag.id) !== -1 ? 'active' : ''}}"
+          wx:for="{{displayedTags}}"
+          wx:for-item="tag"
+          wx:key="id"
+          data-id="{{tag.id}}"
+          data-name="{{tag.name}}"
+          bindtap="toggleTag"
+        >{{tag.name}}</view>
+      </view>
+      <view class="expand-tags-wrap" wx:if="{{(allTags && allTags.length) && (hasMoreTags || visibleTagCount > baseVisibleTagCount)}}">
+        <button class="expand-tags-btn" size="mini" wx:if="{{hasMoreTags}}" bindtap="expandMoreTags">展开更多（+12）</button>
+        <button class="collapse-tags-btn" size="mini" wx:if="{{visibleTagCount > baseVisibleTagCount}}" bindtap="collapseTags">收起</button>
+      </view>
+    </view>
+
+    <view class="form-row">
+      <view class="form-item half">
+        <view class="label">排序</view>
+        <input class="input" type="number" value="{{form.sort_order}}" bindinput="onSortOrderChange" />
+      </view>
+      <view class="form-item half">
+        <view class="label">状态</view>
+        <picker mode="selector" range="{{['显示','隐藏']}}" value="{{form.status === 1 ? 0 : 1}}" bindchange="onStatusChange">
+          <view class="picker-value">{{form.status === 1 ? '显示' : '隐藏'}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="form-section">
+    <text class="section-title">政策信息（结构化）</text>
+
+    <view class="form-item">
+      <view class="label">入住时间</view>
+      <view class="form-row">
+        <input class="input half-input" placeholder="如 14:00" value="{{form.policy_check_in_from}}" data-field="policy_check_in_from" bindinput="onInputChange" />
+        <input class="input half-input" placeholder="如 23:59" value="{{form.policy_check_in_to}}" data-field="policy_check_in_to" bindinput="onInputChange" />
+      </view>
+      <input class="input mt8" placeholder="入住补充说明（可选）" value="{{form.policy_check_in_note}}" data-field="policy_check_in_note" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <view class="label">退房时间</view>
+      <input class="input" placeholder="如 12:00" value="{{form.policy_check_out_before}}" data-field="policy_check_out_before" bindinput="onInputChange" />
+      <input class="input mt8" placeholder="退房补充说明（可选）" value="{{form.policy_check_out_note}}" data-field="policy_check_out_note" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <view class="label">押金说明</view>
+      <view class="switch-line">
+        <text>是否需要押金</text>
+        <switch checked="{{form.policy_deposit_required}}" data-field="policy_deposit_required" bindchange="onSwitchChange" />
+      </view>
+      <view class="form-row">
+        <input class="input half-input" type="digit" placeholder="押金金额" value="{{form.policy_deposit_amount}}" data-field="policy_deposit_amount" bindinput="onInputChange" disabled="{{!form.policy_deposit_required}}" />
+        <input class="input half-input" placeholder="币种（如 元）" value="{{form.policy_deposit_currency}}" data-field="policy_deposit_currency" bindinput="onInputChange" disabled="{{!form.policy_deposit_required}}" />
+      </view>
+      <input class="input mt8" placeholder="押金补充说明（可选）" value="{{form.policy_deposit_note}}" data-field="policy_deposit_note" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <view class="label">发票规则</view>
+      <view class="switch-line">
+        <text>是否支持发票</text>
+        <switch checked="{{form.policy_invoice_supported}}" data-field="policy_invoice_supported" bindchange="onSwitchChange" />
+      </view>
+      <input class="input" placeholder="发票类型，多个用逗号分隔" value="{{form.policy_invoice_types}}" data-field="policy_invoice_types" bindinput="onInputChange" disabled="{{!form.policy_invoice_supported}}" />
+      <input class="input mt8" placeholder="发票补充说明（可选）" value="{{form.policy_invoice_note}}" data-field="policy_invoice_note" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <view class="label">儿童与加床</view>
+      <input class="input" placeholder="选填，如儿童入住说明" value="{{form.policy_child_free_rule}}" data-field="policy_child_free_rule" bindinput="onInputChange" />
+      <view class="switch-line mt8">
+        <text>是否支持加床</text>
+        <switch checked="{{form.policy_extra_bed_supported}}" data-field="policy_extra_bed_supported" bindchange="onSwitchChange" />
+      </view>
+      <input class="input mt8" type="digit" placeholder="加床费用（元/晚，可选）" value="{{form.policy_extra_bed_price}}" data-field="policy_extra_bed_price" bindinput="onInputChange" disabled="{{!form.policy_extra_bed_supported}}" />
+      <input class="input mt8" placeholder="加床补充说明（可选）" value="{{form.policy_extra_bed_note}}" data-field="policy_extra_bed_note" bindinput="onInputChange" />
+    </view>
+
+    <view class="form-item">
+      <view class="label">富文本补充说明（可选）</view>
+      <textarea class="textarea" placeholder="只填温馨提示等补充内容（纯文字或简单 HTML）。也可一次性粘贴整段政策 JSON，点保存会自动拆到上方各项。" value="{{form.policy_rich_text_html}}" data-field="policy_rich_text_html" bindinput="onInputChange" maxlength="20000" />
+    </view>
+  </view>
+
+  <view class="actions">
+    <button class="btn cancel-btn" bindtap="cancel">取消</button>
+    <button class="btn save-btn" bindtap="save" loading="{{loading}}" disabled="{{loading}}">{{isEdit ? '保存' : '创建'}}</button>
+  </view>
+</view>

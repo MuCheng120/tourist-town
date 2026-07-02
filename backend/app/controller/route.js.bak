@@ -1,0 +1,133 @@
+'use strict';
+
+const Controller = require('egg').Controller;
+
+class RouteController extends Controller {
+  /**
+   * 获取路线列表
+   */
+  async list() {
+    const { ctx } = this;
+    const { page, pageSize, status } = ctx.query;
+    const filters = {
+      page: parseInt(page) || 1,
+      pageSize: parseInt(pageSize) || 10,
+      status: status !== undefined ? parseInt(status) : undefined,
+    };
+
+    // 尝试从缓存获取
+    let result = await ctx.service.cache.getRouteList(filters.page, filters.pageSize);
+    
+    if (!result) {
+      // 缓存未命中，从数据库获取
+      result = await ctx.service.route.list(filters);
+      // 设置缓存，有效期10分钟
+      await ctx.service.cache.setRouteList(filters.page, filters.pageSize, result, 600);
+    }
+
+    ctx.body = result;
+  }
+
+  /**
+   * 获取路线详情
+   */
+  async detail() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+
+    // 尝试从缓存获取
+    let result = await ctx.service.cache.getRouteDetail(id);
+    
+    if (!result) {
+      // 缓存未命中，从数据库获取
+      result = await ctx.service.route.detail(id);
+      // 设置缓存，有效期1小时
+      if (result.success) {
+        await ctx.service.cache.setRouteDetail(id, result, 3600);
+      }
+    }
+
+    // 增加访问计数
+    await ctx.service.cache.incrementVisit(`route:${id}`);
+
+    ctx.body = result;
+  }
+
+  /**
+   * 获取路线地图数据
+   */
+  async mapData() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+
+    ctx.body = await ctx.service.route.getMapData(id);
+  }
+
+  /**
+   * 创建路线（管理员）
+   */
+  async create() {
+    const { ctx } = this;
+    const { title, description, cover_image, estimated_duration, items } = ctx.request.body;
+
+    const result = await ctx.service.route.create({
+      title,
+      description,
+      cover_image,
+      estimated_duration,
+      items,
+    });
+
+    // 创建成功后清除缓存
+    if (result.success) {
+      await ctx.service.cache.clearRouteCache();
+    }
+
+    ctx.body = result;
+  }
+
+  /**
+   * 更新路线（管理员）
+   */
+  async update() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+    const { title, description, cover_image, estimated_duration, items, status } = ctx.request.body;
+
+    const updateData = {};
+    if (title !== undefined) updateData.title = title;
+    if (description !== undefined) updateData.description = description;
+    if (cover_image !== undefined) updateData.cover_image = cover_image;
+    if (estimated_duration !== undefined) updateData.estimated_duration = estimated_duration;
+    if (status !== undefined) updateData.status = status;
+    if (items !== undefined) updateData.items = items;
+
+    const result = await ctx.service.route.update(id, updateData);
+
+    // 更新成功后清除缓存
+    if (result.success) {
+      await ctx.service.cache.clearRouteCache();
+    }
+
+    ctx.body = result;
+  }
+
+  /**
+   * 删除路线（管理员）
+   */
+  async delete() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+
+    const result = await ctx.service.route.delete(id);
+
+    // 删除成功后清除缓存
+    if (result.success) {
+      await ctx.service.cache.clearRouteCache();
+    }
+
+    ctx.body = result;
+  }
+}
+
+module.exports = RouteController;

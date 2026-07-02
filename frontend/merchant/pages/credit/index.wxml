@@ -1,0 +1,73 @@
+<view class="credit-page">
+  <!-- 信用等级卡片 -->
+  <view class="credit-card" wx:if="{{creditInfo && !loading}}">
+    <view class="level-badge" style="background: {{levelColors[creditInfo.credit_level]}}">
+      <text class="level-text">{{creditInfo.credit_level}}级</text>
+    </view>
+    
+    <view class="credit-info">
+      <view class="info-row">
+        <text class="label">信用评分</text>
+        <text class="score">{{creditInfo.credit_score}}</text>
+      </view>
+      <view class="info-row">
+        <text class="label">订单完成率</text>
+        <text class="rate">{{orderCompletionRateText}}</text>
+      </view>
+      <view class="info-row">
+        <text class="label">更新时间</text>
+        <text class="time">{{lastLevelUpdateText}}</text>
+      </view>
+    </view>
+
+    <view class="level-desc">
+      <text>{{levelDescs[creditInfo.credit_level]}}</text>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <!-- 操作按钮 -->
+  <view class="action-buttons" wx:if="{{creditInfo}}">
+    <button class="btn-refresh" hover-class="none" bindtap="onRefresh">刷新数据</button>
+    <button class="btn-desc" hover-class="none" bindtap="showCreditDesc">等级说明</button>
+  </view>
+
+  <!-- 违规记录 -->
+  <view class="violations-section">
+    <view class="section-title">违规记录</view>
+    
+    <view class="violation-list" wx:if="{{violations.length > 0}}">
+      <view class="violation-item" wx:for="{{violations}}" wx:key="id">
+        <view class="violation-header">
+          <view class="violation-type {{item.violation_type}}">
+            <text wx:if="{{item.violation_type === 'warning'}}">警告</text>
+            <text wx:if="{{item.violation_type === 'limit'}}">限流</text>
+            <text wx:if="{{item.violation_type === 'suspend'}}">暂停营业</text>
+            <text wx:if="{{item.violation_type === 'revoke'}}">注销账号</text>
+          </view>
+          <view class="violation-status {{item.status}}">
+            <text wx:if="{{item.status === 'active'}}">生效中</text>
+            <text wx:if="{{item.status === 'resolved'}}">已解除</text>
+          </view>
+        </view>
+        
+        <view class="violation-reason">
+          <text>违规原因：{{item.reason}}</text>
+        </view>
+        
+        <view class="violation-time">
+          <text>处罚时间：{{item.punishmentTime}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty-state" wx:else>
+      <van-empty description="暂无数据" />
+      <text>暂无违规记录</text>
+    </view>
+  </view>
+</view>

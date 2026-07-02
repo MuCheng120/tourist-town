@@ -1,0 +1,95 @@
+<!--merchant/pages/ship/index.wxml-->
+<view class="container">
+  <view class="order-info">
+    <view class="info-title">订单信息</view>
+    <view class="info-item">
+      <text class="label">订单号：</text>
+      <text class="value">{{orderInfo.order_no}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">商品名称：</text>
+      <text class="value">{{orderInfo.productName}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">购买数量：</text>
+      <text class="value">x{{orderInfo.quantity}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">收货人：</text>
+      <text class="value">{{orderInfo.receiverName}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">联系电话：</text>
+      <text class="value">{{orderInfo.receiverPhone}}</text>
+    </view>
+    <view class="info-item">
+      <text class="label">收货地址：</text>
+      <text class="value">{{orderInfo.receiverAddress}}</text>
+    </view>
+  </view>
+
+  <!-- 不可发货时的提示 -->
+  <view class="status-tip" wx:if="{{!canShip && statusTip}}">
+    <van-icon name="info-o" size="18" color="#ee0a24" />
+    <text class="tip-text">{{statusTip}}</text>
+  </view>
+
+  <view class="ship-form" wx:if="{{canShip}}">
+    <!-- 选择快递公司 -->
+    <view class="form-item">
+      <view class="form-label">
+        <van-icon name="logistics" size="18" color="#1989fa" />
+        <text class="label-text">快递公司</text>
+        <text class="required">*</text>
+      </view>
+      <picker 
+        bindchange="onCompanyChange" 
+        value="{{companyIndex}}" 
+        range="{{companies}}" 
+        range-key="name"
+      >
+        <view class="picker-value {{!selectedCompany ? 'placeholder' : ''}}">
+          {{selectedCompany ? selectedCompany.name : '请选择快递公司'}}
+          <van-icon name="arrow-down" size="14" />
+        </view>
+      </picker>
+    </view>
+
+    <!-- 快递单号 -->
+    <view class="form-item">
+      <view class="form-label">
+        <van-icon name="notes-o" size="18" color="#1989fa" />
+        <text class="label-text">快递单号</text>
+        <text class="required">*</text>
+      </view>
+      <view class="input-wrapper">
+        <input 
+          class="input-field" 
+          value="{{trackingNo}}" 
+          bindinput="onTrackingNoInput"
+          placeholder="请输入快递单号"
+          placeholder-style="color: #999"
+        />
+        <view class="scan-btn" bindtap="scanCode">
+          <van-icon name="scan" size="20" color="#1989fa" />
+        </view>
+      </view>
+    </view>
+
+    <!-- 提交按钮 -->
+    <button 
+      class="submit-btn" 
+      bindtap="submitShip" 
+      loading="{{submitting}}"
+      disabled="{{submitting}}"
+    >
+      确认发货
+    </button>
+
+    <!-- 温馨提示 -->
+    <view class="tips">
+      <van-icon name="info-o" size="14" />
+      <text class="tips-text">发货后订单状态将变更为"已发货"，请确保信息填写正确</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,124 @@
+<!--pages/index/index.wxml：根节点不用全局 .container，避免 app.wxss 的 height:100vh + flex 压扁子项 -->
+<view class="index-page">
+  <!-- 轮播图：推荐景点或 Banner -->
+  <view class="banner-section" wx:if="{{carouselList.length > 0}}">
+    <swiper class="banner" indicator-dots autoplay circular interval="3000">
+      <swiper-item wx:for="{{carouselList}}" wx:key="id" bindtap="onBannerClick" data-item="{{item}}">
+        <image class="banner-image" src="{{item.image}}" mode="aspectFill" />
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 系统公告：横条仅展示标题滚动；正文在「全部」→ 公告列表页 -->
+  <view class="notice-section" wx:if="{{notice}}">
+    <view class="notice-row">
+      <view class="notice-bar-wrap">
+        <van-notice-bar left-icon="volume-o" text="{{notice}}" scrollable custom-class="notice-bar-inner" />
+      </view>
+      <view class="notice-all" bindtap="navigateToNoticeList" hover-class="notice-all--hover">
+        <text>全部</text>
+        <van-icon name="arrow" size="12" color="#ed6a0c" />
+      </view>
+    </view>
+  </view>
+
+  <!-- 快捷入口（去掉推荐路线） -->
+  <view class="quick-entry">
+    <view class="entry-item" bindtap="navigateTo" data-url="/pages/scenic/index">
+      <view class="entry-icon">
+        <van-icon name="location-o" size="24" color="#07c160" />
+      </view>
+      <text class="entry-text">景点导览</text>
+    </view>
+    <view class="entry-item" bindtap="navigateTo" data-url="/pages/mall/index">
+      <view class="entry-icon">
+        <van-icon name="shopping-cart-o" size="24" color="#ff976a" />
+      </view>
+      <text class="entry-text">特产商城</text>
+    </view>
+    <view class="entry-item" bindtap="navigateTo" data-url="/pages/hotel/index">
+      <view class="entry-icon">
+        <van-icon name="hotel-o" size="24" color="#ee0a24" />
+      </view>
+      <text class="entry-text">酒店预订</text>
+    </view>
+    <view class="entry-item" bindtap="navigateTo" data-url="/pages/community/index">
+      <view class="entry-icon">
+        <van-icon name="chat-o" size="24" color="#969799" />
+      </view>
+      <text class="entry-text">旅游攻略</text>
+    </view>
+  </view>
+
+  <!-- 热门景点 -->
+  <view class="section" wx:if="{{recommendSpots.length > 0}}">
+    <view class="section-header">
+      <text class="section-title">热门景点</text>
+      <text class="section-more" bindtap="navigateTo" data-url="/pages/scenic/index">更多 ›</text>
+    </view>
+    <scroll-view class="spot-scroll" scroll-x enable-flex>
+      <view class="spot-item" wx:for="{{recommendSpots}}" wx:key="id" bindtap="navigateToSpot" data-id="{{item.id}}">
+        <image class="spot-image" src="{{item.cover_image}}" mode="aspectFill" />
+        <view class="spot-info">
+          <text class="spot-name">{{item.name}}</text>
+          <view class="spot-rating">
+            <van-rate value="{{item.rating}}" readonly size="12" />
+            <text class="rating-text">{{item.rating}}</text>
+          </view>
+          <text class="spot-price">¥{{item.ticket_price != null ? item.ticket_price : (item.price != null ? item.price : 0)}}起</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 推荐商品：横向滑动，与热门景点一致；封面用 cardImage（含 cover 回退） -->
+  <view class="section" wx:if="{{recommendProducts.length > 0}}">
+    <view class="section-header">
+      <text class="section-title">特产美食推荐</text>
+      <text class="section-more" bindtap="navigateTo" data-url="/pages/mall/index">更多 ›</text>
+    </view>
+    <scroll-view class="product-scroll" scroll-x enable-flex show-scrollbar="{{false}}">
+      <view class="product-item" wx:for="{{recommendProducts}}" wx:key="id" bindtap="navigateToProduct" data-id="{{item.id}}">
+        <image class="product-image" src="{{item.cardImage}}" mode="aspectFill" />
+        <view class="product-info">
+          <view class="product-name">{{item.name}}</view>
+          <view class="product-footer">
+            <text class="product-price">¥{{item.price}}</text>
+            <text class="product-sales">已售{{item.sales_count}}</text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 推荐攻略 -->
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">热门攻略</text>
+      <text class="section-more" bindtap="navigateTo" data-url="/pages/community/index">更多 ›</text>
+    </view>
+    <view class="post-list">
+      <view class="post-item" wx:for="{{recommendPosts}}" wx:key="id" bindtap="navigateToPost" data-id="{{item.id}}">
+        <image
+          wx:if="{{item.images && item.images.length > 0}}"
+          class="post-image"
+          src="{{item.images[0]}}"
+          mode="aspectFill"
+        />
+        <view class="post-info">
+          <text class="post-title">{{item.title}}</text>
+          <view class="post-footer">
+            <view class="post-author">
+              <image class="author-avatar" src="{{item.user.avatar}}" />
+              <text class="author-name">{{item.user.nickname}}</text>
+            </view>
+            <view class="post-stats">
+              <van-icon name="good-job-o" size="14" />
+              <text class="stat-text">{{item.likes_count}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

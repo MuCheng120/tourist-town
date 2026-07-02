@@ -1,0 +1,55 @@
+/* components/offline-bar/offline-bar.wxss */
+.offline-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12rpx 24rpx;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-size: 26rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.offline-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 16rpx;
+  font-size: 32rpx;
+}
+
+.offline-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.offline-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48rpx;
+  height: 48rpx;
+  margin-left: 16rpx;
+  font-size: 32rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background 0.2s;
+}
+
+.offline-close:active {
+  background: rgba(255, 255, 255, 0.3);
+}

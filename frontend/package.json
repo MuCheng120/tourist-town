@@ -1,0 +1,21 @@
+{
+  "name": "tourist-town-miniprogram",
+  "version": "1.0.0",
+  "description": "旅游小镇微信小程序",
+  "main": "app.js",
+  "scripts": {
+    "dev": "echo '请使用微信开发者工具打开项目'"
+  },
+  "keywords": [
+    "miniprogram",
+    "tourism"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vant/weapp": "^1.11.6",
+    "echarts": "^5.6.0",
+    "echarts-for-weixin": "^1.0.2",
+    "weapp-qrcode": "^1.0.0"
+  }
+}

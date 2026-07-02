@@ -1,0 +1,111 @@
+<!--pages/hotel/index.wxml - 顶部搜索框样式，点击左侧弹出条件选择 -->
+<view class="container">
+  <!-- 顶部：一体式浅灰圆角条，左侧条件 + 右侧搜索（按参考图） -->
+  <view class="search-header-wrap">
+    <view class="search-header">
+      <view class="search-header-left" bindtap="openCriteriaPopup">
+        <text class="search-header-loc">{{locationText}}</text>
+        <text class="search-header-meta">{{checkInStr}} {{checkOutStr}}  {{roomCount}}间 {{guestCount}}人</text>
+      </view>
+      <view class="search-header-divider"></view>
+      <view class="search-header-right">
+        <van-search
+          value="{{keyword}}"
+          placeholder="位置/品牌/酒店"
+          shape="round"
+          background="transparent"
+          bind:change="onSearchChange"
+          bind:search="onSearch"
+        />
+      </view>
+    </view>
+  </view>
+
+  <!-- 排序栏 -->
+  <view class="filter-bar">
+    <view class="filter-item {{orderBy === 'distance' ? 'active' : ''}}" bindtap="onSortChange" data-order-by="distance" data-order="asc">
+      <text>距离</text>
+      <text class="filter-arrow" wx:if="{{orderBy === 'distance'}}">{{order === 'asc' ? '↑' : '↓'}}</text>
+    </view>
+    <view class="filter-item {{orderBy === 'rating' ? 'active' : ''}}" bindtap="onSortChange" data-order-by="rating" data-order="desc">
+      <text>评分</text>
+      <text class="filter-arrow" wx:if="{{orderBy === 'rating'}}">{{order === 'asc' ? '↑' : '↓'}}</text>
+    </view>
+    <view class="filter-item {{orderBy === 'price' ? 'active' : ''}}" bindtap="onSortChange" data-order-by="price">
+      <text>价格</text>
+      <text class="filter-arrow" wx:if="{{orderBy === 'price'}}">{{order === 'asc' ? '↑' : '↓'}}</text>
+    </view>
+  </view>
+
+  <view class="hotel-list">
+    <view class="hotel-card" wx:for="{{hotels}}" wx:for-item="hotel" wx:key="id" bindtap="goToDetail" data-id="{{hotel.id}}">
+      <image class="hotel-cover" src="{{hotel.cover_image}}" mode="aspectFill" wx:if="{{hotel.cover_image}}" />
+      <view class="hotel-cover hotel-cover-placeholder" wx:else><van-icon name="hotel-o" size="48" color="#c8c9cc" /></view>
+      <view class="hotel-body">
+        <text class="hotel-name">{{hotel.name}}</text>
+        <view class="hotel-stats">
+          <text class="hotel-rating" wx:if="{{hotel.rating_display}}">{{hotel.rating_display}}分</text>
+          <text class="hotel-sep" wx:if="{{hotel.rating_display && (hotel.comment_count_display || hotel.favorite_count_display)}}"> </text>
+          <text class="hotel-comment-count" wx:if="{{hotel.comment_count_display}}">{{hotel.comment_count_display}}点评</text>
+          <text class="hotel-sep" wx:if="{{hotel.comment_count_display && hotel.favorite_count_display}}">·</text>
+          <text class="hotel-favorite-count" wx:if="{{hotel.favorite_count_display}}">{{hotel.favorite_count_display}}收藏</text>
+        </view>
+        <view class="hotel-address-row">
+          <text class="hotel-distance" wx:if="{{hotel.distance != null}}">距您约 {{hotel.distance}}km</text>
+          <text class="hotel-address" wx:if="{{hotel.address}}">{{hotel.address}}</text>
+        </view>
+        <view class="hotel-tags" wx:if="{{hotel.tags && hotel.tags.length > 0}}">
+          <text class="hotel-tag" wx:for="{{hotel.tags}}" wx:key="id">{{item.name}}</text>
+        </view>
+        <view class="hotel-price-row">
+          <view class="hotel-price-wrap">
+            <text class="hotel-min-price" wx:if="{{hotel.min_price != null && hotel.min_price > 0}}">¥{{hotel.min_price}}起</text>
+          </view>
+          <text class="hotel-stock-tip" wx:if="{{hotel.list_stock_tip}}">{{hotel.list_stock_tip}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <van-empty wx:if="{{hotels.length === 0 && !loading}}" description="暂无酒店" />
+  <view class="loading" wx:if="{{loading}}"><van-loading size="24px">加载中...</van-loading></view>
+
+  <!-- 加载完成 -->
+  <view class="no-more" wx:if="{{hotels.length > 0 && !loading}}">
+    <text>没有更多了</text>
+  </view>
+</view>
+
+<!-- 弹窗1：条件选择（位置 / 日期 / 间数人数） -->
+<van-popup show="{{showCriteriaPopup}}" position="bottom" round bind:close="closeCriteriaPopup" custom-style="max-height: 70%; z-index: 1000; padding-bottom: 120rpx;">
+  <view class="criteria-popup">
+    <view class="criteria-row" catchtap="onGetLocation">
+      <text class="criteria-row-label">位置</text>
+      <text class="criteria-row-value">{{locationText}}</text>
+      <van-icon name="aim" size="18" color="#1989fa" />
+    </view>
+    <view class="criteria-row" catchtap="openDatePicker">
+      <text class="criteria-row-label">入住日期</text>
+      <text class="criteria-row-value">{{checkInLabel}} - {{checkOutLabel}} 共{{nightCount}}晚</text>
+      <van-icon name="arrow" size="16" color="#969799" />
+    </view>
+    <view class="criteria-row" catchtap="openRoomGuestPopup">
+      <text class="criteria-row-label">客房与人数</text>
+      <text class="criteria-row-value">{{roomCount}}间房 {{adultCount}}成人 {{childCount}}儿童</text>
+      <van-icon name="arrow" size="16" color="#969799" />
+    </view>
+    <view class="criteria-popup-footer">
+      <van-button type="primary" block round bind:click="confirmCriteria">确定</van-button>
+    </view>
+  </view>
+</van-popup>
+
+<hotel-room-guest-popup
+  show="{{ showRoomGuestPopup }}"
+  room-count="{{ roomCount }}"
+  adult-count="{{ adultCount }}"
+  child-count="{{ childCount }}"
+  child-ages="{{ childAges }}"
+  bind:close="closeRoomGuestPopup"
+  bind:confirm="onRoomGuestPopupConfirm"
+/>

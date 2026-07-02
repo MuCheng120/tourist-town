@@ -1,0 +1,168 @@
+'use strict';
+
+const Controller = require('egg').Controller;
+
+class ScenicSpotController extends Controller {
+  /**
+   * 获取景点列表
+   */
+  async list() {
+    const { ctx } = this;
+    const { page, pageSize, status } = ctx.query;
+    const filters = {
+      page: parseInt(page) || 1,
+      pageSize: parseInt(pageSize) || 10,
+      status: status !== undefined ? parseInt(status) : undefined,
+    };
+
+    // 尝试从缓存获取
+    le/ /esult尝= await ctx.service.cache.getScenicList(filters.page, filters.pageSize, {lstatus:efilters.statusr}); await ctx.service.cache.getScenicList(filters.page, filters.pageSize, { status: filters.status });
+    
+    if (!result) {
+      // 缓存未命中，从数据库获取
+      result = await ctx.service.scenicSpot.list(filters);
+      // 设置缓存，有效期10分钟
+      await ctx.service.cache.setScenicList(filters.page, filters.pageSize, { status: filters.status }, result, 600);
+    }
+
+    ctx.body = result;
+  }
+
+  /**
+   * 获取景点详情
+   */
+  async detail() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+
+    // 尝试从缓存获取
+    let result = await ctx.service.cache.getScenicDetail(id);
+    
+    if (!result) {
+      // 缓存未命中，从数据库获取
+      result = await ctx.service.scenicSpot.detail(id);
+      // 设置缓存，有效期1小时
+      if (result.success) {
+        await ctx.service.cache.setScenicDetail(id, result, 3600);
+      }
+    }
+
+    // 增加访问计数
+    await ctx.service.cache.incrementVisit(`scenic:${id}`);
+
+    ctx.body = result;
+  }
+
+  /**
+   * 创建景点（管理员）
+   */
+  async create() {
+    const { ctx } = this;
+    const { name, cover_image, images, location, opening_hours, ticket_price, description } = ctx.request.body;
+
+    const result = await ctx.service.scenicSpot.create({
+      name,
+      cover_image,
+      images,
+      location,
+      opening_hours,
+      ticket_price,
+      description,
+      status: 1,
+    });
+
+    // 创建成功后清除缓存
+    if (result.success) {
+      await ctx.service.cache.clearScenicCache();
+    }
+
+    ctx.body = result;
+  }
+
+  /**
+   * 更新景点（管理员）
+   */
+  async update() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+    const { name, cover_image, images, location, opening_hours, ticket_price, description, status } = ctx.request.body;
+
+    const updateData = {};
+    if (name !== undefined) updateData.name = name;
+    if (cover_image !== undefined) updateData.cover_image = cover_image;
+    if (images !== undefined) updateData.images = images;
+    if (location !== undefined) updateData.location = location;
+    if (opening_hours !== undefined) updateData.opening_hours = opening_hours;
+    if (ticket_price !== undefined) updateData.ticket_price = ticket_price;
+    if (description !== undefined) updateData.description = description;
+    if (status !== undefined) updateData.status = status;
+
+    const result = await ctx.service.scenicSpot.update(id, updateData);
+
+    // 更新成功后清除缓存
+    if (result.success) {
+      await ctx.service.cache.clearScenicCache();
+    }
+
+    ctx.body = result;
+  }
+
+  /**
+   * 删除景点（管理员）
+   */
+  async delete() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+
+    const result = await ctx.service.scenicSpot.delete(id);
+
+    // 删除成功后清除缓存
+    if (result.success) {
+      await ctx.service.cache.clearScenicCache();
+    }
+
+    ctx.body = result;
+  }
+
+  /**
+   * 获取景点评论
+   */
+  async getComments() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+    const { page, pageSize } = ctx.query;
+
+    ctx.body = await ctx.service.scenicSpot.getComments(id, {
+      page: parseInt(page) || 1,
+      pageSize: parseInt(pageSize) || 10,
+    });
+  }
+
+  /**
+   * 添加景点评论
+   */
+  async addComment() {
+    const { ctx } = this;
+    const { id } = ctx.params;
+    const userId = ctx.state.user.id;
+    const { content, images, score, parent_id, reply_to_user_id } = ctx.request.body;
+
+    // 内容安全检查
+    const pass = await ctx.service.security.checkContent(content);
+    if (!pass) {
+      ctx.status = 400;
+      ctx.body = { message: '内容包含违法违规信息' };
+      return;
+    }
+
+    ctx.body = await ctx.service.scenicSpot.addComment(userId, id, {
+      content,
+      images,
+      score,
+      parent_id,
+      reply_to_user_id,
+    });
+  }
+}
+
+module.exports = ScenicSpotController;

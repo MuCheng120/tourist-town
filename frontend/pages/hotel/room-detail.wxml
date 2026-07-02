@@ -1,0 +1,139 @@
+<!-- 房型详情：房型介绍、设施介绍、政策服务 -->
+<view class="container">
+  <block wx:if="{{room}}">
+    <!-- 图片轮播（原生 swiper） -->
+    <view class="gallery-wrap">
+      <swiper class="gallery-swipe" indicator-dots="{{false}}" autoplay="{{false}}" bindchange="onSwipeChange">
+        <swiper-item wx:for="{{room.images}}" wx:key="index">
+          <image class="gallery-img" src="{{item}}" mode="aspectFill" />
+        </swiper-item>
+        <swiper-item wx:if="{{!room.images || room.images.length === 0}}">
+          <view class="gallery-placeholder"><van-icon name="photo-o" size="80" color="#c8c9cc" /></view>
+        </swiper-item>
+      </swiper>
+      <view class="gallery-indicator">{{currentImageIndex}}/{{totalImages}}</view>
+    </view>
+
+    <!-- 房型名称 -->
+    <view class="section name-section">
+      <text class="room-name">{{room.name}}</text>
+    </view>
+
+    <!-- 房型介绍：面积/楼层/Wi-Fi/窗户/吸烟 -->
+    <view class="section spec-section">
+      <view class="spec-row">
+        <view class="spec-item" wx:if="{{room.area}}">
+          <van-icon name="records-o" size="18" color="#666" />
+          <text>{{room.area}}</text>
+        </view>
+        <view class="spec-item" wx:if="{{room.floor}}">
+          <van-icon name="upgrade" size="18" color="#666" />
+          <text>{{room.floor}}</text>
+        </view>
+        <view class="spec-item" wx:if="{{room.wifi_info}}">
+          <van-icon name="wifi-o" size="18" color="#1989fa" />
+          <text>{{room.wifi_info}}</text>
+        </view>
+        <view class="spec-item" wx:if="{{room.window_info}}">
+          <van-icon name="eye-o" size="18" color="#666" />
+          <text>{{room.window_info}}</text>
+        </view>
+        <view class="spec-item" wx:if="{{room.smoking_policy}}">
+          <van-icon name="cross" size="18" color="#666" />
+          <text>{{room.smoking_policy}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 床型与加床 -->
+    <view class="section" wx:if="{{room.bed_type || room.extra_bed_policy}}">
+      <view class="section-head">
+        <van-icon name="logistics" size="18" color="#333" />
+        <text class="section-title">床型</text>
+      </view>
+      <text class="section-desc" wx:if="{{room.bed_type}}">{{room.bed_type}}</text>
+      <text class="section-desc extra-bed" wx:if="{{room.extra_bed_policy}}">成人加床：{{room.extra_bed_policy}}</text>
+    </view>
+
+    <!-- 早餐 -->
+    <view class="section" wx:if="{{room.breakfast_info}}">
+      <view class="section-head">
+        <van-icon name="guide-o" size="18" color="#333" />
+        <text class="section-title">{{room.breakfast_info.has_breakfast ? '早餐' : '无早餐'}}</text>
+      </view>
+      <view class="breakfast-detail" wx:if="{{room.breakfast_info.type}}">
+        <text class="detail-line">类型：{{room.breakfast_info.type}}</text>
+        <text class="detail-line" wx:if="{{room.breakfast_info.cuisine}}">菜品：{{room.breakfast_info.cuisine}}</text>
+        <text class="detail-line" wx:if="{{room.breakfast_info.hours}}">营业时间：{{room.breakfast_info.hours}}</text>
+        <text class="detail-line" wx:if="{{room.breakfast_info.adult_price}}">成人加早：¥{{room.breakfast_info.adult_price}}/人</text>
+        <text class="detail-line" wx:if="{{room.breakfast_info.child_price}}">儿童加早：{{room.breakfast_info.child_price}}</text>
+      </view>
+    </view>
+
+    <!-- 洗浴用品/设施 -->
+    <view class="section" wx:if="{{room.toiletries && room.toiletries.length > 0}}">
+      <view class="section-head">
+        <van-icon name="cluster-o" size="18" color="#333" />
+        <text class="section-title">洗浴用品</text>
+      </view>
+      <view class="toiletries-list">
+        <text class="toiletry-item" wx:for="{{room.toiletries}}" wx:key="index">{{item}}</text>
+      </view>
+    </view>
+
+    <!-- 其他设施（amenities） -->
+    <view class="section" wx:if="{{room.features && room.features.length > 0}}">
+      <view class="section-head">
+        <van-icon name="apps-o" size="18" color="#333" />
+        <text class="section-title">设施介绍</text>
+      </view>
+      <view class="features-wrap">
+        <van-tag plain type="primary" size="medium" wx:for="{{room.features}}" wx:key="index">{{item}}</van-tag>
+      </view>
+    </view>
+
+    <!-- 政策与服务 -->
+    <view class="section policy-section">
+      <view class="section-head main">
+        <text class="section-title">政策与服务</text>
+      </view>
+
+      <view class="policy-block" wx:if="{{room.children_policy}}">
+        <view class="policy-subhead">
+          <van-icon name="friends-o" size="16" color="#333" />
+          <text>儿童及加床</text>
+        </view>
+        <text class="policy-text">{{room.children_policy}}</text>
+      </view>
+
+      <view class="policy-block" wx:if="{{room.cancellation_policy}}">
+        <view class="policy-subhead">
+          <van-icon name="shield-o" size="16" color="#333" />
+          <text>限时取消</text>
+        </view>
+        <text class="policy-text">{{room.cancellation_policy}}</text>
+      </view>
+
+      <view class="policy-block" wx:if="{{!room.children_policy && !room.cancellation_policy}}">
+        <text class="policy-text muted">暂无政策说明，预订前可联系酒店确认。</text>
+      </view>
+    </view>
+
+    <!-- 底部占位 -->
+    <view class="bottom-placeholder"></view>
+  </block>
+
+  <van-loading wx:if="{{loading}}" class="page-loading" size="24px">加载中...</van-loading>
+  <van-empty wx:if="{{!room && !loading}}" description="房型不存在" />
+
+  <!-- 底部预订栏 -->
+  <view class="bottom-bar" wx:if="{{room}}">
+    <view class="price-wrap">
+      <text class="price-label">¥{{room.price}}</text>
+      <text class="price-unit">/晚起</text>
+    </view>
+    <button class="book-btn" bindtap="handleBook" disabled="{{!available}}">
+      {{available ? '预订' : '暂无房'}}
+    </button>
+  </view>
+</view>

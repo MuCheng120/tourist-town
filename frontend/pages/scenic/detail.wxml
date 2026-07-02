@@ -1,0 +1,171 @@
+<view class="detail-container" wx:if="{{spot}}">
+  <!-- 一、顶部图片轮播 -->
+  <swiper
+    class="spot-swiper"
+    bindchange="onImageChange"
+    indicator-dots="{{images.length > 1}}"
+    indicator-color="rgba(255,255,255,0.5)"
+    indicator-active-color="#fff"
+    autoplay="{{images.length > 1}}"
+    interval="5000"
+    duration="500"
+  >
+    <swiper-item wx:for="{{images}}" wx:key="index">
+      <image class="spot-image" src="{{item}}" mode="aspectFill" bindtap="previewImage" data-index="{{index}}" lazy-load />
+    </swiper-item>
+  </swiper>
+
+  <!-- 二、景区基本信息区 -->
+  <view class="section basic-info">
+    <view class="spot-name-row">
+      <text class="spot-name">{{spot.name}}</text>
+      <view class="favorite-btn" bindtap="toggleFavorite">
+        <van-icon name="{{isFavorited ? 'star' : 'star-o'}}" size="22" color="{{isFavorited ? '#ff976a' : '#666'}}" />
+        <text class="favorite-text">{{isFavorited ? '已收藏' : '收藏'}}</text>
+      </view>
+    </view>
+    <view class="rating-row" bindtap="switchToCommentTab">
+      <van-rate value="{{spot.rating}}" readonly size="16" />
+      <text class="rating-num">{{spot.rating}}</text>
+      <text class="rating-count">{{spot.rating_count || 0}}条点评</text>
+      <van-icon name="arrow" size="12" color="#999" />
+    </view>
+  </view>
+
+  <!-- 三、景区运营状态区 -->
+  <view class="section operation-section">
+    <view class="operation-row">
+      <text class="open-status">{{openStatusText}}</text>
+      <text class="open-time">{{spot.open_time || '暂无'}}{{stopTimesText}}</text>
+    </view>
+  </view>
+
+  <!-- 四、联系与位置区：左侧地址，右侧 [地图] [电话] -->
+  <view class="section contact-section">
+    <view class="address-row">
+      <text class="address-text">{{displayAddress}}</text>
+    </view>
+    <view class="contact-btns">
+      <view class="contact-btn" bindtap="openMap">
+        <van-icon name="location-o" size="18" color="#1989fa" />
+        <text>地图</text>
+      </view>
+      <view class="contact-btn" bindtap="showPhonePopup">
+        <van-icon name="phone-o" size="18" color="#1989fa" />
+        <text>电话</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 五、Tab 切换栏：预定 | 评论 -->
+  <view class="tab-bar">
+    <view class="tab-item {{activeTab === 'book' ? 'active' : ''}}" data-tab="book" bindtap="switchTab">预订</view>
+    <view class="tab-item {{activeTab === 'comment' ? 'active' : ''}}" data-tab="comment" bindtap="switchTab">评论</view>
+  </view>
+
+  <!-- Tab1：门票预订（默认） -->
+  <view class="tab-content" wx:if="{{activeTab === 'book'}}">
+    <view class="book-date-row" bindtap="showDatePicker">
+      <text class="book-label">游玩日期</text>
+      <text class="book-value">{{playDateStr || '请选择日期'}}</text>
+      <van-icon name="arrow" size="14" color="#999" />
+    </view>
+    <view class="ticket-list">
+      <view
+        class="ticket-item {{selectedTicketType === item.type ? 'selected' : ''}}"
+        wx:for="{{ticketTypeList}}"
+        wx:key="type"
+        data-type="{{item.type}}"
+        data-price="{{item.price}}"
+        data-name="{{item.name}}"
+        bindtap="selectTicketType"
+      >
+        <view class="ticket-name">{{item.name}}</view>
+        <view class="ticket-remark" wx:if="{{item.remark}}">{{item.remark}}</view>
+        <view class="ticket-price">¥{{item.price}}</view>
+      </view>
+    </view>
+    <view class="quantity-row">
+      <text class="quantity-label">购买数量</text>
+      <van-stepper value="{{quantity}}" min="1" max="10" bind:change="onQuantityChange" />
+    </view>
+    <view class="total-row">
+      <text class="total-row-label">合计</text>
+      <text class="total-row-amount">¥{{totalPrice}}</text>
+    </view>
+    <van-button type="primary" block class="book-submit-btn" bindtap="goToConfirm">立即预订</van-button>
+  </view>
+
+  <!-- Tab2：评论（仅文字+评分） -->
+  <view class="tab-content comment-tab" wx:if="{{activeTab === 'comment'}}" id="comment-section">
+    <view class="comment-write-row" bindtap="openCommentDialog">
+      <van-icon name="edit" size="20" color="#1989fa" />
+      <text>写评论</text>
+    </view>
+    <view class="comments-list">
+      <view class="comment-item" wx:for="{{comments}}" wx:key="id">
+        <view class="comment-header">
+          <image class="user-avatar" src="{{item.user.avatar}}" mode="aspectFill" />
+          <view class="user-info">
+            <text class="user-name">{{item.user.nickname}}</text>
+            <view class="comment-meta">
+              <van-rate wx:if="{{item.score}}" value="{{item.score}}" readonly size="12" />
+              <text class="comment-time">{{item.created_at}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="comment-content">{{item.content}}</view>
+      </view>
+    </view>
+    <view class="load-more" wx:if="{{hasMoreComments}}" bindtap="loadMoreComments"><text>加载更多</text></view>
+    <view class="no-more" wx:if="{{!hasMoreComments && comments.length > 0}}"><text>没有更多了</text></view>
+    <van-empty wx:if="{{comments.length === 0}}" description="暂无评论" />
+  </view>
+
+  <!-- 日期选择弹窗（样式同酒店） -->
+  <van-popup show="{{showDatePicker}}" position="bottom" round bind:close="closeDatePicker">
+    <van-datetime-picker
+      type="date"
+      value="{{playDate}}"
+      min-date="{{minDate}}"
+      max-date="{{maxDate}}"
+      bind:confirm="onDateConfirm"
+      bind:cancel="closeDatePicker"
+    />
+  </van-popup>
+
+  <!-- 电话弹窗：显示管理员设置的联系电话，可拨打 -->
+  <van-popup show="{{showPhoneDialog}}" round bind:close="closePhoneDialog">
+    <view class="phone-popup">
+      <view class="phone-popup-title">联系电话</view>
+      <view class="phone-popup-body" wx:if="{{contactPhone}}">
+        <text class="phone-number">{{contactPhone}}</text>
+        <van-button type="primary" size="small" bindtap="callContactFromDialog">拨打</van-button>
+      </view>
+      <view class="phone-popup-body" wx:else>
+        <text class="phone-empty">暂未设置咨询电话</text>
+      </view>
+      <view class="phone-popup-close" bindtap="closePhoneDialog">关闭</view>
+    </view>
+  </van-popup>
+
+  <!-- 评论弹窗（仅文字+评分） -->
+  <van-popup show="{{showCommentDialog}}" position="bottom" round bind:close="closeCommentDialog">
+    <view class="comment-dialog">
+      <view class="dialog-header">
+        <text class="dialog-title">发表评论</text>
+        <van-icon name="cross" bindtap="closeCommentDialog" />
+      </view>
+      <view class="dialog-body">
+        <view class="score-section">
+          <text class="score-label">评分</text>
+          <van-rate value="{{commentScore}}" bind:change="onScoreChange" />
+        </view>
+        <van-field value="{{commentContent}}" label="评论" type="textarea" placeholder="请输入文字评价" autosize bind:change="onCommentInput" />
+        <van-button block type="primary" bindtap="submitComment" class="submit-comment-btn">提交</van-button>
+      </view>
+    </view>
+  </van-popup>
+</view>
+
+<van-empty wx:else description="景点不存在" />

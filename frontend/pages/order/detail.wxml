@@ -1,0 +1,244 @@
+<block wx:if="{{order}}">
+<view class="order-detail-container {{isAdminView ? 'order-detail-container--admin' : ''}} {{!isAdminView && order.status === 'unpaid' ? 'with-bottom-bar' : ''}}">
+  <!-- 订单状态 -->
+  <view class="status-card">
+    <view class="status-icon">
+      <van-icon wx:if="{{order.status === 'unpaid'}}" name="clock-o" color="#ff976a" size="48" />
+      <van-icon wx:elif="{{order.status === 'paid'}}" name="passed" color="#07c160" size="48" />
+      <van-icon wx:elif="{{order.status === 'shipped'}}" name="logistics" color="#1989fa" size="48" />
+      <van-icon wx:elif="{{order.status === 'verified'}}" name="checked" color="#07c160" size="48" />
+      <van-icon wx:elif="{{order.status === 'completed'}}" name="smile-o" color="#07c160" size="48" />
+      <van-icon wx:elif="{{order.status === 'cancelled'}}" name="close" color="#969799" size="48" />
+      <van-icon wx:elif="{{order.status === 'refunding'}}" name="question" color="#ff976a" size="48" />
+      <van-icon wx:else name="warning-o" color="#ee0a24" size="48" />
+    </view>
+    <view class="status-text">
+      <text class="status-title">{{statusText}}</text>
+      <text class="status-desc">{{statusDesc}}</text>
+    </view>
+  </view>
+
+  <!-- 景点信息 -->
+  <view class="card spot-card" wx:if="{{order.scenic_spot}}">
+    <view class="spot-header">
+      <image class="spot-cover" src="{{order.scenic_spot.cover_image}}" mode="aspectFill"></image>
+      <view class="spot-info">
+        <view class="spot-name">{{order.spot_name}}</view>
+        <view class="spot-meta">
+          <text>游玩日期：{{order.play_date}}</text>
+          <text>数量：{{order.quantity}}张</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 酒店入住信息 -->
+  <view class="card hotel-card" wx:if="{{order.order_type === 'hotel' && order.room_type}}">
+    <view class="card-title">入住信息</view>
+    <view class="info-row"><text class="label">房型</text><text class="value">{{order.room_type.name}}</text></view>
+    <view class="info-row"><text class="label">入住</text><text class="value">{{order.check_in_date}}</text></view>
+    <view class="info-row"><text class="label">退房</text><text class="value">{{order.check_out_date}}</text></view>
+    <view class="info-row" wx:if="{{order.contact_name}}"><text class="label">入住人</text><text class="value">{{order.contact_name}}</text></view>
+    <view class="info-row" wx:if="{{order.contact_phone}}"><text class="label">联系电话</text><text class="value">{{order.contact_phone}}</text></view>
+    <view class="info-row" wx:if="{{order.adult_count != null || order.child_count != null}}">
+      <text class="label">入住人数</text>
+      <text class="value">{{order.adult_count != null ? order.adult_count : 1}}成人{{order.child_count ? '，' + order.child_count + '儿童' : ''}}</text>
+    </view>
+  </view>
+
+  <!-- 收货信息（特产等有地址时展示） -->
+  <view class="card address-card" wx:if="{{order.addressDisplay}}">
+    <view class="card-title">收货信息</view>
+    <view class="info-row address-content">
+      <text class="value">{{order.addressDisplay}}</text>
+    </view>
+  </view>
+
+  <!-- 物流信息（待收货 / 已收货且存在运单） -->
+  <view class="card logistics-card" id="logistics-section" wx:if="{{order.status === 'shipped' || (order.logistics && order.logistics.tracking_no)}}">
+    <view class="card-title">
+      <van-icon name="logistics" size="18" />
+      <text>物流动态</text>
+    </view>
+    <view wx:if="{{logisticsLoading}}" class="logistics-loading">正在更新物流信息…</view>
+    <block wx:elif="{{logisticsSummary}}">
+      <view class="logistics-summary">
+        <view class="info-row logistics-row">
+          <text class="label">承运商</text>
+          <text class="value">{{logisticsSummary.company || '—'}}</text>
+        </view>
+        <view class="info-row logistics-row">
+          <text class="label">运单号</text>
+          <view class="value tracking-row">
+            <text class="tracking-no">{{logisticsSummary.tracking_no}}</text>
+            <text class="copy-link" bindtap="copyTrackingNo">复制</text>
+          </view>
+        </view>
+        <view class="info-row logistics-row" wx:if="{{logisticsSummary.status}}">
+          <text class="label">物流状态</text>
+          <text class="value">{{logisticsSummary.status}}</text>
+        </view>
+      </view>
+      <view class="logistics-timeline" wx:if="{{logisticsTraces.length > 0}}">
+        <view class="trace-item" wx:for="{{logisticsTraces}}" wx:key="index">
+          <view class="trace-dot"></view>
+          <view class="trace-body">
+            <text class="trace-time">{{item.time}}</text>
+            <text wx:if="{{item.location}}" class="trace-location">{{item.location}}</text>
+            <text class="trace-context">{{item.context}}</text>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="logistics-empty-hint">暂无路由轨迹，可下拉刷新或稍后再试</view>
+    </block>
+    <view wx:else class="logistics-empty-hint">暂无物流数据，请稍后再试或联系商家</view>
+  </view>
+
+  <!-- 订单信息 -->
+  <view class="card order-info-card">
+    <view class="card-title">订单信息</view>
+    <view class="info-row">
+      <text class="label">订单编号</text>
+      <text class="value order-no">{{order.order_no}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">下单时间</text>
+      <text class="value">{{order.createdAtText}}</text>
+    </view>
+    <view class="info-row" wx:if="{{order.paid_at}}">
+      <text class="label">支付时间</text>
+      <text class="value">{{order.paidAtText}}</text>
+    </view>
+    <view class="info-row">
+      <text class="label">订单总额</text>
+      <text class="value price">¥{{order.finalAmountText}}</text>
+    </view>
+    <view class="info-row" wx:if="{{order.status === 'refunding' && order.refund_reason}}">
+      <text class="label">商家意见</text>
+      <text class="value">{{order.refund_reason}}</text>
+    </view>
+    <view class="info-row" wx:if="{{order.status === 'refunding' && order.refund_reject_reason}}">
+      <text class="label">商家意见</text>
+      <text class="value">{{order.refund_reject_reason}}</text>
+    </view>
+    <view class="info-row" wx:if="{{order.refund_apply_reason}}">
+      <text class="label">退款理由</text>
+      <text class="value">{{order.refund_apply_reason}}</text>
+    </view>
+  </view>
+
+  <view class="card refund-evidence-card" wx:if="{{order.refund_evidence_images && order.refund_evidence_images.length}}">
+    <view class="card-title">退款凭证</view>
+    <view class="evidence-list">
+      <image
+        wx:for="{{order.refund_evidence_images}}"
+        wx:key="*this"
+        class="evidence-image"
+        src="{{item}}"
+        mode="aspectFill"
+        bindtap="previewRefundEvidence"
+        data-current="{{item}}"
+      />
+    </view>
+  </view>
+
+  <!-- 管理端：酒店确认入住完成 -->
+  <view class="card admin-hotel-complete-card" wx:if="{{isAdminView && order.order_type === 'hotel' && order.status === 'paid'}}">
+    <view class="card-title">入住办理</view>
+    <view class="admin-hotel-complete-tip">客人到店核验身份并办理入住后，点击按钮将订单标为已完成（用户可评价等）。</view>
+    <button class="admin-btn admin-complete-hotel" bindtap="adminCompleteHotel">确认入住完成</button>
+  </view>
+
+  <!-- 管理端最终裁决 -->
+  <view class="card admin-refund-card" wx:if="{{isAdminView && order.status === 'refunding'}}">
+    <view class="admin-tip">平台最终裁决：管理员操作将覆盖商家处理结果</view>
+    <view class="admin-actions">
+      <button class="admin-btn admin-approve" bindtap="adminApproveRefund">同意退款</button>
+      <button class="admin-btn admin-reject" bindtap="adminRejectRefund">拒绝退款</button>
+    </view>
+  </view>
+
+  <!-- 用户端售后：申请退款（与商家处理/管理员裁决链路打通） -->
+  <view class="card aftersale-card" wx:if="{{!isAdminView}}">
+    <view class="card-title">售后服务</view>
+    <view class="aftersale-row">
+      <text class="aftersale-tip" wx:if="{{order.status === 'refunding'}}">退款申请已提交，等待商家处理与平台最终裁决</text>
+      <text class="aftersale-tip" wx:elif="{{order.status === 'refunded'}}">订单已退款</text>
+      <text class="aftersale-tip" wx:elif="{{order.status === 'cancelled'}}">订单已取消</text>
+      <text class="aftersale-tip" wx:elif="{{order.order_type === 'food'}}">美食订单不支持退款</text>
+      <text class="aftersale-tip" wx:elif="{{order.refund_applied_at}}">该订单已申请过退款，不支持重复提交</text>
+      <text class="aftersale-tip" wx:elif="{{(order.order_type === 'hotel' || order.order_type === 'scenic') && (order.status === 'completed' || order.status === 'verified')}}">订单已结束，不支持线上申请退款</text>
+      <text class="aftersale-tip" wx:elif="{{order.order_type === 'souvenir' && (order.status === 'completed' || order.status === 'verified') && !order.showApplyRefundButton}}">核验/完成已超过7天，如需帮助请联系客服</text>
+      <text class="aftersale-tip" wx:else>如需退款，请提交申请</text>
+      <van-button
+        wx:if="{{order.showApplyRefundButton}}"
+        type="danger"
+        size="small"
+        bindtap="applyRefund"
+      >
+        申请退款
+      </van-button>
+    </view>
+  </view>
+
+  <!-- 核销码（美食、酒店不展示；酒店凭证件/手机号入住） -->
+  <view class="card verify-card" wx:if="{{order.verification_code && order.order_type !== 'food' && order.order_type !== 'hotel' && (order.status === 'paid' || order.status === 'verified' || order.status === 'completed')}}">
+    <view class="card-title">
+      <van-icon name="qr" size="18" />
+      <text>核销码</text>
+    </view>
+    <view class="verify-code-box">
+      <text class="verify-code">{{order.verification_code}}</text>
+      <view class="verify-code-actions">
+        <view class="copy-btn" bindtap="copyVerifyCode">
+          <van-icon name="records-o" size="18" />
+          <text>复制</text>
+        </view>
+      </view>
+      <view class="verify-tip">请向工作人员出示此核销码</view>
+    </view>
+    <view class="qr-code">
+      <canvas canvas-id="qrcode" class="qrcode-canvas" style="width: 200px; height: 200px;"></canvas>
+    </view>
+  </view>
+
+</view>
+<!-- 待支付：底部固定「取消 / 立即支付」 -->
+<view class="detail-bottom-bar" wx:if="{{!isAdminView && order.status === 'unpaid'}}">
+  <van-button size="small" type="default" bindtap="cancelOrder">取消订单</van-button>
+  <van-button size="small" type="primary" bindtap="goToPay">立即支付</van-button>
+</view>
+</block>
+
+<van-empty wx:else description="订单不存在" />
+
+<!-- 申请退款弹窗 -->
+<view class="refund-popup-mask" wx:if="{{showRefundPopup}}" catchtouchmove="true">
+  <view class="refund-popup" catchtap="true">
+    <view class="refund-popup-title">申请退款</view>
+    <textarea
+      class="refund-reason-input"
+      placeholder="请填写退款理由（至少5个字）"
+      maxlength="300"
+      value="{{refundReason}}"
+      bindinput="onRefundReasonInput"
+    />
+    <view class="refund-evidence-title">上传图文凭证（最多6张）</view>
+    <view class="upload-list">
+      <view class="upload-add" bindtap="chooseRefundEvidence" wx:if="{{refundEvidenceImages.length < 6}}">
+        <text>+ 上传</text>
+      </view>
+      <view class="upload-item" wx:for="{{refundEvidenceImages}}" wx:key="*this">
+        <image class="upload-image" src="{{item}}" mode="aspectFill" bindtap="previewRefundApplyEvidence" data-current="{{item}}" />
+        <text class="upload-remove" bindtap="removeRefundEvidence" data-idx="{{index}}">x</text>
+      </view>
+    </view>
+    <view class="refund-popup-actions">
+      <button class="refund-btn cancel" bindtap="closeRefundPopup">取消</button>
+      <button class="refund-btn submit" loading="{{refundSubmitting}}" bindtap="submitRefundApply">提交</button>
+    </view>
+  </view>
+</view>
+
+<!-- 支付弹窗 -->
+<van-dialog id="van-dialog" />

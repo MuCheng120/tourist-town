@@ -1,0 +1,121 @@
+<!--pages/community/my.wxml-->
+<view class="container">
+  <!-- 标签页 -->
+  <van-tabs active="{{ activeTab }}" bind:change="onTabChange" color="#1989fa">
+    <van-tab title="已发布" />
+    <van-tab title="草稿" />
+    <van-tab title="审核中" />
+    <van-tab title="未通过" />
+  </van-tabs>
+
+  <!-- 攻略列表 - 测试：移除图片循环 -->
+  <view class="posts-list" wx:if="{{posts.length > 0}}">
+    <view class="post-item" wx:for="{{posts}}" wx:for-index="idx" wx:for-item="post">
+      <view class="post-header">
+        <text class="post-title">{{post.title}}</text>
+        <van-tag
+          size="small"
+          type="{{activeTab === 0 ? (post.is_hidden ? 'warning' : 'success') : (activeTab === 2 ? 'primary' : (activeTab === 3 ? 'danger' : 'default'))}}"
+        >
+          {{activeTab === 0 ? (post.is_hidden ? '已隐藏' : '已发布') : (activeTab === 1 ? '草稿' : (activeTab === 2 ? '审核中' : '审核未通过'))}}
+        </van-tag>
+      </view>
+      
+      <view class="post-content">
+        <text class="post-desc">{{post.content}}</text>
+      </view>
+      <view class="post-content" wx:if="{{activeTab === 3 && post.audit_remark}}">
+        <text class="post-desc">拒绝原因：{{post.audit_remark}}</text>
+      </view>
+
+      <!-- 图片展示 - 最多显示3张 -->
+      <view class="post-images" wx:if="{{post.images && post.images.length > 0}}">
+        <image class="post-image" src="{{post.images[0]}}" mode="aspectFill" wx:if="{{post.images.length > 0}}" />
+        <image class="post-image" src="{{post.images[1]}}" mode="aspectFill" wx:if="{{post.images.length > 1}}" />
+        <image class="post-image" src="{{post.images[2]}}" mode="aspectFill" wx:if="{{post.images.length > 2}}" />
+        <view class="more-images" wx:if="{{post.images.length > 3}}">+{{post.images.length - 3}}</view>
+      </view>
+
+      <view class="post-stats">
+        <view class="stat-item">
+          <van-icon name="good-job-o" size="14" />
+          <text class="stat-text">{{post.likes_count || 0}}</text>
+        </view>
+        <view class="stat-item">
+          <van-icon name="comment-o" size="14" />
+          <text class="stat-text">{{post.comments_count || 0}}</text>
+        </view>
+        <view class="stat-item">
+          <van-icon name="eye-o" size="14" />
+          <text class="stat-text">{{post.views_count || 0}}</text>
+        </view>
+        <text class="post-time">{{post.created_at}}</text>
+      </view>
+
+      <view class="post-actions">
+        <!-- 已发布：隐藏 / 解除隐藏，无编辑 -->
+        <van-button 
+          wx:if="{{activeTab === 0 && post.is_hidden}}"
+          size="small" 
+          type="primary" 
+          bindtap="unhidePost"
+          data-id="{{post.id}}"
+        >
+          解除隐藏
+        </van-button>
+        <van-button 
+          wx:elif="{{activeTab === 0 && !post.is_hidden}}"
+          size="small" 
+          type="default" 
+          bindtap="hidePost"
+          data-id="{{post.id}}"
+        >
+          隐藏
+        </van-button>
+        <!-- 草稿/未通过：编辑 -->
+        <van-button
+          wx:elif="{{(activeTab === 1 || activeTab === 3)}}"
+          size="small"
+          type="info"
+          bindtap="editPost"
+          data-id="{{post.id}}"
+        >
+          编辑
+        </van-button>
+        <!-- 草稿/未通过：提交审核 -->
+        <van-button
+          wx:if="{{(activeTab === 1 || activeTab === 3)}}"
+          size="small"
+          type="primary"
+          bindtap="publishDraft"
+          data-id="{{post.id}}"
+        >
+          提交审核
+        </van-button>
+        <van-button 
+          size="small" 
+          type="danger" 
+          bindtap="deletePost"
+          data-id="{{post.id}}"
+        >
+          删除
+        </van-button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <van-empty 
+    wx:else 
+    description="{{activeTab === 0 ? '还没有发布攻略' : (activeTab === 1 ? '还没有草稿' : (activeTab === 2 ? '暂无审核中的攻略' : '暂无未通过的攻略'))}}"
+  >
+    <van-button round type="primary" class="bottom-btn" bindtap="goPublish">
+      去发布
+    </van-button>
+  </van-empty>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <van-loading size="24px">加载中...</van-loading>
+  </view>
+</view>

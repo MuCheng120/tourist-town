@@ -1,0 +1,152 @@
+<!--pages/merchant-apply/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">商家入驻申请</text>
+    <text class="subtitle">填写以下信息，加入旅游小镇平台</text>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="status-block" wx:if="{{statusLoading}}">
+    <text class="status-text">加载中...</text>
+  </view>
+
+  <!-- 审核中 -->
+  <view class="status-block" wx:elif="{{merchantStatus === 'pending'}}">
+    <van-icon name="clock-o" size="48" color="#1989fa" />
+    <text class="status-text">您的申请正在审核中</text>
+    <text class="status-desc">请耐心等待，我们将在1-3个工作日内完成审核</text>
+  </view>
+
+  <!-- 已拒绝：展示审核意见 + 重新提交 -->
+  <view class="status-block rejected-block" wx:elif="{{merchantStatus === 'rejected' && !showForm}}">
+    <van-icon name="cross" size="48" color="#ee0a24" />
+    <text class="status-text">审核未通过</text>
+    <view class="audit-opinion" wx:if="{{auditOpinion}}">
+      <text class="opinion-label">审核意见：</text>
+      <text class="opinion-content">{{auditOpinion}}</text>
+    </view>
+    <van-button type="primary" round bindtap="goResubmit" class="resubmit-btn">重新提交</van-button>
+  </view>
+
+  <!-- 申请表单（首次申请或重新提交） -->
+  <block wx:elif="{{showForm}}">
+  <van-cell-group>
+    <van-field
+      value="{{ formData.name }}"
+      label="店铺名称"
+      placeholder="请输入店铺名称"
+      bind:change="onFieldChange"
+      data-field="name"
+      required
+    />
+
+    <van-field
+      value="{{ formData.contact }}"
+      label="联系人"
+      placeholder="请输入联系人姓名"
+      bind:change="onFieldChange"
+      data-field="contact"
+      required
+    />
+
+    <van-field
+      value="{{ formData.phone }}"
+      label="联系电话"
+      placeholder="请输入联系电话"
+      type="number"
+      bind:change="onFieldChange"
+      data-field="phone"
+      required
+    />
+
+    <van-field
+      value="{{ formData.address }}"
+      label="店铺地址（选填）"
+      placeholder="请输入店铺地址"
+      bind:change="onFieldChange"
+      data-field="address"
+    />
+
+    <van-field
+      value="{{ formData.business_license }}"
+      label="营业执照号（选填）"
+      placeholder="请输入营业执照号"
+      bind:change="onFieldChange"
+      data-field="business_license"
+    />
+
+    <van-field
+      value="{{ formData.description }}"
+      label="店铺简介"
+      placeholder="请输入店铺简介"
+      type="textarea"
+      autosize
+      bind:change="onFieldChange"
+      data-field="description"
+    />
+
+    <van-field label="资质文件（选填）" custom-class="field-with-uploader">
+      <van-uploader
+        slot="input"
+        accept="file"
+        extension="{{ qualificationFileExtension }}"
+        file-list="{{ qualificationFileList }}"
+        max-count="3"
+        upload-icon="plus"
+        upload-text="上传资质文件"
+        bind:after-read="onQualificationAfterRead"
+        bind:delete="onQualificationDelete"
+      />
+    </van-field>
+  </van-cell-group>
+
+  <view class="upload-section">
+    <view class="section-title">营业执照照片</view>
+    <view class="upload-area">
+      <image wx:if="{{displayLicenseImage}}" class="preview-image" src="{{displayLicenseImage}}" mode="aspectFill" bindtap="previewLicense" />
+      <view wx:else class="upload-placeholder" bindtap="uploadLicense">
+        <van-icon name="photo-o" size="40" color="#999" />
+        <text class="upload-text">点击上传营业执照</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="upload-section idcard-section">
+    <view class="section-title">身份证正面</view>
+    <view class="upload-area upload-area--small">
+      <image wx:if="{{displayIdCardFrontImage}}" class="preview-image preview-image--small" src="{{displayIdCardFrontImage}}" mode="aspectFill" bindtap="previewIdCardFront" />
+      <view wx:else class="upload-placeholder upload-placeholder--small" bindtap="uploadIdCardFront">
+        <van-icon name="photo-o" size="32" color="#999" />
+        <text class="upload-text">点击上传</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="upload-section idcard-section">
+    <view class="section-title">身份证反面</view>
+    <view class="upload-area upload-area--small">
+      <image wx:if="{{displayIdCardBackImage}}" class="preview-image preview-image--small" src="{{displayIdCardBackImage}}" mode="aspectFill" bindtap="previewIdCardBack" />
+      <view wx:else class="upload-placeholder upload-placeholder--small" bindtap="uploadIdCardBack">
+        <van-icon name="photo-o" size="32" color="#999" />
+        <text class="upload-text">点击上传</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="tips-section">
+    <view class="tips-title">入驻须知</view>
+    <view class="tips-content">
+      <text class="tip-item">1. 请确保填写信息真实有效</text>
+      <text class="tip-item">2. 营业执照需清晰可见</text>
+      <text class="tip-item">3. 提交后我们将在1-3个工作日内审核</text>
+      <text class="tip-item">4. 审核通过后将以短信通知</text>
+    </view>
+  </view>
+
+  <view class="submit-section">
+    <van-button type="primary" block round bindtap="handleSubmit" loading="{{submitting}}">
+      {{submitting ? '提交中...' : (lastApplication ? '重新提交申请' : '提交申请')}}
+    </van-button>
+  </view>
+  </block>
+</view>

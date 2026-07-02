@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="filter-bar">
+    <picker mode="selector" range="{{roleOptions}}" range-key="label" value="{{roleIndex}}" bindchange="onRolePickerChange">
+      <view class="filter-item">角色：{{roleOptions[roleIndex].label}}</view>
+    </picker>
+    <picker mode="selector" range="{{statusOptions}}" range-key="label" value="{{statusIndex}}" bindchange="onStatusPickerChange">
+      <view class="filter-item">状态：{{statusOptions[statusIndex].label}}</view>
+    </picker>
+  </view>
+
+  <view class="user-list">
+    <view class="user-card" wx:for="{{list}}" wx:key="id">
+      <view class="card-row">
+        <text class="label">用户</text>
+        <text class="value">{{item.nickname || item.username || item.id}}</text>
+        <van-tag type="{{item.role === 'admin' ? 'primary' : (item.role === 'merchant' ? 'warning' : 'default')}}">{{item.roleText}}</van-tag>
+        <van-tag type="{{item.status === 'banned' ? 'danger' : 'success'}}">{{item.statusText}}</van-tag>
+      </view>
+      <view class="card-row" wx:if="{{item.phone}}">
+        <text class="label">手机</text>
+        <text class="value">{{item.phone}}</text>
+      </view>
+      <view class="card-row">
+        <text class="label">注册时间</text>
+        <text class="value">{{item.created_at}}</text>
+      </view>
+      <view class="card-actions">
+        <van-button wx:if="{{item.role !== 'admin'}}" size="small" type="primary" plain bindtap="setAdmin" data-id="{{item.id}}">设为管理员</van-button>
+        <van-button wx:if="{{item.role === 'admin'}}" size="small" type="default" plain bindtap="revokeAdmin" data-id="{{item.id}}">取消管理员</van-button>
+        <van-button wx:if="{{item.status !== 'banned'}}" size="small" type="danger" plain bindtap="setStatus" data-id="{{item.id}}" data-status="banned">封禁</van-button>
+        <van-button wx:if="{{item.status === 'banned'}}" size="small" type="primary" plain bindtap="setStatus" data-id="{{item.id}}" data-status="active">解封</van-button>
+      </view>
+    </view>
+    <van-empty wx:if="{{list.length === 0 && !loading}}" description="暂无用户" />
+    <van-loading wx:if="{{loading}}" class="loading" />
+  </view>
+</view>

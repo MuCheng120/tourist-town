@@ -1,0 +1,101 @@
+<view class="container">
+  <van-loading wx:if="{{loading}}" class="loading" size="24px">加载中...</van-loading>
+  <view wx:elif="{{error}}" class="error">{{error}}</view>
+
+  <view wx:else class="detail">
+    <!-- 基本信息 -->
+    <view class="section">
+      <view class="section-title">基本信息</view>
+      <view class="basic-header">
+        <image class="avatar" wx:if="{{detail.avatar}}" src="{{detail.avatar}}" mode="aspectFill" />
+        <view class="avatar placeholder" wx:else><van-icon name="shop-o" size="40" color="#c8c9cc" /></view>
+        <view class="basic-info">
+          <text class="name">{{detail.business_name || detail.nickname || detail.username || '未设置'}}</text>
+          <van-tag type="{{detail.status === 'active' ? 'success' : 'danger'}}">{{detail.accountStatusText}}</van-tag>
+          <van-tag plain type="primary">{{detail.shopStatusText}}</van-tag>
+        </view>
+      </view>
+      <van-cell-group>
+        <van-cell title="联系人" value="{{detail.contact || '-'}}" />
+        <van-cell title="手机号" value="{{detail.phone || '-'}}" />
+        <van-cell title="用户名" value="{{detail.username || '-'}}" />
+        <van-cell title="入驻时间" value="{{detail.created_at}}" />
+        <van-cell title="最后登录" value="{{detail.last_login_at}}" />
+      </van-cell-group>
+    </view>
+
+    <!-- 证照信息 -->
+    <view class="section">
+      <view class="section-title">证照信息</view>
+      <van-cell-group>
+        <van-cell title="营业执照号" value="{{detail.license_no || '-'}}" />
+        <van-cell title="执照到期" value="{{detail.license_expiry || '-'}}" />
+        <van-cell title="经营地址" value="{{detail.address || '-'}}" />
+        <van-cell title="商家简介" value="{{detail.description || '-'}}" />
+      </van-cell-group>
+    </view>
+
+    <!-- 营业执照图片（点击预览） -->
+    <view class="section" wx:if="{{licenseImages.length > 0}}">
+      <view class="section-title">营业执照（点击预览）</view>
+      <view class="image-list">
+        <image
+          wx:for="{{licenseImages}}"
+          wx:key="*this"
+          class="thumb"
+          src="{{item}}"
+          mode="aspectFill"
+          data-url="{{item}}"
+          data-urls="{{licenseImages}}"
+          bindtap="previewImage"
+        />
+      </view>
+    </view>
+
+    <!-- 身份证（点击预览） -->
+    <view class="section" wx:if="{{idcardFront || idcardBack}}">
+      <view class="section-title">法人身份证（点击预览）</view>
+      <view class="idcard-row">
+        <view class="idcard-item" wx:if="{{idcardFront}}">
+          <text class="label">正面</text>
+          <image class="idcard-img" src="{{idcardFront}}" mode="widthFix" data-url="{{idcardFront}}" data-urls="{{[idcardFront, idcardBack].filter(Boolean)}}" bindtap="previewImage" />
+        </view>
+        <view class="idcard-item" wx:if="{{idcardBack}}">
+          <text class="label">反面</text>
+          <image class="idcard-img" src="{{idcardBack}}" mode="widthFix" data-url="{{idcardBack}}" data-urls="{{[idcardFront, idcardBack].filter(Boolean)}}" bindtap="previewImage" />
+        </view>
+      </view>
+    </view>
+
+    <!-- 资质文件（点击预览/下载，长按复制链接） -->
+    <view class="section" wx:if="{{qualificationFiles.length > 0}}">
+      <view class="section-title">资质文件（点击预览或下载）</view>
+      <view class="file-list">
+        <view
+          class="file-item"
+          wx:for="{{qualificationFiles}}"
+          wx:key="*this"
+          data-url="{{item}}"
+          data-urls="{{qualificationFiles}}"
+          bindtap="previewOrDownloadFile"
+          bindlongpress="copyFileLink"
+        >
+          <van-icon name="description" size="20" color="#1989fa" />
+          <text class="file-url">文件 {{index + 1}} · 点击预览/下载</text>
+          <van-icon name="arrow" size="14" color="#999" />
+        </view>
+      </view>
+    </view>
+
+    <!-- 经营数据 -->
+    <view class="section">
+      <view class="section-title">经营数据</view>
+      <van-cell-group>
+        <van-cell title="信用等级" value="{{detail.credit_level || '-'}}" />
+        <van-cell title="信用分" value="{{detail.credit_score != null ? detail.credit_score : '-'}}" />
+        <van-cell title="订单完成率" value="{{detail.orderCompletionRate}}{{detail.orderCompletionRate === '-' ? '' : '%'}}" />
+        <van-cell title="违规次数" value="{{detail.violation_count || 0}}" />
+      </van-cell-group>
+    </view>
+  </view>
+</view>

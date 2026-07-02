@@ -1,0 +1,123 @@
+<!--pages/mall/index.wxml-->
+<view class="container">
+  <!-- 顶部：搜索 + 购物车 -->
+  <view class="mall-header">
+    <view class="search-wrap">
+      <van-search 
+        value="{{keyword}}" 
+        placeholder="{{merchantId ? (activeProductType === 'food' ? '搜索餐饮' : '搜索特产') : '搜索商家'}}" 
+        bind:change="onSearchChange"
+        bind:search="onSearch"
+      />
+    </view>
+    <view class="cart-wrap" bindtap="navigateToCart">
+      <van-icon name="shopping-cart-o" size="22" />
+      <view class="cart-badge" wx:if="{{cartCount > 0}}">{{cartCount}}</view>
+    </view>
+  </view>
+
+  <!-- 商家列表模式 -->
+  <view wx:if="{{!merchantId}}">
+    <!-- 商家列表 -->
+    <view class="merchant-list">
+      <view class="merchant-item" wx:for="{{merchants}}" wx:key="id" bindtap="navigateToMerchantDetail" data-id="{{item.id}}">
+        <image class="merchant-avatar" src="{{item.shop_images && item.shop_images.length > 0 ? item.shop_images[0] : 'https://img.yzcdn.cn/vant/cat.jpeg'}}" mode="aspectFill" />
+        <view class="merchant-info">
+          <view class="merchant-header">
+            <text class="merchant-name">{{item.business_name}}</text>
+            <text class="merchant-description" wx:if="{{item.description}}">{{item.description}}</text>
+          </view>
+          <van-tag size="small" type="success" class="merchant-level">{{item.credit_level}}级商家</van-tag>
+        </view>
+      </view>
+    </view>
+
+    <!-- 商家列表空状态 -->
+    <van-empty wx:if="{{merchants.length === 0 && !loading}}" description="暂无商家" />
+  </view>
+
+  <!-- 商品列表模式 -->
+  <view wx:else>
+    <!-- 商家信息头部 -->
+    <view class="merchant-detail-header" wx:if="{{currentMerchant}}">
+      <view class="merchant-detail-info">
+        <text class="merchant-detail-name">{{currentMerchant.business_name}}</text>
+        <text class="merchant-detail-address" wx:if="{{currentMerchant.address}}">{{currentMerchant.address}}</text>
+      </view>
+    </view>
+
+    <!-- 商品类型：特产 / 餐饮（分段选择器） -->
+    <view class="segment-wrap">
+      <view class="segment-bar">
+        <view 
+          class="segment-item {{activeProductType === 'souvenir' ? 'active' : ''}}" 
+          data-type="souvenir" 
+          bindtap="onProductTypeChange"
+        >特产</view>
+        <view 
+          class="segment-item {{activeProductType === 'food' ? 'active' : ''}}" 
+          data-type="food" 
+          bindtap="onProductTypeChange"
+        >餐饮美食</view>
+      </view>
+    </view>
+
+    <!-- 排序（仅销量/价格，搜索统一用顶部 van-search） -->
+    <view class="sort-toolbar">
+      <text class="sort-toolbar-label">排序</text>
+      <view class="sort-btns">
+        <view
+          class="sort-btn {{orderBy === 'sales' || orderBy === 'sales_asc' ? 'active' : ''}}"
+          bindtap="onSortSales"
+        >销量{{orderBy === 'sales' ? '↓' : (orderBy === 'sales_asc' ? '↑' : '')}}</view>
+        <view
+          class="sort-btn {{orderBy === 'price_asc' || orderBy === 'price_desc' ? 'active' : ''}}"
+          bindtap="onSortPrice"
+        >价格{{orderBy === 'price_asc' ? '↑' : (orderBy === 'price_desc' ? '↓' : '')}}</view>
+      </view>
+    </view>
+
+    <!-- 分类标签（仅特产显示，全部用 name=all 避免 van-tab name 空时变成索引 0） -->
+    <view class="category-tabs" wx:if="{{activeProductType === 'souvenir'}}">
+      <van-tabs active="{{ activeCategory }}" bind:change="onCategoryChange">
+        <van-tab title="全部" name="all" />
+        <van-tab title="茶叶" name="茶叶" />
+        <van-tab title="干货" name="干货" />
+        <van-tab title="工艺品" name="工艺品" />
+        <van-tab title="食品" name="食品" />
+      </van-tabs>
+    </view>
+
+    <!-- 商品列表 -->
+    <view class="product-list">
+      <view class="product-item" wx:for="{{products}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+        <image class="product-image" src="{{item.images && item.images[0] ? item.images[0] : item.cover_image}}" mode="aspectFill" />
+        <view class="product-info">
+          <text class="product-name">{{item.name}}</text>
+          <view class="product-tags">
+            <van-tag plain type="danger" size="small">包邮</van-tag>
+            <van-tag plain type="primary" size="small" wx:if="{{item.product_type !== 'food' && item.stock > 0}}">库存{{item.stock}}</van-tag>
+            <van-tag plain type="warning" size="small" wx:elif="{{item.product_type !== 'food' && item.stock <= 0}}">已售罄</van-tag>
+          </view>
+          <view class="product-footer">
+            <text class="product-price">¥{{item.price}}</text>
+            <text class="product-sales">已售{{item.sales_count != null ? item.sales_count : (item.sales || 0)}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 商品列表空状态 -->
+    <van-empty wx:if="{{products.length === 0 && !loading}}" description="暂无商品" />
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading" wx:if="{{loading}}">
+    <van-loading size="24px">加载中...</van-loading>
+  </view>
+
+  <!-- 加载完成 -->
+  <view class="no-more" wx:if="{{noMore}}">
+    <text>没有更多了</text>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!-- 注销账号：二次确认 + 密码（账号密码用户必填） -->
+<view class="container">
+  <view class="notice">
+    <text class="notice-title">注销说明</text>
+    <text class="notice-text">• 注销后账号无法恢复，您将无法使用当前账号登录。</text>
+    <text class="notice-text">• 订单、评论等记录将保留并匿名展示（如「已注销用户」）。</text>
+    <text class="notice-text">• 若您使用账号密码注册，请在下框输入当前密码以确认身份。</text>
+  </view>
+
+  <van-cell-group>
+    <van-field
+      value="{{ password }}"
+      type="password"
+      label="当前密码"
+      placeholder="账号密码用户请填写，微信登录可留空"
+      border="{{ true }}"
+      bind:change="onPasswordChange"
+    />
+  </van-cell-group>
+
+  <view class="btn-wrap">
+    <van-button type="danger" block round bind:click="submit" loading="{{ loading }}">
+      确认注销
+    </van-button>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<van-popup show="{{ show }}" position="bottom" round bind:close="onPopupClose" custom-style="max-height: 60%; z-index: 1000; padding-bottom: 120rpx;">
+  <view class="room-guest-popup">
+    <view class="room-guest-title">选择客房和入住人数</view>
+    <view class="room-guest-tip">入住人数较多时，试试增加间数</view>
+    <view class="room-guest-row">
+      <text>间数</text>
+      <van-stepper value="{{ roomCount }}" min="1" max="9" bind:change="onRoomCountChange" />
+    </view>
+    <view class="room-guest-row">
+      <text>成人数</text>
+      <van-stepper value="{{ adultCount }}" min="1" max="9" bind:change="onAdultCountChange" />
+    </view>
+    <view class="room-guest-row">
+      <view><text>儿童数</text><text class="room-guest-hint">0-17岁</text></view>
+      <van-stepper value="{{ childCount }}" min="0" max="9" bind:change="onChildCountChange" />
+    </view>
+    <view class="room-guest-child-tip">请如实填写儿童年龄（入住登记用）</view>
+    <view class="room-guest-child-ages" wx:if="{{ childAges.length > 0 }}">
+      <text wx:for="{{ childAges }}" wx:key="index" class="child-age-tag">儿童{{ index + 1 }}：{{ item }}岁</text>
+    </view>
+    <view class="room-guest-footer">
+      <van-button type="primary" block round bind:click="confirmRoomGuest">完成</van-button>
+    </view>
+  </view>
+</van-popup>
+
+<van-action-sheet
+  show="{{ showChildAgePopup }}"
+  title="{{ childAgePickerTitle }}"
+  description="用于入住登记"
+  actions="{{ childAgeOptions }}"
+  bind:select="onChildAgeSelect"
+  bind:close="onCloseChildAgePopup"
+  cancel-text="取消"
+/>

@@ -1,0 +1,1341 @@
+2026-02-23 00:53:18,882 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1409045ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 01:30:49,722 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2250808ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 01:30:49,753 ERROR 66661 [Job#17717814497021519157529427911] /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js execute failed, used 40ms. TypeError: Cannot read properties of undefined (reading 'info')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/cache_warmup.js:15:12)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 01:30:49,763 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 01:30:49,768 ERROR 66661 [-/127.0.0.1/-/5ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 02:29:05,983 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3476207ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 02:29:05,989 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js&cron=0%200%202%20*%20*%20*&type=all] 批量更新商户信用等级失败: TypeError: Cannot read properties of undefined (reading 'User')
+    at MerchantCreditService.updateAllMerchantsCreditLevel (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:190:37)
+    at UpdateMerchantLevel.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 02:29:05,995 ERROR 66661 [-/127.0.0.1/-/7ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js&cron=0%200%202%20*%20*%20*&type=all] [定时任务] 更新商户信用等级失败: TypeError: Cannot read properties of undefined (reading 'User')
+    at MerchantCreditService.updateAllMerchantsCreditLevel (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:190:37)
+    at UpdateMerchantLevel.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/update_merchant_level.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 03:35:36,839 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 03:35:36,840 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 04:42:20,757 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 04:42:20,757 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 05:26:10,600 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2629846ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 06:21:03,436 ERROR 66661 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 06:21:03,436 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 06:21:03,432 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3292827ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 07:07:09,814 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2766355ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 07:27:10,559 ERROR 66661 [-/127.0.0.1/-/12ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 07:27:10,561 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 07:27:10,544 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1200722ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 07:57:26,532 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1815961ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 08:06:49,810 ERROR 66661 [-/127.0.0.1/-/3ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js&cron=0%200%208%20*%20*%20*&type=all] 检查商户资质到期失败: TypeError: Cannot read properties of undefined (reading 'MerchantExt')
+    at MerchantCreditService.checkLicenseExpiry (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:331:40)
+    at CheckLicenseExpiry.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 08:06:49,810 ERROR 66661 [-/127.0.0.1/-/3ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js&cron=0%200%208%20*%20*%20*&type=all] [定时任务] 检查商户资质到期失败: TypeError: Cannot read properties of undefined (reading 'MerchantExt')
+    at MerchantCreditService.checkLicenseExpiry (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/service/merchantCredit.js:331:40)
+    at CheckLicenseExpiry.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/check_license_expiry.js:24:52)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 08:06:49,806 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 563263ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 08:28:11,291 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1281455ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 08:28:11,293 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 08:28:11,293 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 08:44:03,058 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 931747ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 09:29:11,266 ERROR 66661 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 09:29:11,267 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 09:29:11,247 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2539578ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 10:30:11,396 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 10:30:11,397 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 10:30:11,387 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2550360ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 11:31:10,727 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 11:31:10,727 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 11:31:10,723 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 1274772ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 12:32:11,353 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 12:32:11,353 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 12:32:11,352 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2319191ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 13:09:25,552 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2039921ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 13:29:27,054 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 989248ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 13:32:11,337 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 13:32:11,338 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 14:33:11,013 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 3631747ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 14:33:11,018 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 14:33:11,019 ERROR 66661 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 15:34:11,102 ERROR 66661 [-/127.0.0.1/-/4ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 15:34:11,103 ERROR 66661 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 15:34:11,084 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2435875ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 16:11:38,763 ERROR 66660 nodejs.ClusterClientNoResponseError: client no response in 2053235ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 66660
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 16:41:46,339 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 133583ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 17:07:23,931 ERROR 95008 [-/::1/-/7ms POST /api/user/admin-login] [管理员登录] 登录失败 {
+  username: 'admin',
+  error: '管理员用户名或密码错误',
+  timestamp: 2026-02-23T09:07:23.930Z
+}
+2026-02-23 17:17:33,040 ERROR 95008 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 17:17:33,041 ERROR 95008 [-/127.0.0.1/-/0ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 18:07:11,666 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 176639ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 18:17:33,038 ERROR 4872 [-/127.0.0.1/-/6ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 18:17:33,040 ERROR 4872 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 19:17:28,197 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 3268836ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 19:17:33,116 ERROR 4872 [-/127.0.0.1/-/28ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 19:17:33,137 ERROR 4872 [-/127.0.0.1/-/3ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 19:34:07,682 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 358735ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 20:18:48,925 ERROR 4872 [-/127.0.0.1/-/72ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 20:18:48,967 ERROR 4872 [-/127.0.0.1/-/13ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 20:18:48,726 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 656767ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 20:46:55,719 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 633496ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 21:03:53,896 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 101887ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 21:18:48,698 ERROR 51118 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 21:18:48,700 ERROR 51118 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 21:36:06,559 ERROR 78034 nodejs.ClusterClientNoResponseError: client no response in 286853ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 78034
+hostname: Mac
+
+2026-02-23 22:06:44,079 ERROR 71958 [-/::1/-/35ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:06:44,080 ERROR 71958 [-/::1/-/36ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 71958
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:18:48,694 ERROR 71958 [-/127.0.0.1/-/2ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 22:18:48,695 ERROR 71958 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-23 22:20:09,579 ERROR 78539 [-/::1/-/77ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:20:09,581 ERROR 78539 [-/::1/-/78ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:20:37,865 ERROR 78539 [-/::1/-/26ms GET /api/routes?limit=3&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?limit=3&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:20:37,866 ERROR 78539 [-/::1/-/27ms GET /api/routes?limit=3&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:20:37,878 ERROR 78539 [-/::1/-/8ms GET /api/routes?limit=3&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?limit=3&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:20:37,879 ERROR 78539 [-/::1/-/8ms GET /api/routes?limit=3&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:20:47,374 ERROR 78539 [-/::1/-/6ms GET /api/routes?page=1&pageSize=10&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?page=1&pageSize=10&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:20:47,375 ERROR 78539 [-/::1/-/7ms GET /api/routes?page=1&pageSize=10&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:20:47,439 ERROR 78539 [-/::1/-/18ms GET /api/routes?page=1&pageSize=10&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?page=1&pageSize=10&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:20:47,439 ERROR 78539 [-/::1/-/18ms GET /api/routes?page=1&pageSize=10&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:27:08,110 ERROR 78539 [-/::1/-/20ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:27:08,110 ERROR 78539 [-/::1/-/20ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:27:08,217 ERROR 78539 [-/::1/-/4ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:27:08,217 ERROR 78539 [-/::1/-/5ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:27:08,353 ERROR 78539 [-/::1/-/5ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:27:08,354 ERROR 78539 [-/::1/-/6ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:34:48,209 ERROR 78539 [-/::1/-/47ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:34:48,209 ERROR 78539 [-/::1/-/47ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:35:12,967 ERROR 78539 [-/::1/-/23ms GET /api/routes?limit=3&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?limit=3&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:35:12,967 ERROR 78539 [-/::1/-/23ms GET /api/routes?limit=3&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:35:12,996 ERROR 78539 [-/::1/-/18ms GET /api/routes?limit=3&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?limit=3&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:35:12,996 ERROR 78539 [-/::1/-/19ms GET /api/routes?limit=3&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:35:19,138 ERROR 78539 [-/::1/-/9ms GET /api/routes?page=1&pageSize=10&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?page=1&pageSize=10&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:35:19,138 ERROR 78539 [-/::1/-/9ms GET /api/routes?page=1&pageSize=10&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:35:19,191 ERROR 78539 [-/::1/-/17ms GET /api/routes?page=1&pageSize=10&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?page=1&pageSize=10&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:35:19,191 ERROR 78539 [-/::1/-/17ms GET /api/routes?page=1&pageSize=10&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 78539
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:43:49,778 ERROR 90864 [-/::1/-/22ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:43:49,779 ERROR 90864 [-/::1/-/23ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 90864
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:43:49,927 ERROR 90864 [-/::1/-/5ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:43:49,927 ERROR 90864 [-/::1/-/5ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 90864
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:43:50,126 ERROR 90864 [-/::1/-/5ms GET /api/routes] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:43:50,127 ERROR 90864 [-/::1/-/6ms GET /api/routes] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 90864
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:43:57,531 ERROR 90864 [-/::1/-/36ms GET /api/routes?limit=3&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?limit=3&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:43:57,532 ERROR 90864 [-/::1/-/37ms GET /api/routes?limit=3&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 90864
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:43:57,541 ERROR 90864 [-/::1/-/7ms GET /api/routes?limit=3&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?limit=3&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:43:57,541 ERROR 90864 [-/::1/-/8ms GET /api/routes?limit=3&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 90864
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:44:12,152 ERROR 90864 [-/::1/-/5ms GET /api/routes?page=1&pageSize=10&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?page=1&pageSize=10&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:44:12,153 ERROR 90864 [-/::1/-/6ms GET /api/routes?page=1&pageSize=10&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 90864
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 22:44:12,226 ERROR 90864 [-/::1/-/37ms GET /api/routes?page=1&pageSize=10&status=1] Error occurred: {
+  message: "Unknown column 'updated_at' in 'field list'",
+  stack: 'Error\n' +
+    '    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)\n' +
+    '    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n' +
+    '    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)\n' +
+    '    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)\n' +
+    '    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)\n' +
+    '    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19\n' +
+    '    at async Promise.all (index 0)\n' +
+    '    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)\n' +
+    '    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)',
+  status: undefined,
+  code: undefined,
+  url: '/api/routes?page=1&pageSize=10&status=1',
+  method: 'GET',
+  userId: undefined
+}
+2026-02-23 22:44:12,226 ERROR 90864 [-/::1/-/37ms GET /api/routes?page=1&pageSize=10&status=1] nodejs.SequelizeDatabaseError: Unknown column 'updated_at' in 'field list'
+    at Query.run (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/mysql/query.js:52:25)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/sequelize.js:315:28
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async MySQLQueryInterface.select (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/dialects/abstract/query-interface.js:407:12)
+    at async route_item.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1140:21)
+    at async HasMany.get (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/associations/has-many.js:170:21)
+    at async /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1202:19
+    at async Promise.all (index 0)
+    at async Model._findSeparate (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1186:5)
+    at async route.findAll (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/sequelize/lib/model.js:1153:12)
+name: "SequelizeDatabaseError"
+parent: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+original: {"code":"ER_BAD_FIELD_ERROR","errno":1054,"sqlState":"42S22","sqlMessage":"Unknown column 'updated_at' in 'field list'","sql":"SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"}
+sql: "SELECT `id`, `route_id`, `place_type`, `place_id`, `sort_order`, `created_at` AS `createdAt`, `updated_at` AS `updatedAt` FROM `route_items` AS `route_item` WHERE `route_item`.`route_id` IN (5, 3, 2) ORDER BY `route_item`.`sort_order` ASC;"
+parameters: {}
+pid: 90864
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-23 23:13:21,796 ERROR 96644 nodejs.ClusterClientNoResponseError: client no response in 210661ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 96644
+hostname: Kinda-DevdeMacBook-Air.local
+
+2026-02-24 00:08:52,965 ERROR 96649 [-/127.0.0.1/-/21ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js&interval=1h&type=all] 订单自动完成定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'lt')
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/auto_complete_orders.js:22:27)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-24 00:08:52,967 ERROR 96649 [-/127.0.0.1/-/1ms SCHEDULE /__schedule?path=/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js&interval=1h&type=all&immediate=false] [schedule.cleanExpiredCoupons] 清理过期优惠券定时任务执行失败: TypeError: Cannot read properties of undefined (reading 'cleanExpiredCoupons')
+    at CleanExpiredCoupons.subscribe (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/app/schedule/clean_expired_coupons.js:17:43)
+    at Object.task (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/lib/load_schedule.js:37:22)
+    at /Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:52:31
+    at AsyncLocalStorage.run (node:internal/async_local_storage/async_context_frame:63:14)
+    at Messenger.<anonymous> (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/egg-schedule/app.js:51:28)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-02-24 00:08:52,948 ERROR 96644 nodejs.ClusterClientNoResponseError: client no response in 3331054ms exceeding maxIdleTime 60000ms, maybe the connection is close on other side.
+    at Timeout._onTimeout (/Users/kinda-dev/Documents/毕业设计/tourist-town2/backend/node_modules/cluster-client/lib/leader.js:79:25)
+    at listOnTimeout (node:internal/timers:605:17)
+    at process.processTimers (node:internal/timers:541:7)
+name: "ClusterClientNoResponseError"
+pid: 96644
+hostname: Kinda-DevdeMacBook-Air.local
+

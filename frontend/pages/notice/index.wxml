@@ -1,0 +1,32 @@
+<!--pages/notice/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">系统公告</text>
+  </view>
+
+  <view class="notice-list">
+    <view class="notice-item" wx:for="{{notices}}" wx:key="id" bindtap="viewNotice" data-id="{{item.id}}">
+      <view class="notice-header">
+        <text class="notice-title">{{item.title}}</text>
+        <text class="notice-date">{{item.createdAt}}</text>
+      </view>
+      <view class="notice-preview">
+        <text class="preview-text">{{item.content}}</text>
+        <van-icon name="arrow" size="14" color="#999" />
+      </view>
+    </view>
+
+    <view class="empty" wx:if="{{notices.length === 0}}">
+      <van-empty description="暂无公告" />
+    </view>
+  </view>
+
+  <!-- 公告详情弹窗 -->
+  <van-popup show="{{showDetail}}" position="center" closeable bind:close="onCloseDetail" custom-style="width: 80%; max-height: 70%;">
+    <view class="notice-detail">
+      <view class="detail-title">{{currentNotice.title}}</view>
+      <view class="detail-content">{{currentNotice.content}}</view>
+      <view class="detail-time">{{currentNotice.createdAt}}</view>
+    </view>
+  </van-popup>
+</view>

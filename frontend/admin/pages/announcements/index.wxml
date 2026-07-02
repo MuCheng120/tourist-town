@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="toolbar">
+    <picker mode="selector" range="{{statusOptions}}" range-key="label" value="{{statusIndex}}" bindchange="onStatusChange">
+      <view class="picker">状态：{{statusOptions[statusIndex].label}}</view>
+    </picker>
+    <button class="create-btn" size="mini" bindtap="openCreate">新建公告</button>
+  </view>
+
+  <view class="list">
+    <view class="card" wx:for="{{list}}" wx:key="id">
+      <view class="title-row">
+        <text class="title">{{item.title}}</text>
+        <text class="tag {{item.status === 1 ? 'on' : 'off'}}">{{item.status === 1 ? '已发布' : '已下线'}}</text>
+      </view>
+      <view class="content">{{item.content || '暂无内容'}}</view>
+      <view class="meta">创建时间：{{item.createdAt || item.created_at || '-'}}</view>
+      <view class="actions">
+        <button class="action-btn" size="mini" bindtap="openEdit" data-id="{{item.id}}">编辑</button>
+        <button class="action-btn action-primary" size="mini" bindtap="toggleStatus" data-id="{{item.id}}" data-status="{{item.status}}">
+          {{item.status === 1 ? '下线' : '发布'}}
+        </button>
+        <button class="action-btn action-danger" size="mini" bindtap="remove" data-id="{{item.id}}">删除</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{!loading && list.length === 0}}">
+    <van-empty description="暂无公告" />
+  </view>
+
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+
+  <view class="mask" wx:if="{{showForm}}" bindtap="closeForm">
+    <view class="modal" catchtap="noop">
+      <view class="modal-title">{{isEdit ? '编辑公告' : '新建公告'}}</view>
+      <view class="field">
+        <text class="label">标题</text>
+        <input class="input" value="{{form.title}}" data-field="title" bindinput="onInput" placeholder="请输入公告标题" placeholder-class="input-placeholder" />
+      </view>
+      <view class="field">
+        <text class="label">内容</text>
+        <textarea class="textarea" value="{{form.content}}" data-field="content" bindinput="onInput" placeholder="请输入公告内容" placeholder-class="input-placeholder" />
+      </view>
+      <view class="field field-row">
+        <text class="label">发布状态</text>
+        <switch checked="{{form.status === 1}}" bindchange="onFormStatusChange" />
+      </view>
+      <view class="modal-actions">
+        <button class="form-btn" size="mini" bindtap="closeForm">取消</button>
+        <button class="form-btn form-btn-primary" size="mini" bindtap="submitForm">保存</button>
+      </view>
+    </view>
+  </view>
+</view>

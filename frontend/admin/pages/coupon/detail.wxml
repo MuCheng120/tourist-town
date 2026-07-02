@@ -1,0 +1,50 @@
+<view class="page">
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <view wx:if="{{!loading && detail}}" class="card">
+    <view class="row">
+      <text class="label">标题</text>
+      <text class="value">{{detail.title}}</text>
+    </view>
+    <view class="row">
+      <text class="label">类型</text>
+      <text class="value">{{detail.type_text || detail.type || 'platform'}}</text>
+    </view>
+    <view class="row">
+      <text class="label">优惠金额</text>
+      <text class="value">¥{{detail.value}}</text>
+    </view>
+    <view class="row">
+      <text class="label">最低消费</text>
+      <text class="value">¥{{detail.min_spend || 0}}</text>
+    </view>
+    <view class="row">
+      <text class="label">发行总量</text>
+      <text class="value">{{detail.total_count || 0}}</text>
+    </view>
+    <view class="row">
+      <text class="label">已领取</text>
+      <text class="value">{{detail.received_count || 0}}</text>
+    </view>
+    <view class="row">
+      <text class="label">已使用</text>
+      <text class="value">{{detail.used_count || 0}}</text>
+    </view>
+    <view class="row">
+      <text class="label">状态</text>
+      <text class="value">{{detail.status === 1 ? '启用' : '禁用'}}</text>
+    </view>
+    <view class="row">
+      <text class="label">过期时间</text>
+      <text class="value">{{detail.expiry_date_display || detail.expiry_date || '-'}}</text>
+    </view>
+    <view class="row">
+      <text class="label">创建时间</text>
+      <text class="value">{{detail.created_time_display || detail.createdAt || detail.created_at || '-'}}</text>
+    </view>
+  </view>
+
+  <view class="empty" wx:if="{{!loading && !detail}}">
+    <van-empty description="暂无数据" />
+  </view>
+</view>
